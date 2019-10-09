@@ -36,7 +36,7 @@
     <link href="http://yoursite.com/2019/10/07/snaillife/"/>
     <id>http://yoursite.com/2019/10/07/snaillife/</id>
     <published>2019-10-07T07:59:43.000Z</published>
-    <updated>2019-10-09T08:40:42.867Z</updated>
+    <updated>2019-10-09T08:51:14.881Z</updated>
     
     <summary type="html">
     
@@ -51,14 +51,39 @@
     </summary>
     
     
-      <category term="随笔" scheme="http://yoursite.com/categories/%E9%9A%8F%E7%AC%94/"/>
-    
     
       <category term="梦想" scheme="http://yoursite.com/tags/%E6%A2%A6%E6%83%B3/"/>
     
       <category term="破晓" scheme="http://yoursite.com/tags/%E7%A0%B4%E6%99%93/"/>
     
       <category term="古月山风" scheme="http://yoursite.com/tags/%E5%8F%A4%E6%9C%88%E5%B1%B1%E9%A3%8E/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://yoursite.com/2019/10/07/hello-world/"/>
+    <id>http://yoursite.com/2019/10/07/hello-world/</id>
+    <published>2019-10-07T07:58:25.425Z</published>
+    <updated>2019-10-09T09:14:35.737Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="hexo" scheme="http://yoursite.com/categories/hexo/"/>
+    
+    
+      <category term="markdown" scheme="http://yoursite.com/tags/markdown/"/>
     
   </entry>
   
