@@ -36,7 +36,7 @@
     <link href="http://yoursite.com/2019/10/07/snaillife/"/>
     <id>http://yoursite.com/2019/10/07/snaillife/</id>
     <published>2019-10-07T07:59:43.000Z</published>
-    <updated>2019-10-09T01:16:36.774Z</updated>
+    <updated>2019-10-09T01:17:02.038Z</updated>
     
     <summary type="html">
     
@@ -50,8 +50,6 @@
     
     </summary>
     
-    
-      <category term="随笔" scheme="http://yoursite.com/categories/%E9%9A%8F%E7%AC%94/"/>
     
     
       <category term="梦想" scheme="http://yoursite.com/tags/%E6%A2%A6%E6%83%B3/"/>
@@ -67,7 +65,7 @@
     <link href="http://yoursite.com/2019/10/07/hello-world/"/>
     <id>http://yoursite.com/2019/10/07/hello-world/</id>
     <published>2019-10-07T07:58:25.425Z</published>
-    <updated>2019-10-09T01:12:29.860Z</updated>
+    <updated>2019-10-09T01:17:02.038Z</updated>
     
     <summary type="html">
     
@@ -81,8 +79,6 @@
     
     </summary>
     
-    
-      <category term="前端" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
   </entry>
