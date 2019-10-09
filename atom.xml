@@ -65,7 +65,7 @@
     <link href="http://yoursite.com/2019/10/07/hello-world/"/>
     <id>http://yoursite.com/2019/10/07/hello-world/</id>
     <published>2019-10-07T07:58:25.425Z</published>
-    <updated>2019-10-09T09:14:35.737Z</updated>
+    <updated>2019-10-09T09:14:46.611Z</updated>
     
     <summary type="html">
     
@@ -79,8 +79,6 @@
     
     </summary>
     
-    
-      <category term="hexo" scheme="http://yoursite.com/categories/hexo/"/>
     
     
       <category term="markdown" scheme="http://yoursite.com/tags/markdown/"/>
