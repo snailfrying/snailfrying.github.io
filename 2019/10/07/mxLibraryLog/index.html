@@ -127,18 +127,18 @@
 
 
 
-<meta name="description" content="您心底所憧憬的事物，一定在某个维度发生">
+<meta name="description" content="document.querySelectorAll(&apos;.github-emoji&apos;)           .forEach(el =&amp;gt; {             if (!el.dataset.src) { return; }             const img = document.createElement(&apos;img&apos;);             img.style">
 <meta name="keywords" content="嘟嘟嘟">
 <meta property="og:type" content="article">
 <meta property="og:title" content="mxLibraryLog">
 <meta property="og:url" content="http://yoursite.com/2019/10/07/mxLibraryLog/index.html">
 <meta property="og:site_name" content="Snail Life">
-<meta property="og:description" content="您心底所憧憬的事物，一定在某个维度发生">
+<meta property="og:description" content="document.querySelectorAll(&apos;.github-emoji&apos;)           .forEach(el =&amp;gt; {             if (!el.dataset.src) { return; }             const img = document.createElement(&apos;img&apos;);             img.style">
 <meta property="og:locale" content="en">
 <meta property="og:updated_time" content="2019-10-08T05:57:07.299Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mxLibraryLog">
-<meta name="twitter:description" content="您心底所憧憬的事物，一定在某个维度发生">
+<meta name="twitter:description" content="document.querySelectorAll(&apos;.github-emoji&apos;)           .forEach(el =&amp;gt; {             if (!el.dataset.src) { return; }             const img = document.createElement(&apos;img&apos;);             img.style">
 
 
 
@@ -421,7 +421,25 @@
       
 
       
-        
+        <script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
       
     </div>
     
@@ -657,7 +675,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共634字</span>
+  <span class="post-count">博客全站共字</span>
 </div>
 <!--页面点击小红心-->
 <script type="text/javascript" src="/love.js"></script>

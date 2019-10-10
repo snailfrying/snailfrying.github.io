@@ -3,12 +3,12 @@
   <entry>
     <title><![CDATA[mxLibraryLog]]></title>
     <url>%2F2019%2F10%2F07%2FmxLibraryLog%2F</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[document.querySelectorAll('.github-emoji') .forEach(el => { if (!el.dataset.src) { return; } const img = document.createElement('img'); img.style = 'display:none !important;'; img.src = el.dataset.src; img.addEventListener('error', () => { img.remove(); el.style.color = 'inherit'; el.style.backgroundImage = 'none'; el.style.background = 'none'; }); img.addEventListener('load', () => { img.remove(); }); document.body.appendChild(img); });]]></content>
   </entry>
   <entry>
     <title><![CDATA[有梦就有远方]]></title>
     <url>%2F2019%2F10%2F07%2Fsnaillife%2F</url>
-    <content type="text"><![CDATA[有梦才有远方 雪夜茫茫，你知道一棵小草的梦吗？寒冷孤寂中，她怀抱一个信念取暖，等到村归大地时，她就会以两片绿叶问候春天，而那两片绿叶，就是曾经在雪地下轻轻地梦呓。 &gt; 候鸟南飞，征途迢迢，他的梦呢?在远方，在视野里，那是南方湛蓝的大海。她很累很累，但依然往前奋飞。因为梦又赐予她另一对翅膀。 &gt; 窗前托腮凝思的少女，你是想做一朵云的诗，还是做一只蝶的画？ &gt; 风中奔跑的翩翩的少年，你是想做一只鹰，与天比高，还是做一条壮阔的长河，为大地抒怀? &gt; 我喜欢做梦。梦让我看到窗外的阳光，梦让我看到天边的彩霞，梦给我不变的召唤于步伐，梦引领我去追逐一个又一个目标。&gt; 1952年，一个叫查克贝瑞的美国青年，做了这么一个梦：超越贝多芬!并把这个消息告诉柴可夫斯基。多年以后，他成功了，成为摇滚音乐的奠基人之一。梦赋予他豪迈的宣言，梦也引领他走向光明的大道。梦启发了他的初心，他则用成功证明了梦的真实与壮美-——因为有了梦，才有了梦想；有了梦想，才有了理想；有了理想，才有了理想而奋斗的人生历程。 &gt; 没有泪水的人，他的眼睛是干涸的； &gt; 没有梦的人，他的夜晚是黑暗的。 &gt; 太阳总是在有梦的地方升起，月亮总是在有梦的地方朦胧。梦是永恒的微笑，使你的心灵永远充满激情，使你的双眼永远澄澈明亮。 &gt; 世界的万花筒散着诱人的清香，未来的天空下也传来迷人的歌唱。我们整装待发 ,用美梦打扮，从实干出发，等到我们抵达秋天的果园，轻轻地擦去夏天留在我们脸上的汗水与灰尘时，我们就可以听得见曾经对春天说过的那句话 ：美梦成真！]]></content>
+    <content type="text"><![CDATA[有梦才有远方 雪夜茫茫，你知道一棵小草的梦吗？寒冷孤寂中，她怀抱一个信念取暖，等到村归大地时，她就会以两片绿叶问候春天，而那两片绿叶，就是曾经在雪地下轻轻地梦呓。 &gt; 候鸟南飞，征途迢迢，他的梦呢?在远方，在视野里，那是南方湛蓝的大海。她很累很累，但依然往前奋飞。因为梦又赐予她另一对翅膀。 &gt; 窗前托腮凝思的少女，你是想做一朵云的诗，还是做一只蝶的画？ &gt; 风中奔跑的翩翩的少年，你是想做一只鹰，与天比高，还是做一条壮阔的长河，为大地抒怀? &gt; 我喜欢做梦。梦让我看到窗外的阳光，梦让我看到天边的彩霞，梦给我不变的召唤于步伐，梦引领我去追逐一个又一个目标。&gt; 1952年，一个叫查克贝瑞的美国青年，做了这么一个梦：超越贝多芬!并把这个消息告诉柴可夫斯基。多年以后，他成功了，成为摇滚音乐的奠基人之一。梦赋予他豪迈的宣言，梦也引领他走向光明的大道。梦启发了他的初心，他则用成功证明了梦的真实与壮美-——因为有了梦，才有了梦想；有了梦想，才有了理想；有了理想，才有了理想而奋斗的人生历程。 &gt; 没有泪水的人，他的眼睛是干涸的； &gt; 没有梦的人，他的夜晚是黑暗的。 &gt; 太阳总是在有梦的地方升起，月亮总是在有梦的地方朦胧。梦是永恒的微笑，使你的心灵永远充满激情，使你的双眼永远澄澈明亮。 &gt; 世界的万花筒散着诱人的清香，未来的天空下也传来迷人的歌唱。我们整装待发 ,用美梦打扮，从实干出发，等到我们抵达秋天的果园，轻轻地擦去夏天留在我们脸上的汗水与灰尘时，我们就可以听得见曾经对春天说过的那句话 ：美梦成真！ document.querySelectorAll('.github-emoji') .forEach(el => { if (!el.dataset.src) { return; } const img = document.createElement('img'); img.style = 'display:none !important;'; img.src = el.dataset.src; img.addEventListener('error', () => { img.remove(); el.style.color = 'inherit'; el.style.backgroundImage = 'none'; el.style.background = 'none'; }); img.addEventListener('load', () => { img.remove(); }); document.body.appendChild(img); });]]></content>
       <tags>
         <tag>梦想</tag>
         <tag>破晓</tag>
@@ -18,7 +18,7 @@
   <entry>
     <title><![CDATA[Hello World]]></title>
     <url>%2F2019%2F10%2F07%2Fhello-world%2F</url>
-    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment document.querySelectorAll('.github-emoji') .forEach(el => { if (!el.dataset.src) { return; } const img = document.createElement('img'); img.style = 'display:none !important;'; img.src = el.dataset.src; img.addEventListener('error', () => { img.remove(); el.style.color = 'inherit'; el.style.backgroundImage = 'none'; el.style.background = 'none'; }); img.addEventListener('load', () => { img.remove(); }); document.body.appendChild(img); });]]></content>
       <tags>
         <tag>markdown</tag>
       </tags>
