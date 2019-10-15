@@ -170,7 +170,7 @@
 <meta property="og:image" content="http://yoursite.com/uploads/loading.gif">
 <meta property="og:image" content="http://yoursite.com/uploads/loading.gif">
 <meta property="og:image" content="http://yoursite.com/uploads/loading.gif">
-<meta property="og:updated_time" content="2019-10-15T11:43:43.716Z">
+<meta property="og:updated_time" content="2019-10-15T11:45:57.574Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hive SQL 编译过程">
 <meta name="twitter:description" content="Hive SQL 编译过程Hive是基于Hadoop的一个数据仓库系统，在各大公司都有广泛的应用。美团数据仓库也是基于Hive搭建，每天执行近万次的Hive ETL计算流程，负责每天数百GB的数据存储和分析。Hive的稳定性和性能对我们的数据分析非常关键。 在几次升级Hive的过程中，我们遇到了一些大大小小的问题。通过向社区的咨询和自己的努力，在解决这些问题的同时我们对Hive将SQL编译为Ma">
@@ -492,6 +492,8 @@
         <hr>
 <h1 id="Hive-SQL-编译过程"><a href="#Hive-SQL-编译过程" class="headerlink" title="Hive SQL 编译过程"></a><strong>Hive SQL 编译过程</strong></h1><p>Hive是基于Hadoop的一个数据仓库系统，在各大公司都有广泛的应用。美团数据仓库也是基于Hive搭建，每天执行近万次的Hive ETL计算流程，负责每天数百GB的数据存储和分析。Hive的稳定性和性能对我们的数据分析非常关键。</p>
 <p>在几次升级Hive的过程中，我们遇到了一些大大小小的问题。通过向社区的咨询和自己的努力，在解决这些问题的同时我们对Hive将SQL编译为MapReduce的过程有了比较深入的理解。对这一过程的理解不仅帮助我们解决了一些Hive的bug，也有利于我们优化Hive SQL，提升我们对Hive的掌控力，同时有能力去定制一些需要的功能。</p>
+<a id="more"></a>
+
 <h2 id="MapReduce实现基本SQL操作的原理"><a href="#MapReduce实现基本SQL操作的原理" class="headerlink" title="MapReduce实现基本SQL操作的原理"></a>MapReduce实现基本SQL操作的原理</h2><p>详细讲解SQL编译为MapReduce之前，我们先来看看MapReduce框架实现SQL基本操作的原理</p>
 <h3 id="Join的实现原理"><a href="#Join的实现原理" class="headerlink" title="Join的实现原理"></a>Join的实现原理</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select u.name, o.orderid from order o join user u on o.uid = u.uid;</span><br></pre></td></tr></table></figure>
 
