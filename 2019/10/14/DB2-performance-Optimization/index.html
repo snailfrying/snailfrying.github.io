@@ -1,0 +1,1641 @@
+<!DOCTYPE html>
+
+
+
+
+<html class="theme-next mist" lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  <link href="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+  
+
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Optimization,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Snail Life" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="提高 DB2 查询性能的常用方法###提高DB2查询性能的常用方法 将着重介绍如何使用 Visual Explain 和 db2expln 查看动态查询的存取计划。读者可以查阅 DB2 Info Center 获得有关查看静态查询存取计划的内容。 ##DB2 Visual Explain DB2 提供了非常直观有效的方法来查看查询的存取计划。DB2 Visual Explain 能够获得可视化的">
+<meta name="keywords" content="Optimization">
+<meta property="og:type" content="article">
+<meta property="og:title" content="DB2 performance Optimization">
+<meta property="og:url" content="http://yoursite.com/2019/10/14/DB2-performance-Optimization/index.html">
+<meta property="og:site_name" content="Snail Life">
+<meta property="og:description" content="提高 DB2 查询性能的常用方法###提高DB2查询性能的常用方法 将着重介绍如何使用 Visual Explain 和 db2expln 查看动态查询的存取计划。读者可以查阅 DB2 Info Center 获得有关查看静态查询存取计划的内容。 ##DB2 Visual Explain DB2 提供了非常直观有效的方法来查看查询的存取计划。DB2 Visual Explain 能够获得可视化的">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://yoursite.com/uploads/loading.gif">
+<meta property="og:image" content="http://yoursite.com/uploads/loading.gif">
+<meta property="og:image" content="http://yoursite.com/uploads/loading.gif">
+<meta property="og:image" content="http://yoursite.com/uploads/loading.gif">
+<meta property="og:image" content="http://yoursite.com/uploads/loading.gif">
+<meta property="og:image" content="http://yoursite.com/uploads/loading.gif">
+<meta property="og:image" content="http://yoursite.com/uploads/loading.gif">
+<meta property="og:image" content="http://yoursite.com/uploads/loading.gif">
+<meta property="og:image" content="http://yoursite.com/uploads/loading.gif">
+<meta property="og:image" content="http://yoursite.com/uploads/loading.gif">
+<meta property="og:image" content="http://yoursite.com/uploads/loading.gif">
+<meta property="og:updated_time" content="2019-10-15T11:28:20.121Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="DB2 performance Optimization">
+<meta name="twitter:description" content="提高 DB2 查询性能的常用方法###提高DB2查询性能的常用方法 将着重介绍如何使用 Visual Explain 和 db2expln 查看动态查询的存取计划。读者可以查阅 DB2 Info Center 获得有关查看静态查询存取计划的内容。 ##DB2 Visual Explain DB2 提供了非常直观有效的方法来查看查询的存取计划。DB2 Visual Explain 能够获得可视化的">
+<meta name="twitter:image" content="http://yoursite.com/uploads/loading.gif">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/10/14/DB2-performance-Optimization/">
+
+
+
+
+
+  <title>DB2 performance Optimization | Snail Life</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+	<a href="https://github.com/snailfrying" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#64CEAA; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Snail Life</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">basketball dance rap</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="Searching..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/14/DB2-performance-Optimization/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="snail json">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Snail Life">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">DB2 performance Optimization</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-10-14T10:02:52+08:00">
+                2019-10-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/database/" itemprop="url" rel="index">
+                    <span itemprop="name">database</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/10/14/DB2-performance-Optimization/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/10/14/DB2-performance-Optimization/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2019/10/14/DB2-performance-Optimization/" class="leancloud_visitors" data-flag-title="DB2 performance Optimization">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             <span>℃</span>
+			 </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  7.2k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  27
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <hr>
+<h1 id="提高-DB2-查询性能的常用方法"><a href="#提高-DB2-查询性能的常用方法" class="headerlink" title="提高 DB2 查询性能的常用方法"></a>提高 DB2 查询性能的常用方法</h1><p>###提高DB2查询性能的常用方法</p>
+<p>将着重介绍如何使用 Visual Explain 和 db2expln 查看动态查询的存取计划。读者可以查阅 <a href="http://publib.boulder.ibm.com/infocenter/db2luw/v8/index.jsp" target="_blank" rel="noopener">DB2 Info Center</a> 获得有关查看静态查询存取计划的内容。</p>
+<p>##DB2 Visual Explain</p>
+<p>DB2 提供了非常直观有效的方法来查看查询的存取计划。DB2 Visual Explain 能够获得可视化的查询计划，而 db2expln 命令则可以获得文本形式的查询计划。有了查询计划，我们就可以有针对的对查询进行优化。根据查询计划找出代价最高的扫描 ( 表扫描，索引扫描等 ) 和操作 (Join，Filter，Fetch 等 )，继而通过改写查询或者创建索引消除代价较高的扫描或操作来优化查询。</p>
+<p>DB2 提供了多种方法来得到可视化查询计划。</p>
+<ol>
+<li><p>通过 DB2 Control Center 获得可视化查询计划。如图 1：</p>
+<p><img src="/uploads/loading.gif" data-original="D:%5Csnail_blog%5Cblog%5Csource%5Cimage%5Cdb21.jpg" alt="图 1. 可视化查询计划"></p>
+</li>
+</ol>
+<p>点击”Explain SQL”后输入要进行分析的查询语句以及查询标号和标签，点击 Ok 按钮便可得到可视化的查询计划。此时，查询计划会被存储在系统的 Explain 表中。用户可以通过图 1 中的”Show Explained Statements History”命令获得存储在 Explain 表中的所有查询计划。</p>
+<ol start="2">
+<li><p>通过 Command Editor( 在 DB2 8.2 版本之前叫做 Command Center) 获得可视化的查询计划。如图 2：</p>
+<p><img src="/uploads/loading.gif" data-original="D:%5Csnail_blog%5Cblog%5Csource%5Cimage%5Cdb22.jpg" alt="图 2. 获得可视化的查询计划"></p>
+</li>
+<li><p>在主窗口输入查询并连接数据库后，点击图中所示的按钮即可得到可视化的查询计划，如图 3：</p>
+<p><img src="/uploads/loading.gif" data-original="D:%5Csnail_blog%5Cblog%5Csource%5Cimage%5Cdb23.jpg" alt="图 3. 查询计划结果"></p>
+</li>
+<li><p>在图 3 所示的查询计划中，还可以点击图示中的每个节点来察看详细的统计信息。譬如双击节点”<strong>FETCH(13) 21,959.75”</strong> 后将会弹出如图 4 所示的对话框：</p>
+<p> <img src="/uploads/loading.gif" data-original="D:%5Csnail_blog%5Cblog%5Csource%5Cimage%5Cdb24.jpg" alt="图 4. 详细的统计信息"></p>
+<p>图 4 中的统计信息主要包括此 FETCH 操作的总代价，CPU，I/O 以及获得结果集中的第一行的代价。在这里，timerons 是结合了 CPU 和 I/O 代价的成本单位。此外，图 4 中还收集了其他相关信息。譬如此操作读取了哪个表的哪些列，每个谓词的选择度 (selectivity)，使用了多少 buffer 等等。</p>
+</li>
+</ol>
+<p>   <strong><strong>db2exfmt</strong></strong></p>
+<p>   db2exfmt 命令能够将 Explain 表中存储的存取计划信息以文本的形式进行格式化输出。db2exfmt 命令将各项信息更为直观的显示，使用起来更加方便。命令如清单 1 所示：</p>
+<h5 id="清单-1-db2exfmt-命令"><a href="#清单-1-db2exfmt-命令" class="headerlink" title="清单 1. db2exfmt 命令"></a>清单 1. db2exfmt 命令</h5>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">db2exfmt -d &lt;``db_name``&gt; -e &lt;``schema``&gt; -g T -o &lt;``output``&gt; -u &lt;``user``&gt; &lt;``password``&gt; -w &lt;``timestamp``&gt;</span><br><span class="line">Example: db2exfmt -d test_db -e user -g T -o D:\temp\sql_1_result_db2exfmt.txt</span><br><span class="line"> ``-u user password -w l</span><br><span class="line">Query:</span><br><span class="line">                ``sql_1.txt（附件中）</span><br><span class="line">                ``Results:</span><br><span class="line">                ``sql_1_result_db2exfmt.txt（附件中）</span><br></pre></td></tr></table></figure>
+
+
+
+<p>   <strong>db2expln</strong></p>
+<p>   db2expln 是命令行下的解释工具，和前面介绍的 Visual Explain 功能相似。通过该命令可以获得文本形式的查询计划。命令如清单 2 所示 :</p>
+<h5 id="清单-2-db2expln-命令"><a href="#清单-2-db2expln-命令" class="headerlink" title="清单 2. db2expln 命令"></a>清单 2. db2expln 命令</h5>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db2expln -d &lt;``db_name``&gt; -user &lt;``user``&gt; &lt;``password``&gt; -stmtfile &lt;``sql.file``&gt;``         ``-z @ -output &lt;``output``&gt; -g``Example: db2expln -d test_db -user user password -stmtfile D:\temp\sql_1.txt`` ``-z @ -output D:\temp\sql_1_result_db2expln.txt –g``Query:``                 ``sql_1.txt（附件中）``                ``Results:``                 ``sql_1_result_db2expln.txt（附件中）</span><br></pre></td></tr></table></figure>
+
+<p>   db2expln 将存取计划以文本形式输出，它只提供存取计划中主要的信息，并不包含每一个操作占用多少 CPU、I/O、占用 Buffer 的大小以及使用的数据库对象等信息，方便阅读。但是 db2expln 也会将各项有关存取计划的信息存入 Explain 表中，用户可以使用 db2exfmt 察看详细的格式化文本信息。</p>
+<h3 id="db2advis"><a href="#db2advis" class="headerlink" title="db2advis"></a>db2advis</h3><p>   db2advis 是 DB2 提供的另外一种非常有用的命令。通过该命令 DB2 可以根据优化器的配置以及机器性能给出提高查询性能的建议。这种建议主要集中于如何创建索引，这些索引可以降低多少查询代价，需要创建哪些表或者 Materialized Query Table(MQT) 等。命令如清单 3 所示：</p>
+<h5 id="清单-3-db2advis-命令"><a href="#清单-3-db2advis-命令" class="headerlink" title="清单 3. db2advis 命令"></a>清单 3. db2advis 命令</h5>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db2advis -d &lt;``db_name``&gt; -a &lt;``user``&gt;/&lt;``password``&gt; -i &lt;``sql.file``&gt; -o &lt;``output``&gt;``Example: db2advis -d test_db -a user/password`` ``-i D:\temp\sql_2.txt &gt; D:\temp\sql_2_result_db2advis.txt``Query:``                 ``sql_2.txt（附件中）``                ``Results:``                ``sql_2_result_db2advis.txt（附件中）</span><br></pre></td></tr></table></figure>
+
+<p>   通过 -i 指定的 SQL 文件可以包含多个查询，但是查询必须以分号分隔。这与 db2expln 命令不同，db2expln 可以通过 -z 参数指定多个查询之间的分隔符。用户可以把某一个 workload 中所使用的所有查询写入 SQL 文件中，并在每个查询之前使用”–#SET FREQUENCY <num>”为其指定在这个 workload 中的执行频率。db2advis 会根据每个查询在这个 workload 的频率指数进行权衡来给出索引的创建建议，从而达到整个 workload 的性能最优。</num></p>
+<h3 id="db2batch"><a href="#db2batch" class="headerlink" title="db2batch"></a>db2batch</h3><p>   前面介绍的工具和命令只提供了查询的估算代价，但有些时候估算代价和实际的执行时间并不是完全呈线形关系，有必要实际执行这些查询。db2batch 就是这样一个 Benchmark 工具，它能够提供从准备到查询完成中各个阶段所花费地具体时间，CPU 时间，以及返回的记录。命令如清单 4 所示：</p>
+<h5 id="清单-4-db2batch-命令"><a href="#清单-4-db2batch-命令" class="headerlink" title="清单 4. db2batch 命令"></a>清单 4. db2batch 命令</h5>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db2batch -d &lt;``db_name``&gt; -a &lt;``user``&gt;/&lt;``password``&gt;`` ``-i &lt;``time_condition``&gt; -f &lt;``sql.file``&gt; -r &lt;``output``&gt;``Example: db2batch -d test_db -a user/password`` ``-i complete -f D:\temp\sql_3.txt -r d:\temp\sql_3_result_db2batch.txt``Query:``                 ``sql_3.txt（附件中）``                ``Results:``                 ``sql_3_result_db2batch.txt（附件中）</span><br></pre></td></tr></table></figure>
+
+<p>   对于执行 db2batch 时一些详细的设置可以通过 -o 参数指定，也可以在 SQL 文件中指定，譬如本例中在 SQL 文件中使用了下面的配置参数 :</p>
+<p>   –#SET ROWS_FETCH -1 ROWS_OUT 5 PERF_DETAIL 1 DELIMITER @ TIMESTAMP</p>
+<p>   其中 ROWS_FETCH 和 ROWS_OUT 定义了从查询的结果集中读取记录数和打印到输出文件中的记录数，PERF_DETAIL 设置了收集性能信息的级别，DELIMITER 则指定了多个查询间的间隔符。</p>
+<h2 id="提高查询性能的常用方法"><a href="#提高查询性能的常用方法" class="headerlink" title="提高查询性能的常用方法"></a>提高查询性能的常用方法</h2><p>   下面我们将从三个方面介绍一些提高查询性能的方法。</p>
+<h3 id="创建索引"><a href="#创建索引" class="headerlink" title="创建索引"></a>创建索引</h3><p>   <strong>根据查询所使用的列建立多列索引</strong></p>
+<p>   建立索引是用来提高查询性能最常用的方法。对于一个特定的查询，可以为某一个表所有出现在查询中的列建立一个联合索引，包括出现在 select 子句和条件语句中的列。但简单的建立一个覆盖所有列的索引并不一定能有效提高查询，因为在多列索引中列的顺序是非常重要的。这个特性是由于索引的 B+ 树结构决定的。一般情况下，要根据谓词的选择度来排列索引中各列的位置，选择度大的谓词所使用的列放在索引的前面，把那些只存在与 select 子句中的列放在索引的最后。譬如清单 5 中的查询：</p>
+<h5 id="清单-5-索引中的谓词位置"><a href="#清单-5-索引中的谓词位置" class="headerlink" title="清单 5. 索引中的谓词位置"></a>清单 5. 索引中的谓词位置</h5>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select add_date``from temp.customer``where city = &apos;WASHINGTON&apos;``and cntry_code = &apos;USA&apos;;</span><br></pre></td></tr></table></figure>
+
+<p>   对于这样的查询可以在 temp.customer 上建立 (city，cntry_code，add_date) 索引。由于该索引包含了 temp.customer 所有用到的列，此查询将不会访问 temp.customer 的数据页面，而直接使用了索引页面。对于包含多列的联合索引，索引树中的根节点和中间节点存储了多列的值的联合。这就决定了存在两种索引扫描。回到清单 5 中的查询，由于此查询在新建索引的第一列上存在谓词条件，DB2 能够根据这个谓词条件从索引树的根节点开始遍历，经过中间节点最后定位到某一个叶子节点，然后从此叶子节点开始往后进行在叶子节点上的索引扫描，直到找到所有满足条件的记录。这种索引扫描称之为 Matching Index Scan。但是如果将 add_date 放在索引的第一个位置，而查询并不存在 add_date 上的谓词条件，那么这个索引扫描将会从第一个索引叶子节点开始，它无法从根节点开始并经过中间节点直接定位到某一个叶子节点，这种扫描的范围扩大到了整个索引，我们称之为 Non-matching Index Scan。图 5 显示了 DB2 根据不同索引生成的存取计划。</p>
+<h5 id="图-5-根据不同索引生成的存取计划"><a href="#图-5-根据不同索引生成的存取计划" class="headerlink" title="图 5. 根据不同索引生成的存取计划"></a>图 5. 根据不同索引生成的存取计划</h5><p>   <img src="/uploads/loading.gif" data-original="https://www.ibm.com/developerworks/cn/data/library/techarticles/dm-0709zhangdw/figure05.gif" alt="根据不同索引生成的存取计划"></p>
+<p>   <strong>根据条件语句中的谓词的选择度创建索引</strong></p>
+<p>   因为建立索引需要占用数据库的存储空间，所以需要在空间和时间性能之间进行权衡。很多时候，只考虑那些在条件子句中有条件判断的列上建立索引会也会同样有效，同时节约了空间。譬如清单 5 中的查询，可以只建立 (city，cntry_code) 索引。我们还可以进一步地检查条件语句中的这两个谓词的选择度，执行清单 6 中的语句检查谓词选择度：</p>
+<h5 id="清单-6-检查谓词选择度"><a href="#清单-6-检查谓词选择度" class="headerlink" title="清单 6. 检查谓词选择度"></a>清单 6. 检查谓词选择度</h5>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Queries:``1. select count(*) from temp.customer``where city = &apos;WASHINGTON&apos;``and cntry_code = &apos;USA&apos;;``2. select count(*) from temp.customer``where city = &apos;WASHINGTON&apos;;``3. select count(*) from temp.customer``where cntry_code = &apos;USA&apos;;``Results:``1. 1404``2. 1407``3. 128700</span><br></pre></td></tr></table></figure>
+
+<p>   选择度越大，过滤掉的记录越多，返回的结果集也就越小。从清单 6 的结果可以看到，第二个查询的选择度几乎有和整个条件语句相同。因此可以直接建立单列索引 (city)，其性能与索引 (city，cntry_code，add_date) 具有相差不多的性能。表 1 中对两个索引的性能和大小进行了对比。</p>
+<h5 id="表-1-两个索引的性能和大小对比"><a href="#表-1-两个索引的性能和大小对比" class="headerlink" title="表 1. 两个索引的性能和大小对比"></a>表 1. 两个索引的性能和大小对比</h5><table>
+<thead>
+<tr>
+<th align="left">索引</th>
+<th align="left">查询计划总代价</th>
+<th align="left">索引大小</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">cust_i1(city，cntry_code，add_date)</td>
+<td align="left">28.94 timerons</td>
+<td align="left">19.52M</td>
+</tr>
+<tr>
+<td align="left">cust_i3(city)</td>
+<td align="left">63.29 timerons</td>
+<td align="left">5.48M</td>
+</tr>
+</tbody></table>
+<p>   从表 1 中可以看到单列索引 (city) 具有更加有效的性能空间比，也就是说占有尽可能小的空间得到尽可能高的查询速度。</p>
+<p>   <strong>避免在建有索引的列上使用函数</strong></p>
+<p>   这是一个很简单的原则，如果在建有索引的列上使用函数，由于函数的单调性不确定，函数的返回值和输入值可能不会一一对应，就可能存在索引中位置差异很大的多个列值可以满足带有函数的谓词条件，因此 DB2 优化器将无法进行 Matching Index Scan，更坏的情况下可能会导致直接进行表扫描。图 6 中对比了使用 function 前后的存取计划的变化。</p>
+<h5 id="图-6-使用-function-前后的存取计划的变化"><a href="#图-6-使用-function-前后的存取计划的变化" class="headerlink" title="图 6. 使用 function 前后的存取计划的变化"></a>图 6. 使用 function 前后的存取计划的变化</h5><p>   <img src="/uploads/loading.gif" data-original="https://www.ibm.com/developerworks/cn/data/library/techarticles/dm-0709zhangdw/figure06.gif" alt="使用 function 前后的存取计划的变化"></p>
+<p>   <strong>在那些需要被排序的列上创建索引</strong></p>
+<p>   这里的排序不仅仅指 order by 子句，还包括 distinct 和 group by 子句，他们都会产生排序的操作。由于索引本身是有序的，在其创建过程中已经进行了排序处理，因此在应用这些语句的列上创建索引会降低排序操作的代价。这种情况一般针对于没有条件语句的查询。如果存在条件语句，DB2 优化器会首先选择出满足条件的纪录，然后才对中间结果集进行排序。对于没有条件语句的查询，排序操作在总的查询代价中会占有较大比重，因此能够较大限度的利用索引的排序结构进行查询优化。此时可以创建单列索引，如果需要创建联合索引则需要把被排序的列放在联合索引的第一列。图 7 对比了清单 7 中的查询在创建索引前后的存取计划。</p>
+<h5 id="清单-7-查询在创建索引前后的存取计划"><a href="#清单-7-查询在创建索引前后的存取计划" class="headerlink" title="清单 7. 查询在创建索引前后的存取计划"></a>清单 7. 查询在创建索引前后的存取计划</h5>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select distinct add_date from temp.customer;</span><br></pre></td></tr></table></figure>
+
+<h5 id="图-7-在创建索引前后的存取计划"><a href="#图-7-在创建索引前后的存取计划" class="headerlink" title="图 7. 在创建索引前后的存取计划"></a>图 7. 在创建索引前后的存取计划</h5><p>   <img src="/uploads/loading.gif" data-original="https://www.ibm.com/developerworks/cn/data/library/techarticles/dm-0709zhangdw/figure07.gif" alt="在创建索引前后的存取计划"></p>
+<p>   从图 7 中我们可以看到在没有索引的情况下 SORT 操作是 24751.69 timerons，但是有索引的情况下，不再需要对结果集进行排序，可以直接进行 UNIQUE 操作，表中显示了这一操作只花费了 2499.98 timerons.</p>
+<p>   图 8 对比了清单 8 中的查询在创建联合索引前后的存取计划，从中可以更好的理解索引对排序操作的优化。</p>
+<h5 id="清单-8-查询示例"><a href="#清单-8-查询示例" class="headerlink" title="清单 8. 查询示例"></a>清单 8. 查询示例</h5>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select cust_name from temp.customer order by add_date;</span><br></pre></td></tr></table></figure>
+
+<h5 id="图-8-创建联合索引前后的存取计划"><a href="#图-8-创建联合索引前后的存取计划" class="headerlink" title="图 8. 创建联合索引前后的存取计划"></a>图 8. 创建联合索引前后的存取计划</h5><p>   <img src="/uploads/loading.gif" data-original="https://www.ibm.com/developerworks/cn/data/library/techarticles/dm-0709zhangdw/figure08.gif" alt="创建联合索引前后的存取计划"></p>
+<p>   索引的 B+ 树结构决定了索引 temp.cust_i5 的所有叶子节点本身就是按照 add_date 排序的，所以对于清单 8 中的查询，只需要顺序扫描索引 temp.cust_i5 的所有叶子节点。但是对于 temp.cust_i6 索引，其所有叶子节点是按照 cust_name 排序，因此在经过对索引的叶子节点扫描获得所有数据之后，还需要对 add_date 进行排序操作。</p>
+<p>   <strong>合理使用 include 关键词创建索引</strong></p>
+<p>   对于类似下面的查询 :</p>
+<h5 id="清单-9-查询示例"><a href="#清单-9-查询示例" class="headerlink" title="清单 9. 查询示例"></a>清单 9. 查询示例</h5>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select cust_name from temp.customer``where cust_num between &apos;0007000000&apos; and &apos;0007200000&apos;</span><br></pre></td></tr></table></figure>
+
+<p>   在第一点中我们提到可以在 cust_num 和 cust_name 上建立联合索引来提高查询性能。但是由于 cust_num 是主键，可以使用 include 关键字创建唯一性索引：</p>
+<p>   create unique index temp.cust_i7 on temp.customer(cust_num) include (cust_name)</p>
+<p>   使用 include 后，cust_name 列的数据将只存在于索引树的叶子节点，并不存在于索引的关键字中。这种情况下，使用带有 include 列的唯一索引会带来优于联合索引的性能，因为唯一索引能够避免一些不必要的操作，如排序。对于清单 9 中的查询创建索引 temp.cust_i7 后存取计划的代价为 12338.7 timerons，创建联合索引 temp.cust_i8(cust_num，cust_name) 后的代价为 12363.17 timerons。一般情况下，当查询的 where 子句中存在主键的谓词我们就可以创建带有 include 列的唯一索引，形成纯索引访问来提高查询性能。注意 include 只能用在创建唯一性索引中。</p>
+<p>   <strong>指定索引的排序属性</strong></p>
+<p>   对于下面用来显示最近一个员工入职的时间的查询：</p>
+<p>   select max(add_date) from temp.employee</p>
+<p>   很显然这个查询会进行全表扫描。查询计划如图 9.a:</p>
+<h5 id="图-9-查询计划"><a href="#图-9-查询计划" class="headerlink" title="图 9. 查询计划"></a>图 9. 查询计划</h5><p>   <img src="/uploads/loading.gif" data-original="https://www.ibm.com/developerworks/cn/data/library/techarticles/dm-0709zhangdw/figure09.gif" alt="查询计划"></p>
+<p>   显然我们可以在 add_date 上创建索引。根据下面的命令创建索引后的查询计划如图 9.b。</p>
+<p>   create index temp.employee_i1 on temp.employee(add_date)</p>
+<p>   这里存在一个误区，大家可能认为既然查询里要取得的是 add_date 的最大值，而我们又在 add_date 上建立了一个索引，优化器应该知道从索引树中直接去寻找最大值。但是实际情况并非如此，因为创建索引的时候并没有指定排序属性，默认为 ASC 升序排列，DB2 将会扫描整个索引树的叶子节点取得所有值后，然后取其最大。我们可以通过设置索引的排序属性来提高查询性能，根据下面的命令创建索引后的查询计划如图 9.c。</p>
+<p>   create index temp.employee_i1 on temp.employee(add_date desc)</p>
+<p>   对于降序排列的索引，DB2 不需要扫描整个索引数的叶子节点，因为第一个节点便是最大的。我们同样可以使用 ALLOW REVERSE SCANS 来指定索引为双向扫描，具有和 DESC 近似的查询性能。ALLOW REVERSE SCANS 可以被认为是 ASC 和 DESC 的组合，只是在以后数据更新的时候维护成本会相对高一些。</p>
+<p>   如果无法改变索引的排序属性，但是我们具有额外的信息，该公司每个月都会有新员工入职，那么这个查询就可以改写成：</p>
+<p>   select max(add_date) from temp.employee where add_date &gt; current timestamp - 1 month</p>
+<p>   这样通过限定一个查询范围也会有效地提高查询性能。</p>
+<h3 id="索引和表的维护"><a href="#索引和表的维护" class="headerlink" title="索引和表的维护"></a>索引和表的维护</h3><p>   <strong>重新组织索引</strong></p>
+<p>   随着数据的不断删除，插入和更新，索引页会变得越来越零散，索引页的物理存储顺序不再匹配其逻辑顺序，索引结构的层次会变得过大，这些都会导致索引页的预读取变得效率低下。因此，根据数据更新的频繁程度需要适当的重新组织索引。可以使用 REORG INDEXES 命令来重新组织索引结构，也可以删除并重新创建索引达到相同的目的。同样的，对表进行重新组织也会带来性能的改善。</p>
+<p>   重新组织某一个表的所有索引的命令如下：<code>REORG INDEXES ALL FOR TABLE table_name</code>。</p>
+<p>   重新组织一个表的数据的命令如下，在下面的命令还可以为其指定一个特定的索引，REORG 命令将会根据这个索引的排序方式重新组织该表的数据。</p>
+<p>   <code>REORG TABLE table_name INDEX index_name</code>。</p>
+<p>   <strong>重新收集表和索引的统计信息</strong></p>
+<p>   和在 2.1 中提到的原因类似，当一个表经过大量的索引修改、数据量变化或者重新组织后，可能需要重新收集表以及相关索引的统计信息。这些统计信息主要是关于表和索引存储的物理特性，包括记录数目，数据页的数目以及记录的平均长度等。优化器将根据这些信息决定使用什么样的存取计划来访问数据。因此，不能真实反映实际情况的统计信息可能会导致优化器选择错误的存取计划。收集表及其所有索引的统计信息的命令如下：<code>RUNSTATS ON TABLE table_name FOR INDEXES ALL</code>。</p>
+<p>   上述两个命令具有复杂的参数选择，用户可以参阅 <a href="http://publib.boulder.ibm.com/infocenter/db2luw/v8/index.jsp" target="_blank" rel="noopener">DB2 Info Center</a> 来根据实际情况使用这两个命令。</p>
+<h3 id="修改查询"><a href="#修改查询" class="headerlink" title="修改查询"></a>修改查询</h3><p>   <strong>合理使用 NOT IN 和 NOT EXISTS</strong></p>
+<p>   一般情况下 NOT EXISTS 具有快于 NOT IN 的性能，但是这并不绝对。根据具体的数据情况、存在的索引以及查询的结构等因素，两者会有较大的性能差异，开发人员需要根据实际情况选择适当的方式。</p>
+<p>   譬如下面的查询：</p>
+<h5 id="清单-10-查询示例"><a href="#清单-10-查询示例" class="headerlink" title="清单 10. 查询示例"></a>清单 10. 查询示例</h5>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">表结构：temp.customer(cust_num) 主键：cust_num``表结构：temp.contact(cnt_id，cust_num) 主键：cnt_id``表结构：temp.contact_detail(cnt_id，address，phone) 主键：cnt_id``查询 :``select cust_num``from temp.customer cust``where not exists (select 1 from temp.contact cont``here cust.cust_num = cont.cust_num)</span><br></pre></td></tr></table></figure>
+
+<p>   此查询用来列出所有不存在联系人的客户。对于这样的需求，开发人员会最自然的写出清单 10 中的查询，的确，对于大部分情况它具有最优的性能。该查询的查询代价为 178,430 timerons。让我们再来看看使用 NOT IN 后查询的总代价，请看清单 11。</p>
+<h5 id="清单-11-查询示例"><a href="#清单-11-查询示例" class="headerlink" title="清单 11. 查询示例"></a>清单 11. 查询示例</h5>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">查询：``select cust_num``from temp.customer cust``where cust.cust_num not in (select cont.cust_num from temp.contact cont)``代价：12,648,897,536 timerons</span><br></pre></td></tr></table></figure>
+
+<p>   可以看到 NOT EXISTS 的性能要比 NOT IN 高出许多。NOT IN 是自内向外的操作，即先得到子查询的结果，然后执行最外层的查询，而 NOT EXISTS 恰好相反，是自外向内的操作。在上述例子中，temp.contact 表中有 65 万条记录，使得 10.2 查询中的 NOT IN 列表非常大，导致了使用 NOT IN 的查询具有非常高的查询代价。下面我们对 10.1 和 10.2 的查询进行修改，将 temp.contact 表中的记录限制到 100 条，请看下面的查询：</p>
+<h5 id="清单-12-查询示例"><a href="#清单-12-查询示例" class="headerlink" title="清单 12. 查询示例"></a>清单 12. 查询示例</h5>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">查询：``select cust_num``from temp.customer cust``where not exists (select 1 from temp.contact cont``here cust.cust_num = cont.cust_num``and cont.cnt_id &lt; 100)``代价：42,015 timerons</span><br></pre></td></tr></table></figure>
+
+<h5 id="清单-13-查询示例"><a href="#清单-13-查询示例" class="headerlink" title="清单 13. 查询示例"></a>清单 13. 查询示例</h5>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">查询：``select cust_num``from temp.customer cust``where cust.cust_num not in (select cont.cust_num from temp.contact cont``where cont.cnt_id &lt; 100)``代价：917,804 timerons</span><br></pre></td></tr></table></figure>
+
+<p>   从 12 和 13 中可以看出 NOT EXISTS 的查询代价随子查询返回的结果集的变化没有大幅度的下降，随着子查询的结果集从 65 万下降到 100 条，NOT EXISTS 的查询代价从 178,430 下降到 42,015，只下降 4 倍。但是 NOT IN 的查询代价却有着极大的变化，其查询代价从 12,648,897,536 下降到 917,804，下降了 13782 倍。可见子查询的结果集对 NOT IN 的性能影响很大，但是这个简单的查询不能说明 NOT EXISTS 永远好于 NOT IN，因为同样存在一些因素对 NOT EXISTS 的性能有很大的影响。我们再看下面的例子：</p>
+<h5 id="清单-14-查询示例"><a href="#清单-14-查询示例" class="headerlink" title="清单 14. 查询示例"></a>清单 14. 查询示例</h5>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">查询：``select cust_num``from temp.customer cust``where not exists (select 1 from temp.contact cont``where cust.cust_num = cont.cust_num``and cont.cnt_id in (select cnt_id from temp.contact_detail``where cnt_id&lt;100))``代价：5,263,096 timerons</span><br></pre></td></tr></table></figure>
+
+<h5 id="清单-15-查询示例"><a href="#清单-15-查询示例" class="headerlink" title="清单 15. 查询示例"></a>清单 15. 查询示例</h5>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">查询：``select cust_num``from temp.customer cust``where cust_num not in (select cust_num from temp.contact cont``where cont.cnt_id in (select cnt_id from temp.contact_detail``where cnt_id&lt;100))``代价：4,289,095 timerons</span><br></pre></td></tr></table></figure>
+
+<p>   在上面的例子中，我们只是对查询增加了一个小改动，使用一个嵌套查询限制了在 temp.contact 中扫描的范围。但是在这两个新的查询中，NOT IN 的性能却又好于 NOT EXISTS。NOT EXISTS 的代价增加了 125 倍，而 NOT IN 的代价却只增加了 4 倍。这是由于 NOT EXISTS 是自外向内，嵌套查询的复杂度对其存在较大的影响。因此在实际应用中，要考虑子查询的结果集以及子查询的复杂度来决定使用 NOT EXISTS 或者 NOT IN。对于 IN，EXISTS 和 JOIN 等操作，大多数情况下 DB2 优化器都能形成比较一致的最终查询计划。</p>
+<p>   <strong>合理使用子查询减少数据扫描和利用索引</strong></p>
+<p>   某些情况下可以将查询中的某一部分逻辑提取出来作为子查询出现，能够减少扫描的数据量，以及利用索引进行数据检索。请看清单 16 中的查询：</p>
+<h5 id="清单-16"><a href="#清单-16" class="headerlink" title="清单 16."></a>清单 16.</h5>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">索引：temp.cust_i1 on temp.customer(add_date)``temp.order_i1 on temp.order(sold_to_cust_num)``temp.order_i2 on temp.order(add_date)``查询：``select cust.cust_num``from temp.customer cust``left join temp.order ord``on cust.cust_num = ord.sold_to_cust_num``where cust.add_date &gt; current timestamp - 2 months``or ord.add_date &gt; current timestamp - 2 months</span><br></pre></td></tr></table></figure>
+
+<p>   上面的查询用来选择所有两个月内新增加的用户以及在两个月内定购了产品的用户。从图 10.a 的查询计划中可看出没有任何索引被使用。</p>
+<h5 id="图-10-查询计划"><a href="#图-10-查询计划" class="headerlink" title="图 10. 查询计划"></a>图 10. 查询计划</h5><p>   <img src="/uploads/loading.gif" data-original="https://www.ibm.com/developerworks/cn/data/library/techarticles/dm-0709zhangdw/figure10.gif" alt="查询计划"></p>
+<p>   使用子查询对该查询重新改写后，请看清单 17:</p>
+<h5 id="清单-17"><a href="#清单-17" class="headerlink" title="清单 17."></a>清单 17.</h5>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">查询：``with tmp as(``select sold_to_cust_num from temp.order ``where add_date &gt; current timestamp - 2 months)``select cust.cust_num from temp.customer cust``where cust.add_date &gt; current timestamp - 2 months``or cust.cust_num in (select sold_to_cust_num from tmp )</span><br></pre></td></tr></table></figure>
+
+<p>   在清单 17 的查询中，我们使用子查询预先限定了要扫描 temp.order 表中的记录数目，而不是像清单 16 中的查询那样对 temp.order 表进行全表扫描。同时，在预先限定数据范围的时候，能够利用 temp.order_i2 索引。请看其查询计划，如图 10.b。可以看到查询代价有大幅度下降。其实，即使没有 temp.order_i2 索引，修改后的查询也仍然由于前者，因为它预先限定了数据的扫描范围，也减少了后续连接处理的数据量，请看图 10.c。</p>
+<p>   <strong>重新排列各个表的连接顺序，尽量减小中间结果集的数据量</strong></p>
+<p>   一般情况下，DB2 会根据各表的 JOIN 顺序自顶向下顺序处理，因此合理排列各表的连接顺序会提高查询性能。譬如清单 18 中的查询：</p>
+<h5 id="清单-18"><a href="#清单-18" class="headerlink" title="清单 18."></a>清单 18.</h5>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">查询：``select cust.cust_name, ord.order_num, cnt.cnt_first_name``from temp.customer cust``left join temp.order ord``on cust.cust_num = ord.sold_to_cust_num``join temp.contact cnt``on cust.cust_num = cnt.cust_num``where cnt.mod_date &gt; current timestamp - 1 months</span><br></pre></td></tr></table></figure>
+
+<p>   清单 18 中的查询用来选择出所有最近一个月内修改过联系人信息的客户的订单信息。此查询会按照链接的顺序先将 temp.customer 表和 temp.order 表进行 LEFT JOIN，然后使用结果集去 JOIN temp.contact 表。由于该查询使用了 LEFT JOIN，因此在生成中间结果集的时候不会有任何记录会被过滤掉，中间结果集的记录数目大于等于 temp.customer 表。了解到了 DB2 是如何解释和执行这样的查询后，很自然的我们就会想到将 JOIN 提前。请看清单 19。</p>
+<h5 id="清单-19"><a href="#清单-19" class="headerlink" title="清单 19."></a>清单 19.</h5>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">查询：``select cust.cust_name, ord.order_num, cnt.cnt_first_name``from temp.customer cust``join temp.contact cnt``on cust.cust_num = cnt.cust_num``left join temp.order ord``on cust.cust_num = ord.sold_to_cust_num``where cnt.mod_date &gt; current timestamp - 1 months</span><br></pre></td></tr></table></figure>
+
+<p>   图 11.a 和图 11.b 分别为清单 18 和 19 的查询的存取计划。在 19 的查询中，在形成中间结果集的时候也应用到了 WHERE 语句中的条件，而不是在所有 JOIN 都结束以后才被应用去除记录的。</p>
+<h5 id="图-11-查询计划"><a href="#图-11-查询计划" class="headerlink" title="图 11. 查询计划"></a>图 11. 查询计划</h5><p>   <img src="/uploads/loading.gif" data-original="https://www.ibm.com/developerworks/cn/data/library/techarticles/dm-0709zhangdw/figure11.gif" alt="查询计划"></p>
+<p>   另外，在修改查询尽量减少中间结果集的记录条数的时候还要考虑中间结果集的数据总量，譬如中间结果集需要保存的每条记录的长度。如果我们把 JOIN temp.contact 提前以后，由于中间结果集需要保存过多的 contact 表的列反而使得结果集的数据总量变大，可能不会带来性能上的改善。</p>
+<p>   <strong>使用 UDF 代替查询中复杂的部分</strong></p>
+<p>   由于 UDF 是预先编译的，性能普遍优于一般的查询，UDF 使用的存取计划一经编译就会相对稳定。笔者在工作中曾多次发现，使用 UDF 代替查询或者视图中的复杂部分会提高几倍甚至几十倍的性能，主要原因是迫使 DB2 使用指定的存取计划来充分利用 index 或者调整其访问过程（如 Join 顺序， Filter 位置等）。使用 UDF 进行优化的基本思路是，将复杂查询分解为多个部分执行，针对每个部分优化处理，将各部分组合时能够避免存取计划的一些不必要变化，优化整体性能。譬如清单 20 中的查询：</p>
+<h5 id="清单-20"><a href="#清单-20" class="headerlink" title="清单 20."></a>清单 20.</h5>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">查询：select * from temp.customer where cust_num in (``select distinct sold_to_cust_num from temp.order``where add_date &gt; current timestamp - 2 months``union``select distinct cust_num from temp.contact``where add_date &gt; current timestamp - 2 months``)</span><br></pre></td></tr></table></figure>
+
+<p>   这个查询会导致优化器生成比较复杂的查询计划，尤其是 temp.customer 是一个比较复杂的视图的时候。这种情况下我们可以通过创建 UDF，将其分步执行：先执行子查询获得 cust_num 值的列表，然后执行最外层的查询。下面的例子是通过 UDF 对清单 20 的查询的改写：</p>
+<h5 id="清单-21"><a href="#清单-21" class="headerlink" title="清单 21."></a>清单 21.</h5>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE FUNCTION temp.getCustNum(p_date timestamp)``RETURNS``TABLE (cust_num CHARACTER(10))``RETURN``select distinct sold_to_cust_num from temp.order``where add_date &gt; p_date``union``select distinct cust_num from temp.contact``where add_date &gt; p_date;``select * from customer where cust_num in (``select cust_num from table(temp.getCustNum(current timestamp - 2 months)) tbl``)</span><br></pre></td></tr></table></figure>
+
+<p>   改写前后的查询代价分别是 445,159.31 和 254,436.98。当面对比较复杂的查询时考虑使用 UDF 将其拆分为多步执行常常会带来意想不到的效果。在实际的项目中，如果数据处理和查询调用是包含在其他应用程序中如 Unix 脚本，Java 程序等，同样可以考虑采用分步数据处理的方式来调用数据库，以优化应用性能。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>   本文主要介绍了如何使用 DB2 提供的各种查看存取计划的工具，并根据作者在 DB2 方面的开发经验总结了一些提高查询性能的方法和技巧。如果能够有效地利用 DB2 提供的各种工具，理解 DB2 中索引的结构，以及查询将如何被解释，数据库开发人员可以更好的提高查询性能来满足需求。</p>
+<p>版权声明：</p>
+<h2 id="除非注明，本博文章均为原创，转载请以链接形式标明本文地址。"><a href="#除非注明，本博文章均为原创，转载请以链接形式标明本文地址。" class="headerlink" title="除非注明，本博文章均为原创，转载请以链接形式标明本文地址。"></a>除非注明，本博文章均为原创，转载请以链接形式标明本文地址。</h2>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Optimization/" rel="tag"># Optimization</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div id="needsharebutton-postbottom">
+            <span class="btn">
+              <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </span>
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/10/07/mxLibraryLog/" rel="next" title="mxLibraryLog">
+                <i class="fa fa-chevron-left"></i> mxLibraryLog
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+		
+		
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">snail json</p>
+              <p class="site-description motion-element" itemprop="description">您心底所憧憬的事物，一定在某个维度发生</p>
+          </div>
+		<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=483937795&auto=1&height=66">
+		</iframe>
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/snailfrying" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:snailfrying@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://plus.google.com/snailfrying" target="_blank" title="Google">
+                      
+                        <i class="fa fa-fw fa-google"></i>Google</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.zhihu.com/people/gua-niu-hui-fei-37/activities" target="_blank" title="知乎">
+                      
+                        <i class="fa fa-fw fa-raindrops"></i>知乎</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#提高-DB2-查询性能的常用方法"><span class="nav-number">1.</span> <span class="nav-text">提高 DB2 查询性能的常用方法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#清单-1-db2exfmt-命令"><span class="nav-number">1.0.0.0.1.</span> <span class="nav-text">清单 1. db2exfmt 命令</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#清单-2-db2expln-命令"><span class="nav-number">1.0.0.0.2.</span> <span class="nav-text">清单 2. db2expln 命令</span></a></li></ol></li></ol><li class="nav-item nav-level-3"><a class="nav-link" href="#db2advis"><span class="nav-number">1.0.1.</span> <span class="nav-text">db2advis</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#清单-3-db2advis-命令"><span class="nav-number">1.0.1.0.1.</span> <span class="nav-text">清单 3. db2advis 命令</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#db2batch"><span class="nav-number">1.0.2.</span> <span class="nav-text">db2batch</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#清单-4-db2batch-命令"><span class="nav-number">1.0.2.0.1.</span> <span class="nav-text">清单 4. db2batch 命令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#提高查询性能的常用方法"><span class="nav-number">1.1.</span> <span class="nav-text">提高查询性能的常用方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建索引"><span class="nav-number">1.1.1.</span> <span class="nav-text">创建索引</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#清单-5-索引中的谓词位置"><span class="nav-number">1.1.1.0.1.</span> <span class="nav-text">清单 5. 索引中的谓词位置</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#图-5-根据不同索引生成的存取计划"><span class="nav-number">1.1.1.0.2.</span> <span class="nav-text">图 5. 根据不同索引生成的存取计划</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#清单-6-检查谓词选择度"><span class="nav-number">1.1.1.0.3.</span> <span class="nav-text">清单 6. 检查谓词选择度</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#表-1-两个索引的性能和大小对比"><span class="nav-number">1.1.1.0.4.</span> <span class="nav-text">表 1. 两个索引的性能和大小对比</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#图-6-使用-function-前后的存取计划的变化"><span class="nav-number">1.1.1.0.5.</span> <span class="nav-text">图 6. 使用 function 前后的存取计划的变化</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#清单-7-查询在创建索引前后的存取计划"><span class="nav-number">1.1.1.0.6.</span> <span class="nav-text">清单 7. 查询在创建索引前后的存取计划</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#图-7-在创建索引前后的存取计划"><span class="nav-number">1.1.1.0.7.</span> <span class="nav-text">图 7. 在创建索引前后的存取计划</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#清单-8-查询示例"><span class="nav-number">1.1.1.0.8.</span> <span class="nav-text">清单 8. 查询示例</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#图-8-创建联合索引前后的存取计划"><span class="nav-number">1.1.1.0.9.</span> <span class="nav-text">图 8. 创建联合索引前后的存取计划</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#清单-9-查询示例"><span class="nav-number">1.1.1.0.10.</span> <span class="nav-text">清单 9. 查询示例</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#图-9-查询计划"><span class="nav-number">1.1.1.0.11.</span> <span class="nav-text">图 9. 查询计划</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#索引和表的维护"><span class="nav-number">1.1.2.</span> <span class="nav-text">索引和表的维护</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改查询"><span class="nav-number">1.1.3.</span> <span class="nav-text">修改查询</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#清单-10-查询示例"><span class="nav-number">1.1.3.0.1.</span> <span class="nav-text">清单 10. 查询示例</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#清单-11-查询示例"><span class="nav-number">1.1.3.0.2.</span> <span class="nav-text">清单 11. 查询示例</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#清单-12-查询示例"><span class="nav-number">1.1.3.0.3.</span> <span class="nav-text">清单 12. 查询示例</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#清单-13-查询示例"><span class="nav-number">1.1.3.0.4.</span> <span class="nav-text">清单 13. 查询示例</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#清单-14-查询示例"><span class="nav-number">1.1.3.0.5.</span> <span class="nav-text">清单 14. 查询示例</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#清单-15-查询示例"><span class="nav-number">1.1.3.0.6.</span> <span class="nav-text">清单 15. 查询示例</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#清单-16"><span class="nav-number">1.1.3.0.7.</span> <span class="nav-text">清单 16.</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#图-10-查询计划"><span class="nav-number">1.1.3.0.8.</span> <span class="nav-text">图 10. 查询计划</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#清单-17"><span class="nav-number">1.1.3.0.9.</span> <span class="nav-text">清单 17.</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#清单-18"><span class="nav-number">1.1.3.0.10.</span> <span class="nav-text">清单 18.</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#清单-19"><span class="nav-number">1.1.3.0.11.</span> <span class="nav-text">清单 19.</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#图-11-查询计划"><span class="nav-number">1.1.3.0.12.</span> <span class="nav-text">图 11. 查询计划</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#清单-20"><span class="nav-number">1.1.3.0.13.</span> <span class="nav-text">清单 20.</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#清单-21"><span class="nav-number">1.1.3.0.14.</span> <span class="nav-text">清单 21.</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">1.2.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#除非注明，本博文章均为原创，转载请以链接形式标明本文地址。"><span class="nav-number">1.3.</span> <span class="nav-text">除非注明，本博文章均为原创，转载请以链接形式标明本文地址。</span></a></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">snail json</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">7.8k</span>
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共7.8k字</span>
+</div>
+<!--页面点击小红心-->
+<script type="text/javascript" src="/love.js"></script>
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+      <div id="needsharebutton-float">
+        <span class="btn">
+          <i class="fa fa-share-alt" aria-hidden="true"></i>
+        </span>
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/2.1.3/jquery.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/fastclick/1.0.6/fastclick.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.lazyload/1.9.3/jquery.lazyload.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.ui.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://龙门阵.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2019/10/14/DB2-performance-Optimization/';
+          this.page.identifier = '2019/10/14/DB2-performance-Optimization/';
+          this.page.title = 'DB2 performance Optimization';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://龙门阵.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: true,
+        notify: true,
+        appId: 'fF92eK9HnnGlETqxfUmFSOTy-gzGzoHsz',
+        appKey: '0OJnVAzjWXYUJttLekLy93fu',
+        placeholder: 'Small snail crawling up!!!',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("gFXuJyqJKwqMss9sIRbzJ0Qa-gzGzoHsz", "Uq6nDSovYwizyRBYP6qTGxNX");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+      pbOptions = {};
+      
+          pbOptions.iconStyle = "box";
+      
+          pbOptions.boxForm = "horizontal";
+      
+          pbOptions.position = "bottomCenter";
+      
+          pbOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+    
+    
+      flOptions = {};
+      
+          flOptions.iconStyle = "box";
+      
+          flOptions.boxForm = "horizontal";
+      
+          flOptions.position = "middleRight";
+      
+          flOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-float', flOptions);
+    
+  </script>
+
+  
+
+  
+  
+
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"left","width":200,"height":400},"mobile":{"show":true},"react":{"opacity":0.7}});</script><script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script></body>
+</html>

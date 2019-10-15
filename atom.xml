@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-10-08T05:57:07.299Z</updated>
+  <updated>2019-10-15T11:28:20.121Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,17 +17,49 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>DB2 performance Optimization</title>
+    <link href="http://yoursite.com/2019/10/14/DB2-performance-Optimization/"/>
+    <id>http://yoursite.com/2019/10/14/DB2-performance-Optimization/</id>
+    <published>2019-10-14T02:02:52.000Z</published>
+    <updated>2019-10-15T11:28:20.121Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;hr&gt;
+&lt;h1 id=&quot;提高-DB2-查询性能的常用方法&quot;&gt;&lt;a href=&quot;#提高-DB2-查询性能的常用方法&quot; class=&quot;headerlink&quot; title=&quot;提高 DB2 查询性能的常用方法&quot;&gt;&lt;/a&gt;提高 DB2
+        
+      
+    
+    </summary>
+    
+    
+      <category term="database" scheme="http://yoursite.com/categories/database/"/>
+    
+    
+      <category term="Optimization" scheme="http://yoursite.com/tags/Optimization/"/>
+    
+  </entry>
+  
+  <entry>
     <title>mxLibraryLog</title>
     <link href="http://yoursite.com/2019/10/07/mxLibraryLog/"/>
     <id>http://yoursite.com/2019/10/07/mxLibraryLog/</id>
     <published>2019-10-07T08:37:10.000Z</published>
-    <updated>2019-10-08T05:57:07.299Z</updated>
+    <updated>2019-10-12T10:03:48.006Z</updated>
     
     <summary type="html">
     
     </summary>
     
     
+      <category term="随笔" scheme="http://yoursite.com/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="self-study" scheme="http://yoursite.com/tags/self-study/"/>
     
   </entry>
   
@@ -36,7 +68,7 @@
     <link href="http://yoursite.com/2019/10/07/snaillife/"/>
     <id>http://yoursite.com/2019/10/07/snaillife/</id>
     <published>2019-10-07T07:59:43.000Z</published>
-    <updated>2019-10-09T12:31:06.359Z</updated>
+    <updated>2019-10-12T01:01:26.228Z</updated>
     
     <summary type="html">
     
@@ -52,6 +84,8 @@
     </summary>
     
     
+      <category term="随笔" scheme="http://yoursite.com/categories/%E9%9A%8F%E7%AC%94/"/>
+    
     
       <category term="梦想" scheme="http://yoursite.com/tags/%E6%A2%A6%E6%83%B3/"/>
     
@@ -66,7 +100,7 @@
     <link href="http://yoursite.com/2019/10/07/hello-world/"/>
     <id>http://yoursite.com/2019/10/07/hello-world/</id>
     <published>2019-10-07T07:58:25.425Z</published>
-    <updated>2019-10-09T12:11:31.525Z</updated>
+    <updated>2019-10-12T01:01:11.083Z</updated>
     
     <summary type="html">
     
@@ -75,6 +109,8 @@
     
     </summary>
     
+    
+      <category term="hexo" scheme="http://yoursite.com/categories/hexo/"/>
     
     
       <category term="markdown" scheme="http://yoursite.com/tags/markdown/"/>
