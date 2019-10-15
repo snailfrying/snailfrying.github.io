@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-10-15T11:28:20.121Z</updated>
+  <updated>2019-10-15T11:43:43.716Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>DB2 performance Optimization</title>
-    <link href="http://yoursite.com/2019/10/14/DB2-performance-Optimization/"/>
-    <id>http://yoursite.com/2019/10/14/DB2-performance-Optimization/</id>
-    <published>2019-10-14T02:02:52.000Z</published>
-    <updated>2019-10-15T11:28:20.121Z</updated>
+    <title>Hive SQL 编译过程</title>
+    <link href="http://yoursite.com/2019/10/15/Hive-SQL-%E7%BC%96%E8%AF%91%E8%BF%87%E7%A8%8B/"/>
+    <id>http://yoursite.com/2019/10/15/Hive-SQL-编译过程/</id>
+    <published>2019-10-15T11:31:48.000Z</published>
+    <updated>2019-10-15T11:43:43.716Z</updated>
     
     <summary type="html">
     
@@ -30,17 +30,42 @@
         
         
           &lt;hr&gt;
-&lt;h1 id=&quot;提高-DB2-查询性能的常用方法&quot;&gt;&lt;a href=&quot;#提高-DB2-查询性能的常用方法&quot; class=&quot;headerlink&quot; title=&quot;提高 DB2 查询性能的常用方法&quot;&gt;&lt;/a&gt;提高 DB2
+&lt;h1 id=&quot;Hive-SQL-编译过程&quot;&gt;&lt;a href=&quot;#Hive-SQL-编译过程&quot; class=&quot;headerlink&quot; title=&quot;Hive SQL 编译过程&quot;&gt;&lt;/a&gt;&lt;strong&gt;Hive SQL
         
       
     
     </summary>
     
     
-      <category term="database" scheme="http://yoursite.com/categories/database/"/>
+    
+      <category term="sql" scheme="http://yoursite.com/tags/sql/"/>
+    
+      <category term="hive" scheme="http://yoursite.com/tags/hive/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>DB2 performance Optimization</title>
+    <link href="http://yoursite.com/2019/10/14/DB2-performance-Optimization/"/>
+    <id>http://yoursite.com/2019/10/14/DB2-performance-Optimization/</id>
+    <published>2019-10-14T02:02:52.000Z</published>
+    <updated>2019-10-15T11:43:43.716Z</updated>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+&lt;h1 id=&quot;提高-DB2-查询性能的常用方法&quot;&gt;&lt;a href=&quot;#提高-DB2-查询性能的常用方法&quot; class=&quot;headerlink&quot; title=&quot;提高 DB2 查询性能的常用方法&quot;&gt;&lt;/a&gt;提高 DB2 查询性能的常用方法&lt;/h1&gt;&lt;h5 id=&quot;提高DB2查询性能的常用方法&quot;&gt;&lt;a href=&quot;#提高DB2查询性能的常用方法&quot; class=&quot;headerlink&quot; title=&quot;提高DB2查询性能的常用方法&quot;&gt;&lt;/a&gt;&lt;strong&gt;提高DB2查询性能的常用方法&lt;/strong&gt;&lt;/h5&gt;&lt;p&gt;将着重介绍如何使用 Visual Explain 和 db2expln 查看动态查询的存取计划。读者可以查阅 &lt;a href=&quot;http://publib.boulder.ibm.com/infocenter/db2luw/v8/index.jsp&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;DB2 Info Center&lt;/a&gt; 获得有关查看静态查询存取计划的内容。&lt;/p&gt;
+&lt;h5 id=&quot;DB2-Visual-Explain&quot;&gt;&lt;a href=&quot;#DB2-Visual-Explain&quot; class=&quot;headerlink&quot; title=&quot;DB2 Visual Explain&quot;&gt;&lt;/a&gt;&lt;strong&gt;DB2 Visual Explain&lt;/strong&gt;&lt;/h5&gt;&lt;p&gt;DB2 提供了非常直观有效的方法来查看查询的存取计划。DB2 Visual Explain 能够获得可视化的查询计划，而 db2expln 命令则可以获得文本形式的查询计划。有了查询计划，我们就可以有针对的对查询进行优化。根据查询计划找出代价最高的扫描 ( 表扫描，索引扫描等 ) 和操作 (Join，Filter，Fetch 等 )，继而通过改写查询或者创建索引消除代价较高的扫描或操作来优化查询。&lt;/p&gt;
+    
+    </summary>
+    
     
     
       <category term="Optimization" scheme="http://yoursite.com/tags/Optimization/"/>
+    
+      <category term="db2" scheme="http://yoursite.com/tags/db2/"/>
+    
+      <category term="sql" scheme="http://yoursite.com/tags/sql/"/>
     
   </entry>
   
@@ -49,14 +74,12 @@
     <link href="http://yoursite.com/2019/10/07/mxLibraryLog/"/>
     <id>http://yoursite.com/2019/10/07/mxLibraryLog/</id>
     <published>2019-10-07T08:37:10.000Z</published>
-    <updated>2019-10-12T10:03:48.006Z</updated>
+    <updated>2019-10-15T11:29:03.696Z</updated>
     
     <summary type="html">
     
     </summary>
     
-    
-      <category term="随笔" scheme="http://yoursite.com/categories/%E9%9A%8F%E7%AC%94/"/>
     
     
       <category term="self-study" scheme="http://yoursite.com/tags/self-study/"/>
@@ -68,7 +91,7 @@
     <link href="http://yoursite.com/2019/10/07/snaillife/"/>
     <id>http://yoursite.com/2019/10/07/snaillife/</id>
     <published>2019-10-07T07:59:43.000Z</published>
-    <updated>2019-10-12T01:01:26.228Z</updated>
+    <updated>2019-10-15T11:43:43.716Z</updated>
     
     <summary type="html">
     
@@ -84,8 +107,6 @@
     </summary>
     
     
-      <category term="随笔" scheme="http://yoursite.com/categories/%E9%9A%8F%E7%AC%94/"/>
-    
     
       <category term="梦想" scheme="http://yoursite.com/tags/%E6%A2%A6%E6%83%B3/"/>
     
@@ -100,7 +121,7 @@
     <link href="http://yoursite.com/2019/10/07/hello-world/"/>
     <id>http://yoursite.com/2019/10/07/hello-world/</id>
     <published>2019-10-07T07:58:25.425Z</published>
-    <updated>2019-10-12T01:01:11.083Z</updated>
+    <updated>2019-10-15T11:43:43.716Z</updated>
     
     <summary type="html">
     
@@ -109,8 +130,6 @@
     
     </summary>
     
-    
-      <category term="hexo" scheme="http://yoursite.com/categories/hexo/"/>
     
     
       <category term="markdown" scheme="http://yoursite.com/tags/markdown/"/>

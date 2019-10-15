@@ -114,7 +114,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="sql,hive,">
 
 
 
@@ -127,17 +127,54 @@
 
 
 
-<meta name="description" content="您心底所憧憬的事物，一定在某个维度发生">
-<meta name="keywords" content="嘟嘟嘟">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Snail Life">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="Hive SQL 编译过程Hive是基于Hadoop的一个数据仓库系统，在各大公司都有广泛的应用。美团数据仓库也是基于Hive搭建，每天执行近万次的Hive ETL计算流程，负责每天数百GB的数据存储和分析。Hive的稳定性和性能对我们的数据分析非常关键。 在几次升级Hive的过程中，我们遇到了一些大大小小的问题。通过向社区的咨询和自己的努力，在解决这些问题的同时我们对Hive将SQL编译为Ma">
+<meta name="keywords" content="sql,hive">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hive SQL 编译过程">
+<meta property="og:url" content="http://yoursite.com/2019/10/15/Hive-SQL-编译过程/index.html">
 <meta property="og:site_name" content="Snail Life">
-<meta property="og:description" content="您心底所憧憬的事物，一定在某个维度发生">
+<meta property="og:description" content="Hive SQL 编译过程Hive是基于Hadoop的一个数据仓库系统，在各大公司都有广泛的应用。美团数据仓库也是基于Hive搭建，每天执行近万次的Hive ETL计算流程，负责每天数百GB的数据存储和分析。Hive的稳定性和性能对我们的数据分析非常关键。 在几次升级Hive的过程中，我们遇到了一些大大小小的问题。通过向社区的咨询和自己的努力，在解决这些问题的同时我们对Hive将SQL编译为Ma">
 <meta property="og:locale" content="en">
+<meta property="og:image" content="http://yoursite.com/uploads/loading.gif">
+<meta property="og:image" content="http://yoursite.com/uploads/loading.gif">
+<meta property="og:image" content="http://yoursite.com/uploads/loading.gif">
+<meta property="og:image" content="http://yoursite.com/uploads/loading.gif">
+<meta property="og:image" content="http://yoursite.com/uploads/loading.gif">
+<meta property="og:image" content="http://yoursite.com/uploads/loading.gif">
+<meta property="og:image" content="http://yoursite.com/uploads/loading.gif">
+<meta property="og:image" content="http://yoursite.com/uploads/loading.gif">
+<meta property="og:image" content="http://yoursite.com/uploads/loading.gif">
+<meta property="og:image" content="http://yoursite.com/uploads/loading.gif">
+<meta property="og:image" content="http://yoursite.com/uploads/loading.gif">
+<meta property="og:image" content="http://yoursite.com/uploads/loading.gif">
+<meta property="og:image" content="http://yoursite.com/uploads/loading.gif">
+<meta property="og:image" content="http://yoursite.com/uploads/loading.gif">
+<meta property="og:image" content="http://yoursite.com/uploads/loading.gif">
+<meta property="og:image" content="http://yoursite.com/uploads/loading.gif">
+<meta property="og:image" content="http://yoursite.com/uploads/loading.gif">
+<meta property="og:image" content="http://yoursite.com/uploads/loading.gif">
+<meta property="og:image" content="http://yoursite.com/uploads/loading.gif">
+<meta property="og:image" content="http://yoursite.com/uploads/loading.gif">
+<meta property="og:image" content="http://yoursite.com/uploads/loading.gif">
+<meta property="og:image" content="http://yoursite.com/uploads/loading.gif">
+<meta property="og:image" content="http://yoursite.com/uploads/loading.gif">
+<meta property="og:image" content="http://yoursite.com/uploads/loading.gif">
+<meta property="og:image" content="http://yoursite.com/uploads/loading.gif">
+<meta property="og:image" content="http://yoursite.com/uploads/loading.gif">
+<meta property="og:image" content="http://yoursite.com/uploads/loading.gif">
+<meta property="og:image" content="http://yoursite.com/uploads/loading.gif">
+<meta property="og:image" content="http://yoursite.com/uploads/loading.gif">
+<meta property="og:image" content="http://yoursite.com/uploads/loading.gif">
+<meta property="og:image" content="http://yoursite.com/uploads/loading.gif">
+<meta property="og:image" content="http://yoursite.com/uploads/loading.gif">
+<meta property="og:image" content="http://yoursite.com/uploads/loading.gif">
+<meta property="og:image" content="http://yoursite.com/uploads/loading.gif">
+<meta property="og:image" content="http://yoursite.com/uploads/loading.gif">
+<meta property="og:updated_time" content="2019-10-15T11:43:43.716Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Snail Life">
-<meta name="twitter:description" content="您心底所憧憬的事物，一定在某个维度发生">
+<meta name="twitter:title" content="Hive SQL 编译过程">
+<meta name="twitter:description" content="Hive SQL 编译过程Hive是基于Hadoop的一个数据仓库系统，在各大公司都有广泛的应用。美团数据仓库也是基于Hive搭建，每天执行近万次的Hive ETL计算流程，负责每天数百GB的数据存储和分析。Hive的稳定性和性能对我们的数据分析非常关键。 在几次升级Hive的过程中，我们遇到了一些大大小小的问题。通过向社区的咨询和自己的努力，在解决这些问题的同时我们对Hive将SQL编译为Ma">
+<meta name="twitter:image" content="http://yoursite.com/uploads/loading.gif">
 
 
 
@@ -167,13 +204,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/">
+  <link rel="canonical" href="http://yoursite.com/2019/10/15/Hive-SQL-编译过程/">
 
 
 
 
 
-  <title>Snail Life</title>
+  <title>Hive SQL 编译过程 | Snail Life</title>
   
 
 
@@ -192,8 +229,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 	<a href="https://github.com/snailfrying" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#64CEAA; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -318,9 +354,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -350,9 +386,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/10/15/Hive-SQL-编译过程/" itemprop="url">Hive SQL 编译过程</a></h1>
+          <h1 class="post-title" itemprop="name headline">Hive SQL 编译过程</h1>
         
 
         <div class="post-meta">
@@ -455,9 +489,7 @@
       
 
       
-        
-          
-            <hr>
+        <hr>
 <h1 id="Hive-SQL-编译过程"><a href="#Hive-SQL-编译过程" class="headerlink" title="Hive SQL 编译过程"></a><strong>Hive SQL 编译过程</strong></h1><p>Hive是基于Hadoop的一个数据仓库系统，在各大公司都有广泛的应用。美团数据仓库也是基于Hive搭建，每天执行近万次的Hive ETL计算流程，负责每天数百GB的数据存储和分析。Hive的稳定性和性能对我们的数据分析非常关键。</p>
 <p>在几次升级Hive的过程中，我们遇到了一些大大小小的问题。通过向社区的咨询和自己的努力，在解决这些问题的同时我们对Hive将SQL编译为MapReduce的过程有了比较深入的理解。对这一过程的理解不仅帮助我们解决了一些Hive的bug，也有利于我们优化Hive SQL，提升我们对Hive的掌控力，同时有能力去定制一些需要的功能。</p>
 <h2 id="MapReduce实现基本SQL操作的原理"><a href="#MapReduce实现基本SQL操作的原理" class="headerlink" title="MapReduce实现基本SQL操作的原理"></a>MapReduce实现基本SQL操作的原理</h2><p>详细讲解SQL编译为MapReduce之前，我们先来看看MapReduce框架实现SQL基本操作的原理</p>
@@ -821,8 +853,6 @@
 <h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p>HiveSQL编译过程<a href="https://tech.meituan.com/2014/02/12/hive-sql-to-mapreduce.html" target="_blank" rel="noopener">https://tech.meituan.com/2014/02/12/hive-sql-to-mapreduce.html</a> Antlr: <a href="http://www.antlr.org/" target="_blank" rel="noopener">http://www.antlr.org/</a> Wiki Antlr介绍: <a href="http://en.wikipedia.org/wiki/ANTLR" target="_blank" rel="noopener">http://en.wikipedia.org/wiki/ANTLR</a> Hive Wiki: <a href="https://cwiki.apache.org/confluence/display/Hive/Home" target="_blank" rel="noopener">https://cwiki.apache.org/confluence/display/Hive/Home</a> HiveSQL编译过程: <a href="http://www.slideshare.net/recruitcojp/internal-hive" target="_blank" rel="noopener">http://www.slideshare.net/recruitcojp/internal-hive</a> Join Optimization in Hive: <a href="https://cwiki.apache.org/confluence/download/attachments/27362054/Hive+Summit+2011-join.pdf?version=1&modificationDate=1309986642000" target="_blank" rel="noopener">Join Strategies in Hive from the 2011 Hadoop Summit (Liyin Tang, Namit Jain)</a> Hive Design Docs: <a href="https://cwiki.apache.org/confluence/display/Hive/DesignDocs" target="_blank" rel="noopener">https://cwiki.apache.org/confluence/display/Hive/DesignDocs</a></p>
 <p>版权声明：</p>
 <h2 id="除非注明，本博文章均为原创，转载请以链接形式标明本文地址。"><a href="#除非注明，本博文章均为原创，转载请以链接形式标明本文地址。" class="headerlink" title="除非注明，本博文章均为原创，转载请以链接形式标明本文地址。"></a>除非注明，本博文章均为原创，转载请以链接形式标明本文地址。</h2>
-          
-        
       
     </div>
     
@@ -837,727 +867,53 @@
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/14/DB2-performance-Optimization/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="snail json">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Snail Life">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/10/14/DB2-performance-Optimization/" itemprop="url">DB2 performance Optimization</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-10-14T10:02:52+08:00">
-                2019-10-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-
+            <a href="/tags/sql/" rel="tag"># sql</a>
           
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/10/14/DB2-performance-Optimization/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/10/14/DB2-performance-Optimization/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
+            <a href="/tags/hive/" rel="tag"># hive</a>
           
-
-          
-          
-             <span id="/2019/10/14/DB2-performance-Optimization/" class="leancloud_visitors" data-flag-title="DB2 performance Optimization">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Visitors&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             <span>℃</span>
-			 </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Words count in article&#58;</span>
-                
-                <span title="Words count in article">
-                  7.2k
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Reading time &asymp;</span>
-                
-                <span title="Reading time">
-                  27
-                </span>
-              
-            </div>
-          
-
-          
-
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
+      
+        <div class="post-widgets">
         
-          <hr>
-<h1 id="提高-DB2-查询性能的常用方法"><a href="#提高-DB2-查询性能的常用方法" class="headerlink" title="提高 DB2 查询性能的常用方法"></a>提高 DB2 查询性能的常用方法</h1><h5 id="提高DB2查询性能的常用方法"><a href="#提高DB2查询性能的常用方法" class="headerlink" title="提高DB2查询性能的常用方法"></a><strong>提高DB2查询性能的常用方法</strong></h5><p>将着重介绍如何使用 Visual Explain 和 db2expln 查看动态查询的存取计划。读者可以查阅 <a href="http://publib.boulder.ibm.com/infocenter/db2luw/v8/index.jsp" target="_blank" rel="noopener">DB2 Info Center</a> 获得有关查看静态查询存取计划的内容。</p>
-<h5 id="DB2-Visual-Explain"><a href="#DB2-Visual-Explain" class="headerlink" title="DB2 Visual Explain"></a><strong>DB2 Visual Explain</strong></h5><p>DB2 提供了非常直观有效的方法来查看查询的存取计划。DB2 Visual Explain 能够获得可视化的查询计划，而 db2expln 命令则可以获得文本形式的查询计划。有了查询计划，我们就可以有针对的对查询进行优化。根据查询计划找出代价最高的扫描 ( 表扫描，索引扫描等 ) 和操作 (Join，Filter，Fetch 等 )，继而通过改写查询或者创建索引消除代价较高的扫描或操作来优化查询。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/10/14/DB2-performance-Optimization/#more" rel="contents">
-              Read more &raquo;
-            </a>
+
+        
+
+        
+          
+          <div id="needsharebutton-postbottom">
+            <span class="btn">
+              <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </span>
           </div>
-          <!--/noindex-->
         
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/07/mxLibraryLog/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="snail json">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Snail Life">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/10/07/mxLibraryLog/" itemprop="url">mxLibraryLog</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-10-07T16:37:10+08:00">
-                2019-10-07
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/10/07/mxLibraryLog/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/10/07/mxLibraryLog/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2019/10/07/mxLibraryLog/" class="leancloud_visitors" data-flag-title="mxLibraryLog">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Visitors&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             <span>℃</span>
-			 </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Words count in article&#58;</span>
-                
-                <span title="Words count in article">
-                  0
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Reading time &asymp;</span>
-                
-                <span title="Reading time">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
       
       
 
       
-        
-          
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/07/snaillife/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="snail json">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Snail Life">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/10/07/snaillife/" itemprop="url">有梦就有远方</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+              <a href="/2019/10/14/DB2-performance-Optimization/" rel="next" title="DB2 performance Optimization">
+                <i class="fa fa-chevron-left"></i> DB2 performance Optimization
+              </a>
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-10-07T15:59:43+08:00">
-                2019-10-07
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/10/07/snaillife/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/10/07/snaillife/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2019/10/07/snaillife/" class="leancloud_visitors" data-flag-title="有梦就有远方">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Visitors&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             <span>℃</span>
-			 </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Words count in article&#58;</span>
-                
-                <span title="Words count in article">
-                  561
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Reading time &asymp;</span>
-                
-                <span title="Reading time">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=1309814540&auto=1&height=66">
-</iframe>
-
-
-<blockquote class="blockquote-center"><p><font face="微软雅黑" color="#339933" text-align="center" font-size="24">有梦才有远方</font></p>
-</blockquote>
-
-<p><font face="微软雅黑" color="#FF0000" style="background-color:#9999999;">     雪夜茫茫，你知道一棵小草的梦吗？寒冷孤寂中，她怀抱一个信念取暖，等到村归大地时，她就会以两片绿叶问候春天，而那两片绿叶，就是曾经在雪地下轻轻地梦呓。</font><br><font face="微软雅黑" color="#FF7F00" style="background-color:#9999999;"> &gt;     候鸟南飞，征途迢迢，他的梦呢?在远方，在视野里，那是南方湛蓝的大海。她很累很累，但依然往前奋飞。因为梦又赐予她另一对翅膀。</font></p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/10/07/snaillife/#more" rel="contents">
-              Read more &raquo;
-            </a>
           </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
 
-    
+          <span class="post-nav-divider"></span>
 
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/07/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="snail json">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Snail Life">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/10/07/hello-world/" itemprop="url">Hello World</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+          <div class="post-nav-prev post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-10-07T15:58:25+08:00">
-                2019-10-07
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/10/07/hello-world/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/10/07/hello-world/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2019/10/07/hello-world/" class="leancloud_visitors" data-flag-title="Hello World">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Visitors&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             <span>℃</span>
-			 </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Words count in article&#58;</span>
-                
-                <span title="Words count in article">
-                  73
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Reading time &asymp;</span>
-                
-                <span title="Reading time">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/10/07/hello-world/#more" rel="contents">
-              Read more &raquo;
-            </a>
           </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
+        </div>
       
 
       
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -1567,10 +923,11 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -1578,6 +935,20 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -1598,9 +969,18 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 		
 		
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -1687,6 +1067,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Hive-SQL-编译过程"><span class="nav-number">1.</span> <span class="nav-text">Hive SQL 编译过程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#MapReduce实现基本SQL操作的原理"><span class="nav-number">1.1.</span> <span class="nav-text">MapReduce实现基本SQL操作的原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Join的实现原理"><span class="nav-number">1.1.1.</span> <span class="nav-text">Join的实现原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Group-By的实现原理"><span class="nav-number">1.1.2.</span> <span class="nav-text">Group By的实现原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Distinct的实现原理"><span class="nav-number">1.1.3.</span> <span class="nav-text">Distinct的实现原理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL转化为MapReduce的过程"><span class="nav-number">1.2.</span> <span class="nav-text">SQL转化为MapReduce的过程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Phase1-SQL词法，语法解析"><span class="nav-number">1.2.1.</span> <span class="nav-text">Phase1 SQL词法，语法解析</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Antlr"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">Antlr</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#抽象语法树AST-Tree"><span class="nav-number">1.2.1.2.</span> <span class="nav-text">抽象语法树AST Tree</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#样例SQL"><span class="nav-number">1.2.1.3.</span> <span class="nav-text">样例SQL</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SQL生成AST-Tree"><span class="nav-number">1.2.1.4.</span> <span class="nav-text">SQL生成AST Tree</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Phase2-SQL基本组成单元QueryBlock"><span class="nav-number">1.2.2.</span> <span class="nav-text">Phase2 SQL基本组成单元QueryBlock</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#QueryBlock"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">QueryBlock</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#AST-Tree生成QueryBlock"><span class="nav-number">1.2.2.2.</span> <span class="nav-text">AST Tree生成QueryBlock</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Phase3-逻辑操作符Operator"><span class="nav-number">1.2.3.</span> <span class="nav-text">Phase3 逻辑操作符Operator</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Operator"><span class="nav-number">1.2.3.1.</span> <span class="nav-text">Operator</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#QueryBlock生成Operator-Tree"><span class="nav-number">1.2.3.2.</span> <span class="nav-text">QueryBlock生成Operator Tree</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Phase4-逻辑层优化器"><span class="nav-number">1.2.4.</span> <span class="nav-text">Phase4 逻辑层优化器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#PredicatePushDown优化器"><span class="nav-number">1.2.4.1.</span> <span class="nav-text">PredicatePushDown优化器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#NonBlockingOpDeDupProc优化器"><span class="nav-number">1.2.4.2.</span> <span class="nav-text">NonBlockingOpDeDupProc优化器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ReduceSinkDeDuplication优化器"><span class="nav-number">1.2.4.3.</span> <span class="nav-text">ReduceSinkDeDuplication优化器</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Phase5-OperatorTree生成MapReduce-Job的过程"><span class="nav-number">1.2.5.</span> <span class="nav-text">Phase5 OperatorTree生成MapReduce Job的过程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#对输出表生成MoveTask"><span class="nav-number">1.2.5.1.</span> <span class="nav-text">对输出表生成MoveTask</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#开始遍历"><span class="nav-number">1.2.5.2.</span> <span class="nav-text">开始遍历</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Rule-1-TS-生成MapReduceTask对象，确定MapWork"><span class="nav-number">1.2.5.3.</span> <span class="nav-text">Rule #1 TS% 生成MapReduceTask对象，确定MapWork</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Rule-2-TS-RS-确定ReduceWork"><span class="nav-number">1.2.5.4.</span> <span class="nav-text">Rule #2 TS%.*RS% 确定ReduceWork</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Rule-3-RS-RS-生成新MapReduceTask对象，切分MapReduceTask"><span class="nav-number">1.2.5.5.</span> <span class="nav-text">Rule #3 RS%.*RS% 生成新MapReduceTask对象，切分MapReduceTask</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#R4-FS-连接MapReduceTask与MoveTask"><span class="nav-number">1.2.5.6.</span> <span class="nav-text">R4 FS% 连接MapReduceTask与MoveTask</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#合并Stage"><span class="nav-number">1.2.5.7.</span> <span class="nav-text">合并Stage</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#切分Map-Reduce阶段"><span class="nav-number">1.2.5.8.</span> <span class="nav-text">切分Map Reduce阶段</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#OperatorTree生成MapReduceTask全貌"><span class="nav-number">1.2.5.9.</span> <span class="nav-text">OperatorTree生成MapReduceTask全貌</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Phase6-物理层优化器"><span class="nav-number">1.2.6.</span> <span class="nav-text">Phase6 物理层优化器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#MapJoin原理"><span class="nav-number">1.2.6.1.</span> <span class="nav-text">MapJoin原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CommonJoinResolver优化器"><span class="nav-number">1.2.6.2.</span> <span class="nav-text">CommonJoinResolver优化器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#MapJoinResolver优化器"><span class="nav-number">1.2.6.3.</span> <span class="nav-text">MapJoinResolver优化器</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hive-SQL编译过程的设计"><span class="nav-number">1.2.7.</span> <span class="nav-text">Hive SQL编译过程的设计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#社区发展方向"><span class="nav-number">1.2.8.</span> <span class="nav-text">社区发展方向</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考"><span class="nav-number">1.2.9.</span> <span class="nav-text">参考</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#除非注明，本博文章均为原创，转载请以链接形式标明本文地址。"><span class="nav-number">1.3.</span> <span class="nav-text">除非注明，本博文章均为原创，转载请以链接形式标明本文地址。</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1864,6 +1260,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -1881,6 +1281,18 @@
       <script id="dsq-count-scr" src="https://龙门阵.disqus.com/count.js" async></script>
     
 
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2019/10/15/Hive-SQL-编译过程/';
+          this.page.identifier = '2019/10/15/Hive-SQL-编译过程/';
+          this.page.title = 'Hive SQL 编译过程';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://龙门阵.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
     
 
   
@@ -2408,26 +1820,6 @@
   
 
   
-  
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-          processEscapes: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-        }
-      });
-    </script>
-
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-      });
-    </script>
-    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
   
 
 
