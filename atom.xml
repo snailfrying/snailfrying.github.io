@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-10-15T11:50:24.099Z</updated>
+  <updated>2019-10-16T10:50:58.136Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,21 +21,24 @@
     <link href="http://yoursite.com/2019/10/15/Hive-SQL-%E7%BC%96%E8%AF%91%E8%BF%87%E7%A8%8B/"/>
     <id>http://yoursite.com/2019/10/15/Hive-SQL-编译过程/</id>
     <published>2019-10-15T11:31:48.000Z</published>
-    <updated>2019-10-15T11:50:24.099Z</updated>
+    <updated>2019-10-16T10:50:58.136Z</updated>
     
     <summary type="html">
     
-      &lt;hr&gt;
-&lt;h1 id=&quot;Hive-SQL-编译过程&quot;&gt;&lt;a href=&quot;#Hive-SQL-编译过程&quot; class=&quot;headerlink&quot; title=&quot;Hive SQL 编译过程&quot;&gt;&lt;/a&gt;&lt;strong&gt;Hive SQL 编译过程&lt;/strong&gt;&lt;/h1&gt;&lt;p&gt;Hive是基于Hadoop的一个数据仓库系统，在各大公司都有广泛的应用。美团数据仓库也是基于Hive搭建，每天执行近万次的Hive ETL计算流程，负责每天数百GB的数据存储和分析。Hive的稳定性和性能对我们的数据分析非常关键。&lt;/p&gt;
+      &lt;iframe scrolling=&quot;no&quot; src=&quot;https://tianqiapi.com/api.php?style=tx&amp;skin=sogou&quot; frameborder=&quot;0&quot; width=&quot;100%&quot; height=&quot;30&quot; allowtransparency=&quot;true&quot;&gt;&lt;/iframe&gt;
+---
+# **Hive SQL 编译过程**
+
+&lt;p&gt;Hive是基于Hadoop的一个数据仓库系统，在各大公司都有广泛的应用。美团数据仓库也是基于Hive搭建，每天执行近万次的Hive ETL计算流程，负责每天数百GB的数据存储和分析。Hive的稳定性和性能对我们的数据分析非常关键。&lt;/p&gt;
 &lt;p&gt;在几次升级Hive的过程中，我们遇到了一些大大小小的问题。通过向社区的咨询和自己的努力，在解决这些问题的同时我们对Hive将SQL编译为MapReduce的过程有了比较深入的理解。对这一过程的理解不仅帮助我们解决了一些Hive的bug，也有利于我们优化Hive SQL，提升我们对Hive的掌控力，同时有能力去定制一些需要的功能。&lt;/p&gt;
     
     </summary>
     
     
     
-      <category term="sql" scheme="http://yoursite.com/tags/sql/"/>
-    
       <category term="hive" scheme="http://yoursite.com/tags/hive/"/>
+    
+      <category term="sql" scheme="http://yoursite.com/tags/sql/"/>
     
   </entry>
   
@@ -44,23 +47,26 @@
     <link href="http://yoursite.com/2019/10/14/DB2-performance-Optimization/"/>
     <id>http://yoursite.com/2019/10/14/DB2-performance-Optimization/</id>
     <published>2019-10-14T02:02:52.000Z</published>
-    <updated>2019-10-15T11:43:43.716Z</updated>
+    <updated>2019-10-16T10:51:49.254Z</updated>
     
     <summary type="html">
     
       &lt;hr&gt;
-&lt;h1 id=&quot;提高-DB2-查询性能的常用方法&quot;&gt;&lt;a href=&quot;#提高-DB2-查询性能的常用方法&quot; class=&quot;headerlink&quot; title=&quot;提高 DB2 查询性能的常用方法&quot;&gt;&lt;/a&gt;提高 DB2 查询性能的常用方法&lt;/h1&gt;&lt;h5 id=&quot;提高DB2查询性能的常用方法&quot;&gt;&lt;a href=&quot;#提高DB2查询性能的常用方法&quot; class=&quot;headerlink&quot; title=&quot;提高DB2查询性能的常用方法&quot;&gt;&lt;/a&gt;&lt;strong&gt;提高DB2查询性能的常用方法&lt;/strong&gt;&lt;/h5&gt;&lt;p&gt;将着重介绍如何使用 Visual Explain 和 db2expln 查看动态查询的存取计划。读者可以查阅 &lt;a href=&quot;http://publib.boulder.ibm.com/infocenter/db2luw/v8/index.jsp&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;DB2 Info Center&lt;/a&gt; 获得有关查看静态查询存取计划的内容。&lt;/p&gt;
+&lt;iframe scrolling=&quot;no&quot; src=&quot;https://tianqiapi.com/api.php?style=tx&amp;skin=sogou&quot; frameborder=&quot;0&quot; width=&quot;100%&quot; height=&quot;30&quot; allowtransparency=&quot;true&quot;&gt;&lt;/iframe&gt;
+# 提高 DB2 查询性能的常用方法
+
+&lt;h5 id=&quot;提高DB2查询性能的常用方法&quot;&gt;&lt;a href=&quot;#提高DB2查询性能的常用方法&quot; class=&quot;headerlink&quot; title=&quot;提高DB2查询性能的常用方法&quot;&gt;&lt;/a&gt;&lt;strong&gt;提高DB2查询性能的常用方法&lt;/strong&gt;&lt;/h5&gt;&lt;p&gt;将着重介绍如何使用 Visual Explain 和 db2expln 查看动态查询的存取计划。读者可以查阅 &lt;a href=&quot;http://publib.boulder.ibm.com/infocenter/db2luw/v8/index.jsp&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;DB2 Info Center&lt;/a&gt; 获得有关查看静态查询存取计划的内容。&lt;/p&gt;
 &lt;h5 id=&quot;DB2-Visual-Explain&quot;&gt;&lt;a href=&quot;#DB2-Visual-Explain&quot; class=&quot;headerlink&quot; title=&quot;DB2 Visual Explain&quot;&gt;&lt;/a&gt;&lt;strong&gt;DB2 Visual Explain&lt;/strong&gt;&lt;/h5&gt;&lt;p&gt;DB2 提供了非常直观有效的方法来查看查询的存取计划。DB2 Visual Explain 能够获得可视化的查询计划，而 db2expln 命令则可以获得文本形式的查询计划。有了查询计划，我们就可以有针对的对查询进行优化。根据查询计划找出代价最高的扫描 ( 表扫描，索引扫描等 ) 和操作 (Join，Filter，Fetch 等 )，继而通过改写查询或者创建索引消除代价较高的扫描或操作来优化查询。&lt;/p&gt;
     
     </summary>
     
     
     
+      <category term="sql" scheme="http://yoursite.com/tags/sql/"/>
+    
       <category term="Optimization" scheme="http://yoursite.com/tags/Optimization/"/>
     
       <category term="db2" scheme="http://yoursite.com/tags/db2/"/>
-    
-      <category term="sql" scheme="http://yoursite.com/tags/sql/"/>
     
   </entry>
   
@@ -86,11 +92,12 @@
     <link href="http://yoursite.com/2019/10/07/snaillife/"/>
     <id>http://yoursite.com/2019/10/07/snaillife/</id>
     <published>2019-10-07T07:59:43.000Z</published>
-    <updated>2019-10-15T11:43:43.716Z</updated>
+    <updated>2019-10-16T11:02:36.764Z</updated>
     
     <summary type="html">
     
-      &lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=&quot;330&quot; height=&quot;86&quot; src=&quot;//music.163.com/outchain/player?type=2&amp;id=1309814540&amp;auto=1&amp;height=66&quot;&gt;
+      &lt;iframe scrolling=&quot;no&quot; src=&quot;https://tianqiapi.com/api.php?style=tx&amp;skin=sogou&quot; frameborder=&quot;0&quot; width=&quot;100%&quot; height=&quot;30&quot; allowtransparency=&quot;true&quot;&gt;&lt;/iframe&gt;
+&lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=&quot;330&quot; height=&quot;86&quot; src=&quot;//music.163.com/outchain/player?type=2&amp;id=1309814540&amp;auto=1&amp;height=66&quot;&gt;
 &lt;/iframe&gt;
 
 
@@ -101,6 +108,8 @@
     
     </summary>
     
+    
+      <category term="dream" scheme="http://yoursite.com/categories/dream/"/>
     
     
       <category term="梦想" scheme="http://yoursite.com/tags/%E6%A2%A6%E6%83%B3/"/>
