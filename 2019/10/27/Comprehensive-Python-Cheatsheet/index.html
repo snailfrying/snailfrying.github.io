@@ -114,7 +114,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="python,">
 
 
 
@@ -128,14 +128,14 @@
 
 
 <meta name="description" content="Contents​    1. Collections:   List**,** Dictionary**,** Set**,** Tuple**,** Range**,** Enumerate**,** Iterator**,** Generator**.**​    2. Types:            Type**,** String**,** Regular_Exp**,** For">
-<meta name="keywords" content="嘟嘟嘟">
+<meta name="keywords" content="python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Comprehensive-Python-Cheatsheet">
 <meta property="og:url" content="http://yoursite.com/2019/10/27/Comprehensive-Python-Cheatsheet/index.html">
 <meta property="og:site_name" content="Snail Life">
 <meta property="og:description" content="Contents​    1. Collections:   List**,** Dictionary**,** Set**,** Tuple**,** Range**,** Enumerate**,** Iterator**,** Generator**.**​    2. Types:            Type**,** String**,** Regular_Exp**,** For">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-10-27T14:31:06.453Z">
+<meta property="og:updated_time" content="2019-10-27T14:35:59.520Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Comprehensive-Python-Cheatsheet">
 <meta name="twitter:description" content="Contents​    1. Collections:   List**,** Dictionary**,** Set**,** Tuple**,** Range**,** Enumerate**,** Iterator**,** Generator**.**​    2. Types:            Type**,** String**,** Regular_Exp**,** For">
@@ -373,6 +373,28 @@
           </span>
 
           
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/language/" itemprop="url" rel="index">
+                    <span itemprop="name">language</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -456,6 +478,8 @@
         <hr>
 <h2 id="Contents"><a href="#Contents" class="headerlink" title="Contents"></a>Contents</h2><p>​    <strong>1. Collections:</strong>   <strong>List**</strong>,** <strong>Dictionary**</strong>,** <strong>Set**</strong>,** <strong>Tuple**</strong>,** <strong>Range**</strong>,** <strong>Enumerate**</strong>,** <strong>Iterator**</strong>,** <strong>Generator**</strong>.**<br>​    <strong>2. Types:</strong>            <strong>Type**</strong>,** <strong>String**</strong>,** <strong>Regular_Exp**</strong>,** <strong>Format**</strong>,** <strong>Numbers**</strong>,** <strong>Combinatorics**</strong>,** <strong>Datetime**</strong>.**<br>​    <strong>3. Syntax:</strong>           <strong>Args**</strong>,** <strong>Inline**</strong>,** <strong>Closure**</strong>,** <strong>Decorator**</strong>,** <strong>Class**</strong>,** <strong>Duck_Types**</strong>,** <strong>Enum**</strong>,** <strong>Exceptions**</strong>.**<br>​    <strong>4. System:</strong>          <strong>Print**</strong>,** <strong>Input**</strong>,** <strong>Command_Line_Arguments**</strong>,** <strong>Open**</strong>,** <strong>Path**</strong>,** <strong>Command_Execution**</strong>.**<br>​    <strong>5. Data:</strong>               <strong>JSON**</strong>,** <strong>Pickle**</strong>,** <strong>CSV**</strong>,** <strong>SQLite**</strong>,** <strong>Bytes**</strong>,** <strong>Struct**</strong>,** <strong>Array**</strong>,** <strong>MemoryView**</strong>,** <strong>Deque**</strong>.**<br>​    <strong>6. Advanced:</strong>     <strong>Threading**</strong>,** <strong>Operator**</strong>,** <strong>Introspection**</strong>,** <strong>Metaprograming**</strong>,** <strong>Eval**</strong>,** <strong>Coroutine**</strong>.**<br>​    <strong>7. Libraries:</strong>        <strong>Progress_Bar**</strong>,** <strong>Plot**</strong>,** <strong>Table**</strong>,** <strong>Curses**</strong>,** <strong>Logging**</strong>,** <strong>Scraping**</strong>,** <strong>Web**</strong>,** <strong>Profile**</strong>,**<br>​                                  <strong>NumPy**</strong>,** <strong>Image**</strong>,** <strong>Animation**</strong>,** <strong>Audio**</strong>,** <strong>Synthesizer**</strong>.**</p>
 <h2 id="Main"><a href="#Main" class="headerlink" title="Main"></a>Main</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">if __name__ == &apos;__main__&apos;:     # Runs main() if file wasn&apos;t imported.</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
 
 <h2 id="List"><a href="#List" class="headerlink" title="List"></a>List</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;list&gt; = &lt;list&gt;[from_inclusive : to_exclusive : ±step_size]</span><br><span class="line">&lt;list&gt;.append(&lt;el&gt;)            # Or: &lt;list&gt; += [&lt;el&gt;]</span><br><span class="line">&lt;list&gt;.extend(&lt;collection&gt;)    # Or: &lt;list&gt; += &lt;collection&gt;</span><br><span class="line">&lt;list&gt;.sort()</span><br><span class="line">&lt;list&gt;.reverse()</span><br><span class="line">&lt;list&gt; = sorted(&lt;collection&gt;)</span><br><span class="line">&lt;iter&gt; = reversed(&lt;list&gt;)</span><br><span class="line">sum_of_elements  = sum(&lt;collection&gt;)</span><br><span class="line">elementwise_sum  = [sum(pair) for pair in zip(list_a, list_b)]</span><br><span class="line">sorted_by_second = sorted(&lt;collection&gt;, key=lambda el: el[1])</span><br><span class="line">sorted_by_both   = sorted(&lt;collection&gt;, key=lambda el: (el[1], el[0]))</span><br><span class="line">flatter_list     = list(itertools.chain.from_iterable(&lt;list&gt;))</span><br><span class="line">product_of_elems = functools.reduce(lambda out, x: out * x, &lt;collection&gt;)</span><br><span class="line">list_of_chars    = list(&lt;str&gt;)</span><br><span class="line">&lt;int&gt; = &lt;list&gt;.count(&lt;el&gt;)     # Returns number of occurrences. Also works on strings.</span><br><span class="line">index = &lt;list&gt;.index(&lt;el&gt;)     # Returns index of first occurrence or raises ValueError.</span><br><span class="line">&lt;list&gt;.insert(index, &lt;el&gt;)     # Inserts item at index and moves the rest to the right.</span><br><span class="line">&lt;el&gt; = &lt;list&gt;.pop([index])     # Removes and returns item at index or from the end.</span><br><span class="line">&lt;list&gt;.remove(&lt;el&gt;)            # Removes first occurrence of item or raises ValueError.</span><br><span class="line">&lt;list&gt;.clear()                 # Removes all items. Also works on dictionary and set.</span><br></pre></td></tr></table></figure>
 
@@ -1224,6 +1248,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/python/" rel="tag"># python</a>
+          
+        </div>
+      
 
       
       
@@ -1352,13 +1382,22 @@
             
 
             
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
 
             
               
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
