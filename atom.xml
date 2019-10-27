@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-10-16T10:50:58.136Z</updated>
+  <updated>2019-10-27T14:31:06.453Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Comprehensive-Python-Cheatsheet</title>
+    <link href="http://yoursite.com/2019/10/27/Comprehensive-Python-Cheatsheet/"/>
+    <id>http://yoursite.com/2019/10/27/Comprehensive-Python-Cheatsheet/</id>
+    <published>2019-10-27T14:30:20.000Z</published>
+    <updated>2019-10-27T14:31:06.453Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;hr&gt;
+&lt;h2 id=&quot;Contents&quot;&gt;&lt;a href=&quot;#Contents&quot; class=&quot;headerlink&quot; title=&quot;Contents&quot;&gt;&lt;/a&gt;Contents&lt;/h2&gt;&lt;p&gt;​    &lt;strong&gt;1. Collections:&lt;/strong&gt;  
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>Hive SQL 编译过程</title>
@@ -36,9 +60,9 @@
     
     
     
-      <category term="hive" scheme="http://yoursite.com/tags/hive/"/>
-    
       <category term="sql" scheme="http://yoursite.com/tags/sql/"/>
+    
+      <category term="hive" scheme="http://yoursite.com/tags/hive/"/>
     
   </entry>
   
@@ -62,11 +86,11 @@
     
     
     
-      <category term="sql" scheme="http://yoursite.com/tags/sql/"/>
-    
       <category term="Optimization" scheme="http://yoursite.com/tags/Optimization/"/>
     
       <category term="db2" scheme="http://yoursite.com/tags/db2/"/>
+    
+      <category term="sql" scheme="http://yoursite.com/tags/sql/"/>
     
   </entry>
   
@@ -75,9 +99,17 @@
     <link href="http://yoursite.com/2019/10/07/mxLibraryLog/"/>
     <id>http://yoursite.com/2019/10/07/mxLibraryLog/</id>
     <published>2019-10-07T08:37:10.000Z</published>
-    <updated>2019-10-15T11:29:03.696Z</updated>
+    <updated>2019-10-27T14:24:57.979Z</updated>
     
     <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;Contents&quot;&gt;&lt;a href=&quot;#Contents&quot; class=&quot;headerlink&quot; title=&quot;Contents&quot;&gt;&lt;/a&gt;Contents&lt;/h2&gt;&lt;p&gt;​    &lt;strong&gt;1. Collections:&lt;/strong&gt;  
+        
+      
     
     </summary>
     
@@ -92,7 +124,7 @@
     <link href="http://yoursite.com/2019/10/07/snaillife/"/>
     <id>http://yoursite.com/2019/10/07/snaillife/</id>
     <published>2019-10-07T07:59:43.000Z</published>
-    <updated>2019-10-16T11:02:36.764Z</updated>
+    <updated>2019-10-16T11:02:43.187Z</updated>
     
     <summary type="html">
     
@@ -108,8 +140,6 @@
     
     </summary>
     
-    
-      <category term="dream" scheme="http://yoursite.com/categories/dream/"/>
     
     
       <category term="梦想" scheme="http://yoursite.com/tags/%E6%A2%A6%E6%83%B3/"/>
