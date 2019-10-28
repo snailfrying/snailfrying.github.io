@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-10-28T07:47:47.527Z</updated>
+  <updated>2019-10-28T07:47:58.577Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://yoursite.com/2019/10/27/Comprehensive-Python-Cheatsheet/"/>
     <id>http://yoursite.com/2019/10/27/Comprehensive-Python-Cheatsheet/</id>
     <published>2019-10-27T14:30:20.000Z</published>
-    <updated>2019-10-28T07:47:47.527Z</updated>
+    <updated>2019-10-28T07:47:58.577Z</updated>
     
     <summary type="html">
     
@@ -31,8 +31,6 @@
     
     </summary>
     
-    
-      <category term="-python" scheme="http://yoursite.com/categories/python/"/>
     
     
       <category term="python" scheme="http://yoursite.com/tags/python/"/>
@@ -98,12 +96,14 @@
     <link href="http://yoursite.com/2019/10/07/mxLibraryLog/"/>
     <id>http://yoursite.com/2019/10/07/mxLibraryLog/</id>
     <published>2019-10-07T08:37:10.000Z</published>
-    <updated>2019-10-28T07:43:09.876Z</updated>
+    <updated>2019-10-28T12:28:32.084Z</updated>
     
     <summary type="html">
     
     </summary>
     
+    
+      <category term="-suibi" scheme="http://yoursite.com/categories/suibi/"/>
     
     
       <category term="self-study" scheme="http://yoursite.com/tags/self-study/"/>
