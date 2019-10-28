@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-10-28T07:47:58.577Z</updated>
+  <updated>2019-10-28T12:49:14.658Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,46 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>金字塔原理</title>
+    <link href="http://yoursite.com/2019/10/28/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86/"/>
+    <id>http://yoursite.com/2019/10/28/金字塔原理/</id>
+    <published>2019-10-28T12:43:53.000Z</published>
+    <updated>2019-10-28T12:49:14.658Z</updated>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+&lt;h1 id=&quot;《金字塔原理》读书笔记&quot;&gt;&lt;a href=&quot;#《金字塔原理》读书笔记&quot; class=&quot;headerlink&quot; title=&quot;《金字塔原理》读书笔记&quot;&gt;&lt;/a&gt;《金字塔原理》读书笔记&lt;/h1&gt;&lt;p&gt;附：&lt;a href=&quot;http://byteliu.com/PDF/金字塔原理.pdf&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;金字塔原理.pdf&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;工作的时候，特别是搞技术的同学，我们通常会有一种感觉，“表达” 比 “做” 难。有时候明明做得挺好的一件事情，表达出来却不是那么回事情，特别是当转正、晋升述职的时候，都不知道怎么来组织自己的思路。平时在和同事、Partner沟通的时候，需要沟通好一会才能把事情说清楚。 如何整理自己的思维逻辑，表达自己想表达的内容；如何能让对方看懂、听明白、记住我们想表达的；如何让对方顺着我们的思路一起思考。这是门很深的学问。 但其实有一些普世方法，在我们初中、高中的语文课上就学习过。其中，有个鼎鼎有名的原理：“金字塔原理”。&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Nonviolent Communication</title>
+    <link href="http://yoursite.com/2019/10/28/Nonviolent-Communication/"/>
+    <id>http://yoursite.com/2019/10/28/Nonviolent-Communication/</id>
+    <published>2019-10-28T12:31:46.000Z</published>
+    <updated>2019-10-28T12:49:24.800Z</updated>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+&lt;h1 id=&quot;非暴力沟通总结笔记&quot;&gt;&lt;a href=&quot;#非暴力沟通总结笔记&quot; class=&quot;headerlink&quot; title=&quot;非暴力沟通总结笔记&quot;&gt;&lt;/a&gt;非暴力沟通总结笔记&lt;/h1&gt;&lt;h3 id=&quot;一、什么是非暴力沟通&quot;&gt;&lt;a href=&quot;#一、什么是非暴力沟通&quot; class=&quot;headerlink&quot; title=&quot;一、什么是非暴力沟通&quot;&gt;&lt;/a&gt;&lt;strong&gt;一、什么是非暴力沟通&lt;/strong&gt;&lt;/h3&gt;&lt;p&gt;非暴力沟通是指提我们要专注于彼此的观察、感受、需要和请求，通过转变谈话和聆听的方式，化解人际间的冲突，获得爱和幸福。非暴力意味着让爱融入生活。让尊重、理解、欣赏、感激、慈悲和友情，而非自私自利、贪婪、憎恨、偏见、怀疑和敌意，来主导生活。&lt;/p&gt;
+&lt;h3 id=&quot;二、非暴力沟通的作用&quot;&gt;&lt;a href=&quot;#二、非暴力沟通的作用&quot; class=&quot;headerlink&quot; title=&quot;二、非暴力沟通的作用&quot;&gt;&lt;/a&gt;&lt;strong&gt;二、非暴力沟通的作用&lt;/strong&gt;&lt;/h3&gt;&lt;p&gt;非暴力沟通能够治疗内心深处的隐秘伤痛，超越个人心智和情感的局限性，突破那些引发愤怒、沮丧、焦虑等负面情绪的思维方式，用不带伤害的方式化解人际间的冲突，学会建立和谐的生命体验。&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="随笔" scheme="http://yoursite.com/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
   
   <entry>
     <title>Comprehensive-Python-Cheatsheet</title>
@@ -96,14 +136,12 @@
     <link href="http://yoursite.com/2019/10/07/mxLibraryLog/"/>
     <id>http://yoursite.com/2019/10/07/mxLibraryLog/</id>
     <published>2019-10-07T08:37:10.000Z</published>
-    <updated>2019-10-28T12:28:32.084Z</updated>
+    <updated>2019-10-28T12:28:50.465Z</updated>
     
     <summary type="html">
     
     </summary>
     
-    
-      <category term="-suibi" scheme="http://yoursite.com/categories/suibi/"/>
     
     
       <category term="self-study" scheme="http://yoursite.com/tags/self-study/"/>
