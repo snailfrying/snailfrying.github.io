@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-10-28T12:49:14.658Z</updated>
+  <updated>2019-10-29T09:00:25.394Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,92 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>python thread 基础概念与方法</title>
+    <link href="http://yoursite.com/2019/10/29/python-thread-%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5%E4%B8%8E%E6%96%B9%E6%B3%95/"/>
+    <id>http://yoursite.com/2019/10/29/python-thread-基础概念与方法/</id>
+    <published>2019-10-29T08:10:46.000Z</published>
+    <updated>2019-10-29T09:00:25.394Z</updated>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.liujiangblog.com/course/python/79&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;原链接&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;在Python3中，通过threading模块提供线程的功能。原来的thread模块已废弃。但是threading模块中有个Thread类（大写的T，类名），是模块中最主要的线程类，一定要分清楚了，千万不要搞混了。&lt;/p&gt;
+&lt;p&gt;threading模块提供了一些比较实用的方法或者属性，例如：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;方法与属性&lt;/th&gt;
+&lt;th&gt;描述&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;current_thread()&lt;/td&gt;
+&lt;td&gt;返回当前线程&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;active_count()&lt;/td&gt;
+&lt;td&gt;返回当前活跃的线程数，1个主线程+n个子线程&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;get_ident()&lt;/td&gt;
+&lt;td&gt;返回当前线程&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;enumerater()&lt;/td&gt;
+&lt;td&gt;返回当前活动 Thread 对象列表&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;main_thread()&lt;/td&gt;
+&lt;td&gt;返回主 Thread 对象&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;settrace(func)&lt;/td&gt;
+&lt;td&gt;为所有线程设置一个 trace 函数&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;setprofile(func)&lt;/td&gt;
+&lt;td&gt;为所有线程设置一个 profile 函数&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;stack_size([size])&lt;/td&gt;
+&lt;td&gt;返回新创建线程栈大小；或为后续创建的线程设定栈大小为 size&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;TIMEOUT_MAX&lt;/td&gt;
+&lt;td&gt;Lock.acquire(), RLock.acquire(), Condition.wait() 允许的最大超时时间&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>python thread tutorial</title>
+    <link href="http://yoursite.com/2019/10/29/python-thread-tutorial/"/>
+    <id>http://yoursite.com/2019/10/29/python-thread-tutorial/</id>
+    <published>2019-10-29T05:39:46.000Z</published>
+    <updated>2019-10-29T09:05:46.323Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;python-thread-tutorial&quot;&gt;&lt;a href=&quot;#python-thread-tutorial&quot; class=&quot;headerlink&quot; title=&quot;python thread tutorial&quot;&gt;&lt;/a&gt;python thread tutorial&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;http://www.liujiangblog.com/course/python/82&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;参考链接&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&quot;1-python-线程与进程的区别&quot;&gt;&lt;a href=&quot;#1-python-线程与进程的区别&quot; class=&quot;headerlink&quot; title=&quot;1. python 线程与进程的区别&quot;&gt;&lt;/a&gt;1. python 线程与进程的区别&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;进程&lt;/strong&gt;是程序（软件，应用）的一个执行实例，每个运行中的程序，可以同时创建多个进程，但至少要有一个。每个进程都提供执行程序所需的所有资源，都有一个虚拟的地址空间、可执行的代码、操作系统的接口、安全的上下文（记录启动该进程的用户和权限等等）、唯一的进程ID、环境变量、优先级类、最小和最大的工作空间（内存空间）。进程可以包含线程，并且每个进程必须有至少一个线程。每个进程启动时都会最先产生一个线程，即主线程，然后主线程会再创建其他的子线程。&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="python" scheme="http://yoursite.com/tags/python/"/>
+    
+      <category term="thread" scheme="http://yoursite.com/tags/thread/"/>
+    
+  </entry>
   
   <entry>
     <title>金字塔原理</title>
