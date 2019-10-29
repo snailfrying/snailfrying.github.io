@@ -213,9 +213,9 @@
     
     
     
-      <category term="hive" scheme="http://yoursite.com/tags/hive/"/>
-    
       <category term="sql" scheme="http://yoursite.com/tags/sql/"/>
+    
+      <category term="hive" scheme="http://yoursite.com/tags/hive/"/>
     
   </entry>
   
@@ -239,11 +239,11 @@
     
     
     
-      <category term="sql" scheme="http://yoursite.com/tags/sql/"/>
-    
       <category term="Optimization" scheme="http://yoursite.com/tags/Optimization/"/>
     
       <category term="db2" scheme="http://yoursite.com/tags/db2/"/>
+    
+      <category term="sql" scheme="http://yoursite.com/tags/sql/"/>
     
   </entry>
   
