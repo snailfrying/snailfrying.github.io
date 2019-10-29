@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-10-29T12:14:49.692Z</updated>
+  <updated>2019-10-29T12:16:21.093Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://yoursite.com/2019/10/29/%E5%8D%8F%E7%A8%8B%E4%B8%8E%E5%BC%82%E6%AD%A5I-O/"/>
     <id>http://yoursite.com/2019/10/29/协程与异步I-O/</id>
     <published>2019-10-29T09:07:09.000Z</published>
-    <updated>2019-10-29T12:14:49.692Z</updated>
+    <updated>2019-10-29T12:16:21.093Z</updated>
     
     <summary type="html">
     
@@ -32,8 +32,6 @@
     
     </summary>
     
-    
-      <category term="Python" scheme="http://yoursite.com/categories/Python/"/>
     
     
       <category term="python" scheme="http://yoursite.com/tags/python/"/>
@@ -47,7 +45,7 @@
     <link href="http://yoursite.com/2019/10/29/python-thread-%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5%E4%B8%8E%E6%96%B9%E6%B3%95/"/>
     <id>http://yoursite.com/2019/10/29/python-thread-基础概念与方法/</id>
     <published>2019-10-29T08:10:46.000Z</published>
-    <updated>2019-10-29T12:14:27.552Z</updated>
+    <updated>2019-10-29T12:16:21.092Z</updated>
     
     <summary type="html">
     
@@ -103,8 +101,6 @@
     </summary>
     
     
-      <category term="Python" scheme="http://yoursite.com/categories/Python/"/>
-    
     
       <category term="-- thread" scheme="http://yoursite.com/tags/thread/"/>
     
@@ -139,13 +135,34 @@
     <link href="http://yoursite.com/2019/10/28/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86/"/>
     <id>http://yoursite.com/2019/10/28/金字塔原理/</id>
     <published>2019-10-28T12:43:53.000Z</published>
-    <updated>2019-10-29T12:14:36.718Z</updated>
+    <updated>2019-10-29T12:16:21.093Z</updated>
     
     <summary type="html">
     
       &lt;hr&gt;
 &lt;h1 id=&quot;《金字塔原理》读书笔记&quot;&gt;&lt;a href=&quot;#《金字塔原理》读书笔记&quot; class=&quot;headerlink&quot; title=&quot;《金字塔原理》读书笔记&quot;&gt;&lt;/a&gt;《金字塔原理》读书笔记&lt;/h1&gt;&lt;p&gt;附：&lt;a href=&quot;http://byteliu.com/PDF/金字塔原理.pdf&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;金字塔原理.pdf&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;工作的时候，特别是搞技术的同学，我们通常会有一种感觉，“表达” 比 “做” 难。有时候明明做得挺好的一件事情，表达出来却不是那么回事情，特别是当转正、晋升述职的时候，都不知道怎么来组织自己的思路。平时在和同事、Partner沟通的时候，需要沟通好一会才能把事情说清楚。 如何整理自己的思维逻辑，表达自己想表达的内容；如何能让对方看懂、听明白、记住我们想表达的；如何让对方顺着我们的思路一起思考。这是门很深的学问。 但其实有一些普世方法，在我们初中、高中的语文课上就学习过。其中，有个鼎鼎有名的原理：“金字塔原理”。&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="随笔" scheme="http://yoursite.com/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Nonviolent Communication</title>
+    <link href="http://yoursite.com/2019/10/28/Nonviolent-Communication/"/>
+    <id>http://yoursite.com/2019/10/28/Nonviolent-Communication/</id>
+    <published>2019-10-28T12:31:46.000Z</published>
+    <updated>2019-10-29T12:22:16.061Z</updated>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+&lt;h1 id=&quot;非暴力沟通总结笔记&quot;&gt;&lt;a href=&quot;#非暴力沟通总结笔记&quot; class=&quot;headerlink&quot; title=&quot;非暴力沟通总结笔记&quot;&gt;&lt;/a&gt;非暴力沟通总结笔记&lt;/h1&gt;&lt;h3 id=&quot;一、什么是非暴力沟通&quot;&gt;&lt;a href=&quot;#一、什么是非暴力沟通&quot; class=&quot;headerlink&quot; title=&quot;一、什么是非暴力沟通&quot;&gt;&lt;/a&gt;&lt;strong&gt;一、什么是非暴力沟通&lt;/strong&gt;&lt;/h3&gt;&lt;p&gt;非暴力沟通是指提我们要专注于彼此的观察、感受、需要和请求，通过转变谈话和聆听的方式，化解人际间的冲突，获得爱和幸福。非暴力意味着让爱融入生活。让尊重、理解、欣赏、感激、慈悲和友情，而非自私自利、贪婪、憎恨、偏见、怀疑和敌意，来主导生活。&lt;/p&gt;
+&lt;h3 id=&quot;二、非暴力沟通的作用&quot;&gt;&lt;a href=&quot;#二、非暴力沟通的作用&quot; class=&quot;headerlink&quot; title=&quot;二、非暴力沟通的作用&quot;&gt;&lt;/a&gt;&lt;strong&gt;二、非暴力沟通的作用&lt;/strong&gt;&lt;/h3&gt;&lt;p&gt;非暴力沟通能够治疗内心深处的隐秘伤痛，超越个人心智和情感的局限性，突破那些引发愤怒、沮丧、焦虑等负面情绪的思维方式，用不带伤害的方式化解人际间的冲突，学会建立和谐的生命体验。&lt;/p&gt;
     
     </summary>
     
@@ -158,32 +175,11 @@
   </entry>
   
   <entry>
-    <title>Nonviolent Communication</title>
-    <link href="http://yoursite.com/2019/10/28/Nonviolent-Communication/"/>
-    <id>http://yoursite.com/2019/10/28/Nonviolent-Communication/</id>
-    <published>2019-10-28T12:31:46.000Z</published>
-    <updated>2019-10-29T11:30:32.112Z</updated>
-    
-    <summary type="html">
-    
-      &lt;hr&gt;
-&lt;h1 id=&quot;非暴力沟通总结笔记&quot;&gt;&lt;a href=&quot;#非暴力沟通总结笔记&quot; class=&quot;headerlink&quot; title=&quot;非暴力沟通总结笔记&quot;&gt;&lt;/a&gt;非暴力沟通总结笔记&lt;/h1&gt;&lt;h3 id=&quot;一、什么是非暴力沟通&quot;&gt;&lt;a href=&quot;#一、什么是非暴力沟通&quot; class=&quot;headerlink&quot; title=&quot;一、什么是非暴力沟通&quot;&gt;&lt;/a&gt;&lt;strong&gt;一、什么是非暴力沟通&lt;/strong&gt;&lt;/h3&gt;&lt;p&gt;非暴力沟通是指提我们要专注于彼此的观察、感受、需要和请求，通过转变谈话和聆听的方式，化解人际间的冲突，获得爱和幸福。非暴力意味着让爱融入生活。让尊重、理解、欣赏、感激、慈悲和友情，而非自私自利、贪婪、憎恨、偏见、怀疑和敌意，来主导生活。&lt;/p&gt;
-&lt;h3 id=&quot;二、非暴力沟通的作用&quot;&gt;&lt;a href=&quot;#二、非暴力沟通的作用&quot; class=&quot;headerlink&quot; title=&quot;二、非暴力沟通的作用&quot;&gt;&lt;/a&gt;&lt;strong&gt;二、非暴力沟通的作用&lt;/strong&gt;&lt;/h3&gt;&lt;p&gt;非暴力沟通能够治疗内心深处的隐秘伤痛，超越个人心智和情感的局限性，突破那些引发愤怒、沮丧、焦虑等负面情绪的思维方式，用不带伤害的方式化解人际间的冲突，学会建立和谐的生命体验。&lt;/p&gt;
-    
-    </summary>
-    
-    
-    
-      <category term="随笔" scheme="http://yoursite.com/tags/%E9%9A%8F%E7%AC%94/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Comprehensive-Python-Cheatsheet</title>
     <link href="http://yoursite.com/2019/10/27/Comprehensive-Python-Cheatsheet/"/>
     <id>http://yoursite.com/2019/10/27/Comprehensive-Python-Cheatsheet/</id>
     <published>2019-10-27T14:30:20.000Z</published>
-    <updated>2019-10-29T12:14:57.530Z</updated>
+    <updated>2019-10-29T12:16:21.094Z</updated>
     
     <summary type="html">
     
@@ -193,8 +189,6 @@
     
     </summary>
     
-    
-      <category term="Python" scheme="http://yoursite.com/categories/Python/"/>
     
     
       <category term="python" scheme="http://yoursite.com/tags/python/"/>
@@ -206,7 +200,7 @@
     <link href="http://yoursite.com/2019/10/15/Hive-SQL-%E7%BC%96%E8%AF%91%E8%BF%87%E7%A8%8B/"/>
     <id>http://yoursite.com/2019/10/15/Hive-SQL-编译过程/</id>
     <published>2019-10-15T11:31:48.000Z</published>
-    <updated>2019-10-29T12:15:39.090Z</updated>
+    <updated>2019-10-29T12:16:21.093Z</updated>
     
     <summary type="html">
     
@@ -220,8 +214,6 @@
     </summary>
     
     
-      <category term="Database" scheme="http://yoursite.com/categories/Database/"/>
-    
     
       <category term="sql" scheme="http://yoursite.com/tags/sql/"/>
     
@@ -234,7 +226,7 @@
     <link href="http://yoursite.com/2019/10/14/DB2-performance-Optimization/"/>
     <id>http://yoursite.com/2019/10/14/DB2-performance-Optimization/</id>
     <published>2019-10-14T02:02:52.000Z</published>
-    <updated>2019-10-29T12:15:47.254Z</updated>
+    <updated>2019-10-29T12:16:21.094Z</updated>
     
     <summary type="html">
     
@@ -247,8 +239,6 @@
     
     </summary>
     
-    
-      <category term="Database" scheme="http://yoursite.com/categories/Database/"/>
     
     
       <category term="Optimization" scheme="http://yoursite.com/tags/Optimization/"/>
@@ -281,7 +271,7 @@
     <link href="http://yoursite.com/2019/10/07/snaillife/"/>
     <id>http://yoursite.com/2019/10/07/snaillife/</id>
     <published>2019-10-07T07:59:43.000Z</published>
-    <updated>2019-10-29T12:15:58.848Z</updated>
+    <updated>2019-10-29T12:21:26.611Z</updated>
     
     <summary type="html">
     
@@ -293,7 +283,8 @@
 &lt;blockquote class=&quot;blockquote-center&quot;&gt;&lt;p&gt;&lt;font face=&quot;微软雅黑&quot; color=&quot;#339933&quot; text-align=&quot;center&quot; font-size=&quot;24&quot;&gt;有梦才有远方&lt;/font&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;font face=&quot;微软雅黑&quot; color=&quot;#FF0000&quot; style=&quot;background-color:#9999999;&quot;&gt;     雪夜茫茫，你知道一棵小草的梦吗？寒冷孤寂中，她怀抱一个信念取暖，等到村归大地时，她就会以两片绿叶问候春天，而那两片绿叶，就是曾经在雪地下轻轻地梦呓。&lt;/font&gt;&lt;br&gt;&lt;font face=&quot;微软雅黑&quot; color=&quot;#FF7F00&quot; style=&quot;background-color:#9999999;&quot;&gt; &amp;gt;     候鸟南飞，征途迢迢，他的梦呢?在远方，在视野里，那是南方湛蓝的大海。她很累很累，但依然往前奋飞。因为梦又赐予她另一对翅膀。&lt;/font&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;font face=&quot;微软雅黑&quot; color=&quot;#FF0000&quot; style=&quot;background-color:#9999999;&quot;&gt;&amp;gt;    雪夜茫茫，你知道一棵小草的梦吗？寒冷孤寂中，她怀抱一个信念取暖，等到村归大地时，她就会以两片绿叶问候春天，而那两片绿叶，就是曾经在雪地下轻轻地梦呓。&lt;/font&gt;&lt;br&gt;&lt;font face=&quot;微软雅黑&quot; color=&quot;#FF7F00&quot; style=&quot;background-color:#9999999;&quot;&gt; &amp;gt;     候鸟南飞，征途迢迢，他的梦呢?在远方，在视野里，那是南方湛蓝的大海。她很累很累，但依然往前奋飞。因为梦又赐予她另一对翅膀。&lt;/font&gt;&lt;/p&gt;
     
     </summary>
     
@@ -314,7 +305,7 @@
     <link href="http://yoursite.com/2019/10/07/hello-world/"/>
     <id>http://yoursite.com/2019/10/07/hello-world/</id>
     <published>2019-10-07T07:58:25.425Z</published>
-    <updated>2019-10-29T12:15:20.382Z</updated>
+    <updated>2019-10-29T12:16:21.092Z</updated>
     
     <summary type="html">
     
@@ -323,8 +314,6 @@
     
     </summary>
     
-    
-      <category term="Hexo" scheme="http://yoursite.com/categories/Hexo/"/>
     
     
       <category term="markdown" scheme="http://yoursite.com/tags/markdown/"/>
