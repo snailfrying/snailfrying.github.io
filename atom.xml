@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-10-29T11:28:42.066Z</updated>
+  <updated>2019-10-29T11:30:32.112Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://yoursite.com/2019/10/29/%E5%8D%8F%E7%A8%8B%E4%B8%8E%E5%BC%82%E6%AD%A5I-O/"/>
     <id>http://yoursite.com/2019/10/29/协程与异步I-O/</id>
     <published>2019-10-29T09:07:09.000Z</published>
-    <updated>2019-10-29T11:28:42.066Z</updated>
+    <updated>2019-10-29T11:30:32.112Z</updated>
     
     <summary type="html">
     
@@ -32,8 +32,6 @@
     
     </summary>
     
-    
-      <category term="Python" scheme="http://yoursite.com/categories/Python/"/>
     
     
       <category term="python" scheme="http://yoursite.com/tags/python/"/>
@@ -47,7 +45,7 @@
     <link href="http://yoursite.com/2019/10/29/python-thread-%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5%E4%B8%8E%E6%96%B9%E6%B3%95/"/>
     <id>http://yoursite.com/2019/10/29/python-thread-基础概念与方法/</id>
     <published>2019-10-29T08:10:46.000Z</published>
-    <updated>2019-10-29T11:29:33.782Z</updated>
+    <updated>2019-10-29T11:30:32.112Z</updated>
     
     <summary type="html">
     
@@ -103,8 +101,6 @@
     </summary>
     
     
-      <category term="Python" scheme="http://yoursite.com/categories/Python/"/>
-    
     
       <category term="-- thread" scheme="http://yoursite.com/tags/thread/"/>
     
@@ -139,7 +135,7 @@
     <link href="http://yoursite.com/2019/10/28/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86/"/>
     <id>http://yoursite.com/2019/10/28/金字塔原理/</id>
     <published>2019-10-28T12:43:53.000Z</published>
-    <updated>2019-10-29T11:28:27.284Z</updated>
+    <updated>2019-10-29T11:30:32.113Z</updated>
     
     <summary type="html">
     
@@ -149,10 +145,6 @@
     
     </summary>
     
-    
-      <category term="随笔" scheme="http://yoursite.com/categories/%E9%9A%8F%E7%AC%94/"/>
-    
-      <category term="逻辑思维" scheme="http://yoursite.com/categories/%E9%9A%8F%E7%AC%94/%E9%80%BB%E8%BE%91%E6%80%9D%E7%BB%B4/"/>
     
     
       <category term="随笔" scheme="http://yoursite.com/tags/%E9%9A%8F%E7%AC%94/"/>
@@ -164,7 +156,7 @@
     <link href="http://yoursite.com/2019/10/28/Nonviolent-Communication/"/>
     <id>http://yoursite.com/2019/10/28/Nonviolent-Communication/</id>
     <published>2019-10-28T12:31:46.000Z</published>
-    <updated>2019-10-29T11:29:14.509Z</updated>
+    <updated>2019-10-29T11:30:32.112Z</updated>
     
     <summary type="html">
     
@@ -174,8 +166,6 @@
     
     </summary>
     
-    
-      <category term="心理学" scheme="http://yoursite.com/categories/%E5%BF%83%E7%90%86%E5%AD%A6/"/>
     
     
       <category term="随笔" scheme="http://yoursite.com/tags/%E9%9A%8F%E7%AC%94/"/>
@@ -187,7 +177,7 @@
     <link href="http://yoursite.com/2019/10/27/Comprehensive-Python-Cheatsheet/"/>
     <id>http://yoursite.com/2019/10/27/Comprehensive-Python-Cheatsheet/</id>
     <published>2019-10-27T14:30:20.000Z</published>
-    <updated>2019-10-29T11:30:06.156Z</updated>
+    <updated>2019-10-29T11:30:32.114Z</updated>
     
     <summary type="html">
     
@@ -197,8 +187,6 @@
     
     </summary>
     
-    
-      <category term="python" scheme="http://yoursite.com/categories/python/"/>
     
     
       <category term="python" scheme="http://yoursite.com/tags/python/"/>
@@ -210,7 +198,7 @@
     <link href="http://yoursite.com/2019/10/15/Hive-SQL-%E7%BC%96%E8%AF%91%E8%BF%87%E7%A8%8B/"/>
     <id>http://yoursite.com/2019/10/15/Hive-SQL-编译过程/</id>
     <published>2019-10-15T11:31:48.000Z</published>
-    <updated>2019-10-29T11:29:00.894Z</updated>
+    <updated>2019-10-29T11:30:32.114Z</updated>
     
     <summary type="html">
     
@@ -224,12 +212,10 @@
     </summary>
     
     
-      <category term="database" scheme="http://yoursite.com/categories/database/"/>
-    
-    
-      <category term="sql" scheme="http://yoursite.com/tags/sql/"/>
     
       <category term="hive" scheme="http://yoursite.com/tags/hive/"/>
+    
+      <category term="sql" scheme="http://yoursite.com/tags/sql/"/>
     
   </entry>
   
@@ -238,7 +224,7 @@
     <link href="http://yoursite.com/2019/10/14/DB2-performance-Optimization/"/>
     <id>http://yoursite.com/2019/10/14/DB2-performance-Optimization/</id>
     <published>2019-10-14T02:02:52.000Z</published>
-    <updated>2019-10-29T11:28:52.891Z</updated>
+    <updated>2019-10-29T11:30:32.114Z</updated>
     
     <summary type="html">
     
@@ -252,14 +238,12 @@
     </summary>
     
     
-      <category term="database" scheme="http://yoursite.com/categories/database/"/>
     
+      <category term="sql" scheme="http://yoursite.com/tags/sql/"/>
     
       <category term="Optimization" scheme="http://yoursite.com/tags/Optimization/"/>
     
       <category term="db2" scheme="http://yoursite.com/tags/db2/"/>
-    
-      <category term="sql" scheme="http://yoursite.com/tags/sql/"/>
     
   </entry>
   
@@ -268,14 +252,12 @@
     <link href="http://yoursite.com/2019/10/07/mxLibraryLog/"/>
     <id>http://yoursite.com/2019/10/07/mxLibraryLog/</id>
     <published>2019-10-07T08:37:10.000Z</published>
-    <updated>2019-10-29T11:25:53.740Z</updated>
+    <updated>2019-10-29T11:30:32.112Z</updated>
     
     <summary type="html">
     
     </summary>
     
-    
-      <category term="dream" scheme="http://yoursite.com/categories/dream/"/>
     
     
       <category term="self-study" scheme="http://yoursite.com/tags/self-study/"/>
@@ -287,7 +269,7 @@
     <link href="http://yoursite.com/2019/10/07/snaillife/"/>
     <id>http://yoursite.com/2019/10/07/snaillife/</id>
     <published>2019-10-07T07:59:43.000Z</published>
-    <updated>2019-10-29T11:30:17.892Z</updated>
+    <updated>2019-10-29T11:30:32.112Z</updated>
     
     <summary type="html">
     
@@ -303,8 +285,6 @@
     
     </summary>
     
-    
-      <category term="随笔" scheme="http://yoursite.com/categories/%E9%9A%8F%E7%AC%94/"/>
     
     
       <category term="梦想" scheme="http://yoursite.com/tags/%E6%A2%A6%E6%83%B3/"/>
