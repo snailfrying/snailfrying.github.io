@@ -114,7 +114,7 @@
 
 
 
-  <meta name="keywords" content="随笔,">
+  <meta name="keywords" content="python,thread,">
 
 
 
@@ -127,18 +127,18 @@
 
 
 
-<meta name="description" content="非暴力沟通总结笔记一、什么是非暴力沟通非暴力沟通是指提我们要专注于彼此的观察、感受、需要和请求，通过转变谈话和聆听的方式，化解人际间的冲突，获得爱和幸福。非暴力意味着让爱融入生活。让尊重、理解、欣赏、感激、慈悲和友情，而非自私自利、贪婪、憎恨、偏见、怀疑和敌意，来主导生活。 二、非暴力沟通的作用非暴力沟通能够治疗内心深处的隐秘伤痛，超越个人心智和情感的局限性，突破那些引发愤怒、沮丧、焦虑等负面情">
-<meta name="keywords" content="随笔">
+<meta name="description" content="原链接 通常在Python中我们进行并发编程一般都是使用多线程或者多进程来实现的，对于CPU计算密集型任务由于GIL的存在通常使用多进程来实现，而对于IO密集型任务可以通过线程调度来让线程在执行IO任务时让出GIL，从而实现表面上的并发。 其实对于IO密集型任务我们还有一种选择就是协程。协程，又称微线程，英文名Coroutine，是运行在单线程中的“并发”，协程相比多线程的一大优势就是省去了多线">
+<meta name="keywords" content="python,thread">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Nonviolent Communication">
-<meta property="og:url" content="http://yoursite.com/2019/10/28/Nonviolent-Communication/index.html">
+<meta property="og:title" content="协程与异步I&#x2F;O">
+<meta property="og:url" content="http://yoursite.com/2019/10/29/协程与异步I-O/index.html">
 <meta property="og:site_name" content="Snail Life">
-<meta property="og:description" content="非暴力沟通总结笔记一、什么是非暴力沟通非暴力沟通是指提我们要专注于彼此的观察、感受、需要和请求，通过转变谈话和聆听的方式，化解人际间的冲突，获得爱和幸福。非暴力意味着让爱融入生活。让尊重、理解、欣赏、感激、慈悲和友情，而非自私自利、贪婪、憎恨、偏见、怀疑和敌意，来主导生活。 二、非暴力沟通的作用非暴力沟通能够治疗内心深处的隐秘伤痛，超越个人心智和情感的局限性，突破那些引发愤怒、沮丧、焦虑等负面情">
+<meta property="og:description" content="原链接 通常在Python中我们进行并发编程一般都是使用多线程或者多进程来实现的，对于CPU计算密集型任务由于GIL的存在通常使用多进程来实现，而对于IO密集型任务可以通过线程调度来让线程在执行IO任务时让出GIL，从而实现表面上的并发。 其实对于IO密集型任务我们还有一种选择就是协程。协程，又称微线程，英文名Coroutine，是运行在单线程中的“并发”，协程相比多线程的一大优势就是省去了多线">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-10-28T12:49:24.800Z">
+<meta property="og:updated_time" content="2019-10-29T09:09:48.913Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Nonviolent Communication">
-<meta name="twitter:description" content="非暴力沟通总结笔记一、什么是非暴力沟通非暴力沟通是指提我们要专注于彼此的观察、感受、需要和请求，通过转变谈话和聆听的方式，化解人际间的冲突，获得爱和幸福。非暴力意味着让爱融入生活。让尊重、理解、欣赏、感激、慈悲和友情，而非自私自利、贪婪、憎恨、偏见、怀疑和敌意，来主导生活。 二、非暴力沟通的作用非暴力沟通能够治疗内心深处的隐秘伤痛，超越个人心智和情感的局限性，突破那些引发愤怒、沮丧、焦虑等负面情">
+<meta name="twitter:title" content="协程与异步I&#x2F;O">
+<meta name="twitter:description" content="原链接 通常在Python中我们进行并发编程一般都是使用多线程或者多进程来实现的，对于CPU计算密集型任务由于GIL的存在通常使用多进程来实现，而对于IO密集型任务可以通过线程调度来让线程在执行IO任务时让出GIL，从而实现表面上的并发。 其实对于IO密集型任务我们还有一种选择就是协程。协程，又称微线程，英文名Coroutine，是运行在单线程中的“并发”，协程相比多线程的一大优势就是省去了多线">
 
 
 
@@ -168,13 +168,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/10/28/Nonviolent-Communication/">
+  <link rel="canonical" href="http://yoursite.com/2019/10/29/协程与异步I-O/">
 
 
 
 
 
-  <title>Nonviolent Communication | Snail Life</title>
+  <title>协程与异步I/O | Snail Life</title>
   
 
 
@@ -333,7 +333,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/28/Nonviolent-Communication/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/29/协程与异步I-O/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="snail json">
@@ -350,7 +350,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Nonviolent Communication</h1>
+          <h1 class="post-title" itemprop="name headline">协程与异步I/O</h1>
         
 
         <div class="post-meta">
@@ -362,8 +362,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-10-28T20:31:46+08:00">
-                2019-10-28
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-10-29T17:07:09+08:00">
+                2019-10-29
               </time>
             
 
@@ -381,8 +381,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/10/28/Nonviolent-Communication/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/10/28/Nonviolent-Communication/" itemprop="commentCount"></span>
+                <a href="/2019/10/29/协程与异步I-O/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/10/29/协程与异步I-O/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -390,7 +390,7 @@
 
           
           
-             <span id="/2019/10/28/Nonviolent-Communication/" class="leancloud_visitors" data-flag-title="Nonviolent Communication">
+             <span id="/2019/10/29/协程与异步I-O/" class="leancloud_visitors" data-flag-title="协程与异步I/O">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -416,7 +416,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  5.8k
+                  2.6k
                 </span>
               
 
@@ -432,7 +432,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  19
+                  10
                 </span>
               
             </div>
@@ -454,172 +454,81 @@
 
       
         <hr>
-<h1 id="非暴力沟通总结笔记"><a href="#非暴力沟通总结笔记" class="headerlink" title="非暴力沟通总结笔记"></a>非暴力沟通总结笔记</h1><h3 id="一、什么是非暴力沟通"><a href="#一、什么是非暴力沟通" class="headerlink" title="一、什么是非暴力沟通"></a><strong>一、什么是非暴力沟通</strong></h3><p>非暴力沟通是指提我们要专注于彼此的观察、感受、需要和请求，通过转变谈话和聆听的方式，化解人际间的冲突，获得爱和幸福。非暴力意味着让爱融入生活。让尊重、理解、欣赏、感激、慈悲和友情，而非自私自利、贪婪、憎恨、偏见、怀疑和敌意，来主导生活。</p>
-<h3 id="二、非暴力沟通的作用"><a href="#二、非暴力沟通的作用" class="headerlink" title="二、非暴力沟通的作用"></a><strong>二、非暴力沟通的作用</strong></h3><p>非暴力沟通能够治疗内心深处的隐秘伤痛，超越个人心智和情感的局限性，突破那些引发愤怒、沮丧、焦虑等负面情绪的思维方式，用不带伤害的方式化解人际间的冲突，学会建立和谐的生命体验。</p>
+<p><a href="http://www.liujiangblog.com/course/python/83" target="_blank" rel="noopener">原链接</a></p>
+<p>通常在Python中我们进行并发编程一般都是使用多线程或者多进程来实现的，对于CPU计算密集型任务由于GIL的存在通常使用多进程来实现，而对于IO密集型任务可以通过线程调度来让线程在执行IO任务时让出GIL，从而实现表面上的并发。</p>
+<p>其实对于IO密集型任务我们还有一种选择就是协程。<strong>协程，又称微线程，英文名Coroutine</strong>，是运行在单线程中的“并发”，协程相比多线程的一大优势就是省去了多线程之间的切换开销，获得了更高的运行效率。Python中的异步IO模块asyncio就是基本的协程模块。</p>
 <a id="more"></a>
-<p>非暴力沟通指导我们转变谈话和聆听的方式。我们不再条件反射地反应，而是去明了自己的观察、感受和愿望，有意识地使用语言。我们既诚实、清晰地表达自己，又尊重与倾听他人。这样，在每一次互动中我们都能聆听到自己和他人心灵深处的呼声。同时，它还促使我们仔细的观察，发现正影响我们的行为和事件，并提出明确的请求。</p>
-<p>非暴力沟通提醒我们专注于彼此的观察、感受、需要和请求。它鼓励倾听，培育尊重与爱，使我们情意相通，乐于互助。有些人使用非暴力沟通理解自己，有些人用它改善人际关系，还有人借助它改进工作。在世界各地，非暴力沟通被用来协调各大个层面的争论和冲突。</p>
-<p><strong>非暴力沟通运用在哪里</strong></p>
-<p><em>适用于各个层面和环境：密关系；家庭；学校；组织机构；心理疗法及精神辅导；外交和商业谈判；任何性质的争论和冲突</em></p>
-<h3 id="三、是什么蒙蔽了爱？"><a href="#三、是什么蒙蔽了爱？" class="headerlink" title="三、是什么蒙蔽了爱？"></a><strong>三、是什么蒙蔽了爱？</strong></h3><p>异化的沟通方式：有些沟通方式很难让我们体会到爱，异化的沟通方式使我们难以体会到心中的爱。首先证券就是其中的一种，它将不符合我们价值观的人看作是不道德的或邪恶的。进行比较也是一种评判，它会蒙蔽对人对己的爱意。异化的沟通方式还淡化了我们对自己的思想、情感和行为的责任意识。此外，强人所难也会造成心灵的隔阂。</p>
-<p><strong>1、道德评判</strong>  ：对他人的评价实际上反映了我们的需要和价值观，道德证券是用道德的标准来评判人，如果一个人的行为不符合我们的价值观，那他就被看作是不道德的或邪恶的</p>
-<p><strong>2、进行比较</strong>：比较也是评判的一种方式</p>
-<p><strong>3、回避责任</strong>：我们对自己的思想、情感和行动负有责任。不得不。。。、你让我。。。。</p>
-<h3 id="当我们根据以下理由行动时，我们也就试图回避责任。"><a href="#当我们根据以下理由行动时，我们也就试图回避责任。" class="headerlink" title="当我们根据以下理由行动时，我们也就试图回避责任。"></a>当我们根据以下理由行动时，我们也就试图回避责任。</h3><h3 id="当我们根据以下理由行动时，我们也就试图回避责任。-1"><a href="#当我们根据以下理由行动时，我们也就试图回避责任。-1" class="headerlink" title="当我们根据以下理由行动时，我们也就试图回避责任。"></a>当我们根据以下理由行动时，我们也就试图回避责任。</h3><h3 id="受说不清楚的力量驱使。——为什么打扫房间？——因为我不得不做。"><a href="#受说不清楚的力量驱使。——为什么打扫房间？——因为我不得不做。" class="headerlink" title="*受说不清楚的力量驱使。——为什么打扫房间？——因为我不得不做。"></a>*受说不清楚的力量驱使。——为什么打扫房间？——因为我不得不做。</h3><h3 id="我们的个人情况、成长历程、自我形象等。——为什么喝酒——因为我是个酒鬼。"><a href="#我们的个人情况、成长历程、自我形象等。——为什么喝酒——因为我是个酒鬼。" class="headerlink" title="*我们的个人情况、成长历程、自我形象等。——为什么喝酒——因为我是个酒鬼。"></a>*我们的个人情况、成长历程、自我形象等。——为什么喝酒——因为我是个酒鬼。</h3><h3 id="其他人的行为。——为什么我要打自己的小孩？——因为他跑到街上去。"><a href="#其他人的行为。——为什么我要打自己的小孩？——因为他跑到街上去。" class="headerlink" title="*其他人的行为。——为什么我要打自己的小孩？——因为他跑到街上去。"></a>*其他人的行为。——为什么我要打自己的小孩？——因为他跑到街上去。</h3><h3 id="上级的命令。——为什么欺骗顾客？——因为老板叫我这样做。"><a href="#上级的命令。——为什么欺骗顾客？——因为老板叫我这样做。" class="headerlink" title="*上级的命令。——为什么欺骗顾客？——因为老板叫我这样做。"></a>*上级的命令。——为什么欺骗顾客？——因为老板叫我这样做。</h3><h3 id="同伴的压力。——为什么抽烟？——因为我所有的朋友都抽烟。"><a href="#同伴的压力。——为什么抽烟？——因为我所有的朋友都抽烟。" class="headerlink" title="*同伴的压力。——为什么抽烟？——因为我所有的朋友都抽烟。"></a>*同伴的压力。——为什么抽烟？——因为我所有的朋友都抽烟。</h3><h3 id="机构的规章制度及政策。——为什么我要将你停职？——因为你违规了。根据学校规定，我必须这么做。"><a href="#机构的规章制度及政策。——为什么我要将你停职？——因为你违规了。根据学校规定，我必须这么做。" class="headerlink" title="*机构的规章制度及政策。——为什么我要将你停职？——因为你违规了。根据学校规定，我必须这么做。"></a>*机构的规章制度及政策。——为什么我要将你停职？——因为你违规了。根据学校规定，我必须这么做。</h3><h3 id="性别角色、社会角色或年龄角色。——为什么我必须做我讨厌的工作？——因为我不仅是一个丈夫，而且还是一个父亲。"><a href="#性别角色、社会角色或年龄角色。——为什么我必须做我讨厌的工作？——因为我不仅是一个丈夫，而且还是一个父亲。" class="headerlink" title="*性别角色、社会角色或年龄角色。——为什么我必须做我讨厌的工作？——因为我不仅是一个丈夫，而且还是一个父亲。"></a>*性别角色、社会角色或年龄角色。——为什么我必须做我讨厌的工作？——因为我不仅是一个丈夫，而且还是一个父亲。</h3><p><strong>4、强人所难</strong>：我们对别人的要求往往暗含着威胁：如果不配合，他们就会受到惩罚。有些行为值得奖励，而另一些行为必须受罚。</p>
-<p><strong>暴力的根源</strong></p>
-<p>暴力的根源在于人们忽视彼此的感受与需要，而将冲突归咎于对方</p>
-<h3 id="五、非暴力沟通四要素"><a href="#五、非暴力沟通四要素" class="headerlink" title="五、非暴力沟通四要素"></a><strong>五、非暴力沟通四要素</strong></h3><p><strong>1、观察</strong>（清楚地表达观察结果，而不判断或评估）</p>
-<p><strong>2、感受</strong>：注意区分感受和想法（表达感受，例如受伤、害怕、喜悦、开心、气愤等等）</p>
-<p>​     表达想法的词：被抛弃、被羞辱、被虐待、被打扰、被拒绝、不受重视、被束缚、被欺负、无人理解、得不到支持、无人赏识、被利用、被贬低</p>
-<p>1、表达需要被满足时的感受词汇（兴奋，喜悦，欣喜，甜蜜，精力充沛，兴高采烈，感激，感动，乐观，自信，振作，振奋，开心，高兴，快乐，愉快，幸福，陶醉，满足，欣慰，心旷神怡，喜出望外，平静，自在，舒适，放松，踏实，安全，温暖，放心，无忧无虑……</p>
-<p>2、表达需要没有满足时的感受词汇（害怕，担心，焦虑，忧虑，着急，紧张，心神不宁，心烦意乱，忧伤，沮丧，灰心，气馁，泄气，绝望，伤感，凄凉，悲伤，恼怒，愤怒，烦恼，苦恼，生气，厌烦，不满，不快，不耐烦，不高兴，震惊，失望，困惑，茫然，寂寞，孤独，郁闷，难过，悲观，沉重，麻木，精疲力尽，萎靡不振，疲惫不堪，昏昏欲睡，无精打采，尴尬，惭愧，妒忌，遗憾，不舒服……</p>
-<p><strong>3、需要</strong>（哪些需要导致那样的感受）</p>
-<p><strong>4、请求</strong>：为了改善生活，我的请求是什么</p>
-<p>1、提出具体的请求</p>
-<p>清楚地告诉对方，我们希望他们做什么，我们提出的请求越具体越好。如果我们的意思含糊不清，别人就难了解我们到底想要什么</p>
-<p>2、明确谈话的目的</p>
-<p>我们期待的是如实的反馈——我们想了解他人的真实想法。当然，有时我们希望他人采取某种行动。对自己的认识越深刻，表达越清楚，我们就越可能得到称心的回应。</p>
-<p>3、请求反馈</p>
-<p>我们的意思和别人的理解有时可能是两回事。如果无法确实对方是否已经明白，我们可能就需要得到反馈</p>
-<h3 id="区分观察和评论"><a href="#区分观察和评论" class="headerlink" title="区分观察和评论"></a><strong>区分观察和评论</strong></h3><p>不区分观察和评论，人们将倾向于听到批评。非暴力沟通的第一个要素是观察。我们仔细观察正在发生的事情，并清楚地说出观察结果。非暴力沟通不鼓励绝对化的评论，而主张评论要基于特定时间和环境中的观察。</p>
-<p>注意：“每次”“曾”等词语在以下句子中表达的是观察结果</p>
-<p>“总是”、“从不”等词语在以下句子中表达的是评论。</p>
-<p>如果我们的表达言过其实，别人就可能产生逆反心理，而不愿做出友善的回应。</p>
-<h3 id="体会和表达感受"><a href="#体会和表达感受" class="headerlink" title="体会和表达感受"></a><strong>体会和表达感受</strong></h3><p>你越是留意自己内心的声音，就越能听到别人的声音。区分感受与想法，用具体的语言如实陈述自己的感受。</p>
-<p>示弱（陈述感受）有助于解决冲突</p>
-<p><strong>非暴力沟通的第二个要素是感受</strong>：</p>
-<p>在非暴力沟通中，我们注意区分感受和想法。当我们说“我觉得”，我们常常并不是在表达感受，而是在表达想法。“我觉得”换成“我认为”也许更恰当。</p>
-<p>还有一些词表达的是想法，而非感受。例如：被抛弃、被羞辱、被虐待、被打扰、被拒绝、不受重视、被束缚、被欺负、无人理解、得不到支持、无人赏识、被利用、被贬低</p>
-<p>建立表达感受的词汇表;非暴力沟通主张使用具体的语言</p>
-<p>1）下列词语可用来表达我们的需要得到满足时的感受：</p>
-<p>兴奋，喜悦，欣喜，甜蜜，精力充沛，兴高采烈，感激，感动，乐观，自信，振作，振奋，开心，高兴，快乐，愉快，幸福，陶醉，满足，欣慰，心旷神怡，喜出望外，平静，自在，舒适，放松，踏实，安全，温暖，放心，无忧无虑……</p>
-<p>2）下列词语可用来表达我们的需要没有得到满足时的感受：</p>
-<p>害怕，担心，焦虑，忧虑，着急，紧张，心神不宁，心烦意乱，忧伤，沮丧，灰心，气馁，泄气，绝望，伤感，凄凉，悲伤，恼怒，愤怒，烦恼，苦恼，生气，厌烦，不满，不快，不耐烦，不高兴，震惊，失望，困惑，茫然，寂寞，孤独，郁闷，难过，悲观，沉重，麻木，精疲力尽，萎靡不振，疲惫不堪，昏昏欲睡，无精打采，尴尬，惭愧，妒忌，遗憾，不舒服……</p>
-<p><strong>感受的根源</strong></p>
-<p>别人的行为可能会刺激我们，但并不是我们感受的根源。感受的根源在于自身，是我们的需要和期待以及对他人言行的看法，导致了我们的感受。可以用“我（感到）……因为我……”句式来认识感受与自身的关系。</p>
-<p>听到不中听的话的四种选择：责备自己，指责他人，体会自己的感受和需要，体会他人的感受和需要。批评往往暗含着期待。对他人的批评实际上间接表达了我们尚未满足的需要。做生活的主人——我们对自己的意愿、感受和行动负完全的责任。</p>
-<p>听到不中听的话：四种选择</p>
-<p>第一种是认为自己犯了猎</p>
-<p>第二种是指责对方</p>
-<p>第三种是了解我们的感受和需要</p>
-<p>第四种是用心体会他人的感受和需要</p>
-<p>通过了解我们的需要、愿望、期待以及想法，我们不再指责他人，而承认我们的感受源于自身。</p>
-<p>使用以下表达方式时，我们可能就已经忽视了感受与自身的关系</p>
-<p>1）只提及相关的事情</p>
-<p>2）2）只提及他人的行为</p>
-<p>3）3）指责他人</p>
-<p>我们可以通过“我（感到）……因为我……”这种表达方式来认识感受与自身的关系</p>
-<h4 id="非暴力沟通需要"><a href="#非暴力沟通需要" class="headerlink" title="非暴力沟通需要"></a><strong>非暴力沟通需要</strong></h4><p><strong>如果我们通过批评来提出主张，人们的反应常常是申辩或反击。反之，如果我们直接说出需要，其他人就较有可能做出积极的回应。</strong></p>
-<p>大多数人并不习惯从需要的角度来考虑问题。在不顺心时，我们倾向于考虑别人有什么错。</p>
-<p>根据我长期以来的经验，一旦人们开始谈论需要，而不指责对方，他们就有可能找到办法来满足双方的需要。以下是一些我们每个人都有的基本需要：</p>
-<p>1、自由选择：选择梦想、目标、方向，自由制定计划来实现这些梦想、目标和方向。</p>
-<p>2、庆祝：庆祝生命的创造力以及梦想的实现，纪念人生的失落、亲人的去世或梦想的破灭等（表达悲伤）</p>
-<p>3）言行不一：真诚、创造 、意义、自我肯定。</p>
-<p>4）滋养身体：空气、食物、运动，免于病毒、细菌、昆虫及肉食动物的伤害，休息、住所、触摸、水。</p>
-<p>5）玩耍：乐趣、欢笑。</p>
-<p>6）情意相通：美、和谐、激励、秩序、平静。</p>
-<p>7）相互依存：接纳、欣赏、亲密关系、社会、体贴、成长，安全感、倾听，诚实（诚实使我们能够认识和超越自己的局限性），爱、信心、尊重、支持、信任、理解。</p>
-<p><strong>从“情感的奴隶”到“生活的主人”</strong></p>
-<p>对于大多数的人来说，个人成长一般会经历三个阶段。</p>
-<p>第一阶段：“情感的奴隶”</p>
-<p>在这个阶段，我们相信自己需要为他人负责——让他们快乐是我们的义务。如果别人不高兴，我们就会感到不安，觉得自己有责任做点什么。此时，我们特别容易把亲人看作是负担</p>
-<p>第二阶段：“面目可憎</p>
-<p>为他人的情绪负责，牺牲自己迎合他人，代价实在很大。想到日子过得这么憋屈，我闪可能会很恼怒</p>
-<p>第三阶段：“生活的主人”</p>
-<p>我们乐于互助。我们帮助他人，是出于爱，而不是出于恐惧、内疚或惭愧。那是自由而快乐的行为。此时，我们意识到，虽然我们对自己的意愿、感受和行动负有完全的责任，但无法为他人负责。我们还发现，人与人相互依存，损人无法真正利己。非暴力沟通正是想帮助我们既表达自己，又关心他人。</p>
-<h4 id="请求帮助"><a href="#请求帮助" class="headerlink" title="请求帮助"></a><strong>请求帮助</strong></h4><p><strong>提出具体的请求</strong></p>
-<p>清楚地告诉对方，我们希望他们做什么</p>
-<p>我们提出的请求越具体越好。如果我们的意思含糊不清，别人就难了解我们到底想要什么</p>
-<p><strong>明确谈话的目的</strong></p>
-<p>我们期待的是如实的反馈——我们想了解他人的真实想法。当然，有时我们希望他人采取某种行动。对自己的认识越深刻，表达越清楚，我们就越可能得到称心的回应。</p>
-<p><strong>请求反馈</strong></p>
-<p>我们的意思和别人的理解有时可能是两回事。如果无法确实对方是否已经明白，我们可能就需要得到反馈</p>
-<p><strong>了解他人的反应</strong></p>
-<p>a）对方此时此刻的感受</p>
-<p>有时，我们想了解对方的感受，以及为什么他们会产生那样的感受。为此，我们也许会问：“听你说这些，你的心情怎么样？”然后，我们可以进一步问：“为什么呢？”</p>
-<p>b）对方正在想什么:有时，我们想了解对方的想法。在询问时，说清楚想了解的是哪些方面的想法，将有助于我们获得所需要的回应。例如，我们可以和对方说：“我想请你谈谈我的建议是否有可行性。如果不太可行，那根据你的判断，哪些因素会妨碍建议的实施呢？”如果我们只是问“对这个建议你有什么看法”，那么，对方谈的内容也许并不是我们关心的。</p>
-<p>c）对方是否接受我们的请求</p>
-<p>在另一些时候，我们可能想知道，对方是否愿意接受我们的请求。这时，我们也许会问：“我想知道，你是否同意将会议时间延迟一周？</p>
-<p><strong>用全身心倾听</strong></p>
-<p><strong>为了倾听他们，我们需要先放下已有的想法和判断，全神贯注地体会对方</strong></p>
-<p>●建议：“我想你应该……”</p>
-<p>●比较：“这算不了什么。你听听我的经历……”</p>
-<p>●说教：“如果你这样做……你将会得到很大的好处。”</p>
-<p>●安慰：“这不是你的错，你已经尽最大努力了。”</p>
-<p>●回忆：“这让我想起……”</p>
-<p>●同情：“哦，你这可怜的人……”</p>
-<p>●否定：“高兴一点。不要这么难过。”</p>
-<p>●询问：“这种情况是什么时候开始的？”</p>
-<p>●辩解：“我原想早点打电话给你，但昨晚……”</p>
-<p>●纠正：“事情的经过不是那样的。</p>
-<p>非暴力沟通的忧伤及自我宽恕可以激发我们对生命的爱</p>
-<p>练习</p>
-<p>用“选择做”代替“不得不”</p>
-<p>第一步</p>
-<p>在日常生活中，你觉得哪些事情没意思，却又认为自己不得不做？请将它们列在一张纸上。</p>
-<p>当我第一次审视自己的清单时，仅仅是它的长度就让我明白为什么我活得不开心。我终于意识到，有许多事情，我之所以日复一日地去做，是因为我相信那是不得不做的事情。</p>
-<p>我清单上的第一项是“写临床报告”。我讨厌写那些报告，然而，每天我至少要折磨自己一个小时。第二项则是“开车送小孩上学。”</p>
-<p>第二步</p>
-<p>列好清单后，向自己坦白：你做这些事情是因为你选择了做它们，而不是因为你不得不做。在你所列的每个项目前，加上“我选择做”。</p>
-<p>当时，我对这一步骤有些抗拒。我反复强调：“写临床报告不是我的选择！我不得不做！我是一个临床心理医生 。我不得不写这些报告。”</p>
-<p>第三步</p>
-<p>一旦承认某一行为是你的选择，就填写以下的声明来了解你为什么要那么做：“我选择做<strong>__</strong>是因为我想要<strong>__</strong>。”</p>
-<p>:深入理解我们行为的动机</p>
-<p>你在思考“我选择做<strong>__</strong>是因为我想要<strong>__</strong>”</p>
-<p>1）为了钱</p>
-<p>2）2）为了得到赞同</p>
-<p>3）3）为了逃避惩罚</p>
-<p>4）4）不感到羞愧</p>
-<p>5）5）为了避免内疚</p>
-<p>6）6）为了履行职责</p>
-<p><strong>充分表达愤怒</strong></p>
-<p>非暴力沟通并不主张忽视或压抑愤怒，它认为，通过深入地了解愤怒，我们可以充分表达内心的渴望。</p>
-<p>为什么我们会生气？</p>
-<p>充分表达愤怒的第一步是我们不再归咎于他人。如果我们认为“他让我很生气”，那么，我们难免就会指责他人。然而，实际情况是，我们心情并不取决于他人的行为。</p>
-<p>我们认为别人就当认错或受罚——我相信这就是我们生气的原因。</p>
-<p>除了专注于自身的感受和需要，我们还可以选择去体会对方的感受和需要。此时，我们也不会感到生气。我们无须压抑愤怒，只要我们专注于他人的感受和需要，愤怒也就不再存在。</p>
-<p>“合理的愤怒”？</p>
-<p>我坚信，专注于我们的需要，比评判他人是什么人更有益于生活。</p>
-<p>与其沉浸于“合理的愤怒”，不如倾听自己和他人的需要。这也许需要一个过程，但通过不断地实践，我们将会有意识地用“我生气是因为我需要……”来取代“我生气是因为他们……”。</p>
-<p>暴力的种子</p>
-<p>表达愤怒的四个步骤</p>
-<p>停下来，除了呼吸，什么也别做。我们避免采取行动去指责或惩罚对方。我们只是静静地体会自己。一想是什么想起使我们生气了</p>
-<p>为了充分地表达自己，我们现在需要张开嘴，说出我们的愤怒——怒火此时已被转化为需要以及与需要相联系的情感</p>
-<p>先倾听他人</p>
-<p>给自己时间我们需要有足够的耐心来学习和运用非暴力沟通</p>
-<p>在不顺心时，许多人已经习惯于批评和指责他人。因此，在刚开始运用非暴力沟通时，我们可以把节奏放慢些，在说话前先想一想，有时，我们甚至停下来，什么也不说</p>
-<p>运用强制力避免伤害</p>
-<p>使用强制力的目的是为了保护自己和他人，是为了避免伤害，而不是惩罚他人。</p>
-<p>如果我们威胁他人和实施惩罚，对方常常产生敌意和抵触心理，彼此的关系将会疏远。</p>
-<p>惩罚还可能使人忽视事情本身的意义，而把注意力放在不服从的后果上。</p>
-<p>体罚是最常见的惩罚，指责或否定、不给孩子好处也是一种惩罚。</p>
-<p>当你不喜欢他的行为时，请问自己两个问题：我希望他怎么做？我希望他基于什么原因做我希望他做的事情？</p>
-<p>如果冲突双方都能充分表达观察、感受、需要和请求，并得到对方的理解，那么，双方的需要通过可以同时得到满足。至少，他们可以求同存异。</p>
-<p>然而，在有些时候，双方没有机会进行这样的对话。例如，有一方也许不想交流，或是危险迫在眉睫没有时间交流。在这样的情况下，我们可能就需要使用强制力来避免伤害。</p>
-<p><strong>使用强制力的目的</strong></p>
-<p>非暴力沟通中，我们运用强制力是出于防卫（保护自己或对方）的目的而不是为了惩罚、羞辱或谴责对方</p>
-<p><strong>重获生活的热情</strong></p>
-<p>通过运用非暴力沟通，我们不再试图分析自己或他人有什么毛病，而是用心去了解我们的需要和他人的需要，这样，我们的内心将逐渐变得平和。</p>
-<p>一旦我们发现自己心底深处的愿望，并采取积极的行动，我们将会重获生活的热情。</p>
-<p>倾听内心的声音</p>
-<p>认识情感的根源在于个人的需要和想法，并以建设性的语言提出明确的请求，非暴力沟通帮助我们认识社会文化对个体的消极影响。一旦认识到社会文化的局限性，我们就可能突破它的束缚，至少，我们已经迈出了关键的一步。</p>
-<p>解决内心的冲突</p>
-<p>心灵环保</p>
-<p>用非暴力沟通代替诊断</p>
-<p><strong>表达感激</strong></p>
-<p><strong>非暴力沟通鼓励我们充分表达感激。在表达感激时，我们说出：1）对我们有益的行为；2）我们的哪些需要得到了满足；3）我们的需要得到满足后，我们是什么样的心情。</strong></p>
-<p><strong>当别人以这样的方式表达对我们的感激时，我们可以与对方一起庆祝生命的美——即不自大，也不假谦虚</strong></p>
-<p>赞扬的动机</p>
-<p>用非暴力沟通的方式表达感激时，我们只是为了庆祝他人的行为提升了我们的生活品质，而不是想得到任何回报。</p>
-<p>非暴力沟通表达感激的方式</p>
-<p>非暴力沟通表达感激的方式包含三个部分：</p>
-<p>1.对方做了什么事情使我们的生活得到了改善；</p>
-<p>2.我们有哪些需要得到了满足；</p>
-<p>3.我们的心情怎么样？</p>
-<p><strong>感悟</strong>：非暴力沟通谈论了如何运用观察、感受、需要和请求来沟通，化解人际交往中的冲突，以此获得爱和幸福。</p>
-<p>在人际交往中，很多人往往只注重自己的感受，人们习惯指责对方，推卸责任，以至于激化矛盾冲突，而这本书告诉我们，我们应该站在对方的角度上去思考感受问题，通过转变一些沟通和聆听的方式可以让我们更好的理解他人，获得理解和信任。</p>
-<p>读了这本书，让我意识到原来沟通还可以用另外一种方式。为了与他人更好的沟通理解，我们需要学会非暴力沟通，提高沟通品质。</p>
 
+<p>Python中的协程经历了很长的一段发展历程。最初的生成器<code>yield</code>和<code>send()</code>语法，然后在Python3.4中加入了<code>asyncio</code>模块，引入<code>@asyncio.coroutine</code>装饰器和<code>yield from</code>语法，在Python3.5上又提供了<code>async/await</code>语法，目前正式发布的Python3.6中<code>asynico</code>也由临时版改为了稳定版。</p>
+<h2 id="1-协程："><a href="#1-协程：" class="headerlink" title="1. 协程："></a>1. 协程：</h2><p>协程的切换不同于线程切换，是由程序自身控制的，没有切换的开销。协程不需要多线程的锁机制，因为都是在同一个线程中运行，所以没有同时访问数据的问题，执行效率比多线程高很多。</p>
+<p>因为协程是单线程执行，那怎么利用多核CPU呢？最简单的方法是多进程+协程，既充分利用多核，又充分发挥协程的高效率，可获得极高的性能。</p>
+<p>如果你还无法理解协程的概念，那么可以这么简单的理解：</p>
+<p><strong>进程/线程：操作系统提供的一种并发处理任务的能力。</strong></p>
+<p><strong>协程：程序员通过高超的代码能力，在代码执行流程中人为的实现多任务并发，是单个线程内的任务调度技巧。</strong></p>
+<p>多进程和多线程体现的是操作系统的能力，而协程体现的是程序员的流程控制能力。看下面的例子，甲，乙两个工人模拟两个工作任务交替进行，在单线程内实现了类似多线程的功能。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="comment"># -*- coding:utf-8 -*-</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">task1</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        <span class="keyword">yield</span> <span class="string">"&lt;甲&gt;也累了，让&lt;乙&gt;工作一会儿"</span></span><br><span class="line">        time.sleep(<span class="number">1</span>)</span><br><span class="line">        print(<span class="string">"&lt;甲&gt;工作了一段时间....."</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">task2</span><span class="params">(t)</span>:</span></span><br><span class="line">    next(t)</span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        print(<span class="string">"-----------------------------------"</span>)</span><br><span class="line">        print(<span class="string">"&lt;乙&gt;工作了一段时间....."</span>)</span><br><span class="line">        time.sleep(<span class="number">2</span>)</span><br><span class="line">        print(<span class="string">"&lt;乙&gt;累了，让&lt;甲&gt;工作一会儿...."</span>)</span><br><span class="line">        ret = t.send(<span class="literal">None</span>)</span><br><span class="line">        print(ret)</span><br><span class="line">    t.close()</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    t = task1()</span><br><span class="line">    task2(t)</span><br></pre></td></tr></table></figure>
+
+<p>运行结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;乙&gt;工作了一段时间.....</span><br><span class="line">&lt;乙&gt;累了，让&lt;甲&gt;工作一会儿....</span><br><span class="line">&lt;甲&gt;工作了一段时间.....</span><br><span class="line">&lt;甲&gt;也累了，让&lt;乙&gt;工作一会儿</span><br><span class="line">-----------------------------------</span><br><span class="line">&lt;乙&gt;工作了一段时间.....</span><br><span class="line">&lt;乙&gt;累了，让&lt;甲&gt;工作一会儿....</span><br><span class="line">&lt;甲&gt;工作了一段时间.....</span><br><span class="line">&lt;甲&gt;也累了，让&lt;乙&gt;工作一会儿</span><br><span class="line">-----------------------------------</span><br><span class="line">&lt;乙&gt;工作了一段时间.....</span><br><span class="line">&lt;乙&gt;累了，让&lt;甲&gt;工作一会儿....</span><br><span class="line">&lt;甲&gt;工作了一段时间.....</span><br><span class="line">&lt;甲&gt;也累了，让&lt;乙&gt;工作一会儿</span><br><span class="line">-----------------------------------</span><br><span class="line">&lt;乙&gt;工作了一段时间.....</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-yield"><a href="#2-yield" class="headerlink" title="2. yield"></a>2. yield</h2><p>最早的时候，Python提供了yield关键字，用于制造生成器。也就是说，包含有yield的函数，都是一个生成器！</p>
+<p><strong>yield的语法规则是：在yield这里暂停函数的执行，并返回yield后面表达式的值（默认为None），直到被next()方法再次调用时，从上次暂停的yield代码处继续往下执行。</strong>当没有可以继续next()的时候，抛出异常，该异常可被for循环处理。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; def fib(n):</span><br><span class="line">    a, b = 0, 1</span><br><span class="line">    i = 0</span><br><span class="line">    while i &lt; n:</span><br><span class="line">        yield b</span><br><span class="line">        a, b = b, a+b</span><br><span class="line">        i += 1</span><br><span class="line">&gt;&gt;&gt; f = fib(5)</span><br><span class="line">&gt;&gt;&gt; next(f)</span><br><span class="line">1</span><br><span class="line">&gt;&gt;&gt; next(f)</span><br><span class="line">1</span><br><span class="line">&gt;&gt;&gt; next(f)</span><br><span class="line">2</span><br><span class="line">&gt;&gt;&gt; next(f)</span><br><span class="line">3</span><br><span class="line">&gt;&gt;&gt; next(f)</span><br><span class="line">5</span><br><span class="line">&gt;&gt;&gt; next(f)</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File &quot;&lt;pyshell#9&gt;&quot;, line 1, in &lt;module&gt;</span><br><span class="line">    next(f)</span><br><span class="line">StopIteration</span><br></pre></td></tr></table></figure>
+
+<p>下面是通过for循环不断地使fib生成下一个数，实际上就是不断地调用next()方法。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fib</span><span class="params">(n)</span>:</span></span><br><span class="line">    a, b = <span class="number">0</span>, <span class="number">1</span></span><br><span class="line">    i = <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> i &lt; n:</span><br><span class="line">        <span class="keyword">yield</span> b</span><br><span class="line">        a, b = b, a+b</span><br><span class="line">        i += <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    f = fib(<span class="number">10</span>)</span><br><span class="line">    <span class="keyword">for</span> item <span class="keyword">in</span> f:</span><br><span class="line">        print(item)</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-send"><a href="#3-send" class="headerlink" title="3. send()"></a>3. send()</h2><p>最初的yield只能返回并暂停函数，并不能实现协程的功能。后来，Python为它定义了新的功能——接收外部发来的值，这样一个生成器就变成了协程。</p>
+<p><strong>每个生成器都可以执行send()方法，为生成器内部的yield语句发送数据</strong>。此时yield语句不再只是<code>yield xxxx</code>的形式，还可以是<code>var = yield xxxx</code>的赋值形式。<strong>它同时具备两个功能，一是暂停并返回函数，二是接收外部send()方法发送过来的值，重新激活函数，并将这个值赋值给var变量！</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">simple_coroutine</span><span class="params">()</span>:</span></span><br><span class="line">    print(<span class="string">'-&gt; 启动协程'</span>)</span><br><span class="line">    y = <span class="number">10</span></span><br><span class="line">    x = <span class="keyword">yield</span> y</span><br><span class="line">    print(<span class="string">'-&gt; 协程接收到了x的值:'</span>, x)</span><br><span class="line"></span><br><span class="line">my_coro = simple_coroutine()</span><br><span class="line">ret = next(my_coro)</span><br><span class="line">print(ret)</span><br><span class="line">my_coro.send(<span class="number">10</span>)</span><br></pre></td></tr></table></figure>
+
+<p>协程可以处于下面四个状态中的一个。当前状态可以导入inspect模块，使用inspect.getgeneratorstate(…) 方法查看，该方法会返回下述字符串中的一个。</p>
+<ul>
+<li>‘GEN_CREATED’　　等待开始执行。</li>
+<li>‘GEN_RUNNING’　　协程正在执行。</li>
+<li>‘GEN_SUSPENDED’ 在yield表达式处暂停。</li>
+<li>‘GEN_CLOSED’ 　　执行结束。</li>
+</ul>
+<p>因为send()方法的参数会成为暂停的yield表达式的值，所以，仅当协程处于暂停状态时才能调用 send()方法，例如<code>my_coro.send(10)</code>。不过，如果协程还没激活（状态是<code>&#39;GEN_CREATED&#39;</code>），就立即把None之外的值发给它，会出现TypeError。因此，始终要先调用<code>next(my_coro)</code>激活协程（也可以调用<code>my_coro.send(None)</code>），这一过程被称作预激活。</p>
+<p>除了send()方法，其实还有throw()和close()方法：</p>
+<ul>
+<li>generator.throw(exc_type[, exc_value[, traceback]])</li>
+</ul>
+<p>使生成器在暂停的yield表达式处抛出指定的异常。如果生成器处理了抛出的异常，代码会向前执行到下一个yield表达式，而产出的值会成为调用<code>generator.throw()</code>方法得到的返回值。如果生成器没有处理抛出的异常，异常会向上冒泡，传到调用方的上下文中。</p>
+<ul>
+<li>generator.close()</li>
+</ul>
+<p>使生成器在暂停的yield表达式处抛出<code>GeneratorExit</code>异常。如果生成器没有处理这个异常，或者抛出了<code>StopIteration</code>异常（通常是指运行到结尾），调用方不会报错。如果收到<code>GeneratorExit</code>异常，生成器一定不能产出值，否则解释器会抛出<code>RuntimeError</code>异常。生成器抛出的其他异常会向上冒泡，传给调用方。</p>
+<h2 id="4-asyncio-coroutine与yield-from"><a href="#4-asyncio-coroutine与yield-from" class="headerlink" title="4. @asyncio.coroutine与yield from"></a>4. @asyncio.coroutine与yield from</h2><p><strong>@asyncio.coroutine：asyncio模块中的装饰器，用于将一个生成器声明为协程。</strong></p>
+<p><strong>yield from 其实就是等待另外一个协程的返回。</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">10</span>):</span><br><span class="line">        <span class="keyword">yield</span> i</span><br><span class="line"></span><br><span class="line">print(list(func()))</span><br></pre></td></tr></table></figure>
+
+<p>可以写成：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">yield</span> <span class="keyword">from</span> range(<span class="number">10</span>)</span><br><span class="line"></span><br><span class="line">print(list(func()))</span><br></pre></td></tr></table></figure>
+
+<p>从Python3.4开始asyncio模块加入到了标准库，通过asyncio我们可以轻松实现协程来完成异步IO操作。asyncio是一个基于事件循环的异步IO模块,通过<code>yield from</code>，我们可以将协程<code>asyncio.sleep()</code>的控制权交给事件循环，然后挂起当前协程；之后，由事件循环决定何时唤醒<code>asyncio.sleep</code>,接着向后执行代码。</p>
+<p>下面这段代码，我们创造了一个协程display_date(num, loop)，然后它使用关键字yield from来等待协程<code>asyncio.sleep(2)()</code>的返回结果。而在这等待的2s之间它会让出CPU的执行权，直到<code>asyncio.sleep(2)</code>返回结果。<code>asyncio.sleep(2)</code>模拟的其实就是一个耗时2秒的IO读写操作。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> asyncio</span><br><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line"></span><br><span class="line"><span class="meta">@asyncio.coroutine  # 声明一个协程</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">display_date</span><span class="params">(num, loop)</span>:</span></span><br><span class="line">    end_time = loop.time() + <span class="number">10.0</span></span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        print(<span class="string">"Loop: &#123;&#125; Time: &#123;&#125;"</span>.format(num, datetime.datetime.now()))</span><br><span class="line">        <span class="keyword">if</span> (loop.time() + <span class="number">1.0</span>) &gt;= end_time:</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">yield</span> <span class="keyword">from</span> asyncio.sleep(<span class="number">2</span>)  <span class="comment"># 阻塞直到协程sleep(2)返回结果</span></span><br><span class="line">loop = asyncio.get_event_loop()  <span class="comment"># 获取一个event_loop</span></span><br><span class="line">tasks = [display_date(<span class="number">1</span>, loop), display_date(<span class="number">2</span>, loop)]</span><br><span class="line">loop.run_until_complete(asyncio.gather(*tasks))  <span class="comment"># "阻塞"直到所有的tasks完成</span></span><br><span class="line">loop.close()</span><br></pre></td></tr></table></figure>
+
+<p>运行结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Loop: 2 Time: 2017-10-17 21:19:45.438511</span><br><span class="line">Loop: 1 Time: 2017-10-17 21:19:45.438511</span><br><span class="line">Loop: 2 Time: 2017-10-17 21:19:47.438626</span><br><span class="line">Loop: 1 Time: 2017-10-17 21:19:47.438626</span><br><span class="line">Loop: 2 Time: 2017-10-17 21:19:49.438740</span><br><span class="line">Loop: 1 Time: 2017-10-17 21:19:49.438740</span><br><span class="line">Loop: 2 Time: 2017-10-17 21:19:51.438855</span><br><span class="line">Loop: 1 Time: 2017-10-17 21:19:51.438855</span><br><span class="line">Loop: 2 Time: 2017-10-17 21:19:53.438969</span><br><span class="line">Loop: 1 Time: 2017-10-17 21:19:53.438969</span><br><span class="line">Loop: 2 Time: 2017-10-17 21:19:55.439083</span><br><span class="line">Loop: 1 Time: 2017-10-17 21:19:55.439083</span><br></pre></td></tr></table></figure>
+
+<h2 id="5-async和await"><a href="#5-async和await" class="headerlink" title="5. async和await"></a>5. async和await</h2><p>Python3.5中对协程提供了更直接的支持，引入了<code>async/await</code>关键字。上面的代码可以这样改写：使用<code>async</code>代替<code>@asyncio.coroutine</code>，使用<code>await</code>代替<code>yield from</code>，代码变得更加简洁可读。从Python设计的角度来说，<code>async/await</code>让协程独立于生成器而存在，不再使用yield语法。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> asyncio</span><br><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">def</span> <span class="title">display_date</span><span class="params">(num, loop)</span>:</span>      <span class="comment"># 注意这一行的写法</span></span><br><span class="line">    end_time = loop.time() + <span class="number">10.0</span></span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        print(<span class="string">"Loop: &#123;&#125; Time: &#123;&#125;"</span>.format(num, datetime.datetime.now()))</span><br><span class="line">        <span class="keyword">if</span> (loop.time() + <span class="number">1.0</span>) &gt;= end_time:</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">await</span> asyncio.sleep(<span class="number">2</span>)  <span class="comment"># 阻塞直到协程sleep(2)返回结果</span></span><br><span class="line"></span><br><span class="line">loop = asyncio.get_event_loop()  <span class="comment"># 获取一个event_loop</span></span><br><span class="line">tasks = [display_date(<span class="number">1</span>, loop), display_date(<span class="number">2</span>, loop)]</span><br><span class="line">loop.run_until_complete(asyncio.gather(*tasks))  <span class="comment"># "阻塞"直到所有的tasks完成</span></span><br><span class="line">loop.close()</span><br></pre></td></tr></table></figure>
+
+<h2 id="6-asyncio模块"><a href="#6-asyncio模块" class="headerlink" title="6. asyncio模块"></a>6. asyncio模块</h2><p>asyncio的使用可分三步走：</p>
+<ol>
+<li>创建事件循环</li>
+<li>指定循环模式并运行</li>
+<li>关闭循环</li>
+</ol>
+<p>通常我们使用<code>asyncio.get_event_loop()</code>方法创建一个循环。</p>
+<p>运行循环有两种方法：一是调用<code>run_until_complete()</code>方法，二是调用<code>run_forever()</code>方法。<code>run_until_complete()</code>内置<code>add_done_callback</code>回调函数，<code>run_forever()</code>则可以自定义<code>add_done_callback()</code>，具体差异请看下面两个例子。</p>
+<p>使用<code>run_until_complete()</code>方法：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> asyncio</span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(future)</span>:</span></span><br><span class="line">    <span class="keyword">await</span> asyncio.sleep(<span class="number">1</span>)</span><br><span class="line">    future.set_result(<span class="string">'Future is done!'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line"></span><br><span class="line">    loop = asyncio.get_event_loop()</span><br><span class="line">    future = asyncio.Future()</span><br><span class="line">    asyncio.ensure_future(func(future))</span><br><span class="line">    print(loop.is_running())   <span class="comment"># 查看当前状态时循环是否已经启动</span></span><br><span class="line">    loop.run_until_complete(future)</span><br><span class="line">    print(future.result())</span><br><span class="line">    loop.close()</span><br></pre></td></tr></table></figure>
+
+<p>使用<code>run_forever()</code>方法：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> asyncio</span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(future)</span>:</span></span><br><span class="line">    <span class="keyword">await</span> asyncio.sleep(<span class="number">1</span>)</span><br><span class="line">    future.set_result(<span class="string">'Future is done!'</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">call_result</span><span class="params">(future)</span>:</span></span><br><span class="line">    print(future.result())</span><br><span class="line">    loop.stop()</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    loop = asyncio.get_event_loop()</span><br><span class="line">    future = asyncio.Future()</span><br><span class="line">    asyncio.ensure_future(func(future))</span><br><span class="line">    future.add_done_callback(call_result)        <span class="comment"># 注意这行</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        loop.run_forever()</span><br><span class="line">    <span class="keyword">finally</span>:</span><br><span class="line">        loop.close()</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -636,7 +545,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/随笔/" rel="tag"># 随笔</a>
+            <a href="/tags/python/" rel="tag"># python</a>
+          
+            <a href="/tags/thread/" rel="tag"># thread</a>
           
         </div>
       
@@ -664,8 +575,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/10/27/Comprehensive-Python-Cheatsheet/" rel="next" title="Comprehensive-Python-Cheatsheet">
-                <i class="fa fa-chevron-left"></i> Comprehensive-Python-Cheatsheet
+              <a href="/2019/10/29/python-thread-基础概念与方法/" rel="next" title="python thread 基础概念与方法">
+                <i class="fa fa-chevron-left"></i> python thread 基础概念与方法
               </a>
             
           </div>
@@ -673,10 +584,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/10/28/金字塔原理/" rel="prev" title="金字塔原理">
-                金字塔原理 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -846,7 +753,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#非暴力沟通总结笔记"><span class="nav-number">1.</span> <span class="nav-text">非暴力沟通总结笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、什么是非暴力沟通"><span class="nav-number">1.0.1.</span> <span class="nav-text">一、什么是非暴力沟通</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、非暴力沟通的作用"><span class="nav-number">1.0.2.</span> <span class="nav-text">二、非暴力沟通的作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、是什么蒙蔽了爱？"><span class="nav-number">1.0.3.</span> <span class="nav-text">三、是什么蒙蔽了爱？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#当我们根据以下理由行动时，我们也就试图回避责任。"><span class="nav-number">1.0.4.</span> <span class="nav-text">当我们根据以下理由行动时，我们也就试图回避责任。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#当我们根据以下理由行动时，我们也就试图回避责任。-1"><span class="nav-number">1.0.5.</span> <span class="nav-text">当我们根据以下理由行动时，我们也就试图回避责任。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#受说不清楚的力量驱使。——为什么打扫房间？——因为我不得不做。"><span class="nav-number">1.0.6.</span> <span class="nav-text">*受说不清楚的力量驱使。——为什么打扫房间？——因为我不得不做。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#我们的个人情况、成长历程、自我形象等。——为什么喝酒——因为我是个酒鬼。"><span class="nav-number">1.0.7.</span> <span class="nav-text">*我们的个人情况、成长历程、自我形象等。——为什么喝酒——因为我是个酒鬼。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他人的行为。——为什么我要打自己的小孩？——因为他跑到街上去。"><span class="nav-number">1.0.8.</span> <span class="nav-text">*其他人的行为。——为什么我要打自己的小孩？——因为他跑到街上去。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#上级的命令。——为什么欺骗顾客？——因为老板叫我这样做。"><span class="nav-number">1.0.9.</span> <span class="nav-text">*上级的命令。——为什么欺骗顾客？——因为老板叫我这样做。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#同伴的压力。——为什么抽烟？——因为我所有的朋友都抽烟。"><span class="nav-number">1.0.10.</span> <span class="nav-text">*同伴的压力。——为什么抽烟？——因为我所有的朋友都抽烟。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#机构的规章制度及政策。——为什么我要将你停职？——因为你违规了。根据学校规定，我必须这么做。"><span class="nav-number">1.0.11.</span> <span class="nav-text">*机构的规章制度及政策。——为什么我要将你停职？——因为你违规了。根据学校规定，我必须这么做。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#性别角色、社会角色或年龄角色。——为什么我必须做我讨厌的工作？——因为我不仅是一个丈夫，而且还是一个父亲。"><span class="nav-number">1.0.12.</span> <span class="nav-text">*性别角色、社会角色或年龄角色。——为什么我必须做我讨厌的工作？——因为我不仅是一个丈夫，而且还是一个父亲。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#五、非暴力沟通四要素"><span class="nav-number">1.0.13.</span> <span class="nav-text">五、非暴力沟通四要素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#区分观察和评论"><span class="nav-number">1.0.14.</span> <span class="nav-text">区分观察和评论</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#体会和表达感受"><span class="nav-number">1.0.15.</span> <span class="nav-text">体会和表达感受</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#非暴力沟通需要"><span class="nav-number">1.0.15.1.</span> <span class="nav-text">非暴力沟通需要</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#请求帮助"><span class="nav-number">1.0.15.2.</span> <span class="nav-text">请求帮助</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-协程："><span class="nav-number">1.</span> <span class="nav-text">1. 协程：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-yield"><span class="nav-number">2.</span> <span class="nav-text">2. yield</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-send"><span class="nav-number">3.</span> <span class="nav-text">3. send()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-asyncio-coroutine与yield-from"><span class="nav-number">4.</span> <span class="nav-text">4. @asyncio.coroutine与yield from</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-async和await"><span class="nav-number">5.</span> <span class="nav-text">5. async和await</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-asyncio模块"><span class="nav-number">6.</span> <span class="nav-text">6. asyncio模块</span></a></li></ol></div>
             
 
           </div>
@@ -1053,9 +960,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://yoursite.com/2019/10/28/Nonviolent-Communication/';
-          this.page.identifier = '2019/10/28/Nonviolent-Communication/';
-          this.page.title = 'Nonviolent Communication';
+          this.page.url = 'http://yoursite.com/2019/10/29/协程与异步I-O/';
+          this.page.identifier = '2019/10/29/协程与异步I-O/';
+          this.page.title = '协程与异步I/O';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://龙门阵.disqus.com/embed.js';

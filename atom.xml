@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-10-29T09:00:25.394Z</updated>
+  <updated>2019-10-29T09:09:48.913Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,11 +17,35 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>协程与异步I/O</title>
+    <link href="http://yoursite.com/2019/10/29/%E5%8D%8F%E7%A8%8B%E4%B8%8E%E5%BC%82%E6%AD%A5I-O/"/>
+    <id>http://yoursite.com/2019/10/29/协程与异步I-O/</id>
+    <published>2019-10-29T09:07:09.000Z</published>
+    <updated>2019-10-29T09:09:48.913Z</updated>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.liujiangblog.com/course/python/83&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;原链接&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;通常在Python中我们进行并发编程一般都是使用多线程或者多进程来实现的，对于CPU计算密集型任务由于GIL的存在通常使用多进程来实现，而对于IO密集型任务可以通过线程调度来让线程在执行IO任务时让出GIL，从而实现表面上的并发。&lt;/p&gt;
+&lt;p&gt;其实对于IO密集型任务我们还有一种选择就是协程。&lt;strong&gt;协程，又称微线程，英文名Coroutine&lt;/strong&gt;，是运行在单线程中的“并发”，协程相比多线程的一大优势就是省去了多线程之间的切换开销，获得了更高的运行效率。Python中的异步IO模块asyncio就是基本的协程模块。&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="python" scheme="http://yoursite.com/tags/python/"/>
+    
+      <category term="thread" scheme="http://yoursite.com/tags/thread/"/>
+    
+  </entry>
+  
+  <entry>
     <title>python thread 基础概念与方法</title>
     <link href="http://yoursite.com/2019/10/29/python-thread-%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5%E4%B8%8E%E6%96%B9%E6%B3%95/"/>
     <id>http://yoursite.com/2019/10/29/python-thread-基础概念与方法/</id>
     <published>2019-10-29T08:10:46.000Z</published>
-    <updated>2019-10-29T09:00:25.394Z</updated>
+    <updated>2019-10-29T09:06:12.645Z</updated>
     
     <summary type="html">
     
