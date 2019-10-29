@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-10-29T09:09:48.913Z</updated>
+  <updated>2019-10-29T09:11:00.628Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://yoursite.com/2019/10/29/%E5%8D%8F%E7%A8%8B%E4%B8%8E%E5%BC%82%E6%AD%A5I-O/"/>
     <id>http://yoursite.com/2019/10/29/协程与异步I-O/</id>
     <published>2019-10-29T09:07:09.000Z</published>
-    <updated>2019-10-29T09:09:48.913Z</updated>
+    <updated>2019-10-29T09:11:00.628Z</updated>
     
     <summary type="html">
     
@@ -207,9 +207,9 @@
     
     
     
-      <category term="sql" scheme="http://yoursite.com/tags/sql/"/>
-    
       <category term="hive" scheme="http://yoursite.com/tags/hive/"/>
+    
+      <category term="sql" scheme="http://yoursite.com/tags/sql/"/>
     
   </entry>
   
@@ -233,11 +233,11 @@
     
     
     
+      <category term="sql" scheme="http://yoursite.com/tags/sql/"/>
+    
       <category term="Optimization" scheme="http://yoursite.com/tags/Optimization/"/>
     
       <category term="db2" scheme="http://yoursite.com/tags/db2/"/>
-    
-      <category term="sql" scheme="http://yoursite.com/tags/sql/"/>
     
   </entry>
   
