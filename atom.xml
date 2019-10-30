@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-10-30T03:12:28.085Z</updated>
+  <updated>2019-10-30T03:15:00.894Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,21 +21,26 @@
     <link href="http://yoursite.com/2019/10/30/window10-%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
     <id>http://yoursite.com/2019/10/30/window10-快捷键/</id>
     <published>2019-10-30T02:29:30.000Z</published>
-    <updated>2019-10-30T03:12:28.085Z</updated>
+    <updated>2019-10-30T03:15:00.894Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;hr&gt;
-&lt;h3 id=&quot;1-常用window10-快捷键菜单&quot;&gt;&lt;a href=&quot;#1-常用window10-快捷键菜单&quot; class=&quot;headerlink&quot; title=&quot;1.常用window10 快捷键菜单&quot;&gt;&lt;/a&gt;1.常用window10
-        
-      
+      &lt;hr&gt;
+&lt;h3 id=&quot;1-常用window10-快捷键菜单&quot;&gt;&lt;a href=&quot;#1-常用window10-快捷键菜单&quot; class=&quot;headerlink&quot; title=&quot;1.常用window10 快捷键菜单&quot;&gt;&lt;/a&gt;1.常用window10 快捷键菜单&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;​        &lt;strong&gt;Win+D：显示桌面&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;　　&lt;strong&gt;Win+E：打开资源管理器&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;　　&lt;strong&gt;Win+I：打开设置界面&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;　　&lt;strong&gt;Win+L：锁定屏幕&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;　　&lt;strong&gt;Win+R：打开运行窗口&lt;/strong&gt;&lt;/p&gt;
     
     </summary>
     
+    
+      <category term="巧技" scheme="http://yoursite.com/categories/%E5%B7%A7%E6%8A%80/"/>
     
     
       <category term="win10快捷键" scheme="http://yoursite.com/tags/win10%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
