@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-10-30T03:11:49.274Z</updated>
+  <updated>2019-10-30T03:12:28.085Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://yoursite.com/2019/10/30/window10-%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
     <id>http://yoursite.com/2019/10/30/window10-快捷键/</id>
     <published>2019-10-30T02:29:30.000Z</published>
-    <updated>2019-10-30T03:11:49.274Z</updated>
+    <updated>2019-10-30T03:12:28.085Z</updated>
     
     <summary type="html">
     
@@ -36,8 +36,6 @@
     
     </summary>
     
-    
-      <category term="巧技" scheme="http://yoursite.com/categories/%E5%B7%A7%E6%8A%80/"/>
     
     
       <category term="win10快捷键" scheme="http://yoursite.com/tags/win10%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
@@ -241,9 +239,9 @@
     
     
     
-      <category term="hive" scheme="http://yoursite.com/tags/hive/"/>
-    
       <category term="sql" scheme="http://yoursite.com/tags/sql/"/>
+    
+      <category term="hive" scheme="http://yoursite.com/tags/hive/"/>
     
   </entry>
   
@@ -267,11 +265,11 @@
     
     
     
-      <category term="sql" scheme="http://yoursite.com/tags/sql/"/>
-    
       <category term="Optimization" scheme="http://yoursite.com/tags/Optimization/"/>
     
       <category term="db2" scheme="http://yoursite.com/tags/db2/"/>
+    
+      <category term="sql" scheme="http://yoursite.com/tags/sql/"/>
     
   </entry>
   
