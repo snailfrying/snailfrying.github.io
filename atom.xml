@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-10-29T12:16:21.093Z</updated>
+  <updated>2019-10-30T03:11:49.274Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>window10 快捷键</title>
+    <link href="http://yoursite.com/2019/10/30/window10-%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
+    <id>http://yoursite.com/2019/10/30/window10-快捷键/</id>
+    <published>2019-10-30T02:29:30.000Z</published>
+    <updated>2019-10-30T03:11:49.274Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;hr&gt;
+&lt;h3 id=&quot;1-常用window10-快捷键菜单&quot;&gt;&lt;a href=&quot;#1-常用window10-快捷键菜单&quot; class=&quot;headerlink&quot; title=&quot;1.常用window10 快捷键菜单&quot;&gt;&lt;/a&gt;1.常用window10
+        
+      
+    
+    </summary>
+    
+    
+      <category term="巧技" scheme="http://yoursite.com/categories/%E5%B7%A7%E6%8A%80/"/>
+    
+    
+      <category term="win10快捷键" scheme="http://yoursite.com/tags/win10%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
+    
+  </entry>
   
   <entry>
     <title>协程与异步I/O</title>
@@ -156,7 +184,7 @@
     <link href="http://yoursite.com/2019/10/28/Nonviolent-Communication/"/>
     <id>http://yoursite.com/2019/10/28/Nonviolent-Communication/</id>
     <published>2019-10-28T12:31:46.000Z</published>
-    <updated>2019-10-29T12:22:16.061Z</updated>
+    <updated>2019-10-29T12:22:28.275Z</updated>
     
     <summary type="html">
     
@@ -166,8 +194,6 @@
     
     </summary>
     
-    
-      <category term="随笔" scheme="http://yoursite.com/categories/%E9%9A%8F%E7%AC%94/"/>
     
     
       <category term="随笔" scheme="http://yoursite.com/tags/%E9%9A%8F%E7%AC%94/"/>
@@ -215,9 +241,9 @@
     
     
     
-      <category term="sql" scheme="http://yoursite.com/tags/sql/"/>
-    
       <category term="hive" scheme="http://yoursite.com/tags/hive/"/>
+    
+      <category term="sql" scheme="http://yoursite.com/tags/sql/"/>
     
   </entry>
   
@@ -241,11 +267,11 @@
     
     
     
+      <category term="sql" scheme="http://yoursite.com/tags/sql/"/>
+    
       <category term="Optimization" scheme="http://yoursite.com/tags/Optimization/"/>
     
       <category term="db2" scheme="http://yoursite.com/tags/db2/"/>
-    
-      <category term="sql" scheme="http://yoursite.com/tags/sql/"/>
     
   </entry>
   
@@ -271,7 +297,7 @@
     <link href="http://yoursite.com/2019/10/07/snaillife/"/>
     <id>http://yoursite.com/2019/10/07/snaillife/</id>
     <published>2019-10-07T07:59:43.000Z</published>
-    <updated>2019-10-29T12:21:26.611Z</updated>
+    <updated>2019-10-29T12:22:28.275Z</updated>
     
     <summary type="html">
     
@@ -288,8 +314,6 @@
     
     </summary>
     
-    
-      <category term="随笔" scheme="http://yoursite.com/categories/%E9%9A%8F%E7%AC%94/"/>
     
     
       <category term="梦想" scheme="http://yoursite.com/tags/%E6%A2%A6%E6%83%B3/"/>
