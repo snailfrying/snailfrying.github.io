@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-10-31T03:24:37.332Z</updated>
+  <updated>2019-10-31T05:15:19.129Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,17 +21,12 @@
     <link href="http://yoursite.com/2019/10/31/asyncc%E5%AE%9E%E8%B7%B5/"/>
     <id>http://yoursite.com/2019/10/31/asyncc实践/</id>
     <published>2019-10-31T02:55:32.000Z</published>
-    <updated>2019-10-31T03:24:37.332Z</updated>
+    <updated>2019-10-31T05:15:19.129Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;h3 id=&quot;协程异步实践&quot;&gt;&lt;a href=&quot;#协程异步实践&quot; class=&quot;headerlink&quot; title=&quot;协程异步实践&quot;&gt;&lt;/a&gt;协程异步实践&lt;/h3&gt;&lt;p&gt;&lt;a
-        
-      
+      &lt;h3 id=&quot;协程异步实践&quot;&gt;&lt;a href=&quot;#协程异步实践&quot; class=&quot;headerlink&quot; title=&quot;协程异步实践&quot;&gt;&lt;/a&gt;协程异步实践&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;[https://hubertroy.gitbooks.io/aiohttp-chinese-documentation/content/aiohttp%E6%96%87%E6%A1%A3/Introduce.html](https://hubertroy.gitbooks.io/aiohttp-chinese-documentation/content/aiohttp文档/Introduce.html)&quot;&gt;aiohttp&lt;/a&gt;: 是一个为Python提供异步HTTP 客户端/服务端编程，基于&lt;a href=&quot;https://aiohttp.readthedocs.io/en/stable/glossary.html#term-asyncio&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;asyncio(Python用于支持异步编程的标准库)&lt;/a&gt;的异步库。&lt;/p&gt;
+&lt;p&gt;​    此代码，通过aiohttp异步请求四个网页，并且异步解析网页，存储为四个文件。&lt;/p&gt;
     
     </summary>
     
@@ -71,7 +66,7 @@
     <link href="http://yoursite.com/2019/10/30/window10-%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
     <id>http://yoursite.com/2019/10/30/window10-快捷键/</id>
     <published>2019-10-30T02:29:30.000Z</published>
-    <updated>2019-10-31T03:26:30.051Z</updated>
+    <updated>2019-10-31T05:14:50.812Z</updated>
     
     <summary type="html">
     
