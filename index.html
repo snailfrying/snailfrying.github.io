@@ -333,6 +333,204 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/31/asyncc实践/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="snail json">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Snail Life">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/10/31/asyncc实践/" itemprop="url">asyncc实践</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-10-31T10:55:32+08:00">
+                2019-10-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/10/31/asyncc实践/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/10/31/asyncc实践/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2019/10/31/asyncc实践/" class="leancloud_visitors" data-flag-title="asyncc实践">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             <span>℃</span>
+			 </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  430
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  2
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="协程异步实践"><a href="#协程异步实践" class="headerlink" title="协程异步实践"></a>协程异步实践</h3><p><a href="[https://hubertroy.gitbooks.io/aiohttp-chinese-documentation/content/aiohttp%E6%96%87%E6%A1%A3/Introduce.html](https://hubertroy.gitbooks.io/aiohttp-chinese-documentation/content/aiohttp文档/Introduce.html)">aiohttp</a>: 是一个为Python提供异步HTTP 客户端/服务端编程，基于<a href="https://aiohttp.readthedocs.io/en/stable/glossary.html#term-asyncio" target="_blank" rel="noopener">asyncio(Python用于支持异步编程的标准库)</a>的异步库。</p>
+<p>​    此代码，通过aiohttp异步请求四个网页，并且异步解析网页，存储为四个文件。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">It's example of usage asyncio+aiohttp to downloading.</span></span><br><span class="line"><span class="string">You should install aiohttp for using:</span></span><br><span class="line"><span class="string">(You can use virtualenv to testing)</span></span><br><span class="line"><span class="string">pip install -r /path/to/requirements.txt</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> asyncio</span><br><span class="line"><span class="keyword">import</span> concurrent.futures <span class="keyword">as</span> cofu</span><br><span class="line"><span class="keyword">from</span> os.path <span class="keyword">import</span> basename</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> aiohttp</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">download</span><span class="params">(ways)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> ways:</span><br><span class="line">        print(<span class="string">'Ways list is empty. Downloading is impossible'</span>)</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">    print(<span class="string">'downloading..'</span>)</span><br><span class="line"></span><br><span class="line">    success_files = set()</span><br><span class="line">    failure_files = set()</span><br><span class="line"></span><br><span class="line">    event_loop = asyncio.get_event_loop()</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        event_loop.run_until_complete(</span><br><span class="line">            async_downloader(ways, event_loop, success_files, failure_files)</span><br><span class="line">        )</span><br><span class="line">    <span class="keyword">finally</span>:</span><br><span class="line">        event_loop.close()</span><br><span class="line"></span><br><span class="line">    print(<span class="string">'Download complete'</span>)</span><br><span class="line">    print(<span class="string">'-'</span> * <span class="number">100</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> success_files:</span><br><span class="line">        print(<span class="string">'success:'</span>)</span><br><span class="line">        <span class="keyword">for</span> file <span class="keyword">in</span> success_files:</span><br><span class="line">            print(file)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> failure_files:</span><br><span class="line">        print(<span class="string">'failure:'</span>)</span><br><span class="line">        <span class="keyword">for</span> file <span class="keyword">in</span> failure_files:</span><br><span class="line">            print(file)</span><br><span class="line"></span><br><span class="line"><span class="comment">#请求网页</span></span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">def</span> <span class="title">async_downloader</span><span class="params">(ways, loop, success_files=set<span class="params">()</span>, failure_files=set<span class="params">()</span>)</span>:</span></span><br><span class="line">    <span class="keyword">async</span> <span class="keyword">with</span> aiohttp.ClientSession() <span class="keyword">as</span> session:</span><br><span class="line">        coroutines = [</span><br><span class="line">            download_file_by_url(</span><br><span class="line">                url,</span><br><span class="line">                session=session,</span><br><span class="line">            ) <span class="keyword">for</span> url <span class="keyword">in</span> ways]</span><br><span class="line"></span><br><span class="line">        completed, pending = <span class="keyword">await</span> asyncio.wait(coroutines, return_when=cofu.FIRST_COMPLETED)</span><br><span class="line">        <span class="keyword">while</span> pending:</span><br><span class="line"></span><br><span class="line">            <span class="keyword">for</span> task <span class="keyword">in</span> completed:</span><br><span class="line">                fail, url = task.result()</span><br><span class="line"></span><br><span class="line">                <span class="keyword">if</span> fail:</span><br><span class="line">                    failure_files.add(url)</span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    success_files.add(url)</span><br><span class="line"></span><br><span class="line">            completed, pending = <span class="keyword">await</span> asyncio.wait(pending, return_when=cofu.FIRST_COMPLETED)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> task <span class="keyword">in</span> completed:</span><br><span class="line">            fail, url = task.result()</span><br><span class="line">            <span class="keyword">if</span> fail:</span><br><span class="line">                failure_files.add(url)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                success_files.add(url)</span><br><span class="line"></span><br><span class="line"><span class="comment">#解析网页</span></span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">def</span> <span class="title">download_file_by_url</span><span class="params">(url, session=None)</span>:</span></span><br><span class="line">    fail = <span class="literal">True</span></span><br><span class="line">    file_name = basename(url)</span><br><span class="line">    <span class="keyword">assert</span> session</span><br><span class="line"></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="keyword">async</span> <span class="keyword">with</span> session.get(url) <span class="keyword">as</span> response:</span><br><span class="line">            <span class="keyword">if</span> response.status == <span class="number">404</span>:</span><br><span class="line">                print(<span class="string">'\t&#123;&#125; from &#123;&#125; : Failed : &#123;&#125;'</span>.format(file_name, url, <span class="string">'404 - Not found'</span>))</span><br><span class="line">                <span class="keyword">return</span> fail, url</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> response.status == <span class="number">200</span>:</span><br><span class="line">                print(<span class="string">'\t&#123;&#125; from &#123;&#125; : Failed : HTTP response &#123;&#125;'</span>.format(file_name, url, response.status))</span><br><span class="line">                <span class="keyword">return</span> fail, url</span><br><span class="line"></span><br><span class="line">            data = <span class="keyword">await</span> response.read()</span><br><span class="line"></span><br><span class="line">            <span class="keyword">with</span> open(file_name, <span class="string">'wb'</span>) <span class="keyword">as</span> file:</span><br><span class="line">                file.write(data)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">except</span> asyncio.TimeoutError <span class="keyword">as</span> err:</span><br><span class="line">        print(<span class="string">'\t&#123;&#125; from &#123;&#125;: Failed : &#123;&#125;'</span>.format(file_name, url, <span class="string">'Timeout error'</span>))</span><br><span class="line"></span><br><span class="line">    <span class="keyword">except</span> aiohttp.client_exceptions.ClientConnectionError <span class="keyword">as</span> err:</span><br><span class="line">        print(<span class="string">'\t&#123;&#125; from &#123;&#125;: Failed : &#123;&#125;'</span>.format(file_name, url, <span class="string">'Client connection error'</span>))</span><br><span class="line"></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        print(<span class="string">'\t&#123;&#125; from &#123;&#125; : Success'</span>.format(file_name, url))</span><br><span class="line">        fail = <span class="literal">False</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> fail, url</span><br><span class="line"></span><br><span class="line"><span class="comment">#多多益善</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test</span><span class="params">()</span>:</span></span><br><span class="line">    ways = [<span class="string">'https://www.baidu.com'</span>,</span><br><span class="line">            <span class="string">'https://www.jd.com'</span>,</span><br><span class="line">            <span class="string">'https://www.cn.bing.com'</span>,</span><br><span class="line">            <span class="string">'https://www.snailfrying.github.io'</span>,</span><br><span class="line">            ]</span><br><span class="line"></span><br><span class="line">    download(ways)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    test()</span><br></pre></td></tr></table></figure>
+
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/30/python-algorithms-string/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -374,6 +572,28 @@
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -418,7 +638,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  448
+                  660
                 </span>
               
 
@@ -434,7 +654,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  1
+                  3
                 </span>
               
             </div>
@@ -456,22 +676,16 @@
 
       
         
-          
-            <hr>
+          <hr>
 <h2 id="1-1-旋转字符串"><a href="#1-1-旋转字符串" class="headerlink" title="1.1 旋转字符串"></a>1.1 旋转字符串</h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>给定一个字符串，要求把字符串前面的若干个字符移动到字符串的尾部，如把字符串“abcdef”前面的2个字符’a’和’b’移动到字符串的尾部，使得原字符串变成字符串“cdefab”。请写一个函数完成此功能，要求对长度为n的字符串操作的时间复杂度为 O(n)，空间复杂度为 O(1)。</p>
 <h4 id="方法：三步反转法"><a href="#方法：三步反转法" class="headerlink" title="方法：三步反转法"></a>方法：三步反转法</h4><p>对于这个问题，换一个角度思考一下。</p>
-<p>将一个字符串分成X和Y两个部分，在每部分字符串上定义反转操作，如X^T，即把X的所有字符反转（如，X=”abc”，那么X^T=”cba”），那么就得到下面的结论：(X^TY^T)^T=YX，显然就解决了字符串的反转问题。</p>
-<p>例如，字符串 abcdef ，若要让def翻转到abc的前头，只要按照下述3个步骤操作即可：</p>
-<ol>
-<li>首先将原字符串分为两个部分，即X:abc，Y:def；</li>
-<li>将X反转，X-&gt;X^T，即得：abc-&gt;cba；将Y反转，Y-&gt;Y^T，即得：def-&gt;fed。</li>
-<li>反转上述步骤得到的结果字符串X^TY^T，即反转字符串cbafed的两部分（cba和fed）给予反转，cbafed得到defabc，形式化表示为(X^TY^T)^T=YX，这就实现了整个反转。</li>
-</ol>
-<p>代码则可以这么写：    </p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#反转字符串</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">ReverseString</span><span class="params">(s,left,right)</span>:</span></span><br><span class="line">    s = list(s)</span><br><span class="line">    <span class="keyword">while</span>(left &lt; right):</span><br><span class="line">        s[left], s[right] = s[right], s[left]</span><br><span class="line">        left += <span class="number">1</span></span><br><span class="line">        right -= <span class="number">1</span></span><br><span class="line">    s = <span class="string">''</span>.join(s)</span><br><span class="line">    <span class="keyword">return</span> s</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">leftRotateString</span><span class="params">(s, n, m)</span>:</span></span><br><span class="line">    m %= n  <span class="comment">#若要左移动大于n位，那么和%n 是等价的</span></span><br><span class="line">    s = ReverseString(s,<span class="number">0</span>,m<span class="number">-1</span>)</span><br><span class="line">    s = ReverseString(s,m,n<span class="number">-1</span>)</span><br><span class="line">    s = ReverseString(s,<span class="number">0</span>,n<span class="number">-1</span>)</span><br><span class="line">    print(s)</span><br><span class="line"></span><br><span class="line">s = <span class="string">"123456"</span></span><br><span class="line">leftRotateString(s,len(s),<span class="number">4</span>)</span><br><span class="line"><span class="comment">#运行结果：  561234</span></span><br></pre></td></tr></table></figure>
-
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/10/30/python-algorithms-string/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -983,8 +1197,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python/" itemprop="url" rel="index">
-                    <span itemprop="name">Python</span>
+                  <a href="/categories/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
                   </a>
                 </span>
 
@@ -1162,206 +1376,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/29/python-thread-tutorial/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="snail json">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Snail Life">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/10/29/python-thread-tutorial/" itemprop="url">python thread tutorial</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-10-29T13:39:46+08:00">
-                2019-10-29
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python/" itemprop="url" rel="index">
-                    <span itemprop="name">Python</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/10/29/python-thread-tutorial/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/10/29/python-thread-tutorial/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2019/10/29/python-thread-tutorial/" class="leancloud_visitors" data-flag-title="python thread tutorial">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Visitors&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             <span>℃</span>
-			 </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Words count in article&#58;</span>
-                
-                <span title="Words count in article">
-                  4.2k
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Reading time &asymp;</span>
-                
-                <span title="Reading time">
-                  17
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="python-thread-tutorial"><a href="#python-thread-tutorial" class="headerlink" title="python thread tutorial"></a>python thread tutorial</h2><p><a href="http://www.liujiangblog.com/course/python/82" target="_blank" rel="noopener">参考链接</a></p>
-<h4 id="1-python-线程与进程的区别"><a href="#1-python-线程与进程的区别" class="headerlink" title="1. python 线程与进程的区别"></a>1. python 线程与进程的区别</h4><p><strong>进程</strong>是程序（软件，应用）的一个执行实例，每个运行中的程序，可以同时创建多个进程，但至少要有一个。每个进程都提供执行程序所需的所有资源，都有一个虚拟的地址空间、可执行的代码、操作系统的接口、安全的上下文（记录启动该进程的用户和权限等等）、唯一的进程ID、环境变量、优先级类、最小和最大的工作空间（内存空间）。进程可以包含线程，并且每个进程必须有至少一个线程。每个进程启动时都会最先产生一个线程，即主线程，然后主线程会再创建其他的子线程。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/10/29/python-thread-tutorial/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1413,7 +1427,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1435,7 +1449,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -1504,7 +1518,7 @@
 		<h3 class="widget-title">Tag Cloud</h3>
 		<div id="myCanvasContainer" class="widget tagcloud">
 		  <canvas width="250" height="250" id="resCanvas" style="width=100%">
-			<ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/thread/">-- thread</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Optimization/">Optimization</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/db2/">db2</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hive/">hive</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/self-study/">self-study</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sql/">sql</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/thread/">thread</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/win10快捷键/">win10快捷键</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/古月山风/">古月山风</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/梦想/">梦想</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/破晓/">破晓</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a><span class="tag-list-count">2</span></li></ul>
+			<ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/thread/">-- thread</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Optimization/">Optimization</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithms/">algorithms</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/db2/">db2</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hive/">hive</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/self-study/">self-study</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sql/">sql</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/thread/">thread</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/win10快捷键/">win10快捷键</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/古月山风/">古月山风</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/梦想/">梦想</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/破晓/">破晓</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a><span class="tag-list-count">2</span></li></ul>
 		  </canvas>
 		</div>
 	  </div>
@@ -1535,7 +1549,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">51.3k</span>
+    <span title="Site words total count">51.9k</span>
   
 </div>
 

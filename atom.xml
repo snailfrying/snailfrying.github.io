@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-10-30T13:12:20.506Z</updated>
+  <updated>2019-10-31T03:24:37.332Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>python algorithms string</title>
-    <link href="http://yoursite.com/2019/10/30/python-algorithms-string/"/>
-    <id>http://yoursite.com/2019/10/30/python-algorithms-string/</id>
-    <published>2019-10-30T11:44:55.000Z</published>
-    <updated>2019-10-30T13:12:20.506Z</updated>
+    <title>asyncc实践</title>
+    <link href="http://yoursite.com/2019/10/31/asyncc%E5%AE%9E%E8%B7%B5/"/>
+    <id>http://yoursite.com/2019/10/31/asyncc实践/</id>
+    <published>2019-10-31T02:55:32.000Z</published>
+    <updated>2019-10-31T03:24:37.332Z</updated>
     
     <summary type="html">
     
@@ -29,14 +29,40 @@
       
         
         
-          &lt;hr&gt;
-&lt;h2 id=&quot;1-1-旋转字符串&quot;&gt;&lt;a href=&quot;#1-1-旋转字符串&quot; class=&quot;headerlink&quot; title=&quot;1.1 旋转字符串&quot;&gt;&lt;/a&gt;1.1 旋转字符串&lt;/h2&gt;&lt;h3 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot;
+          &lt;h3 id=&quot;协程异步实践&quot;&gt;&lt;a href=&quot;#协程异步实践&quot; class=&quot;headerlink&quot; title=&quot;协程异步实践&quot;&gt;&lt;/a&gt;协程异步实践&lt;/h3&gt;&lt;p&gt;&lt;a
         
       
     
     </summary>
     
     
+      <category term="Python" scheme="http://yoursite.com/categories/Python/"/>
+    
+    
+      <category term="thread" scheme="http://yoursite.com/tags/thread/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>python algorithms string</title>
+    <link href="http://yoursite.com/2019/10/30/python-algorithms-string/"/>
+    <id>http://yoursite.com/2019/10/30/python-algorithms-string/</id>
+    <published>2019-10-30T11:44:55.000Z</published>
+    <updated>2019-10-31T03:25:09.953Z</updated>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+&lt;h2 id=&quot;1-1-旋转字符串&quot;&gt;&lt;a href=&quot;#1-1-旋转字符串&quot; class=&quot;headerlink&quot; title=&quot;1.1 旋转字符串&quot;&gt;&lt;/a&gt;1.1 旋转字符串&lt;/h2&gt;&lt;h3 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述&quot;&gt;&lt;/a&gt;题目描述&lt;/h3&gt;&lt;p&gt;给定一个字符串，要求把字符串前面的若干个字符移动到字符串的尾部，如把字符串“abcdef”前面的2个字符’a’和’b’移动到字符串的尾部，使得原字符串变成字符串“cdefab”。请写一个函数完成此功能，要求对长度为n的字符串操作的时间复杂度为 O(n)，空间复杂度为 O(1)。&lt;/p&gt;
+&lt;h4 id=&quot;方法：三步反转法&quot;&gt;&lt;a href=&quot;#方法：三步反转法&quot; class=&quot;headerlink&quot; title=&quot;方法：三步反转法&quot;&gt;&lt;/a&gt;方法：三步反转法&lt;/h4&gt;&lt;p&gt;对于这个问题，换一个角度思考一下。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="python" scheme="http://yoursite.com/categories/python/"/>
+    
+    
+      <category term="algorithms" scheme="http://yoursite.com/tags/algorithms/"/>
     
   </entry>
   
@@ -45,7 +71,7 @@
     <link href="http://yoursite.com/2019/10/30/window10-%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
     <id>http://yoursite.com/2019/10/30/window10-快捷键/</id>
     <published>2019-10-30T02:29:30.000Z</published>
-    <updated>2019-10-30T03:23:52.187Z</updated>
+    <updated>2019-10-31T03:26:30.051Z</updated>
     
     <summary type="html">
     
@@ -91,9 +117,9 @@
       <category term="python" scheme="http://yoursite.com/categories/python/"/>
     
     
-      <category term="python" scheme="http://yoursite.com/tags/python/"/>
-    
       <category term="thread" scheme="http://yoursite.com/tags/thread/"/>
+    
+      <category term="python" scheme="http://yoursite.com/tags/python/"/>
     
   </entry>
   
@@ -102,7 +128,7 @@
     <link href="http://yoursite.com/2019/10/29/python-thread-%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5%E4%B8%8E%E6%96%B9%E6%B3%95/"/>
     <id>http://yoursite.com/2019/10/29/python-thread-基础概念与方法/</id>
     <published>2019-10-29T08:10:46.000Z</published>
-    <updated>2019-10-30T03:20:13.530Z</updated>
+    <updated>2019-10-31T03:25:20.560Z</updated>
     
     <summary type="html">
     
@@ -158,7 +184,7 @@
     </summary>
     
     
-      <category term="Python" scheme="http://yoursite.com/categories/Python/"/>
+      <category term="python" scheme="http://yoursite.com/categories/python/"/>
     
     
       <category term="-- thread" scheme="http://yoursite.com/tags/thread/"/>
@@ -170,7 +196,7 @@
     <link href="http://yoursite.com/2019/10/29/python-thread-tutorial/"/>
     <id>http://yoursite.com/2019/10/29/python-thread-tutorial/</id>
     <published>2019-10-29T05:39:46.000Z</published>
-    <updated>2019-10-29T11:29:52.622Z</updated>
+    <updated>2019-10-31T03:25:38.164Z</updated>
     
     <summary type="html">
     
@@ -180,12 +206,12 @@
     </summary>
     
     
-      <category term="Python" scheme="http://yoursite.com/categories/Python/"/>
+      <category term="python" scheme="http://yoursite.com/categories/python/"/>
     
-    
-      <category term="python" scheme="http://yoursite.com/tags/python/"/>
     
       <category term="thread" scheme="http://yoursite.com/tags/thread/"/>
+    
+      <category term="python" scheme="http://yoursite.com/tags/python/"/>
     
   </entry>
   
