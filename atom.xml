@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-10-31T05:15:19.129Z</updated>
+  <updated>2019-11-04T10:40:15.939Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Win10设置电脑内网连接网线，外网连接wifi</title>
+    <link href="http://yoursite.com/2019/11/04/Win10%E8%AE%BE%E7%BD%AE%E7%94%B5%E8%84%91%E5%86%85%E7%BD%91%E8%BF%9E%E6%8E%A5%E7%BD%91%E7%BA%BF%EF%BC%8C%E5%A4%96%E7%BD%91%E8%BF%9E%E6%8E%A5wifi/"/>
+    <id>http://yoursite.com/2019/11/04/Win10设置电脑内网连接网线，外网连接wifi/</id>
+    <published>2019-11-04T10:05:42.000Z</published>
+    <updated>2019-11-04T10:40:15.939Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;Win10设置电脑内网连接网线，外网连接wifi&quot;&gt;&lt;a href=&quot;#Win10设置电脑内网连接网线，外网连接wifi&quot; class=&quot;headerlink&quot; title=&quot;Win10设置电脑内网连接网线，外网连接wifi&quot;&gt;&lt;/a&gt;Win10设置电脑内网连接网线，外网连接wifi&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;win10一台电脑即可使用内网又可使用外网原理&lt;/p&gt;
+&lt;p&gt;​    您可以吧电脑比喻为一个路由器。就像打电话的移动服务器一样，一台服务器可以多个用户使用，就是因为每一个用户有专用的电话号码，然后通过中转服务器转到你所到达的属地，再到达相应的用用户。&lt;/p&gt;
+&lt;p&gt;​    所以你就是用户，电脑就是中转器，你访问不同的页面，通过路由转到不懂的网段，就可以使用相应的网络了。当然内网和外网是有优先级的。也就是说你访问的网页，优先使用哪一个网段。选取看你电脑哪一个网段是常用的。比如说我，外网常用，当然使用外网，并且外网的访问ip是很复杂的，分配网段比较复杂，分配内容比较容易。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+    
+    </summary>
+    
+    
+      <category term="巧技" scheme="http://yoursite.com/categories/%E5%B7%A7%E6%8A%80/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>asyncc实践</title>
@@ -43,7 +67,7 @@
     <link href="http://yoursite.com/2019/10/30/python-algorithms-string/"/>
     <id>http://yoursite.com/2019/10/30/python-algorithms-string/</id>
     <published>2019-10-30T11:44:55.000Z</published>
-    <updated>2019-10-31T03:25:09.953Z</updated>
+    <updated>2019-10-31T07:00:22.384Z</updated>
     
     <summary type="html">
     
