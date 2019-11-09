@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-11-05T09:45:51.731Z</updated>
+  <updated>2019-11-09T08:43:26.407Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,11 +17,35 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>linux菜鸟</title>
-    <link href="http://yoursite.com/2019/11/05/linux%E8%8F%9C%E9%B8%9F/"/>
-    <id>http://yoursite.com/2019/11/05/linux菜鸟/</id>
-    <published>2019-11-05T08:26:36.000Z</published>
-    <updated>2019-11-05T09:45:51.731Z</updated>
+    <title>vim技巧</title>
+    <link href="http://yoursite.com/2019/11/09/vim%E6%8A%80%E5%B7%A7/"/>
+    <id>http://yoursite.com/2019/11/09/vim技巧/</id>
+    <published>2019-11-09T06:38:42.000Z</published>
+    <updated>2019-11-09T08:43:26.407Z</updated>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+&lt;h2 id=&quot;1-vim总结技巧&quot;&gt;&lt;a href=&quot;#1-vim总结技巧&quot; class=&quot;headerlink&quot; title=&quot;1.vim总结技巧&quot;&gt;&lt;/a&gt;1.vim总结技巧&lt;/h2&gt;&lt;h4 id=&quot;vim键盘图&quot;&gt;&lt;a href=&quot;#vim键盘图&quot; class=&quot;headerlink&quot; title=&quot;vim键盘图&quot;&gt;&lt;/a&gt;vim键盘图&lt;/h4&gt;&lt;p&gt;&lt;img src=&quot;/uploads/loading.gif&quot; data-original=&quot;https://www.runoob.com/wp-content/uploads/2015/10/vi-vim-cheat-sheet-sch.gif&quot; alt&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="-巧技" scheme="http://yoursite.com/categories/%E5%B7%A7%E6%8A%80/"/>
+    
+    
+      <category term="vim" scheme="http://yoursite.com/tags/vim/"/>
+    
+      <category term="linux" scheme="http://yoursite.com/tags/linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>hive 脚本用户 and beeline</title>
+    <link href="http://yoursite.com/2019/11/09/hive-%E8%84%9A%E6%9C%AC%E7%94%A8%E6%88%B7-and-beeline/"/>
+    <id>http://yoursite.com/2019/11/09/hive-脚本用户-and-beeline/</id>
+    <published>2019-11-09T05:57:26.000Z</published>
+    <updated>2019-11-09T05:57:26.351Z</updated>
     
     <summary type="html">
     
@@ -29,9 +53,32 @@
       
         
         
-          &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;具体需求&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span
+          &lt;hr&gt;
+&lt;p&gt;版权声明：&lt;/p&gt;
+&lt;h2 id=&quot;除非注明，本博文章均为原创，转载请以链接形式标明本文地址。&quot;&gt;&lt;a href=&quot;#除非注明，本博文章均为原创，转载请以链接形式标明本文地址。&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>linux菜鸟</title>
+    <link href="http://yoursite.com/2019/11/05/linux%E8%8F%9C%E9%B8%9F/"/>
+    <id>http://yoursite.com/2019/11/05/linux菜鸟/</id>
+    <published>2019-11-05T08:26:36.000Z</published>
+    <updated>2019-11-09T08:43:35.982Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;菜鸟-linux命令总结&quot;&gt;&lt;a href=&quot;#菜鸟-linux命令总结&quot; class=&quot;headerlink&quot; title=&quot;菜鸟-linux命令总结&quot;&gt;&lt;/a&gt;菜鸟-linux命令总结&lt;/h3&gt;&lt;p&gt;&lt;a
         
       
     
@@ -48,7 +95,7 @@
     <link href="http://yoursite.com/2019/11/04/Win10%E8%AE%BE%E7%BD%AE%E7%94%B5%E8%84%91%E5%86%85%E7%BD%91%E8%BF%9E%E6%8E%A5%E7%BD%91%E7%BA%BF%EF%BC%8C%E5%A4%96%E7%BD%91%E8%BF%9E%E6%8E%A5wifi/"/>
     <id>http://yoursite.com/2019/11/04/Win10设置电脑内网连接网线，外网连接wifi/</id>
     <published>2019-11-04T10:05:42.000Z</published>
-    <updated>2019-11-05T03:11:18.692Z</updated>
+    <updated>2019-11-09T05:59:40.197Z</updated>
     
     <summary type="html">
     
