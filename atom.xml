@@ -70,17 +70,16 @@
     <link href="http://yoursite.com/2019/11/05/linux%E8%8F%9C%E9%B8%9F/"/>
     <id>http://yoursite.com/2019/11/05/linux菜鸟/</id>
     <published>2019-11-05T08:26:36.000Z</published>
-    <updated>2019-11-09T08:43:35.982Z</updated>
+    <updated>2019-11-09T08:51:01.352Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;h3 id=&quot;菜鸟-linux命令总结&quot;&gt;&lt;a href=&quot;#菜鸟-linux命令总结&quot; class=&quot;headerlink&quot; title=&quot;菜鸟-linux命令总结&quot;&gt;&lt;/a&gt;菜鸟-linux命令总结&lt;/h3&gt;&lt;p&gt;&lt;a
-        
-      
+      &lt;h3 id=&quot;菜鸟-linux命令总结&quot;&gt;&lt;a href=&quot;#菜鸟-linux命令总结&quot; class=&quot;headerlink&quot; title=&quot;菜鸟-linux命令总结&quot;&gt;&lt;/a&gt;菜鸟-linux命令总结&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/jaywcjlove/linux-command&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;linux命令大全教程&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://man.linuxde.net/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;linux搜索大全&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://wangchujiang.com/linux-command/list.html#!kw=ls&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;linux命令搜索教程岚&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/judasn/Linux-Tutorial&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;linux安装教程-bigData&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/fengyuhetao/shell&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;shell脚本案列大全&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&quot;1-命令大全&quot;&gt;&lt;a href=&quot;#1-命令大全&quot; class=&quot;headerlink&quot; title=&quot;1. 命令大全&quot;&gt;&lt;/a&gt;1. 命令大全&lt;/h4&gt;&lt;h5 id=&quot;文件传输&quot;&gt;&lt;a href=&quot;#文件传输&quot; class=&quot;headerlink&quot; title=&quot;文件传输&quot;&gt;&lt;/a&gt;文件传输&lt;/h5&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;bye、ftp、ftpcount、ftpshut、ftpwho、ncftp、tftp、uucico、uucp、uupick、uuto、scp&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
     </summary>
     
@@ -399,9 +398,9 @@
       <category term="database" scheme="http://yoursite.com/categories/database/"/>
     
     
-      <category term="hive" scheme="http://yoursite.com/tags/hive/"/>
-    
       <category term="sql" scheme="http://yoursite.com/tags/sql/"/>
+    
+      <category term="hive" scheme="http://yoursite.com/tags/hive/"/>
     
   </entry>
   
@@ -427,11 +426,11 @@
       <category term="database" scheme="http://yoursite.com/categories/database/"/>
     
     
-      <category term="sql" scheme="http://yoursite.com/tags/sql/"/>
-    
       <category term="Optimization" scheme="http://yoursite.com/tags/Optimization/"/>
     
       <category term="db2" scheme="http://yoursite.com/tags/db2/"/>
+    
+      <category term="sql" scheme="http://yoursite.com/tags/sql/"/>
     
   </entry>
   
