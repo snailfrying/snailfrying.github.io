@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-11-09T08:43:26.407Z</updated>
+  <updated>2019-11-18T12:42:10.322Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,15 +17,48 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>statistics algorithms learning</title>
+    <link href="http://yoursite.com/2019/11/15/statistics-algorithms-learning/"/>
+    <id>http://yoursite.com/2019/11/15/statistics-algorithms-learning/</id>
+    <published>2019-11-15T08:52:59.000Z</published>
+    <updated>2019-11-18T12:42:10.322Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;https://github.com/fengdu78/lihang-code&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;李航统计学代码实现&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;李航-统计学与吴恩达-深度学习理论与代码实践&quot;&gt;&lt;a href=&quot;#李航-统计学与吴恩达-深度学习理论与代码实践&quot; class=&quot;headerlink&quot; title=&quot;李航-统计学与吴恩达-深度学习理论与代码实践&quot;&gt;&lt;/a&gt;李航-统计学与吴恩达-深度学习理论与代码实践&lt;/h2&gt;&lt;h3 id=&quot;目录&quot;&gt;&lt;a href=&quot;#目录&quot; class=&quot;headerlink&quot; title=&quot;目录&quot;&gt;&lt;/a&gt;目录&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;h4 id=&quot;统计学习方法与深度学习概论&quot;&gt;&lt;a href=&quot;#统计学习方法与深度学习概论&quot; class=&quot;headerlink&quot; title=&quot;统计学习方法与深度学习概论&quot;&gt;&lt;/a&gt;统计学习方法与深度学习概论&lt;/h4&gt;&lt;/li&gt;
+&lt;li&gt;&lt;h4 id=&quot;最小二乘法完整实践理论&quot;&gt;&lt;a href=&quot;#最小二乘法完整实践理论&quot; class=&quot;headerlink&quot; title=&quot;最小二乘法完整实践理论&quot;&gt;&lt;/a&gt;最小二乘法完整实践理论&lt;/h4&gt;&lt;/li&gt;
+&lt;li&gt;&lt;h4 id=&quot;感知机&quot;&gt;&lt;a href=&quot;#感知机&quot; class=&quot;headerlink&quot; title=&quot;感知机&quot;&gt;&lt;/a&gt;感知机&lt;/h4&gt;&lt;/li&gt;
+&lt;li&gt;&lt;h4 id=&quot;统计学与深度学习中的回归&quot;&gt;&lt;a href=&quot;#统计学与深度学习中的回归&quot; class=&quot;headerlink&quot; title=&quot;统计学与深度学习中的回归&quot;&gt;&lt;/a&gt;统计学与深度学习中的回归&lt;/h4&gt;&lt;/li&gt;
+&lt;li&gt;&lt;h4 id=&quot;支持向量机&quot;&gt;&lt;a href=&quot;#支持向量机&quot; class=&quot;headerlink&quot; title=&quot;支持向量机&quot;&gt;&lt;/a&gt;支持向量机&lt;/h4&gt;&lt;/li&gt;
+&lt;li&gt;&lt;h4 id=&quot;FM与FFM…&quot;&gt;&lt;a href=&quot;#FM与FFM…&quot; class=&quot;headerlink&quot; title=&quot;FM与FFM…&quot;&gt;&lt;/a&gt;FM与FFM…&lt;/h4&gt;
+    
+    </summary>
+    
+    
+      <category term="python" scheme="http://yoursite.com/categories/python/"/>
+    
+      <category term="algorithms" scheme="http://yoursite.com/categories/python/algorithms/"/>
+    
+    
+      <category term="statistics" scheme="http://yoursite.com/tags/statistics/"/>
+    
+  </entry>
+  
+  <entry>
     <title>vim技巧</title>
     <link href="http://yoursite.com/2019/11/09/vim%E6%8A%80%E5%B7%A7/"/>
     <id>http://yoursite.com/2019/11/09/vim技巧/</id>
     <published>2019-11-09T06:38:42.000Z</published>
-    <updated>2019-11-09T08:43:26.407Z</updated>
+    <updated>2019-11-11T02:32:53.971Z</updated>
     
     <summary type="html">
     
       &lt;hr&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/fengyuhetao/shell&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;shell脚本案列大全&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://tinylab.org/open-shell-book/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;shell系列教程&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://zh-google-styleguide.readthedocs.io/en/latest/google-shell-styleguide/formatting/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;goole-shell开发规范&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&quot;1-vim总结技巧&quot;&gt;&lt;a href=&quot;#1-vim总结技巧&quot; class=&quot;headerlink&quot; title=&quot;1.vim总结技巧&quot;&gt;&lt;/a&gt;1.vim总结技巧&lt;/h2&gt;&lt;h4 id=&quot;vim键盘图&quot;&gt;&lt;a href=&quot;#vim键盘图&quot; class=&quot;headerlink&quot; title=&quot;vim键盘图&quot;&gt;&lt;/a&gt;vim键盘图&lt;/h4&gt;&lt;p&gt;&lt;img src=&quot;/uploads/loading.gif&quot; data-original=&quot;https://www.runoob.com/wp-content/uploads/2015/10/vi-vim-cheat-sheet-sch.gif&quot; alt&gt;&lt;/p&gt;
     
     </summary>
@@ -45,22 +78,18 @@
     <link href="http://yoursite.com/2019/11/09/hive-%E8%84%9A%E6%9C%AC%E7%94%A8%E6%88%B7-and-beeline/"/>
     <id>http://yoursite.com/2019/11/09/hive-脚本用户-and-beeline/</id>
     <published>2019-11-09T05:57:26.000Z</published>
-    <updated>2019-11-09T05:57:26.351Z</updated>
+    <updated>2019-11-18T11:20:54.521Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;hr&gt;
-&lt;p&gt;版权声明：&lt;/p&gt;
-&lt;h2 id=&quot;除非注明，本博文章均为原创，转载请以链接形式标明本文地址。&quot;&gt;&lt;a href=&quot;#除非注明，本博文章均为原创，转载请以链接形式标明本文地址。&quot; class=&quot;headerlink&quot;
-        
-      
+      &lt;hr&gt;
+&lt;p&gt;&lt;a href=&quot;[https://cwiki.apache.org/confluence/display/Hive/HiveServer2+Clients#HiveServer2Clients-Beeline%E2%80%93NewCommandLineShell](https://cwiki.apache.org/confluence/display/Hive/HiveServer2+Clients#HiveServer2Clients-Beeline–NewCommandLineShell)&quot;&gt;&lt;a href=&quot;https://cwiki.apache.org/confluence/display/Hive/HiveServer2+Clients&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;HiveServer2 Clients&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&quot;HiveServer2Clients简介&quot;&gt;&lt;a href=&quot;#HiveServer2Clients简介&quot; class=&quot;headerlink&quot; title=&quot;HiveServer2Clients简介&quot;&gt;&lt;/a&gt;HiveServer2Clients简介&lt;/h4&gt;&lt;h6 id=&quot;1-beeline是什么&quot;&gt;&lt;a href=&quot;#1-beeline是什么&quot; class=&quot;headerlink&quot; title=&quot;1.beeline是什么&quot;&gt;&lt;/a&gt;1.beeline是什么&lt;/h6&gt;&lt;p&gt;​    Beeline，是HiveServer2的JDBC客户端，基于SQLLine命令行接口。Beeline Shell可以工作在嵌入式模式和远程模式，在嵌入式模式中，它运行一个嵌入式的Hive（类似于Hive CLI），在远程模式中，通过Thrift连接到一个单独的HiveServer2进程，从Hive 0.14开始，当Beeline和HiveServer2一起使用时，它会从HiveServer2打印执行查询的日志信息到STDERR。建议在生产环境使用远程HiveServer2模式，因为这样更安全，不需要为用户授予直接的HDFS/Metastore访问权限&lt;/p&gt;
     
     </summary>
     
+    
+      <category term="hive" scheme="http://yoursite.com/categories/hive/"/>
     
     
   </entry>
@@ -381,7 +410,7 @@
     <link href="http://yoursite.com/2019/10/15/Hive-SQL-%E7%BC%96%E8%AF%91%E8%BF%87%E7%A8%8B/"/>
     <id>http://yoursite.com/2019/10/15/Hive-SQL-编译过程/</id>
     <published>2019-10-15T11:31:48.000Z</published>
-    <updated>2019-10-30T03:20:36.365Z</updated>
+    <updated>2019-11-18T11:21:22.576Z</updated>
     
     <summary type="html">
     
