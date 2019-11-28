@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-11-20T12:23:40.460Z</updated>
+  <updated>2019-11-28T12:45:05.783Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,18 +21,16 @@
     <link href="http://yoursite.com/2019/11/20/chapter2-%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E6%B3%95%E5%AE%8C%E6%95%B4%E5%AE%9E%E8%B7%B5%E7%90%86%E8%AE%BA/"/>
     <id>http://yoursite.com/2019/11/20/chapter2-最小二乘法完整实践理论/</id>
     <published>2019-11-20T12:14:04.000Z</published>
-    <updated>2019-11-20T12:23:40.460Z</updated>
+    <updated>2019-11-28T12:45:05.783Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;hr&gt;
-&lt;h3 id=&quot;chapter2-最小二乘法完整实践理论&quot;&gt;&lt;a href=&quot;#chapter2-最小二乘法完整实践理论&quot; class=&quot;headerlink&quot;
-        
-      
+      &lt;hr&gt;
+&lt;h3 id=&quot;chapter2-最小二乘法完整实践理论&quot;&gt;&lt;a href=&quot;#chapter2-最小二乘法完整实践理论&quot; class=&quot;headerlink&quot; title=&quot;chapter2- 最小二乘法完整实践理论&quot;&gt;&lt;/a&gt;chapter2- 最小二乘法完整实践理论&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&lt;h5 id=&quot;概要&quot;&gt;&lt;a href=&quot;#概要&quot; class=&quot;headerlink&quot; title=&quot;概要&quot;&gt;&lt;/a&gt;概要&lt;/h5&gt;&lt;p&gt;​    此章，通过最小二乘法，在统计学习，机器学习，深度学习的轨道上进行讨论，它们叁之间的共性与异性。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;h5 id=&quot;什么是最小二乘法&quot;&gt;&lt;a href=&quot;#什么是最小二乘法&quot; class=&quot;headerlink&quot; title=&quot;什么是最小二乘法&quot;&gt;&lt;/a&gt;什么是最小二乘法&lt;/h5&gt;&lt;p&gt;​    &lt;strong&gt;最小二乘法&lt;/strong&gt;（&lt;strong&gt;least squares method&lt;/strong&gt;），又称&lt;strong&gt;最小平方法&lt;/strong&gt;，是一种&lt;a href=&quot;https://zh.wikipedia.org/wiki/数学&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;数学&lt;/a&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/优化&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;优化&lt;/a&gt;方法。它通过最小化&lt;a href=&quot;https://zh.wikipedia.org/wiki/误差&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;误差&lt;/a&gt;的平方和寻找数据的最佳函数匹配。&lt;/p&gt;
+&lt;p&gt;​    利用最小二乘法可以简便地求得未知的数据，并使得这些求得的数据与实际数据之间误差的平方和为最小。&lt;/p&gt;
     
     </summary>
     
@@ -129,7 +127,7 @@
     <link href="http://yoursite.com/2019/11/09/hive-%E8%84%9A%E6%9C%AC%E7%94%A8%E6%88%B7-and-beeline/"/>
     <id>http://yoursite.com/2019/11/09/hive-脚本用户-and-beeline/</id>
     <published>2019-11-09T05:57:26.000Z</published>
-    <updated>2019-11-18T11:20:54.521Z</updated>
+    <updated>2019-11-22T10:20:24.212Z</updated>
     
     <summary type="html">
     
