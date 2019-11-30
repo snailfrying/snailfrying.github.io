@@ -141,7 +141,7 @@
 <meta property="og:image" content="http://yoursite.com/uploads/loading.gif">
 <meta property="og:image" content="http://yoursite.com/uploads/loading.gif">
 <meta property="og:image" content="http://yoursite.com/uploads/loading.gif">
-<meta property="og:updated_time" content="2019-11-30T09:37:30.342Z">
+<meta property="og:updated_time" content="2019-11-30T09:42:07.269Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="chapter2 最小二乘法完整实践理论">
 <meta name="twitter:description" content="chapter2- 最小二乘法完整实践理论 概要​    此章，通过最小二乘法，在统计学习，机器学习，深度学习的轨道上进行讨论，它们叁之间的共性与异性。  什么是最小二乘法​    最小二乘法（least squares method），又称最小平方法，是一种数学优化方法。它通过最小化误差的平方和寻找数据的最佳函数匹配。 ​    利用最小二乘法可以简便地求得未知的数据，并使得这些求得的数据与实">
@@ -503,7 +503,7 @@
 <p>$$<br>\theta_1=\frac{m\sum_{i=1}^mx^{(i)}y^{(i)} - \sum_{i=1}^mx^{(i)}\sum_{i=1}^my^{(i)}}<br>{m\sum_{i=1}^m(x^{(i)})^2 - (\sum_{i=1}^mx^{(i)})^2}<br>$$</p>
 <p>​        利用求导的方式,很容推广到多个样本特征的多项式拟合当中。即在拟合函数公式(1)当中，求解参数                            $\theta_i(i=0,1,2,3,\cdots,m)$,可以简化拟合函数为：<br>$$<br>h_θ(x_1,x_2,…x_n)=\sum_{i=0}^{n}\theta_ix_i<br>$$<br>​         损失函数就可以表示为：<br>$$<br>J(\theta_0,\theta_1) =\sum_{i=1}^m(h_θ(x_0^{(i)},x_1^{(i)},\cdots,x_j^{(i)}) - y^{(j)})^2=\sum_{i=1}^n(\sum_{j=1}^m\theta_jx_j^{(i)}-y^{(i)})^2<br>$$<br>​        利用损失函数分别对$\theta_i(i=0,1,2,3,\cdots,m)$求导，并令导数为0可得：<br>$$<br>\sum_{i=1}^n(\sum_{j=1}^m\theta_jx_j^{(i)}-y^{(i)})x_j^=0 \ (j=0,\cdots,m)<br>$$<br>​          就可以得到一个M+1个一元方程组，求解这个方程组，就可以得到所有的$\theta_i(i=0,1,2,3,\cdots,m)$。代            入参数到$h_\theta$就可以得到拟合函数了</p>
 <h6 id="3-2-矩阵法求解最小二乘法"><a href="#3-2-矩阵法求解最小二乘法" class="headerlink" title="3.2  矩阵法求解最小二乘法"></a>3.2  矩阵法求解最小二乘法</h6><p>​        对于上述$h_\theta$,矩阵表达式形式为：</p>
-<p>$$<br>h_\theta(X) = \theta X<br>$$<br>​        即$h_{\theta}=y= \theta_1 x + \theta_0$,写成代价矩阵式为:<br>$$<br>\min\limits_{x_0,x_1}<br>\begin{Vmatrix}<br>\begin{pmatrix}<br>      \theta_0\<br>      \theta_1<br>\end{pmatrix}<br>\begin{pmatrix}<br>       1&amp;x_1 \<br>       .&amp;. \<br>       .&amp;. \<br>       .&amp;. \<br>       1&amp;x_m \<br>\end{pmatrix}<br>-<br>\begin{pmatrix}<br>       y_1\<br>       .\<br>       .\<br>       .\<br>       y_m \<br>    \end{pmatrix}<br>\end{Vmatrix}<em>2<br>= \min\limits</em>{x}||\theta X-Y||_2<br>$$</p>
+<p>$$<br>h_\theta(X) = \theta X<br>$$<br>​        即$h_{\theta}=y= \theta_1 x + \theta_0$,写成代价矩阵式为:<br>$$<br>\min\limits_{x_0,x_1}<br>\begin{Vmatrix}<br>    \begin{pmatrix}<br>          \theta_0\<br>          \theta_1<br>    \end{pmatrix}<br>    \begin{pmatrix}<br>           1&amp;x_1 \<br>           .&amp;. \<br>           .&amp;. \<br>           .&amp;. \<br>           1&amp;x_m \<br>    \end{pmatrix} -<br>    \begin{pmatrix}<br>           y_1\<br>           .\<br>           .\<br>           .\<br>           y_m \<br>    \end{pmatrix}<br>\end{Vmatrix}<em>2<br>=\  \min\limits</em>{x}||\theta X-Y||_2<br>$$</p>
 <p>​        化简为矩阵损失函数 $J(θ)=\frac{1}{2}(θX−Y)^T(θX−Y)$，其中， 假设函数$h_{\theta}(X)$为mx1的向量,$\theta$为nx1的    向量，里面有n个代数法的模型参数。$X$为mxn维的矩阵。m代表样本的个数，n代表样本的特征数.</p>
 <p>​        对于损失函数求导，并且令为0，可能</p>
 <p>​<br>$$<br>\frac{\partial}{\partial \theta}J{(\theta)} = X^T(X\theta-Y) = 0<br>$$<br>​     这里用到了矩阵求导链式法则，和两个矩阵求导的公式：</p>
