@@ -141,7 +141,7 @@
 <meta property="og:image" content="http://yoursite.com/uploads/loading.gif">
 <meta property="og:image" content="http://yoursite.com/uploads/loading.gif">
 <meta property="og:image" content="http://yoursite.com/uploads/loading.gif">
-<meta property="og:updated_time" content="2019-11-30T09:56:03.992Z">
+<meta property="og:updated_time" content="2019-12-01T13:06:41.618Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="chapter2 最小二乘法完整实践理论">
 <meta name="twitter:description" content="chapter2- 最小二乘法完整实践理论 概要​    此章，通过最小二乘法，在统计学习，机器学习，深度学习的轨道上进行讨论，它们叁之间的共性与异性。  什么是最小二乘法​    最小二乘法（least squares method），又称最小平方法，是一种数学优化方法。它通过最小化误差的平方和寻找数据的最佳函数匹配。 ​    利用最小二乘法可以简便地求得未知的数据，并使得这些求得的数据与实">
@@ -520,16 +520,16 @@
 
 <h6 id="d-训练数据"><a href="#d-训练数据" class="headerlink" title="d.训练数据"></a>d.训练数据</h6><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># M=0</span></span><br><span class="line">p_lsq_0 = fitting(M=<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
 
-<p><img src="/uploads/loading.gif" data-original=".._posts%5Cchapter2-%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E6%B3%95%E5%AE%8C%E6%95%B4%E5%AE%9E%E8%B7%B5%E7%90%86%E8%AE%BA%5Cchapter1_data%5Cd1.png" alt="d1"></p>
+<p><img src="/uploads/loading.gif" data-original="D:%5Csnail_blog%5Cblog%5Csource%5Cimage%5Cd1.png" alt="d1"></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># M=1</span></span><br><span class="line">p_lsq_1 = fitting(M=<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
 
-<p><img src="/uploads/loading.gif" data-original=".._posts%5Cchapter2-%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E6%B3%95%E5%AE%8C%E6%95%B4%E5%AE%9E%E8%B7%B5%E7%90%86%E8%AE%BA%5Cchapter1_data%5Cd2.png" alt></p>
+<p><img src="/uploads/loading.gif" data-original="..%5Cimage%5Cd2.png" alt></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># M=3</span></span><br><span class="line">p_lsq_3 = fitting(M=<span class="number">3</span>)</span><br></pre></td></tr></table></figure>
 
-<p><img src="/uploads/loading.gif" data-original=".._posts%5Cchapter2-%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E6%B3%95%E5%AE%8C%E6%95%B4%E5%AE%9E%E8%B7%B5%E7%90%86%E8%AE%BA%5Cchapter1_data%5Cd3.png" alt></p>
+<p><img src="/uploads/loading.gif" data-original="..%5Cimage%5Cd3.png" alt></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># M=9</span></span><br><span class="line">p_lsq_9 = fitting(M=<span class="number">9</span>)</span><br></pre></td></tr></table></figure>
 
-<p><img src="/uploads/loading.gif" data-original=".._posts%5Cchapter2-%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E6%B3%95%E5%AE%8C%E6%95%B4%E5%AE%9E%E8%B7%B5%E7%90%86%E8%AE%BA%5Cchapter1_data%5Cd4.png" alt></p>
+<p><img src="/uploads/loading.gif" data-original="..%5Cimage%5Cd4.png" alt></p>
 <p>​        随着M阶数的增加，函数对点的拟合程度也随之提高，当M=3时，函数拟合程度的泛化能力算是最好的。当M=9的时候，函数把每一个点都进行了拟合，并且都在线上，也就是说在训练集当中，准确率为100%，但是如果设置测试集，M=9拟合的函数一定没有M=3的函数的泛化能力强。下面，介绍正则化。当我们追求准确率时，又要保证函数的泛化能力，正则化是一个很好的技巧，可以有效的防止过拟合问题。当然不同的正则化，适应着不同的数据分布，随着我们篇章的书写，会继续讨论相关问题。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">regularization = <span class="number">0.0001</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">residuals_func_regularization</span><span class="params">(p, x, y)</span>:</span></span><br><span class="line">    ret = fit_func(p, x) - y</span><br><span class="line">    ret = np.append(ret,np.sqrt(<span class="number">0.5</span> * regularization * np.square(p)))  <span class="comment"># L2范数作为正则化项</span></span><br><span class="line">    <span class="keyword">return</span> ret</span><br></pre></td></tr></table></figure>
 
@@ -537,7 +537,7 @@
 
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#可视化正则化后与不适用正则化之间的效果的效果</span></span><br><span class="line">plt.plot(x_points, real_func(x_points), label=<span class="string">'real'</span>)</span><br><span class="line">plt.plot(x_points, fit_func(p_lsq_9[<span class="number">0</span>], x_points), label=<span class="string">'fitted curve'</span>)</span><br><span class="line">plt.plot(</span><br><span class="line">    x_points,</span><br><span class="line">    fit_func(p_lsq_regularization[<span class="number">0</span>], x_points),</span><br><span class="line">    label=<span class="string">'regularization'</span>)</span><br><span class="line">plt.plot(x, y, <span class="string">'bo'</span>, label=<span class="string">'noise'</span>)</span><br><span class="line">plt.legend()</span><br></pre></td></tr></table></figure>
 
-<p><img src="/uploads/loading.gif" data-original=".._posts%5Cchapter2-%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E6%B3%95%E5%AE%8C%E6%95%B4%E5%AE%9E%E8%B7%B5%E7%90%86%E8%AE%BA%5Cchapter1_data%5Cd5.png" alt></p>
+<p><img src="/uploads/loading.gif" data-original="..%5Cimage%5Cd5.png" alt></p>
 <p>从上图，可以看出，正则化对于模型的泛化能力还是很有效果的，当然增加拟合数据x，y的数量，拟合程度降维更好，有兴趣的同学可以试一试。</p>
 <ol start="5">
 <li><h6 id="深度学习实现最小二乘法"><a href="#深度学习实现最小二乘法" class="headerlink" title="深度学习实现最小二乘法"></a>深度学习实现最小二乘法</h6><p>现在我们使用深度学习方法去实现最小二乘法。这里选择TensorFlow 2.0进行实现。可以使用在线编译器google-colab-notebook.</p>
@@ -555,7 +555,7 @@
 
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#通过获得参数，实现拟合函数</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">pre_f</span><span class="params">(x)</span>:</span></span><br><span class="line">  f = Ws1[<span class="number">-1</span>]*x + Ws2[<span class="number">-1</span>]*x**<span class="number">2</span> + Ws3[<span class="number">-1</span>]*x**<span class="number">3</span> + bs[<span class="number">-1</span>]</span><br><span class="line">  <span class="keyword">return</span> f</span><br><span class="line"><span class="comment">#可视化拟合函数</span></span><br><span class="line">plt.plot(t_x_points.numpy(), t_y_points.numpy(),label = <span class="string">'real'</span>)</span><br><span class="line">plt.plot(t_x.numpy(), t_y.numpy(),label = <span class="string">'noise'</span>)</span><br><span class="line">plt.plot(t_x.numpy(), pre_f(t_x).numpy(), label = <span class="string">'pre'</span>)</span><br><span class="line">plt.legend()</span><br></pre></td></tr></table></figure>
 
-<p><img src="/uploads/loading.gif" data-original=".._posts%5Cchapter2-%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E6%B3%95%E5%AE%8C%E6%95%B4%E5%AE%9E%E8%B7%B5%E7%90%86%E8%AE%BA%5Cchapter1_data%5Cd6.png" alt></p>
+<p><img src="/uploads/loading.gif" data-original="..%5Cimage%5Cd6.png" alt></p>
 <p>​        可见，在小量的数据当中，深度学习的效果，不尽人意，和ML实现的效果相比，相差还是较大的。你可以把数据量以及迭代次数增加，可以增加拟合效果，特别是数据量的增加，可以有效的提升模型的效果。如果感兴趣，可以试一试。当然深度学习的正则化亦有效果的。</p>
 </li>
 <li><h5 id="总结三者之间的联系以及区别。"><a href="#总结三者之间的联系以及区别。" class="headerlink" title="总结三者之间的联系以及区别。"></a>总结三者之间的联系以及区别。</h5><p>​        通过统计学，机器学习，深度学习上理论和实践的讲述。我们很容易从中总结如下几点它们之间的联系与区别。</p>
@@ -1581,5 +1581,5 @@
 
   
 
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"left","width":200,"height":400},"mobile":{"show":true},"react":{"opacity":0.7}});</script><script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script></body>
+<script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"left","width":200,"height":400},"mobile":{"show":true},"react":{"opacity":0.7}});</script></body>
 </html>
