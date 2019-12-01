@@ -179,8 +179,8 @@
         <category>database</category>
       </categories>
       <tags>
-        <tag>sql</tag>
         <tag>hive</tag>
+        <tag>sql</tag>
       </tags>
   </entry>
   <entry>
@@ -191,9 +191,9 @@
         <category>database</category>
       </categories>
       <tags>
+        <tag>sql</tag>
         <tag>Optimization</tag>
         <tag>db2</tag>
-        <tag>sql</tag>
       </tags>
   </entry>
   <entry>
