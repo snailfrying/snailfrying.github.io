@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-12-03T05:10:54.078Z</updated>
+  <updated>2019-12-03T08:37:19.536Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,11 +17,39 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>chapter3-感知机</title>
+    <link href="http://yoursite.com/2019/11/20/chapter3-%E6%84%9F%E7%9F%A5%E6%9C%BA/"/>
+    <id>http://yoursite.com/2019/11/20/chapter3-感知机/</id>
+    <published>2019-11-20T12:14:04.000Z</published>
+    <updated>2019-12-03T08:37:19.536Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;hr&gt;
+&lt;h2 id=&quot;chapter3-感知机&quot;&gt;&lt;a href=&quot;#chapter3-感知机&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="python" scheme="http://yoursite.com/categories/python/"/>
+    
+    
+      <category term="algorithms" scheme="http://yoursite.com/tags/algorithms/"/>
+    
+  </entry>
+  
+  <entry>
     <title>chapter2 最小二乘法完整实践理论</title>
     <link href="http://yoursite.com/2019/11/20/chapter2-%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E6%B3%95%E5%AE%8C%E6%95%B4%E5%AE%9E%E8%B7%B5%E7%90%86%E8%AE%BA/"/>
     <id>http://yoursite.com/2019/11/20/chapter2-最小二乘法完整实践理论/</id>
     <published>2019-11-20T12:14:04.000Z</published>
-    <updated>2019-12-03T05:10:54.078Z</updated>
+    <updated>2019-12-03T11:39:20.108Z</updated>
     
     <summary type="html">
     
@@ -526,40 +554,6 @@
     
     
       <category term="self-study" scheme="http://yoursite.com/tags/self-study/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>有梦就有远方</title>
-    <link href="http://yoursite.com/2019/10/07/snaillife/"/>
-    <id>http://yoursite.com/2019/10/07/snaillife/</id>
-    <published>2019-10-07T07:59:43.000Z</published>
-    <updated>2019-10-30T03:19:46.931Z</updated>
-    
-    <summary type="html">
-    
-      &lt;iframe scrolling=&quot;no&quot; src=&quot;https://tianqiapi.com/api.php?style=tx&amp;skin=sogou&quot; frameborder=&quot;0&quot; width=&quot;100%&quot; height=&quot;30&quot; allowtransparency=&quot;true&quot;&gt;&lt;/iframe&gt;
-&lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=&quot;330&quot; height=&quot;86&quot; src=&quot;//music.163.com/outchain/player?type=2&amp;id=1309814540&amp;auto=1&amp;height=66&quot;&gt;
-&lt;/iframe&gt;
-
-
-&lt;blockquote class=&quot;blockquote-center&quot;&gt;&lt;p&gt;&lt;font face=&quot;微软雅黑&quot; color=&quot;#339933&quot; text-align=&quot;center&quot; font-size=&quot;24&quot;&gt;有梦才有远方&lt;/font&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;&lt;font face=&quot;微软雅黑&quot; color=&quot;#FF0000&quot; style=&quot;background-color:#9999999;&quot;&gt;&amp;gt;    雪夜茫茫，你知道一棵小草的梦吗？寒冷孤寂中，她怀抱一个信念取暖，等到村归大地时，她就会以两片绿叶问候春天，而那两片绿叶，就是曾经在雪地下轻轻地梦呓。&lt;/font&gt;&lt;br&gt;&lt;font face=&quot;微软雅黑&quot; color=&quot;#FF7F00&quot; style=&quot;background-color:#9999999;&quot;&gt; &amp;gt;     候鸟南飞，征途迢迢，他的梦呢?在远方，在视野里，那是南方湛蓝的大海。她很累很累，但依然往前奋飞。因为梦又赐予她另一对翅膀。&lt;/font&gt;&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="随笔" scheme="http://yoursite.com/categories/%E9%9A%8F%E7%AC%94/"/>
-    
-    
-      <category term="梦想" scheme="http://yoursite.com/tags/%E6%A2%A6%E6%83%B3/"/>
-    
-      <category term="破晓" scheme="http://yoursite.com/tags/%E7%A0%B4%E6%99%93/"/>
-    
-      <category term="古月山风" scheme="http://yoursite.com/tags/%E5%8F%A4%E6%9C%88%E5%B1%B1%E9%A3%8E/"/>
     
   </entry>
   
