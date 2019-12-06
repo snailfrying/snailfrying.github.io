@@ -440,7 +440,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  294
+                  951
                 </span>
               
 
@@ -456,7 +456,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  1
+                  3
                 </span>
               
             </div>
@@ -480,8 +480,19 @@
         
           
             <hr>
-<h2 id="chapter3-感知机"><a href="#chapter3-感知机" class="headerlink" title="chapter3-感知机"></a>chapter3-感知机</h2><h5 id="1-概要"><a href="#1-概要" class="headerlink" title="1.概要"></a>1.概要</h5><p>通过上一章最小二乘法的理论与实践，我们知道统计学学习-机器学习-深度学习，它们之间的联系与区别。在这我们将讨论感知机算法，再次讨论他们叁之间的关系。并且很有必要熟悉感知机，虽然它现在在分类模型当中已经不适用，因为泛化能力有限，能力更强的为支撑向量机(svm)。但是它在机器学习和深度学习其他深奥算法上有较大的联系，甚至为其算法逻辑实现基础。掌握它的思想，为进一步的提升，打下坚实的基础。</p>
-<h5 id="2-感知机原理"><a href="#2-感知机原理" class="headerlink" title="2.感知机原理"></a>2.感知机原理</h5><p>首先感知机算法是一种二分类线性算法。当然也可以提升至多维分类模型上，但是都是线性模型，对于非线性的，神经网络了解一下。感知机学习算法：用一个函数输入$x$(一个实值的向量)映射到输出值$f(x)$(一个二元值):<br>$$<br>f(x)=\begin{cases}<br>    1 \qquad if \quad w.x + b &gt; 0 \<br>    -1 \qquad other wise<br>\end{cases}<br>$$</p>
+<h2 id="chapter3-感知机"><a href="#chapter3-感知机" class="headerlink" title="chapter3-感知机"></a>chapter3-感知机</h2><h5 id="1-概要"><a href="#1-概要" class="headerlink" title="1.概要"></a>1.概要</h5><p>通过上一章最小二乘法的理论与实践，我们知道统计学学习-机器学习-深度学习，它们之间的联系与区别。本章我们将讨论感知机算法，再次讨论他们叁之间的关系。并且很有必要熟悉感知机，虽然它现在在分类模型当中已经不适用，因为泛化能力有限，能力更强的为支撑向量机(svm)。但是它在机器学习和深度学习其他深奥算法上有较大的联系，甚至为其算法逻辑实现基础。掌握它的思想，为进一步的提升，打下坚实的基础。</p>
+<h5 id="2-感知机模型原理"><a href="#2-感知机模型原理" class="headerlink" title="2.感知机模型原理"></a>2.感知机模型原理</h5><p>首先感知机算法是一种二分类线性算法。当然也可以提升至多维分类模型上，但是都是线性模型，对于非线性的，神经网络了解一下。感知机学习算法：用一个函数输入$x$(一个实值的向量)映射到输出值$f(x)$(一个二元值):<br>$$<br>f(x)=\begin{cases}<br>    1 \qquad if \quad w.x + b &gt; 0 \<br>    -1 \qquad other wise<br>\end{cases}<br>$$</p>
+<p>对于多维来说，如果我们有m个样本，每个样本对应于n维特征和一个二元类别输出，如下：<br>$$<br>(x_1^{(0)},x_2^{(0)},\cdots ,x_n^{(0)},y_0),\<br>(x_1^{(1)},x_2^{(1)},\cdots ,x_n^{(1)},y_1),\<br>(x_1^{(2)},x_2^{(2)},\cdots ,x_n^{(2)},y_2),\<br>\cdots,\<br>(x_1^{(m)},x_2^{(m)},\cdots ,x_n^{(m)},y_m)<br>$$<br>目标是找到一个如下平面去分割数据，即为：<br>$$<br>\theta_0+\theta_1x_1+\theta_2x_2+\theta_3x_3+\cdots+\theta_nx_n =0<br>$$<br>比较函数$f(x)$我们亦可以找出一个平面作为二分类平面,即为：<br>$$<br>f(x)=\begin{cases}<br>    \theta_0+\theta_1x_1+\theta_2x_2+\theta_3x_3+\cdots+\theta_nx_n&gt;0 \<br>    \theta_0+\theta_1x_1+\theta_2x_2+\theta_3x_3+\cdots+\theta_nx_n&lt;0<br>\end{cases}<br>$$<br>当然，我们是可以进行简化公式3的，拟定一个$x_0=1$，这样就有一个超平面$\sum_{i=0}^n \theta \bullet x$</p>
+<p>其中，$\theta$和$x$都是$(n+1)\times1$的向量,之间内积就组成一个平面。</p>
+<p>感知机模型定义为，$y=sign(\theta \bullet x)$,其中<br>$$<br>sign(x)=\begin{cases}-1 \quad x&lt;0 \ 1 \quad x\geq 0 \end{cases}<br>$$</p>
+<h5 id="3-感知机模型损失函数"><a href="#3-感知机模型损失函数" class="headerlink" title="3.感知机模型损失函数"></a>3.感知机模型损失函数</h5><p>从公式(5)可以看出令我们把的结果分为1和-1而不是0，这样我们可以很好的去判断分类结果是否正确，比如$y\theta \bullet x=1$(预测结果与真实样本同号，即为正确)，反之，$y\theta \bullet x=-1$则为分类错误。</p>
+<p>对于感知机模型函数，我们目标就是使分类错误的点到超平面$y$的距离和最小，由于$y\theta \bullet x&lt;0$,所以对于每一个被错误分类的样本$i\in M$(其中M个分类错误点)到超平面的距离为：<br>$$<br>\frac{-y^{(i)}\theta \bullet x^{(i)} }{\begin{Vmatrix} \theta \end{Vmatrix}<em>2}\<br>其中{\begin{Vmatrix} \theta \end{Vmatrix}_2}为L2范数<br>$$<br>即可得到初步的损失函数:<br>$$<br>J(\theta) = -\sum</em>{i=0,i \in M}^{n}\frac{y^{(i)}\theta \bullet x^{(i)} }{\begin{Vmatrix} \theta \end{Vmatrix}_2}<br>$$<br>观察公式(7)，容易看出，分子分母都带有$\theta$，利用简单的数学知识可以看出，不管$\theta$如何增加还是减小，对于</p>
+<p>$J(\theta)$来说都是同倍数增加减的。所以，我们可以把分子分母中的$\theta$简化一个，即，我们保留分子中的$\theta$。因此，简化后的损失函数为:<br>$$<br>J(\theta) = - \sum_{i=0,i \in M}^{n}{y^{(i)}\theta \bullet x^{(i)} }<br>$$<br>如果您了解支撑向量机(svm)的话，他的损失函数，是保留的分母，也就是:<br>$$<br>min\frac{1}{\begin{Vmatrix}\theta\end{Vmatrix}} \Leftrightarrow min\frac{1}{2}\begin{Vmatrix}\theta\end{Vmatrix}_2<br>$$</p>
+<h5 id="3-感知机模型的优化算法"><a href="#3-感知机模型的优化算法" class="headerlink" title="3.感知机模型的优化算法"></a>3.感知机模型的优化算法</h5><h5 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h5><p>@(*.*)@ @(^.^)@ @(*.*)@ @(^.^)@ @(*.*)@ @(^.^)@ @(*.*)@ @(^.^)@ @(*.*)@ @(^.^)@ @(*.*)@ @(^.^)@ </p>
+<p><a href="https://www.cnblogs.com/pinard/p/6042320.html" target="_blank" rel="noopener">感知机原理</a></p>
+<p><a href="https://www.zhihu.com/question/20473040" target="_blank" rel="noopener">什么是范数</a></p>
+<p><a href="https://www.cnblogs.com/graphics/archive/2010/07/10/1774809.html" target="_blank" rel="noopener">如何求点到面的距离</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/31886934" target="_blank" rel="noopener">支撑向量机原理</a></p>
 
           
         
@@ -1513,7 +1524,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">68.6k</span>
+    <span title="Site words total count">69.3k</span>
   
 </div>
 

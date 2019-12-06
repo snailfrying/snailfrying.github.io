@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-12-04T12:45:25.328Z</updated>
+  <updated>2019-12-06T09:52:31.209Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://yoursite.com/2019/11/20/chapter3-%E6%84%9F%E7%9F%A5%E6%9C%BA/"/>
     <id>http://yoursite.com/2019/11/20/chapter3-感知机/</id>
     <published>2019-11-20T12:14:04.000Z</published>
-    <updated>2019-12-04T12:45:25.328Z</updated>
+    <updated>2019-12-06T09:52:31.209Z</updated>
     
     <summary type="html">
     
@@ -49,7 +49,7 @@
     <link href="http://yoursite.com/2019/11/20/chapter2-%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E6%B3%95%E5%AE%8C%E6%95%B4%E5%AE%9E%E8%B7%B5%E7%90%86%E8%AE%BA/"/>
     <id>http://yoursite.com/2019/11/20/chapter2-最小二乘法完整实践理论/</id>
     <published>2019-11-20T12:14:04.000Z</published>
-    <updated>2019-12-04T11:53:46.140Z</updated>
+    <updated>2019-12-05T11:15:39.296Z</updated>
     
     <summary type="html">
     
@@ -502,9 +502,9 @@
       <category term="database" scheme="http://yoursite.com/categories/database/"/>
     
     
-      <category term="hive" scheme="http://yoursite.com/tags/hive/"/>
-    
       <category term="sql" scheme="http://yoursite.com/tags/sql/"/>
+    
+      <category term="hive" scheme="http://yoursite.com/tags/hive/"/>
     
   </entry>
   
@@ -530,11 +530,11 @@
       <category term="database" scheme="http://yoursite.com/categories/database/"/>
     
     
-      <category term="sql" scheme="http://yoursite.com/tags/sql/"/>
-    
       <category term="Optimization" scheme="http://yoursite.com/tags/Optimization/"/>
     
       <category term="db2" scheme="http://yoursite.com/tags/db2/"/>
+    
+      <category term="sql" scheme="http://yoursite.com/tags/sql/"/>
     
   </entry>
   
