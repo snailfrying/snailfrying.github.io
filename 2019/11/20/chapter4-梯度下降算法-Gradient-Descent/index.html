@@ -136,7 +136,7 @@
 <meta property="og:description" content="chapter4-梯度下降算法(Gradient Descent)求解机器学习算法的模型参数时，即无约束优化问题时，梯度下降（Gradient Descent）是最常采用的方法之一，另一种常用的方法是最小二乘法。这里就对梯度下降法做一个完整的总结。 1.梯度在微积分里面，对多元函数的参数求∂偏导数，把求得的各个参数的偏导数以向量的形式写出来，就是梯度。比如函数$f(x,y)$,分别对$x,y$">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://yoursite.com/uploads/loading.gif">
-<meta property="og:updated_time" content="2019-12-09T09:51:00.782Z">
+<meta property="og:updated_time" content="2019-12-10T11:02:59.793Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="chapter4-梯度下降算法(Gradient Descent)">
 <meta name="twitter:description" content="chapter4-梯度下降算法(Gradient Descent)求解机器学习算法的模型参数时，即无约束优化问题时，梯度下降（Gradient Descent）是最常采用的方法之一，另一种常用的方法是最小二乘法。这里就对梯度下降法做一个完整的总结。 1.梯度在微积分里面，对多元函数的参数求∂偏导数，把求得的各个参数的偏导数以向量的形式写出来，就是梯度。比如函数$f(x,y)$,分别对$x,y$">
@@ -440,7 +440,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  624
+                  2.2k
                 </span>
               
 
@@ -456,7 +456,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  2
+                  8
                 </span>
               
             </div>
@@ -482,10 +482,64 @@
 <h5 id="chapter4-梯度下降算法-Gradient-Descent"><a href="#chapter4-梯度下降算法-Gradient-Descent" class="headerlink" title="chapter4-梯度下降算法(Gradient Descent)"></a>chapter4-梯度下降算法(Gradient Descent)</h5><p>求解机器学习算法的模型参数时，即无约束优化问题时，梯度下降（Gradient Descent）是最常采用的方法之一，另一种常用的方法是最小二乘法。这里就对梯度下降法做一个完整的总结。</p>
 <h5 id="1-梯度"><a href="#1-梯度" class="headerlink" title="1.梯度"></a>1.梯度</h5><p>在微积分里面，对多元函数的参数求∂偏导数，把求得的各个参数的偏导数以向量的形式写出来，就是梯度。比如函数$f(x,y)$,分别对$x,y$进行求导，求得梯度向量是$(\frac{\partial f}{\partial x},\frac{\partial f}{\partial y})^T$ 简称$grad f(x,y)$ | $\Delta f(x,y)$,对于点为$(x_0,y_0)$,他的梯度向量值为$(\frac{\partial f}{\partial x_0},\frac{\partial f}{\partial y_0})^T$ | $\Delta f(x_0,y_0)$,如果为三个变量，就为：$\Delta f(x,y,z)$,以此类推。</p>
 <p>那为什么要找到函数$f(x,y)$的梯度呢？因为梯度向量是函数下降(增加)速度最快的地方。比如说，在初始点$(x_0,y_0)$ 沿着梯度向量$\Delta f(x_0,y_0)$ (-$\Delta f(x_0,y_0)$)，增加最快(下降最快)的方向 ，我们能够更快的找到函数的最小值(最大值)。</p>
+<a id="more"></a>
+
 <h5 id="2-梯度上升与梯度下降"><a href="#2-梯度上升与梯度下降" class="headerlink" title="2.梯度上升与梯度下降"></a>2.梯度上升与梯度下降</h5><p>在机器学习背景当中，求损失函数的最小值，是非常常见的。对于梯度来说，求梯度向量给予不同的正负，就能够使得在函数上走向增加最快的方向(+)和下降最快的方向(-)。即为$f(\theta)$和$-f(\theta)$。</p>
-<h5 id="3-梯度下降算法详解"><a href="#3-梯度下降算法详解" class="headerlink" title="3.梯度下降算法详解"></a>3.梯度下降算法详解</h5><h6 id="3-1梯度下降算法的直观解释"><a href="#3-1梯度下降算法的直观解释" class="headerlink" title="3.1梯度下降算法的直观解释"></a>3.1梯度下降算法的直观解释</h6><p>梯度下降算法如下图所示，从图中我们可以看出，从初始点出发，通过迭代不断的朝着下降速度最快的方向前进。但是在不同的step size (learning rate)下，他走向了不同的地方，因为函数可能有多个峰值和谷值，所以会找到不同谷底的最小值，使得最终的结果可能是局部最优。当然梯度下降算法分为：批量梯度下降算法(BGD),随机梯度下降算法(SGD)和小批量随机梯度算法(MBGD)。选择不同的算法，他们在运行时间和结果是否最优解上有较大的差异。(如果函数为凸函数，那么不管怎样都会有全局最优解，比如$x^2$)</p>
+<h5 id="3-梯度下降算法详解"><a href="#3-梯度下降算法详解" class="headerlink" title="3.梯度下降算法详解"></a>3.梯度下降算法详解</h5><h6 id="3-1梯度下降算法的直观解释"><a href="#3-1梯度下降算法的直观解释" class="headerlink" title="3.1梯度下降算法的直观解释"></a>3.1梯度下降算法的直观解释</h6><p>梯度下降算法如下图所示，从图中我们可以看出，从初始点出发，通过迭代不断的朝着下降速度最快的方向前进。但是在不同的step size (learning rate)下，他走向了不同的地方，因为函数可能有多个峰值和谷值，所以会找到不同谷底的最小值，使得最终的结果可能是局部最优。当然梯度下降算法分为：批量梯度下降算法(BGD),随机梯度下降算法(SGD)和小批量随机梯度算法(MBGD)(算法区别主要在于样本选择)。选择不同的算法，他们在运行时间和结果是否最优解上有较大的差异。(如果函数为凸函数，那么不管怎样都会有全局最优解，比如$x^2$)</p>
 <p><img src="/uploads/loading.gif" data-original="/image/gradient_descent.png" alt></p>
-<h6 id="3-2-梯度下降算法相关概念"><a href="#3-2-梯度下降算法相关概念" class="headerlink" title="3.2 梯度下降算法相关概念"></a>3.2 梯度下降算法相关概念</h6>
+<h6 id="3-2-梯度下降算法相关概念"><a href="#3-2-梯度下降算法相关概念" class="headerlink" title="3.2 梯度下降算法相关概念"></a>3.2 梯度下降算法相关概念</h6><p>由上述介绍，我们总结概念如下：</p>
+<ol>
+<li><p>步长(learning rate)： 步长决定了你梯度下降时，一次迭代你往前进方向走的长度</p>
+</li>
+<li><p>特征(feature): 指样本输入部分。比如2个但特征样本$(x_0,y_0)(x_1,y_1)$，则第一个样本特征为$x_0$，输出为$y_0$.</p>
+</li>
+<li><p>假设函数(hypothesis fuction):在监督学习中，为了拟合输入样本，而使用的假设函数，记为$h_\theta(x)$,比如对于某个单个特征的m个样本$(x^{(i)},y^{(i)}) \quad (i=1,2,3,\cdots,m)$,可以采用拟合函数如下:$h_\theta=\theta_0 + \theta_1x$.</p>
+</li>
+<li><p>损失函数(loss function): 为了评估模型拟合的好坏，通常用损失函数来度量拟合程度。损失函数极小化，以为这拟合度最好，对应的模型参数即为最优函数。在线性回归中，损失函数，通常为样本输出与假设函数的差的平方，即为平方误差(mse).比如m个样本$(x^{(i)},y^{(i)}) \quad (i=1,2,3,\cdots,m)$,采用线性回归，损失函数为：<br>$$<br>J(\theta_0,\theta_1) = \sum_{i=1}^m(h_\theta{(x_i)}-y_i)^2<br>$$<br>   其中$x_i$表示第$i$个样本特征,$y_i$表示第$i$个样本的输出，$h_\theta(x)$为假设函数。</p>
+</li>
+</ol>
+<h6 id="3-3-梯度下降详细算法"><a href="#3-3-梯度下降详细算法" class="headerlink" title="3.3 梯度下降详细算法"></a>3.3 梯度下降详细算法</h6><p>类比于最小二乘法章节。梯度下降算法我们以线性回归来进行举例，它亦有代数式和矩阵式两种求解方式，下面我们将进行分别讨论。</p>
+<p>3.3.1 梯度下降代数式算法</p>
+<p>​    1. 确定假设函数和损失函数</p>
+<pre><code>对于线性回归的假设函数为$h_\theta(x_1,x_2,...x_n)=\theta_0+\theta_1x_1+...+\theta_{n−1}x_{n−1}$,其中$x_i$为样本特征，$\theta_i$为模型参数，同最小二乘法，我们可以令$x_0=1$,可以简化为**$h_θ(x_1,x_2,...x_n)=\sum_{i=0}^{n}\theta_ix_i$**,因此利用均方误差作为损失函数为：</code></pre><p>$$<br>J(\theta_0,\theta_1,\cdots,\theta_j) =\frac{1}{2m}\sum_{i=1}^m(h_θ(x_0^{(i)},x_1^{(i)},\cdots,x_j^{(i)}) - y^{(j)})^2=\frac{1}{2m}\sum_{i=1}^n(\sum_{j=1}^m\theta_jx_j^{(i)}-y^{(i)})^2<br>$$</p>
+<ol start="2">
+<li><p>算法参数的初始化</p>
+<p> 主要初始化模型参数$\theta_i$、终止距离$\epsilon $、步长$\alpha$和最大迭代次数max_iters.在没有先知经验下，我喜欢把数$\theta_i$初始化为0，$\epsilon $初始化为0.0001和$\alpha$初始化为0.38,max_iters初始化为1000.</p>
+<p>3.算法过程</p>
+<pre><code>1）对损失函数$\theta_i$求偏导，得到梯度向量，即线性回归梯度为:</code></pre><p>$$<br>\frac{\partial }{\partial \theta_i}J(\theta_0,\theta_1,\cdots,\theta_j) =\frac{1}{m}\sum_{i=1}^n(\sum_{j=1}^m\theta_jx_j^{(i)}-y^{(i)})x_j^{(i)}<br>$$<br>​        2）利用步长乘以损失函数梯度，得到当前位置下降的距离。</p>
+</li>
+</ol>
+<p>​        3）确定当前所有$\theta_i$下降距离是否都小于$\epsilon$,如果小于或者达到最大迭代次数结束max_iters就终止训练，即              最佳参数为当前$\theta_i$,如果没有就进行步骤4。</p>
+<p>​        4） 更新每个参数$\theta_i$,更新后进入步骤1，知道满足步骤3或者达到最大迭代次数结束max_iters<br>$$<br>\theta_i=\theta_i-\alpha\frac{1}{m}\sum_{i=1}^n(\sum_{j=1}^m\theta_jx_j^{(i)}-y^{(i)})x_j^{(i)}<br>$$<br>3.3.2 梯度下降矩阵式算法</p>
+<p>​     基本思想和线性代数解法一致，只是由矩阵进行表示</p>
+<p>​    1. 确定假设函数和损失函数</p>
+<p>​         对于简化后的$h_\theta$可知，能够得到矩阵表达式为:<br>$$<br>h_\theta(X) = \theta X<br>$$</p>
+<p>​          化简为矩阵损失函数 $J(θ)=\frac{1}{2}(θX−Y)^T(θX−Y)$，其中， 假设函数$h_{\theta}(X)$为mx1的向量,$\theta$为nx1的            向量，里面有n个代数法的模型参数。$X$为mxn维的矩阵。m代表样本的个数，n代表样本的特征数.</p>
+<ol start="2">
+<li><p>算法参数的初始化</p>
+<p>除$\theta_i$变为矩阵向量表示，其余和上述一致</p>
+</li>
+<li><p>算法过程</p>
+<p>1) 对损失函数$\theta_i$求偏导，得到梯度向量，即线性回归梯度为:</p>
+</li>
+</ol>
+<p>$$<br>\frac{\partial }{\partial \theta}J(\theta)=X^T(\theta X-Y)<br>$$</p>
+<p>​        2) 利用步长乘以损失函数梯度，得到当前位置下降的距离。</p>
+<p>​        3）确定当前所有$\theta_i$下降距离是否都小于$\epsilon$,如果小于或者达到最大迭代次数结束max_iters就终止训练，即最佳参数为当前$\theta_i$,如果没有就进行步骤4，</p>
+<p>​        4） 更新每个参数$\theta_i$,更新后进入步骤1，直到满足步骤3。<br>$$<br>\theta = \theta-\alpha X^T(\theta X-Y)<br>$$</p>
+<p>3.3.3 梯度下降算法代码实践</p>
+<p>​        现在我们举一个实际的栗子。对于函数$f(x)=x^4-3x^3+2$,求导可以得到$f^\prime(x)=4x^3-9x^2$.我们令$f^\prime(x)=0$可以解出$x=\frac{9}{4}=2.25 \quad and\quad x=0$,我们需要全局最小值，所以取得$x=2.25$.下面我们通过梯度下降算法去解出$x$的值：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">next_x = <span class="number">6</span>  <span class="comment">#初始化值x</span></span><br><span class="line">learning_rate = <span class="number">0.01</span>  <span class="comment"># 学习率</span></span><br><span class="line">epsilon = <span class="number">0.00001</span>  <span class="comment"># 迭代值相差阈值 如果相差太小就停止模型。</span></span><br><span class="line">max_iters = <span class="number">10000</span>  <span class="comment">#最大迭代数</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#导函数</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">df</span><span class="params">(x)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">4</span> * x**<span class="number">3</span> - <span class="number">9</span> * x**<span class="number">2</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> _i <span class="keyword">in</span> range(max_iters):</span><br><span class="line">    current_x = next_x</span><br><span class="line">    next_x = current_x - learning_rate * df(current_x)</span><br><span class="line"></span><br><span class="line">    step = next_x - current_x</span><br><span class="line">    <span class="keyword">if</span> abs(step) &lt;= epsilon:</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line">print(<span class="string">"Minimum at "</span>, next_x)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 最终输出求最小近似值x: "2.2499646074278457"</span></span><br></pre></td></tr></table></figure>
+
+<h6 id="3-4-梯度下降算法调参"><a href="#3-4-梯度下降算法调参" class="headerlink" title="3.4 梯度下降算法调参"></a>3.4 梯度下降算法调参</h6><p>​    1.learning_rate(步长)的选择，在不同阶数函数当中，峰值与谷值高低不一，造成步长的长度一定决定是否会错过全局最优峰值，或者会在局部峰值停滞不前。所以呢？根据我的经验来说：构建模型时，我们应该把步长设置得较大一点比如0.5，这样模型会更快的收敛，这样会更快的找到模型构建是否正确。当模型完全没问题时，应该逐渐减小步长，免得错过更好的峰值。</p>
+<ol start="2">
+<li>初始值设定。站在不同的高度，领略不同的风景。所以需要细心调整初始值。当然在深度学习当中对初始值的设定要求会更高。</li>
+<li>归一化。在线性模型当中，归一化可以使模型更快的收敛。不会各种低峰饶很久，才回收敛。最常见归一化就是特征值$(x-avg(x))/std(x)$，就是减去平均值，然后除以方差。</li>
+</ol>
+<h5 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h5><p><a href="https://www.cnblogs.com/pinard/p/5970503.html" target="_blank" rel="noopener">梯度下降算法原理</a></p>
+<p><a href="https://medium.com/deep-math-machine-learning-ai/chapter-1-2-gradient-descent-with-math-d4f2871af402" target="_blank" rel="noopener">gradient descent theory</a></p>
+<p><a href="https://www.cnblogs.com/shine-lee/p/11779514.html" target="_blank" rel="noopener">为什么要归一化|标准化</a></p>
+
       
     </div>
     
@@ -720,7 +774,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#chapter4-梯度下降算法-Gradient-Descent"><span class="nav-number">1.</span> <span class="nav-text">chapter4-梯度下降算法(Gradient Descent)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-梯度"><span class="nav-number">2.</span> <span class="nav-text">1.梯度</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-梯度上升与梯度下降"><span class="nav-number">3.</span> <span class="nav-text">2.梯度上升与梯度下降</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-梯度下降算法详解"><span class="nav-number">4.</span> <span class="nav-text">3.梯度下降算法详解</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#3-1梯度下降算法的直观解释"><span class="nav-number">4.1.</span> <span class="nav-text">3.1梯度下降算法的直观解释</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#3-2-梯度下降算法相关概念"><span class="nav-number">4.2.</span> <span class="nav-text">3.2 梯度下降算法相关概念</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#chapter4-梯度下降算法-Gradient-Descent"><span class="nav-number">1.</span> <span class="nav-text">chapter4-梯度下降算法(Gradient Descent)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-梯度"><span class="nav-number">2.</span> <span class="nav-text">1.梯度</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-梯度上升与梯度下降"><span class="nav-number">3.</span> <span class="nav-text">2.梯度上升与梯度下降</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-梯度下降算法详解"><span class="nav-number">4.</span> <span class="nav-text">3.梯度下降算法详解</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#3-1梯度下降算法的直观解释"><span class="nav-number">4.1.</span> <span class="nav-text">3.1梯度下降算法的直观解释</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#3-2-梯度下降算法相关概念"><span class="nav-number">4.2.</span> <span class="nav-text">3.2 梯度下降算法相关概念</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#3-3-梯度下降详细算法"><span class="nav-number">4.3.</span> <span class="nav-text">3.3 梯度下降详细算法</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#3-4-梯度下降算法调参"><span class="nav-number">4.4.</span> <span class="nav-text">3.4 梯度下降算法调参</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#参考文献"><span class="nav-number">5.</span> <span class="nav-text">参考文献</span></a></li></ol></div>
             
 
           </div>
@@ -768,7 +822,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">70.1k</span>
+    <span title="Site words total count">71.7k</span>
   
 </div>
 
@@ -1503,5 +1557,5 @@
 
   
 
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"left","width":200,"height":400},"mobile":{"show":true},"react":{"opacity":0.7}});</script><script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script></body>
+<script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"left","width":200,"height":400},"mobile":{"show":true},"react":{"opacity":0.7}});</script></body>
 </html>

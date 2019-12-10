@@ -44,19 +44,15 @@
     <link href="http://yoursite.com/2019/11/20/chapter4-%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E7%AE%97%E6%B3%95-Gradient-Descent/"/>
     <id>http://yoursite.com/2019/11/20/chapter4-梯度下降算法-Gradient-Descent/</id>
     <published>2019-11-20T12:14:04.000Z</published>
-    <updated>2019-12-09T09:51:00.782Z</updated>
+    <updated>2019-12-10T11:02:59.793Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;hr&gt;
+      &lt;hr&gt;
 &lt;hr&gt;
-&lt;h5 id=&quot;chapter4-梯度下降算法-Gradient-Descent&quot;&gt;&lt;a href=&quot;#chapter4-梯度下降算法-Gradient-Descent&quot; class=&quot;headerlink&quot;
-        
-      
+&lt;h5 id=&quot;chapter4-梯度下降算法-Gradient-Descent&quot;&gt;&lt;a href=&quot;#chapter4-梯度下降算法-Gradient-Descent&quot; class=&quot;headerlink&quot; title=&quot;chapter4-梯度下降算法(Gradient Descent)&quot;&gt;&lt;/a&gt;chapter4-梯度下降算法(Gradient Descent)&lt;/h5&gt;&lt;p&gt;求解机器学习算法的模型参数时，即无约束优化问题时，梯度下降（Gradient Descent）是最常采用的方法之一，另一种常用的方法是最小二乘法。这里就对梯度下降法做一个完整的总结。&lt;/p&gt;
+&lt;h5 id=&quot;1-梯度&quot;&gt;&lt;a href=&quot;#1-梯度&quot; class=&quot;headerlink&quot; title=&quot;1.梯度&quot;&gt;&lt;/a&gt;1.梯度&lt;/h5&gt;&lt;p&gt;在微积分里面，对多元函数的参数求∂偏导数，把求得的各个参数的偏导数以向量的形式写出来，就是梯度。比如函数$f(x,y)$,分别对$x,y$进行求导，求得梯度向量是$(\frac{\partial f}{\partial x},\frac{\partial f}{\partial y})^T$ 简称$grad f(x,y)$ | $\Delta f(x,y)$,对于点为$(x_0,y_0)$,他的梯度向量值为$(\frac{\partial f}{\partial x_0},\frac{\partial f}{\partial y_0})^T$ | $\Delta f(x_0,y_0)$,如果为三个变量，就为：$\Delta f(x,y,z)$,以此类推。&lt;/p&gt;
+&lt;p&gt;那为什么要找到函数$f(x,y)$的梯度呢？因为梯度向量是函数下降(增加)速度最快的地方。比如说，在初始点$(x_0,y_0)$ 沿着梯度向量$\Delta f(x_0,y_0)$ (-$\Delta f(x_0,y_0)$)，增加最快(下降最快)的方向 ，我们能够更快的找到函数的最小值(最大值)。&lt;/p&gt;
     
     </summary>
     
@@ -73,7 +69,7 @@
     <link href="http://yoursite.com/2019/11/20/chapter2-%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E6%B3%95%E5%AE%8C%E6%95%B4%E5%AE%9E%E8%B7%B5%E7%90%86%E8%AE%BA/"/>
     <id>http://yoursite.com/2019/11/20/chapter2-最小二乘法完整实践理论/</id>
     <published>2019-11-20T12:14:04.000Z</published>
-    <updated>2019-12-09T08:48:05.619Z</updated>
+    <updated>2019-12-09T11:40:45.524Z</updated>
     
     <summary type="html">
     
@@ -97,7 +93,7 @@
     <link href="http://yoursite.com/2019/11/19/chapter1-%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E4%B8%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95%E6%A6%82%E8%AE%BA/"/>
     <id>http://yoursite.com/2019/11/19/chapter1-统计学习与深度学习方法概论/</id>
     <published>2019-11-19T12:13:13.000Z</published>
-    <updated>2019-11-20T12:25:32.300Z</updated>
+    <updated>2019-12-09T10:38:03.437Z</updated>
     
     <summary type="html">
     
@@ -107,7 +103,7 @@
 &lt;/li&gt;
 &lt;li&gt;&lt;h6 id=&quot;统计学三要素&quot;&gt;&lt;a href=&quot;#统计学三要素&quot; class=&quot;headerlink&quot; title=&quot;统计学三要素&quot;&gt;&lt;/a&gt;统计学三要素&lt;/h6&gt;&lt;p&gt;​                                                        方法 = 模型 + 策略 + 算法&lt;/p&gt;
 &lt;p&gt;​      模型、策略 、算法三要素是理解统计学习中，起到提纲挈领的作用。&lt;/p&gt;
-&lt;p&gt;​      模型(model)：亦为假设空间(hypothesis),包含所有可能的太监概率分布或者决策函数。&lt;/p&gt;
+&lt;p&gt;​      模型(model)：亦为假设空间(hypothesis),包含所有可能的概率分布或者决策函数。&lt;/p&gt;
 &lt;p&gt;​      策略(strategy): 亦为评价准则(evaluation  criterion)，评价模型经验风险最小化与结构风险最小化。不同模型有不同的风险函数&lt;/p&gt;
 &lt;p&gt;​      算法(algorithm): 学习模型的具体计算方法。&lt;/p&gt;
     
