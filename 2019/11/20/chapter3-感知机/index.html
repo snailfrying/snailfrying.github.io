@@ -135,7 +135,7 @@
 <meta property="og:site_name" content="Snail Life">
 <meta property="og:description" content="chapter3-感知机1.概要通过上一章最小二乘法的理论与实践，我们知道统计学学习-机器学习-深度学习，它们之间的联系与区别。本章我们将讨论感知机算法，再次讨论他们叁之间的关系。并且很有必要熟悉感知机，虽然它现在在分类模型当中已经不适用，因为泛化能力有限，能力更强的为支撑向量机(svm)。但是它在机器学习和深度学习其他深奥算法上有较大的联系，甚至为其算法逻辑实现基础。掌握它的思想，为进一步的提">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-12-09T03:01:56.999Z">
+<meta property="og:updated_time" content="2019-12-12T11:12:57.557Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="chapter3-感知机">
 <meta name="twitter:description" content="chapter3-感知机1.概要通过上一章最小二乘法的理论与实践，我们知道统计学学习-机器学习-深度学习，它们之间的联系与区别。本章我们将讨论感知机算法，再次讨论他们叁之间的关系。并且很有必要熟悉感知机，虽然它现在在分类模型当中已经不适用，因为泛化能力有限，能力更强的为支撑向量机(svm)。但是它在机器学习和深度学习其他深奥算法上有较大的联系，甚至为其算法逻辑实现基础。掌握它的思想，为进一步的提">
@@ -438,7 +438,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  1.1k
+                  2.1k
                 </span>
               
 
@@ -454,7 +454,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  4
+                  8
                 </span>
               
             </div>
@@ -487,7 +487,35 @@
 <p>对于感知机模型函数，我们目标就是使分类错误的点到超平面$y$的距离和最小，由于$y\theta \bullet x&lt;0$,所以对于每一个被错误分类的样本$i\in M$(其中M个分类错误点)到超平面的距离为：<br>$$<br>\frac{-y^{(i)}\theta \bullet x^{(i)}}{\begin{Vmatrix} \theta \end{Vmatrix}_2}<br>$$<br>其中${\begin{Vmatrix} \theta \end{Vmatrix}_2}$为L2范数</p>
 <p>即可得到初步的损失函数:<br>$$<br>J\theta = -\sum_{i=0,i \in M}^{n}\frac{y^{(i)}\theta \bullet x^{(i)} }{\begin{Vmatrix} \theta \end{Vmatrix}_2}<br>$$<br>观察公式(7)，容易看出，分子分母都带有$\theta$，利用简单的数学知识可以看出，不管$\theta$如何增加还是减小，对于</p>
 <p>$J(\theta)$来说都是同倍数增加减的。所以，我们可以把分子分母中的$\theta$简化一个，即，我们保留分子中的$\theta$。因此，简化后的损失函数为:<br>$$<br>J(\theta) = - \sum_{i=0,i \in M}^{n}{y^{(i)}\theta \bullet x^{(i)} }<br>$$<br>如果您了解支撑向量机(svm)的话，他的损失函数，是保留的分母，也就是:<br>$$<br>min\frac{1}{\begin{Vmatrix}\theta\end{Vmatrix}} \Leftrightarrow min\frac{1}{2}\begin{Vmatrix}\theta\end{Vmatrix}_2<br>$$</p>
-<h5 id="3-感知机模型的优化算法"><a href="#3-感知机模型的优化算法" class="headerlink" title="3.感知机模型的优化算法"></a>3.感知机模型的优化算法</h5><p>根据上述的推论。我们已知感知机模型算法的损失函数，因此，我们可以去迭代损失函数去找到最优参数$\theta$,依据原理可知，损失函数是通过对分类错误的样本进行更新，使之模型能够分类，正确。通常感知机模型的优化算法常用梯度下降算法(Gradient Descent)、拟牛顿算法，进行去优化。对于梯度下降算法分为批量梯度下降算法(BGD),随机梯度下降算法(SGD)和小批量随机梯度算法(MBGD)。由于感知机算法是对错误样本进行更新，所以不能够使用BGD,我们将用常用的SGD进行举例说明</p>
+<h5 id="3-感知机模型的优化算法"><a href="#3-感知机模型的优化算法" class="headerlink" title="3.感知机模型的优化算法"></a>3.感知机模型的优化算法</h5><p>根据上述的推论。我们已知感知机模型算法的损失函数，因此，我们可以去迭代损失函数去找到最优参数$\theta$,依据原理可知，损失函数是通过对分类错误的样本进行更新，使之模型能够分类，正确。通常感知机模型的优化算法常用<a href="[https://snailfrying.github.io/2019/11/20/chapter4-%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E7%AE%97%E6%B3%95-Gradient-Descent/#more](https://snailfrying.github.io/2019/11/20/chapter4-梯度下降算法-Gradient-Descent/#more)">梯度下降算法(Gradient Descent)</a>、拟牛顿算法，进行去优化。对于梯度下降算法分为批量梯度下降算法(BGD),随机梯度下降算法(SGD)和小批量随机梯度算法(MBGD)。由于感知机算法是对错误样本进行更新，所以不能够使用BGD,我们将用常用的SGD进行举例说明.</p>
+<p>因此，我们对损失函数$J(\theta)$,对$\theta$进行求导可得<figure class="highlight taggerscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$$</span><br><span class="line"><span class="symbol">\f</span>rac&#123;<span class="symbol">\p</span>artial &#125;&#123;<span class="symbol">\p</span>artial <span class="symbol">\t</span>heta_i&#125;J(<span class="symbol">\t</span>heta_0,<span class="symbol">\t</span>heta_1,<span class="symbol">\c</span>dots,<span class="symbol">\t</span>heta_j) =-<span class="symbol">\s</span>um_&#123;x_i<span class="symbol">\i</span>n M&#125;y^&#123;(i)&#125;x^&#123;(i)&#125;</span><br><span class="line">$$</span><br><span class="line">即更新损失函数<span class="keyword">$J</span>(<span class="symbol">\t</span>heta)$梯度下降公式</span><br></pre></td></tr></table></figure></p>
+<p>$$<br>\theta=\theta+\alpha\sum_{x_i\in M}y^{(i)}x^{(i)}<br>$$<br>由于我们采用SGD，所以每次仅仅只需对一个误分类样本进行更新梯度。即假设采用第$i$个样本来更新，则可以假话公式为<figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">$</span><span class="symbol">$</span></span><br><span class="line">\theta=\theta+\alpha y^&#123;(i)&#125;x^&#123;(i)&#125;</span><br><span class="line"><span class="symbol">$</span><span class="symbol">$</span></span><br><span class="line">其中<span class="symbol">$</span>\alpha<span class="symbol">$</span>为步长，<span class="symbol">$</span>y^&#123;(i)&#125;<span class="symbol">$</span>为样本输出结果(<span class="number">1</span> | <span class="number">-1</span>),<span class="symbol">$</span>x^&#123;(i)&#125;<span class="symbol">$</span>为<span class="symbol">$</span>(n+<span class="number">1</span>)\times1<span class="symbol">$</span>的向量。</span><br><span class="line"></span><br><span class="line">##### <span class="number">4.</span>感知机模型算法</span><br><span class="line"></span><br><span class="line">我们已经通过上述讨论，知道感知机模型算法的细枝末节，现在我们来总结，如何去实现此算法。</span><br><span class="line"></span><br><span class="line"><span class="number">1.</span> 首先我们确定样本特征。对于特征如下</span><br></pre></td></tr></table></figure></p>
+<p>   $$<br>   (x_1^{(0)},x_2^{(0)},\cdots ,x_n^{(0)},y_0),\<br>   (x_1^{(1)},x_2^{(1)},\cdots ,x_n^{(1)},y_1),\<br>   (x_1^{(2)},x_2^{(2)},\cdots ,x_n^{(2)},y_2),\<br>   \cdots,\<br>   (x_1^{(m)},x_2^{(m)},\cdots ,x_n^{(m)},y_m)<br>   $$<br>   对于样本输出结果$y^{(i)} \in(1,-1)$的二分类。</p>
+<ol start="2">
+<li><p>初始化所有$x_0 = 1$，对于参数$\theta$ 初始化为1,$\alpha$步长初始化0.8。</p>
+</li>
+<li><p>判断是否有样本满足$y\theta \bullet x=-1$，即为误分类样本，并且从中选择一个样本$x_i$,</p>
+</li>
+<li><p>对选择样本$x_i$进行更新参数$\theta_i$,更新后进入步骤3。</p>
+</li>
+</ol>
+<p>$$<br>\theta=\theta+\alpha\sum_{x_i\in M}y^{(i)}x^{(i)}<br>$$</p>
+<ol start="5">
+<li>如果没有误分类样本就结束训练.此时的$\theta$即为最佳参数。</li>
+</ol>
+<h5 id="5-感知机算法的对偶形式"><a href="#5-感知机算法的对偶形式" class="headerlink" title="5.感知机算法的对偶形式"></a>5.感知机算法的对偶形式</h5><p>感知机算法的对偶形式是对梯度下降过程进行优化，对于函数</p>
+<p>$$<br>f(x)=\theta_0+\theta_1x_1+\theta_2x_2+\theta_3x_3+\cdots+\theta_nx_n<br>$$<br>求导得到梯度可得<br>$$<br>f(x)=\begin{cases}<br>    \theta_i^{(j)} = \sum_{i=1}^{n}\alpha y_i^{(j)}x_i^{(j)} \quad j \in m\<br>    \theta_0 = \sum_{i=1}^{n} \alpha y_i<br>\end{cases}<br>$$<br>对于梯度函数只对错误样本进行更新梯度，如果错误样本$j \in m$,那么对于错误样本$j$，函数分错一般就在拟合函数之间。如果你知道支持向量机(svm)的话，那么这些点就可能就是支撑向量点。而对于这些点迭代次数为$m_j$的话，由于$\alpha$亦为常数，我就可以令$\alpha m_j=\beta_j$,因此函数可以重写为<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="formula">$$</span></span><br><span class="line"><span class="formula">f(x)=<span class="tag">\<span class="name">begin</span><span class="string">&#123;cases&#125;</span></span></span></span><br><span class="line"><span class="formula">	<span class="tag">\<span class="name">theta</span></span>_i^&#123;(j)&#125; = <span class="tag">\<span class="name">sum</span></span>_&#123;i=1&#125;^&#123;n&#125;<span class="tag">\<span class="name">beta</span></span>_j y_i^&#123;(j)&#125;x_i^&#123;(j)&#125; <span class="tag">\<span class="name">quad</span></span> j <span class="tag">\<span class="name">in</span></span> m<span class="tag">\<span class="name">\</span></span></span></span><br><span class="line"><span class="formula">	<span class="tag">\<span class="name">theta</span></span>_0 = <span class="tag">\<span class="name">sum</span></span>_&#123;i=1&#125;^&#123;n&#125; <span class="tag">\<span class="name">beta</span></span>_j  y_i</span></span><br><span class="line"><span class="formula"><span class="tag">\<span class="name">end</span><span class="string">&#123;cases&#125;</span></span></span></span><br><span class="line"><span class="formula">$$</span></span><br><span class="line">对于对偶式，我们可以重写函数<span class="formula">$f(x)$</span>的判别错误样本是为</span><br></pre></td></tr></table></figure></p>
+<p>$$<br>y^{(j)}\sum_{i=1}^{n}\beta y^{(i)}x^{(i)}\bullet x^{(j)} &lt; 0 \quad j \in m<br>$$<br>根据公式(18)，依据$y=\theta_1x+\theta_0$的形式代入公式(5)中，即得。观察公式(18)，我们可以看出有内积$G=x^{(i)}\bullet x^{(j)}$,两个常量矩阵内积令为$G$。我们可以事先算出$G$，进行查矩阵表形式给出值，就可以省下大量的计算。因此优化了梯度下降算法。本质就是对错误样本的删选算法形式进行优化。</p>
+<p>因此，感知机对偶形式算法实现为！</p>
+<p>​        1.初始化所有$x_0 = 1$，对于参数$\theta$ 初始化为1,$\alpha$步长初始化0.8，$\beta$为0。同上，不同初始值会带来不同的效果</p>
+<p>​        2.计算样本内积Gram矩阵$G$</p>
+<p>​        3.对$\beta$错误样本标量进行更新$\beta_i =\beta_i+\alpha$</p>
+<ol start="4">
+<li>检查训练集里是否还有误分类的点，如果没有，算法结束，此时的$\theta$向量最终结果为下式。如果有,继续第2步<br>$$<br>\begin{cases}<pre><code>\theta_i^{(j)} = \sum_{i=1}^{n}\beta_j y_i^{(j)}x_i^{(j)} \quad j \in m\\
+\theta_0 = \sum_{i=1}^{n} \beta_j  y_i</code></pre>\end{cases}<br>$$</li>
+</ol>
+<h5 id="6-感知机算法代码实践"><a href="#6-感知机算法代码实践" class="headerlink" title="6.感知机算法代码实践"></a>6.感知机算法代码实践</h5><h6 id="6-1-感知机普通形式"><a href="#6-1-感知机普通形式" class="headerlink" title="6.1.感知机普通形式"></a>6.1.感知机普通形式</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
 <h5 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h5><p>@(*.*)@ @(^.^)@ @(*.*)@ @(^.^)@ @(*.*)@ @(^.^)@ @(*.*)@ @(^.^)@ @(*.*)@ @(^.^)@</p>
 <p><a href="https://www.cnblogs.com/pinard/p/6042320.html" target="_blank" rel="noopener">感知机原理</a></p>
 <p><a href="https://www.zhihu.com/question/20473040" target="_blank" rel="noopener">什么是范数</a></p>
@@ -547,6 +575,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/11/20/chapter2-最小二乘法完整实践理论/" rel="prev" title="chapter2 最小二乘法完整实践理论">
+                chapter2 最小二乘法完整实践理论 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -724,7 +756,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#chapter3-感知机"><span class="nav-number">1.</span> <span class="nav-text">chapter3-感知机</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-概要"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">1.概要</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-感知机模型原理"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">2.感知机模型原理</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-感知机模型损失函数"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">3.感知机模型损失函数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-感知机模型的优化算法"><span class="nav-number">1.0.0.4.</span> <span class="nav-text">3.感知机模型的优化算法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#参考文献"><span class="nav-number">1.0.0.5.</span> <span class="nav-text">参考文献</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#chapter3-感知机"><span class="nav-number">1.</span> <span class="nav-text">chapter3-感知机</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-概要"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">1.概要</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-感知机模型原理"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">2.感知机模型原理</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-感知机模型损失函数"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">3.感知机模型损失函数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-感知机模型的优化算法"><span class="nav-number">1.0.0.4.</span> <span class="nav-text">3.感知机模型的优化算法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-感知机算法的对偶形式"><span class="nav-number">1.0.0.5.</span> <span class="nav-text">5.感知机算法的对偶形式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#6-感知机算法代码实践"><span class="nav-number">1.0.0.6.</span> <span class="nav-text">6.感知机算法代码实践</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#6-1-感知机普通形式"><span class="nav-number">1.0.0.6.1.</span> <span class="nav-text">6.1.感知机普通形式</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#参考文献"><span class="nav-number">1.0.0.7.</span> <span class="nav-text">参考文献</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -772,7 +804,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">71.7k</span>
+    <span title="Site words total count">72.9k</span>
   
 </div>
 
