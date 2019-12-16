@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-12-09T11:40:45.524Z</updated>
+  <updated>2019-12-16T11:35:54.581Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,35 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>chapter2 最小二乘法完整实践理论</title>
-    <link href="http://yoursite.com/2019/11/20/chapter2-%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E6%B3%95%E5%AE%8C%E6%95%B4%E5%AE%9E%E8%B7%B5%E7%90%86%E8%AE%BA/"/>
-    <id>http://yoursite.com/2019/11/20/chapter2-最小二乘法完整实践理论/</id>
-    <published>2019-11-20T12:14:04.000Z</published>
-    <updated>2019-12-09T11:40:45.524Z</updated>
-    
-    <summary type="html">
-    
-      &lt;hr&gt;
-&lt;h3 id=&quot;chapter2-最小二乘法完整实践理论&quot;&gt;&lt;a href=&quot;#chapter2-最小二乘法完整实践理论&quot; class=&quot;headerlink&quot; title=&quot;chapter2- 最小二乘法完整实践理论&quot;&gt;&lt;/a&gt;chapter2- 最小二乘法完整实践理论&lt;/h3&gt;&lt;h6 id=&quot;1-概要&quot;&gt;&lt;a href=&quot;#1-概要&quot; class=&quot;headerlink&quot; title=&quot;1.概要&quot;&gt;&lt;/a&gt;1.概要&lt;/h6&gt;&lt;p&gt;​    此章，通过最小二乘法，在统计学习，机器学习，深度学习的轨道上进行讨论，它们叁之间的共性与异性。&lt;/p&gt;
-&lt;h6 id=&quot;2-什么是最小二乘法&quot;&gt;&lt;a href=&quot;#2-什么是最小二乘法&quot; class=&quot;headerlink&quot; title=&quot;2.什么是最小二乘法&quot;&gt;&lt;/a&gt;2.什么是最小二乘法&lt;/h6&gt;&lt;p&gt;​    &lt;strong&gt;最小二乘法&lt;/strong&gt;（&lt;strong&gt;least squares method&lt;/strong&gt;），又称&lt;strong&gt;最小平方法&lt;/strong&gt;，是一种&lt;a href=&quot;https://zh.wikipedia.org/wiki/数学&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;数学&lt;/a&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/优化&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;优化&lt;/a&gt;方法。它通过最小化&lt;a href=&quot;https://zh.wikipedia.org/wiki/误差&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;误差&lt;/a&gt;的平方和寻找数据的最佳函数匹配。&lt;/p&gt;
-&lt;p&gt;​    利用最小二乘法可以简便地求得未知的数据，并使得这些求得的数据与实际数据之间误差的平方和为最小。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="python" scheme="http://yoursite.com/categories/python/"/>
-    
-    
-      <category term="algorithms" scheme="http://yoursite.com/tags/algorithms/"/>
-    
-  </entry>
-  
-  <entry>
     <title>chapter3-感知机</title>
     <link href="http://yoursite.com/2019/11/20/chapter3-%E6%84%9F%E7%9F%A5%E6%9C%BA/"/>
     <id>http://yoursite.com/2019/11/20/chapter3-感知机/</id>
     <published>2019-11-20T12:14:04.000Z</published>
-    <updated>2019-12-12T11:12:57.557Z</updated>
+    <updated>2019-12-16T11:35:54.581Z</updated>
     
     <summary type="html">
     
@@ -68,7 +44,7 @@
     <link href="http://yoursite.com/2019/11/20/chapter4-%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E7%AE%97%E6%B3%95-Gradient-Descent/"/>
     <id>http://yoursite.com/2019/11/20/chapter4-梯度下降算法-Gradient-Descent/</id>
     <published>2019-11-20T12:14:04.000Z</published>
-    <updated>2019-12-10T11:20:41.599Z</updated>
+    <updated>2019-12-16T11:35:49.375Z</updated>
     
     <summary type="html">
     
@@ -77,6 +53,30 @@
 &lt;h5 id=&quot;chapter4-梯度下降算法-Gradient-Descent&quot;&gt;&lt;a href=&quot;#chapter4-梯度下降算法-Gradient-Descent&quot; class=&quot;headerlink&quot; title=&quot;chapter4-梯度下降算法(Gradient Descent)&quot;&gt;&lt;/a&gt;chapter4-梯度下降算法(Gradient Descent)&lt;/h5&gt;&lt;p&gt;求解机器学习算法的模型参数时，即无约束优化问题时，梯度下降（Gradient Descent）是最常采用的方法之一，另一种常用的方法是最小二乘法。这里就对梯度下降法做一个完整的总结。&lt;/p&gt;
 &lt;h5 id=&quot;1-梯度&quot;&gt;&lt;a href=&quot;#1-梯度&quot; class=&quot;headerlink&quot; title=&quot;1.梯度&quot;&gt;&lt;/a&gt;1.梯度&lt;/h5&gt;&lt;p&gt;在微积分里面，对多元函数的参数求∂偏导数，把求得的各个参数的偏导数以向量的形式写出来，就是梯度。比如函数$f(x,y)$,分别对$x,y$进行求导，求得梯度向量是$(\frac{\partial f}{\partial x},\frac{\partial f}{\partial y})^T$ 简称$grad f(x,y)$ | $\Delta f(x,y)$,对于点为$(x_0,y_0)$,他的梯度向量值为$(\frac{\partial f}{\partial x_0},\frac{\partial f}{\partial y_0})^T$ | $\Delta f(x_0,y_0)$,如果为三个变量，就为：$\Delta f(x,y,z)$,以此类推。&lt;/p&gt;
 &lt;p&gt;那为什么要找到函数$f(x,y)$的梯度呢？因为梯度向量是函数下降(增加)速度最快的地方。比如说，在初始点$(x_0,y_0)$ 沿着梯度向量$\Delta f(x_0,y_0)$ (-$\Delta f(x_0,y_0)$)，增加最快(下降最快)的方向 ，我们能够更快的找到函数的最小值(最大值)。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="python" scheme="http://yoursite.com/categories/python/"/>
+    
+    
+      <category term="algorithms" scheme="http://yoursite.com/tags/algorithms/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>chapter2 最小二乘法完整实践理论</title>
+    <link href="http://yoursite.com/2019/11/20/chapter2-%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E6%B3%95%E5%AE%8C%E6%95%B4%E5%AE%9E%E8%B7%B5%E7%90%86%E8%AE%BA/"/>
+    <id>http://yoursite.com/2019/11/20/chapter2-最小二乘法完整实践理论/</id>
+    <published>2019-11-20T12:14:04.000Z</published>
+    <updated>2019-12-09T11:40:45.524Z</updated>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+&lt;h3 id=&quot;chapter2-最小二乘法完整实践理论&quot;&gt;&lt;a href=&quot;#chapter2-最小二乘法完整实践理论&quot; class=&quot;headerlink&quot; title=&quot;chapter2- 最小二乘法完整实践理论&quot;&gt;&lt;/a&gt;chapter2- 最小二乘法完整实践理论&lt;/h3&gt;&lt;h6 id=&quot;1-概要&quot;&gt;&lt;a href=&quot;#1-概要&quot; class=&quot;headerlink&quot; title=&quot;1.概要&quot;&gt;&lt;/a&gt;1.概要&lt;/h6&gt;&lt;p&gt;​    此章，通过最小二乘法，在统计学习，机器学习，深度学习的轨道上进行讨论，它们叁之间的共性与异性。&lt;/p&gt;
+&lt;h6 id=&quot;2-什么是最小二乘法&quot;&gt;&lt;a href=&quot;#2-什么是最小二乘法&quot; class=&quot;headerlink&quot; title=&quot;2.什么是最小二乘法&quot;&gt;&lt;/a&gt;2.什么是最小二乘法&lt;/h6&gt;&lt;p&gt;​    &lt;strong&gt;最小二乘法&lt;/strong&gt;（&lt;strong&gt;least squares method&lt;/strong&gt;），又称&lt;strong&gt;最小平方法&lt;/strong&gt;，是一种&lt;a href=&quot;https://zh.wikipedia.org/wiki/数学&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;数学&lt;/a&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/优化&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;优化&lt;/a&gt;方法。它通过最小化&lt;a href=&quot;https://zh.wikipedia.org/wiki/误差&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;误差&lt;/a&gt;的平方和寻找数据的最佳函数匹配。&lt;/p&gt;
+&lt;p&gt;​    利用最小二乘法可以简便地求得未知的数据，并使得这些求得的数据与实际数据之间误差的平方和为最小。&lt;/p&gt;
     
     </summary>
     
@@ -218,7 +218,7 @@
     <link href="http://yoursite.com/2019/11/04/Win10%E8%AE%BE%E7%BD%AE%E7%94%B5%E8%84%91%E5%86%85%E7%BD%91%E8%BF%9E%E6%8E%A5%E7%BD%91%E7%BA%BF%EF%BC%8C%E5%A4%96%E7%BD%91%E8%BF%9E%E6%8E%A5wifi/"/>
     <id>http://yoursite.com/2019/11/04/Win10设置电脑内网连接网线，外网连接wifi/</id>
     <published>2019-11-04T10:05:42.000Z</published>
-    <updated>2019-11-29T07:14:36.255Z</updated>
+    <updated>2019-12-16T11:35:32.968Z</updated>
     
     <summary type="html">
     
@@ -522,9 +522,9 @@
       <category term="database" scheme="http://yoursite.com/categories/database/"/>
     
     
-      <category term="hive" scheme="http://yoursite.com/tags/hive/"/>
-    
       <category term="sql" scheme="http://yoursite.com/tags/sql/"/>
+    
+      <category term="hive" scheme="http://yoursite.com/tags/hive/"/>
     
   </entry>
   
@@ -550,11 +550,11 @@
       <category term="database" scheme="http://yoursite.com/categories/database/"/>
     
     
-      <category term="sql" scheme="http://yoursite.com/tags/sql/"/>
-    
       <category term="Optimization" scheme="http://yoursite.com/tags/Optimization/"/>
     
       <category term="db2" scheme="http://yoursite.com/tags/db2/"/>
+    
+      <category term="sql" scheme="http://yoursite.com/tags/sql/"/>
     
   </entry>
   
