@@ -127,13 +127,13 @@
 
 
 
-<meta name="description" content="chapter2- 最小二乘法完整实践理论1.概要​    此章，通过最小二乘法，在统计学习，机器学习，深度学习的轨道上进行讨论，它们叁之间的共性与异性。 2.什么是最小二乘法​    最小二乘法（least squares method），又称最小平方法，是一种数学优化方法。它通过最小化误差的平方和寻找数据的最佳函数匹配。 ​    利用最小二乘法可以简便地求得未知的数据，并使得这些求得的数据">
+<meta name="description" content="chapter2- 最小二乘法完整实践理论1.概要​    此章，通过最小二乘法，在统计学习，机器学习，深度学习的轨道上进行讨论，它们叁之间的共性与异性。 2.什么是最小二乘法​    最小二乘法（least squares method），又称最小平方法，是一种数学优化方法。它通过最小化误差的平方和寻找数据的最佳函数匹配。 ​    利用最小二乘法可以简便地求得未知的数据，并使得求得的数据与实">
 <meta name="keywords" content="algorithms">
 <meta property="og:type" content="article">
 <meta property="og:title" content="chapter2 最小二乘法完整实践理论">
 <meta property="og:url" content="http://yoursite.com/2019/11/20/chapter2-最小二乘法完整实践理论/index.html">
 <meta property="og:site_name" content="Snail Life">
-<meta property="og:description" content="chapter2- 最小二乘法完整实践理论1.概要​    此章，通过最小二乘法，在统计学习，机器学习，深度学习的轨道上进行讨论，它们叁之间的共性与异性。 2.什么是最小二乘法​    最小二乘法（least squares method），又称最小平方法，是一种数学优化方法。它通过最小化误差的平方和寻找数据的最佳函数匹配。 ​    利用最小二乘法可以简便地求得未知的数据，并使得这些求得的数据">
+<meta property="og:description" content="chapter2- 最小二乘法完整实践理论1.概要​    此章，通过最小二乘法，在统计学习，机器学习，深度学习的轨道上进行讨论，它们叁之间的共性与异性。 2.什么是最小二乘法​    最小二乘法（least squares method），又称最小平方法，是一种数学优化方法。它通过最小化误差的平方和寻找数据的最佳函数匹配。 ​    利用最小二乘法可以简便地求得未知的数据，并使得求得的数据与实">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://yoursite.com/uploads/loading.gif">
 <meta property="og:image" content="http://yoursite.com/uploads/loading.gif">
@@ -142,10 +142,10 @@
 <meta property="og:image" content="http://yoursite.com/uploads/loading.gif">
 <meta property="og:image" content="http://yoursite.com/uploads/loading.gif">
 <meta property="og:image" content="http://yoursite.com/uploads/loading.gif">
-<meta property="og:updated_time" content="2019-12-16T11:43:23.948Z">
+<meta property="og:updated_time" content="2019-12-19T11:25:45.563Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="chapter2 最小二乘法完整实践理论">
-<meta name="twitter:description" content="chapter2- 最小二乘法完整实践理论1.概要​    此章，通过最小二乘法，在统计学习，机器学习，深度学习的轨道上进行讨论，它们叁之间的共性与异性。 2.什么是最小二乘法​    最小二乘法（least squares method），又称最小平方法，是一种数学优化方法。它通过最小化误差的平方和寻找数据的最佳函数匹配。 ​    利用最小二乘法可以简便地求得未知的数据，并使得这些求得的数据">
+<meta name="twitter:description" content="chapter2- 最小二乘法完整实践理论1.概要​    此章，通过最小二乘法，在统计学习，机器学习，深度学习的轨道上进行讨论，它们叁之间的共性与异性。 2.什么是最小二乘法​    最小二乘法（least squares method），又称最小平方法，是一种数学优化方法。它通过最小化误差的平方和寻找数据的最佳函数匹配。 ​    利用最小二乘法可以简便地求得未知的数据，并使得求得的数据与实">
 <meta name="twitter:image" content="http://yoursite.com/uploads/loading.gif">
 
 
@@ -486,11 +486,11 @@
         <hr>
 <h3 id="chapter2-最小二乘法完整实践理论"><a href="#chapter2-最小二乘法完整实践理论" class="headerlink" title="chapter2- 最小二乘法完整实践理论"></a>chapter2- 最小二乘法完整实践理论</h3><h6 id="1-概要"><a href="#1-概要" class="headerlink" title="1.概要"></a>1.概要</h6><p>​    此章，通过最小二乘法，在统计学习，机器学习，深度学习的轨道上进行讨论，它们叁之间的共性与异性。</p>
 <h6 id="2-什么是最小二乘法"><a href="#2-什么是最小二乘法" class="headerlink" title="2.什么是最小二乘法"></a>2.什么是最小二乘法</h6><p>​    <strong>最小二乘法</strong>（<strong>least squares method</strong>），又称<strong>最小平方法</strong>，是一种<a href="https://zh.wikipedia.org/wiki/数学" target="_blank" rel="noopener">数学</a><a href="https://zh.wikipedia.org/wiki/优化" target="_blank" rel="noopener">优化</a>方法。它通过最小化<a href="https://zh.wikipedia.org/wiki/误差" target="_blank" rel="noopener">误差</a>的平方和寻找数据的最佳函数匹配。</p>
-<p>​    利用最小二乘法可以简便地求得未知的数据，并使得这些求得的数据与实际数据之间误差的平方和为最小。</p>
+<p>​    利用最小二乘法可以简便地求得未知的数据，并使得求得的数据与实际数据之间误差的平方和为最小。</p>
 <a id="more"></a>
 
 <p>​    高斯于1823年在误差$e_1,…,e_n$独立同分布的假定下,证明了最小二乘方法的一个最优性质: 在所有无偏的线性估计类中,最小二乘方法是其中方差最小的。 对于数据$(x_i,y_i)(i = 1,2,3,…,m)$,能够拟合出下列公式（1），即是一个多项式函数<br>$$<br>h_\theta(x_1,x_2,…x_n)=\theta_0+\theta_1x_1+…+\theta_{n−1}x_{n−1}<br>$$</p>
-<p>​    利用数据$(x_i,y_i)$代入公式1,利用数学知识是能够解除最佳拟合参数$W_i$。即能够得到$H(x)$使得与真实值相差最小—残差$e_i$。因此，得到一个代价函数(Cost Function)，亦为损失函数(公式2)。</p>
+<p>​    利用数据$(x_i,y_i)$代入公式1,利用数学知识是能够解出最佳拟合参数$W_i$。即能够得到$H(x)$使得与真实值相差最小—残差$e_i$。因此，得到一个代价函数(Cost Function)，亦为损失函数(公式2)。</p>
 <p>$$<br>min\sum_{i=1}^{m}e_i = \min\sum_{i=1}^n(y_i-h_θ(x^{(i)})^2<br>$$</p>
 <h5 id="3-统计学中如何去解最小二乘法"><a href="#3-统计学中如何去解最小二乘法" class="headerlink" title="3.统计学中如何去解最小二乘法"></a>3.统计学中如何去解最小二乘法</h5><p>​    我们以一次线性函数模型来进行用数学公式求解，让大家初始一下统计学如何去拟合数据的。对于高阶函数，统计学知识求解，感兴趣的同学，可以去Google一下。</p>
 <h6 id="3-1-代数法求解最小二乘法"><a href="#3-1-代数法求解最小二乘法" class="headerlink" title="3.1 代数法求解最小二乘法"></a>3.1 代数法求解最小二乘法</h6><p>​            最简单的线性式$h_\theta= \theta_1x + \theta_0$有代价函数为：<br>$$<br>J(\theta_1,\theta_0) =\sum_{i=1}^n(y_i-h_θ(x^{(i)})^2=\sum_{i=1}^n(y_i-\theta_1x - \theta_0)^2<br>$$<br>​            有了公式(3)代价函数，我们如何去使它最小了，最常用的解法就是对$\theta_1$和$\theta_0$分别求编导，令编导为            零，就可以解出$\theta_1$和$\theta_0$的值，即过程为：</p>
@@ -508,7 +508,7 @@
 <p>​<br>$$<br>\frac{\partial}{\partial \theta}J{(\theta)} = X^T(X\theta-Y) = 0<br>$$<br>​     这里用到了矩阵求导链式法则，和两个矩阵求导的公式：</p>
 <p>​            公式1: $\frac{\partial}{\partial x}(X^TX) = 2X \ x为向量$</p>
 <p>​            公式2:  $ \Delta_X f(AX+B)=A^T\Delta_Y f,Y=AX+B,\ f(Y)为标量$</p>
-<p>​    对上述求导等式整理后可得：<br>$$<br>X^TX\theta = X^TY<br>$$<br>​    两边同时左乘$(X^TX)$可得：<br>$$<br>\theta = (X^TX)^-1X^TY<br>$$<br>​    这样就可以一下子求出$\theta$向量表达式的公式，免去了代数法一个个去求导的麻烦.只要给了数据，就可以用公    式(15)算出$\theta$,得到数据拟合函数$h_{\theta}(X)$了。</p>
+<p>​    对上述求导等式整理后可得：<br>$$<br>X^TX\theta = X^TY<br>$$<br>​    两边同时左乘$(X^TX)$可得：<br>$$<br>\theta = (X^TX)^-1X^TY<br>$$<br>​    这样就可以求出$\theta$向量表达式的公式，免去了代数法一个个去求导的麻烦.只要给了数据，就可以用公式(15)算出$\theta$,得到数据拟合函数$h_{\theta}(X)$了。</p>
 <h5 id="4-机器学习实现最小二乘法"><a href="#4-机器学习实现最小二乘法" class="headerlink" title="4.机器学习实现最小二乘法"></a>4.机器学习实现最小二乘法</h5><p>现在我们使用机器学习方法去实现最小二乘法。这里选择Python3.7进行实现。</p>
 <p>逻辑步骤如下：</p>
 <h6 id="a-导入相关的工具包以及定义相关函数"><a href="#a-导入相关的工具包以及定义相关函数" class="headerlink" title="a.导入相关的工具包以及定义相关函数"></a>a.导入相关的工具包以及定义相关函数</h6><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> scipy <span class="keyword">as</span> sp</span><br><span class="line"><span class="keyword">from</span> scipy.optimize <span class="keyword">import</span> leastsq</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line">%matplotlib inline</span><br><span class="line"></span><br><span class="line"><span class="comment"># 目标函数</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">real_func</span><span class="params">(x)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> np.sin(<span class="number">2</span>*np.pi*x)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 多项式</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fit_func</span><span class="params">(p, x)</span>:</span></span><br><span class="line">    f = np.poly1d(p)</span><br><span class="line">    <span class="keyword">return</span> f(x)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 残差</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">residuals_func</span><span class="params">(p, x, y)</span>:</span></span><br><span class="line">    ret = fit_func(p, x) - y</span><br><span class="line">    <span class="keyword">return</span> ret</span><br></pre></td></tr></table></figure>
@@ -620,8 +620,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/11/20/chapter3-感知机/" rel="prev" title="chapter3-感知机">
-                chapter3-感知机 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/11/20/chapter5-逻辑斯谛回归-LogisticRegression/" rel="prev" title="chapter5-逻辑斯谛回归-LogisticRegression">
+                chapter5-逻辑斯谛回归-LogisticRegression <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -710,7 +710,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-count">24</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -817,7 +817,7 @@
 		<h3 class="widget-title">Tag Cloud</h3>
 		<div id="myCanvasContainer" class="widget tagcloud">
 		  <canvas width="250" height="250" id="resCanvas" style="width=100%">
-			<ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/thread/">-- thread</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Optimization/">Optimization</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithms/">algorithms</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/db2/">db2</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hive/">hive</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/self-study/">self-study</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sql/">sql</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/statistics/">statistics</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/thread/">thread</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vim/">vim</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/win10快捷键/">win10快捷键</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/古月山风/">古月山风</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/梦想/">梦想</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/破晓/">破晓</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a><span class="tag-list-count">2</span></li></ul>
+			<ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/thread/">-- thread</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Optimization/">Optimization</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithms/">algorithms</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/db2/">db2</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hive/">hive</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/self-study/">self-study</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sql/">sql</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/statistics/">statistics</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/thread/">thread</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vim/">vim</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/win10快捷键/">win10快捷键</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/古月山风/">古月山风</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/梦想/">梦想</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/破晓/">破晓</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a><span class="tag-list-count">2</span></li></ul>
 		  </canvas>
 		</div>
 	  </div>

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-12-16T11:51:43.088Z</updated>
+  <updated>2019-12-24T02:29:32.035Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://yoursite.com/2019/11/20/chapter3-%E6%84%9F%E7%9F%A5%E6%9C%BA/"/>
     <id>http://yoursite.com/2019/11/20/chapter3-感知机/</id>
     <published>2019-11-20T12:14:04.000Z</published>
-    <updated>2019-12-16T11:51:43.088Z</updated>
+    <updated>2019-12-24T02:29:32.035Z</updated>
     
     <summary type="html">
     
@@ -40,18 +40,46 @@
   </entry>
   
   <entry>
+    <title>chapter5-逻辑斯谛回归-LogisticRegression</title>
+    <link href="http://yoursite.com/2019/11/20/chapter5-%E9%80%BB%E8%BE%91%E6%96%AF%E8%B0%9B%E5%9B%9E%E5%BD%92-LogisticRegression/"/>
+    <id>http://yoursite.com/2019/11/20/chapter5-逻辑斯谛回归-LogisticRegression/</id>
+    <published>2019-11-20T12:14:04.000Z</published>
+    <updated>2019-12-19T11:29:57.549Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;hr&gt;
+&lt;h3 id=&quot;chapter5-逻辑斯谛回归-LogisticRegression&quot;&gt;&lt;a href=&quot;#chapter5-逻辑斯谛回归-LogisticRegression&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="python" scheme="http://yoursite.com/categories/python/"/>
+    
+    
+      <category term="algorithms" scheme="http://yoursite.com/tags/algorithms/"/>
+    
+  </entry>
+  
+  <entry>
     <title>chapter2 最小二乘法完整实践理论</title>
     <link href="http://yoursite.com/2019/11/20/chapter2-%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E6%B3%95%E5%AE%8C%E6%95%B4%E5%AE%9E%E8%B7%B5%E7%90%86%E8%AE%BA/"/>
     <id>http://yoursite.com/2019/11/20/chapter2-最小二乘法完整实践理论/</id>
     <published>2019-11-20T12:14:04.000Z</published>
-    <updated>2019-12-16T11:43:23.948Z</updated>
+    <updated>2019-12-19T11:25:45.563Z</updated>
     
     <summary type="html">
     
       &lt;hr&gt;
 &lt;h3 id=&quot;chapter2-最小二乘法完整实践理论&quot;&gt;&lt;a href=&quot;#chapter2-最小二乘法完整实践理论&quot; class=&quot;headerlink&quot; title=&quot;chapter2- 最小二乘法完整实践理论&quot;&gt;&lt;/a&gt;chapter2- 最小二乘法完整实践理论&lt;/h3&gt;&lt;h6 id=&quot;1-概要&quot;&gt;&lt;a href=&quot;#1-概要&quot; class=&quot;headerlink&quot; title=&quot;1.概要&quot;&gt;&lt;/a&gt;1.概要&lt;/h6&gt;&lt;p&gt;​    此章，通过最小二乘法，在统计学习，机器学习，深度学习的轨道上进行讨论，它们叁之间的共性与异性。&lt;/p&gt;
 &lt;h6 id=&quot;2-什么是最小二乘法&quot;&gt;&lt;a href=&quot;#2-什么是最小二乘法&quot; class=&quot;headerlink&quot; title=&quot;2.什么是最小二乘法&quot;&gt;&lt;/a&gt;2.什么是最小二乘法&lt;/h6&gt;&lt;p&gt;​    &lt;strong&gt;最小二乘法&lt;/strong&gt;（&lt;strong&gt;least squares method&lt;/strong&gt;），又称&lt;strong&gt;最小平方法&lt;/strong&gt;，是一种&lt;a href=&quot;https://zh.wikipedia.org/wiki/数学&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;数学&lt;/a&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/优化&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;优化&lt;/a&gt;方法。它通过最小化&lt;a href=&quot;https://zh.wikipedia.org/wiki/误差&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;误差&lt;/a&gt;的平方和寻找数据的最佳函数匹配。&lt;/p&gt;
-&lt;p&gt;​    利用最小二乘法可以简便地求得未知的数据，并使得这些求得的数据与实际数据之间误差的平方和为最小。&lt;/p&gt;
+&lt;p&gt;​    利用最小二乘法可以简便地求得未知的数据，并使得求得的数据与实际数据之间误差的平方和为最小。&lt;/p&gt;
     
     </summary>
     
@@ -68,13 +96,13 @@
     <link href="http://yoursite.com/2019/11/20/chapter4-%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E7%AE%97%E6%B3%95-Gradient-Descent/"/>
     <id>http://yoursite.com/2019/11/20/chapter4-梯度下降算法-Gradient-Descent/</id>
     <published>2019-11-20T12:14:04.000Z</published>
-    <updated>2019-12-16T11:35:49.375Z</updated>
+    <updated>2019-12-24T08:21:30.700Z</updated>
     
     <summary type="html">
     
       &lt;hr&gt;
 &lt;hr&gt;
-&lt;h5 id=&quot;chapter4-梯度下降算法-Gradient-Descent&quot;&gt;&lt;a href=&quot;#chapter4-梯度下降算法-Gradient-Descent&quot; class=&quot;headerlink&quot; title=&quot;chapter4-梯度下降算法(Gradient Descent)&quot;&gt;&lt;/a&gt;chapter4-梯度下降算法(Gradient Descent)&lt;/h5&gt;&lt;p&gt;求解机器学习算法的模型参数时，即无约束优化问题时，梯度下降（Gradient Descent）是最常采用的方法之一，另一种常用的方法是最小二乘法。这里就对梯度下降法做一个完整的总结。&lt;/p&gt;
+&lt;h3 id=&quot;chapter4-梯度下降算法-Gradient-Descent&quot;&gt;&lt;a href=&quot;#chapter4-梯度下降算法-Gradient-Descent&quot; class=&quot;headerlink&quot; title=&quot;chapter4-梯度下降算法(Gradient Descent)&quot;&gt;&lt;/a&gt;chapter4-梯度下降算法(Gradient Descent)&lt;/h3&gt;&lt;p&gt;求解机器学习算法的模型参数时，即无约束优化问题时，梯度下降（Gradient Descent）是最常采用的方法之一，另一种常用的方法是最小二乘法。这里就对梯度下降法做一个完整的总结。&lt;/p&gt;
 &lt;h5 id=&quot;1-梯度&quot;&gt;&lt;a href=&quot;#1-梯度&quot; class=&quot;headerlink&quot; title=&quot;1.梯度&quot;&gt;&lt;/a&gt;1.梯度&lt;/h5&gt;&lt;p&gt;在微积分里面，对多元函数的参数求∂偏导数，把求得的各个参数的偏导数以向量的形式写出来，就是梯度。比如函数$f(x,y)$,分别对$x,y$进行求导，求得梯度向量是$(\frac{\partial f}{\partial x},\frac{\partial f}{\partial y})^T$ 简称$grad f(x,y)$ | $\Delta f(x,y)$,对于点为$(x_0,y_0)$,他的梯度向量值为$(\frac{\partial f}{\partial x_0},\frac{\partial f}{\partial y_0})^T$ | $\Delta f(x_0,y_0)$,如果为三个变量，就为：$\Delta f(x,y,z)$,以此类推。&lt;/p&gt;
 &lt;p&gt;那为什么要找到函数$f(x,y)$的梯度呢？因为梯度向量是函数下降(增加)速度最快的地方。比如说，在初始点$(x_0,y_0)$ 沿着梯度向量$\Delta f(x_0,y_0)$ (-$\Delta f(x_0,y_0)$)，增加最快(下降最快)的方向 ，我们能够更快的找到函数的最小值(最大值)。&lt;/p&gt;
     
@@ -522,37 +550,7 @@
       <category term="database" scheme="http://yoursite.com/categories/database/"/>
     
     
-      <category term="sql" scheme="http://yoursite.com/tags/sql/"/>
-    
       <category term="hive" scheme="http://yoursite.com/tags/hive/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>DB2 performance Optimization</title>
-    <link href="http://yoursite.com/2019/10/14/DB2-performance-Optimization/"/>
-    <id>http://yoursite.com/2019/10/14/DB2-performance-Optimization/</id>
-    <published>2019-10-14T02:02:52.000Z</published>
-    <updated>2019-10-30T03:20:48.520Z</updated>
-    
-    <summary type="html">
-    
-      &lt;hr&gt;
-&lt;iframe scrolling=&quot;no&quot; src=&quot;https://tianqiapi.com/api.php?style=tx&amp;skin=sogou&quot; frameborder=&quot;0&quot; width=&quot;100%&quot; height=&quot;30&quot; allowtransparency=&quot;true&quot;&gt;&lt;/iframe&gt;
-# 提高 DB2 查询性能的常用方法
-
-&lt;h5 id=&quot;提高DB2查询性能的常用方法&quot;&gt;&lt;a href=&quot;#提高DB2查询性能的常用方法&quot; class=&quot;headerlink&quot; title=&quot;提高DB2查询性能的常用方法&quot;&gt;&lt;/a&gt;&lt;strong&gt;提高DB2查询性能的常用方法&lt;/strong&gt;&lt;/h5&gt;&lt;p&gt;将着重介绍如何使用 Visual Explain 和 db2expln 查看动态查询的存取计划。读者可以查阅 &lt;a href=&quot;http://publib.boulder.ibm.com/infocenter/db2luw/v8/index.jsp&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;DB2 Info Center&lt;/a&gt; 获得有关查看静态查询存取计划的内容。&lt;/p&gt;
-&lt;h5 id=&quot;DB2-Visual-Explain&quot;&gt;&lt;a href=&quot;#DB2-Visual-Explain&quot; class=&quot;headerlink&quot; title=&quot;DB2 Visual Explain&quot;&gt;&lt;/a&gt;&lt;strong&gt;DB2 Visual Explain&lt;/strong&gt;&lt;/h5&gt;&lt;p&gt;DB2 提供了非常直观有效的方法来查看查询的存取计划。DB2 Visual Explain 能够获得可视化的查询计划，而 db2expln 命令则可以获得文本形式的查询计划。有了查询计划，我们就可以有针对的对查询进行优化。根据查询计划找出代价最高的扫描 ( 表扫描，索引扫描等 ) 和操作 (Join，Filter，Fetch 等 )，继而通过改写查询或者创建索引消除代价较高的扫描或操作来优化查询。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="database" scheme="http://yoursite.com/categories/database/"/>
-    
-    
-      <category term="Optimization" scheme="http://yoursite.com/tags/Optimization/"/>
-    
-      <category term="db2" scheme="http://yoursite.com/tags/db2/"/>
     
       <category term="sql" scheme="http://yoursite.com/tags/sql/"/>
     
