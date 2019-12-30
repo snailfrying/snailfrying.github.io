@@ -136,7 +136,7 @@
 <meta property="og:description" content="chapter4-梯度下降算法(Gradient Descent)求解机器学习算法的模型参数时，即无约束优化问题时，梯度下降（Gradient Descent）是最常采用的方法之一，另一种常用的方法是最小二乘法。这里就对梯度下降法做一个完整的总结。 1.梯度在微积分里面，对多元函数的参数求∂偏导数，把求得的各个参数的偏导数以向量的形式写出来，就是梯度。比如函数$f(x,y)$,分别对$x,y$">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://yoursite.com/uploads/loading.gif">
-<meta property="og:updated_time" content="2019-12-24T08:21:30.700Z">
+<meta property="og:updated_time" content="2019-12-24T08:27:56.823Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="chapter4-梯度下降算法(Gradient Descent)">
 <meta name="twitter:description" content="chapter4-梯度下降算法(Gradient Descent)求解机器学习算法的模型参数时，即无约束优化问题时，梯度下降（Gradient Descent）是最常采用的方法之一，另一种常用的方法是最小二乘法。这里就对梯度下降法做一个完整的总结。 1.梯度在微积分里面，对多元函数的参数求∂偏导数，把求得的各个参数的偏导数以向量的形式写出来，就是梯度。比如函数$f(x,y)$,分别对$x,y$">
@@ -499,10 +499,10 @@
 </li>
 </ol>
 <h6 id="3-3-梯度下降详细算法"><a href="#3-3-梯度下降详细算法" class="headerlink" title="3.3 梯度下降详细算法"></a>3.3 梯度下降详细算法</h6><p>类比于最小二乘法章节。梯度下降算法我们以线性回归来进行举例，它亦有代数式和矩阵式两种求解方式，下面我们将进行分别讨论。</p>
-<p>3.3.1 梯度下降代数式算法</p>
+<p>3.3.1. 梯度下降代数式算法</p>
 <ol>
 <li><p>确定假设函数和损失函数 </p>
-<p>​     对于线性回归的假设函数为$h_\theta(x_1,x_2,…x_n)=\theta_0+\theta_1x_1+…+\theta_{n−1}x_{n−1}$,其中$x_i$为样本特征，$\theta_i$为     模型参数，同最小二乘法，我们可以令$x_0=1$,可以简化为<strong>$h_θ(x_1,x_2,…x_n)=\sum_{i=0}^{n}\theta_ix_i$</strong>,因此利用均方误差作为损失函数为 </p>
+<p>​    对于线性回归的假设函数为$h_\theta(x_1,x_2,…x_n)=\theta_0+\theta_1x_1+…+\theta_{n−1}x_{n−1}$,其中$x_i$为样本特征，$\theta_i$为       模型参数，同最小二乘法，我们可以令$x_0=1$,可以简化为<strong>$h_θ(x_1,x_2,…x_n)=\sum_{i=0}^{n}\theta_ix_i$</strong>,因此利用均方误差作为损失函数为 </p>
 </li>
 </ol>
 <p>$$<br>J(\theta_0,\theta_1,\cdots,\theta_j) =\frac{1}{2m}\sum_{i=1}^m(h_θ(x_0^{(i)},x_1^{(i)},\cdots,x_j^{(i)}) - y^{(j)})^2=\frac{1}{2m}\sum_{i=1}^n(\sum_{j=1}^m\theta_jx_j^{(i)}-y^{(i)})^2<br>$$</p>
@@ -514,7 +514,7 @@
 </li>
 </ol>
 <p>​        3）确定当前所有$\theta_i$下降距离是否都小于$\epsilon$,如果小于或者达到最大迭代次数结束max_iters就终止训练，即              最佳参数为当前$\theta_i$,如果没有就进行步骤4。</p>
-<p>​        4） 更新每个参数$\theta_i$,更新后进入步骤1，知道满足步骤3或者达到最大迭代次数结束max_iters<br>$$<br>\theta_i=\theta_i-\alpha\frac{1}{m}\sum_{i=1}^n(\sum_{j=1}^m\theta_jx_j^{(i)}-y^{(i)})x_j^{(i)}<br>$$<br>3.3.2 梯度下降矩阵式算法</p>
+<p>​        4） 更新每个参数$\theta_i$,更新后进入步骤1，知道满足步骤3或者达到最大迭代次数结束max_iters<br>$$<br>\theta_i=\theta_i-\alpha\frac{1}{m}\sum_{i=1}^n(\sum_{j=1}^m\theta_jx_j^{(i)}-y^{(i)})x_j^{(i)}<br>$$<br>3.3.2.  梯度下降矩阵式算法</p>
 <p>​     基本思想和线性代数解法一致，只是由矩阵进行表示</p>
 <p>​    1. 确定假设函数和损失函数</p>
 <p>​         对于简化后的$h_\theta$可知，能够得到矩阵表达式为:<br>$$<br>h_\theta(X) = \theta X<br>$$</p>
@@ -531,7 +531,7 @@
 <p>​        2) 利用步长乘以损失函数梯度，得到当前位置下降的距离。</p>
 <p>​        3）确定当前所有$\theta_i$下降距离是否都小于$\epsilon$,如果小于或者达到最大迭代次数结束max_iters就终止训练，即最佳参数为当前$\theta_i$,如果没有就进行步骤4，</p>
 <p>​        4） 更新每个参数$\theta_i$,更新后进入步骤1，直到满足步骤3。<br>$$<br>\theta = \theta-\alpha X^T(\theta X-Y)<br>$$</p>
-<p>3.3.3 梯度下降算法代码实践</p>
+<p>3.3.3. 梯度下降算法代码实践</p>
 <p>​        现在我们举一个实际的栗子。对于函数$f(x)=x^4-3x^3+2$,求导可以得到$f^\prime(x)=4x^3-9x^2$.我们令$f^\prime(x)=0$可以解出$x=\frac{9}{4}=2.25 \quad and\quad x=0$,我们需要全局最小值，所以取得$x=2.25$.下面我们通过梯度下降算法去解出$x$的值：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">next_x = <span class="number">6</span>  <span class="comment">#初始化值x</span></span><br><span class="line">learning_rate = <span class="number">0.01</span>  <span class="comment"># 学习率</span></span><br><span class="line">epsilon = <span class="number">0.00001</span>  <span class="comment"># 迭代值相差阈值 如果相差太小就停止模型。</span></span><br><span class="line">max_iters = <span class="number">10000</span>  <span class="comment">#最大迭代数</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#导函数</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">df</span><span class="params">(x)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">4</span> * x**<span class="number">3</span> - <span class="number">9</span> * x**<span class="number">2</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> _i <span class="keyword">in</span> range(max_iters):</span><br><span class="line">    current_x = next_x</span><br><span class="line">    next_x = current_x - learning_rate * df(current_x)</span><br><span class="line"></span><br><span class="line">    step = next_x - current_x</span><br><span class="line">    <span class="keyword">if</span> abs(step) &lt;= epsilon:</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line">print(<span class="string">"Minimum at "</span>, next_x)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 最终输出求最小近似值x: "2.2499646074278457"</span></span><br></pre></td></tr></table></figure>
 
@@ -593,8 +593,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/11/19/chapter1-统计学习与深度学习方法概论/" rel="next" title="chapter1-统计学习与深度学习方法概论">
-                <i class="fa fa-chevron-left"></i> chapter1-统计学习与深度学习方法概论
+              <a href="/2019/11/20/chapter2-最小二乘法完整实践理论/" rel="next" title="chapter2 最小二乘法完整实践理论">
+                <i class="fa fa-chevron-left"></i> chapter2 最小二乘法完整实践理论
               </a>
             
           </div>
@@ -603,8 +603,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/11/20/chapter2-最小二乘法完整实践理论/" rel="prev" title="chapter2 最小二乘法完整实践理论">
-                chapter2 最小二乘法完整实践理论 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/11/20/chapter5-逻辑斯谛回归-LogisticRegression/" rel="prev" title="chapter5-逻辑斯谛回归-LogisticRegression">
+                chapter5-逻辑斯谛回归-LogisticRegression <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
