@@ -138,7 +138,7 @@
 <meta property="og:image" content="http://yoursite.com/uploads/loading.gif">
 <meta property="og:image" content="http://yoursite.com/uploads/loading.gif">
 <meta property="og:image" content="http://yoursite.com/uploads/loading.gif">
-<meta property="og:updated_time" content="2019-12-30T08:34:41.878Z">
+<meta property="og:updated_time" content="2019-12-30T09:25:28.420Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="chapter5-逻辑斯谛回归-LogisticRegression">
 <meta name="twitter:description" content="chapter5-逻辑斯谛回归-LogisticRegressionstatistics learning1.浅谈线性回归由于前面最小二乘法和梯度下降算法，已经大力讨论了回归模型，因此，本章只进行简单的回顾回归模型。分析线性回归原理和与最小二乘法之间的区别。 线性回归与最小二乘法的最大区别，就在于损失函数的迭代。也就是如何优化损失函数。最小二乘法顾名思义，就是采用最小二乘法进行迭代，损失函数如下">
@@ -483,9 +483,12 @@
 <h3 id="chapter5-逻辑斯谛回归-LogisticRegression"><a href="#chapter5-逻辑斯谛回归-LogisticRegression" class="headerlink" title="chapter5-逻辑斯谛回归-LogisticRegression"></a>chapter5-逻辑斯谛回归-LogisticRegression</h3><h4 id="statistics-learning"><a href="#statistics-learning" class="headerlink" title="statistics learning"></a>statistics learning</h4><h5 id="1-浅谈线性回归"><a href="#1-浅谈线性回归" class="headerlink" title="1.浅谈线性回归"></a>1.浅谈线性回归</h5><p>由于前面<a href="https://snailfrying.github.io/2019/11/20/chapter2-最小二乘法完整实践理论/#more" target="_blank" rel="noopener">最小二乘法</a>和<a href="https://snailfrying.github.io/2019/11/20/chapter4-梯度下降算法-Gradient-Descent/#more" target="_blank" rel="noopener">梯度下降算法</a>，已经大力讨论了回归模型，因此，本章只进行简单的回顾回归模型。分析线性回归原理和与最小二乘法之间的区别。</p>
 <p>线性回归与最小二乘法的最大区别，就在于损失函数的迭代。也就是如何优化损失函数。最小二乘法顾名思义，就是采用最小二乘法进行迭代，损失函数如下：<br>$$<br>J(\theta_0,\theta_1,\cdots,\theta_j) =\sum_{i=1}^m(h_θ(x_0^{(i)},x_1^{(i)},\cdots,x_j^{(i)}) - y^{(j)})^2=\sum_{i=1}^n(\sum_{j=1}^m\theta_jx_j^{(i)}-y^{(i)})^2<br>$$</p>
 <p>对损失函数求导为，更新参数$\theta$：<br>$$<br>\theta = (X^TX)^-1X^TY<br>$$<br>对于线性回归算法来说，就是利用梯度下降算法，损失函数如下：<br>$$<br>J(\theta_0,\theta_1,\cdots,\theta_j) =\frac{1}{2m}\sum_{i=1}^m(h_θ(x_0^{(i)},x_1^{(i)},\cdots,x_j^{(i)}) - y^{(j)})^2=\frac{1}{2m}\sum_{i=1}^n(\sum_{j=1}^m\theta_jx_j^{(i)}-y^{(i)})^2<br>$$</p>
-<p>对损失函数求偏导，更新参数$\theta$：<br>$$<br>\theta = \theta-\alpha X^T(\theta X-Y)<br>$$<br>综合上述，对于线性回归来说，利用最小二乘法与梯度下降算法去优化模型，区别就在于求全导(每一个错误样本都会更新)，还是偏导上(逐渐逼近最佳拟合函数)。相对于不同的数据量来说，小样本，最小二乘法会更快的收敛，时间会更少。当样本量较大时，最小二乘法的计算量会逐渐增大，这时，没有梯度下降算法收敛得快，但不一定是最优解。</p>
+<p>对损失函数求偏导，更新参数$\theta$：<br>$$<br>\theta = \theta-\alpha X^T(\theta X-Y)<br>$$</p>
+<a id="more"></a>
+
+<p>综合上述，对于线性回归来说，利用最小二乘法与梯度下降算法去优化模型，区别就在于求全导(每一个错误样本都会更新)，还是偏导上(逐渐逼近最佳拟合函数)。相对于不同的数据量来说，小样本，最小二乘法会更快的收敛，时间会更少。当样本量较大时，最小二乘法的计算量会逐渐增大，这时，没有梯度下降算法收敛得快，但不一定是最优解。</p>
 <h5 id="2-LogisticRegression-theory"><a href="#2-LogisticRegression-theory" class="headerlink" title="2. LogisticRegression theory"></a>2. LogisticRegression theory</h5><h6 id="1-线性回归和逻辑回归的关系"><a href="#1-线性回归和逻辑回归的关系" class="headerlink" title="1)  线性回归和逻辑回归的关系"></a>1)  线性回归和逻辑回归的关系</h6><p>​        逻辑斯谛回归是在线性回归的基础之上，加入了非线性函数，就是sigmod函数，进行分类或者多分类。        因此logisticRegression是分类模型，那为什么带有回归两字呢？因为线性回归的y是连续的，而分类问题，y是离散的。那怎么做才能让连续分类问题转化为离散分类问题呢？利用sigmod函数，可以在闭区间$[0,1]$中的连续值，转化为0和1标签，多分类同理。sigmod函数如下：<br>$$<br>g(z) = \frac{1}{1+e^{-z}}<br>$$<br>可视化如图所示：</p>
-<p><img src="/uploads/loading.gif" data-original="%5Cimage%5Csigmod.png" alt></p>
+<p><img src="/uploads/loading.gif" data-original="/image/sigmod.png" alt></p>
 <p>它有一个非常好的性质，即当z趋于正无穷时，g(z)趋于1，而当z趋于负无穷时，g(z)趋于0，这非常适合于我们的分类概率模型。另外，它还有一个很好的导数性质：　<br>$$<br>g^{‘}(z) = g(z)(1-g(z))<br>$$<br>这个通过函数对g(z)求导很容易得到，后面我们会用到这个式子。</p>
 <p>如果我们令g(z)中的z为：${z = \theta x}$，这样就得到了二元逻辑回归模型的一般形式：<br>$$<br>h_{\theta}(x) = \frac{1}{1+e^{-\theta x}}<br>$$<br>　　其中x为样本输入，$h_{\theta}(x)$为模型输出，可以理解为某一分类的概率大小。而$\theta$为分类模型的要求出的模型参数。对于模型输出$h_{\theta}(x)$，让它和二元样本输出y（假设为0和1）有这样的对应关系，如果$h_{\theta}(x)$ &gt;0.5 ，即$\theta x &gt; 0$, 则y为1。如果$h_{\theta}(x) &lt; 0.5$，即$x\theta &lt; 0$, 则y为0。$y=0.5$是临界情况，此时$\theta x = 0$为， 从逻辑回归模型本身无法确定分类。</p>
 <p>　 $h_{\theta}(x)$的值越小，而分类为0的的概率越高，反之，值越大的话分类为1的的概率越高。如果靠近临界点，则分类准确率会下降。</p>
@@ -593,8 +596,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/11/20/chapter2-最小二乘法完整实践理论/" rel="next" title="chapter2 最小二乘法完整实践理论">
-                <i class="fa fa-chevron-left"></i> chapter2 最小二乘法完整实践理论
+              <a href="/2019/11/20/chapter4-梯度下降算法-Gradient-Descent/" rel="next" title="chapter4-梯度下降算法(Gradient Descent)">
+                <i class="fa fa-chevron-left"></i> chapter4-梯度下降算法(Gradient Descent)
               </a>
             
           </div>

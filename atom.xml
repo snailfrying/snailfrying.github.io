@@ -44,42 +44,15 @@
     <link href="http://yoursite.com/2019/11/20/chapter5-%E9%80%BB%E8%BE%91%E6%96%AF%E8%B0%9B%E5%9B%9E%E5%BD%92-LogisticRegression/"/>
     <id>http://yoursite.com/2019/11/20/chapter5-逻辑斯谛回归-LogisticRegression/</id>
     <published>2019-11-20T12:14:04.000Z</published>
-    <updated>2019-12-30T08:34:41.878Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;hr&gt;
-&lt;h3 id=&quot;chapter5-逻辑斯谛回归-LogisticRegression&quot;&gt;&lt;a href=&quot;#chapter5-逻辑斯谛回归-LogisticRegression&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="python" scheme="http://yoursite.com/categories/python/"/>
-    
-    
-      <category term="algorithms" scheme="http://yoursite.com/tags/algorithms/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>chapter2 最小二乘法完整实践理论</title>
-    <link href="http://yoursite.com/2019/11/20/chapter2-%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E6%B3%95%E5%AE%8C%E6%95%B4%E5%AE%9E%E8%B7%B5%E7%90%86%E8%AE%BA/"/>
-    <id>http://yoursite.com/2019/11/20/chapter2-最小二乘法完整实践理论/</id>
-    <published>2019-11-20T12:14:04.000Z</published>
-    <updated>2019-12-26T11:49:03.322Z</updated>
+    <updated>2019-12-30T09:25:28.420Z</updated>
     
     <summary type="html">
     
       &lt;hr&gt;
-&lt;h3 id=&quot;chapter2-最小二乘法完整实践理论&quot;&gt;&lt;a href=&quot;#chapter2-最小二乘法完整实践理论&quot; class=&quot;headerlink&quot; title=&quot;chapter2- 最小二乘法完整实践理论&quot;&gt;&lt;/a&gt;chapter2- 最小二乘法完整实践理论&lt;/h3&gt;&lt;h6 id=&quot;1-概要&quot;&gt;&lt;a href=&quot;#1-概要&quot; class=&quot;headerlink&quot; title=&quot;1.概要&quot;&gt;&lt;/a&gt;1.概要&lt;/h6&gt;&lt;p&gt;​    此章，通过最小二乘法，在统计学习，机器学习，深度学习的轨道上进行讨论，它们叁之间的共性与异性。&lt;/p&gt;
-&lt;h6 id=&quot;2-什么是最小二乘法&quot;&gt;&lt;a href=&quot;#2-什么是最小二乘法&quot; class=&quot;headerlink&quot; title=&quot;2.什么是最小二乘法&quot;&gt;&lt;/a&gt;2.什么是最小二乘法&lt;/h6&gt;&lt;p&gt;​    &lt;strong&gt;最小二乘法&lt;/strong&gt;（&lt;strong&gt;least squares method&lt;/strong&gt;），又称&lt;strong&gt;最小平方法&lt;/strong&gt;，是一种&lt;a href=&quot;https://zh.wikipedia.org/wiki/数学&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;数学&lt;/a&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/优化&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;优化&lt;/a&gt;方法。它通过最小化&lt;a href=&quot;https://zh.wikipedia.org/wiki/误差&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;误差&lt;/a&gt;的平方和寻找数据的最佳函数匹配。&lt;/p&gt;
-&lt;p&gt;​    利用最小二乘法可以简便地求得未知的数据，并使得求得的数据与实际数据之间误差的平方和为最小。&lt;/p&gt;
+&lt;h3 id=&quot;chapter5-逻辑斯谛回归-LogisticRegression&quot;&gt;&lt;a href=&quot;#chapter5-逻辑斯谛回归-LogisticRegression&quot; class=&quot;headerlink&quot; title=&quot;chapter5-逻辑斯谛回归-LogisticRegression&quot;&gt;&lt;/a&gt;chapter5-逻辑斯谛回归-LogisticRegression&lt;/h3&gt;&lt;h4 id=&quot;statistics-learning&quot;&gt;&lt;a href=&quot;#statistics-learning&quot; class=&quot;headerlink&quot; title=&quot;statistics learning&quot;&gt;&lt;/a&gt;statistics learning&lt;/h4&gt;&lt;h5 id=&quot;1-浅谈线性回归&quot;&gt;&lt;a href=&quot;#1-浅谈线性回归&quot; class=&quot;headerlink&quot; title=&quot;1.浅谈线性回归&quot;&gt;&lt;/a&gt;1.浅谈线性回归&lt;/h5&gt;&lt;p&gt;由于前面&lt;a href=&quot;https://snailfrying.github.io/2019/11/20/chapter2-最小二乘法完整实践理论/#more&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;最小二乘法&lt;/a&gt;和&lt;a href=&quot;https://snailfrying.github.io/2019/11/20/chapter4-梯度下降算法-Gradient-Descent/#more&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;梯度下降算法&lt;/a&gt;，已经大力讨论了回归模型，因此，本章只进行简单的回顾回归模型。分析线性回归原理和与最小二乘法之间的区别。&lt;/p&gt;
+&lt;p&gt;线性回归与最小二乘法的最大区别，就在于损失函数的迭代。也就是如何优化损失函数。最小二乘法顾名思义，就是采用最小二乘法进行迭代，损失函数如下：&lt;br&gt;$$&lt;br&gt;J(\theta_0,\theta_1,\cdots,\theta_j) =\sum_{i=1}^m(h_θ(x_0^{(i)},x_1^{(i)},\cdots,x_j^{(i)}) - y^{(j)})^2=\sum_{i=1}^n(\sum_{j=1}^m\theta_jx_j^{(i)}-y^{(i)})^2&lt;br&gt;$$&lt;/p&gt;
+&lt;p&gt;对损失函数求导为，更新参数$\theta$：&lt;br&gt;$$&lt;br&gt;\theta = (X^TX)^-1X^TY&lt;br&gt;$$&lt;br&gt;对于线性回归算法来说，就是利用梯度下降算法，损失函数如下：&lt;br&gt;$$&lt;br&gt;J(\theta_0,\theta_1,\cdots,\theta_j) =\frac{1}{2m}\sum_{i=1}^m(h_θ(x_0^{(i)},x_1^{(i)},\cdots,x_j^{(i)}) - y^{(j)})^2=\frac{1}{2m}\sum_{i=1}^n(\sum_{j=1}^m\theta_jx_j^{(i)}-y^{(i)})^2&lt;br&gt;$$&lt;/p&gt;
+&lt;p&gt;对损失函数求偏导，更新参数$\theta$：&lt;br&gt;$$&lt;br&gt;\theta = \theta-\alpha X^T(\theta X-Y)&lt;br&gt;$$&lt;/p&gt;
     
     </summary>
     
@@ -105,6 +78,30 @@
 &lt;h3 id=&quot;chapter4-梯度下降算法-Gradient-Descent&quot;&gt;&lt;a href=&quot;#chapter4-梯度下降算法-Gradient-Descent&quot; class=&quot;headerlink&quot; title=&quot;chapter4-梯度下降算法(Gradient Descent)&quot;&gt;&lt;/a&gt;chapter4-梯度下降算法(Gradient Descent)&lt;/h3&gt;&lt;p&gt;求解机器学习算法的模型参数时，即无约束优化问题时，梯度下降（Gradient Descent）是最常采用的方法之一，另一种常用的方法是最小二乘法。这里就对梯度下降法做一个完整的总结。&lt;/p&gt;
 &lt;h5 id=&quot;1-梯度&quot;&gt;&lt;a href=&quot;#1-梯度&quot; class=&quot;headerlink&quot; title=&quot;1.梯度&quot;&gt;&lt;/a&gt;1.梯度&lt;/h5&gt;&lt;p&gt;在微积分里面，对多元函数的参数求∂偏导数，把求得的各个参数的偏导数以向量的形式写出来，就是梯度。比如函数$f(x,y)$,分别对$x,y$进行求导，求得梯度向量是$(\frac{\partial f}{\partial x},\frac{\partial f}{\partial y})^T$ 简称$grad f(x,y)$ | $\Delta f(x,y)$,对于点为$(x_0,y_0)$,他的梯度向量值为$(\frac{\partial f}{\partial x_0},\frac{\partial f}{\partial y_0})^T$ | $\Delta f(x_0,y_0)$,如果为三个变量，就为：$\Delta f(x,y,z)$,以此类推。&lt;/p&gt;
 &lt;p&gt;那为什么要找到函数$f(x,y)$的梯度呢？因为梯度向量是函数下降(增加)速度最快的地方。比如说，在初始点$(x_0,y_0)$ 沿着梯度向量$\Delta f(x_0,y_0)$ (-$\Delta f(x_0,y_0)$)，增加最快(下降最快)的方向 ，我们能够更快的找到函数的最小值(最大值)。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="python" scheme="http://yoursite.com/categories/python/"/>
+    
+    
+      <category term="algorithms" scheme="http://yoursite.com/tags/algorithms/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>chapter2 最小二乘法完整实践理论</title>
+    <link href="http://yoursite.com/2019/11/20/chapter2-%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E6%B3%95%E5%AE%8C%E6%95%B4%E5%AE%9E%E8%B7%B5%E7%90%86%E8%AE%BA/"/>
+    <id>http://yoursite.com/2019/11/20/chapter2-最小二乘法完整实践理论/</id>
+    <published>2019-11-20T12:14:04.000Z</published>
+    <updated>2019-12-26T11:49:03.322Z</updated>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+&lt;h3 id=&quot;chapter2-最小二乘法完整实践理论&quot;&gt;&lt;a href=&quot;#chapter2-最小二乘法完整实践理论&quot; class=&quot;headerlink&quot; title=&quot;chapter2- 最小二乘法完整实践理论&quot;&gt;&lt;/a&gt;chapter2- 最小二乘法完整实践理论&lt;/h3&gt;&lt;h6 id=&quot;1-概要&quot;&gt;&lt;a href=&quot;#1-概要&quot; class=&quot;headerlink&quot; title=&quot;1.概要&quot;&gt;&lt;/a&gt;1.概要&lt;/h6&gt;&lt;p&gt;​    此章，通过最小二乘法，在统计学习，机器学习，深度学习的轨道上进行讨论，它们叁之间的共性与异性。&lt;/p&gt;
+&lt;h6 id=&quot;2-什么是最小二乘法&quot;&gt;&lt;a href=&quot;#2-什么是最小二乘法&quot; class=&quot;headerlink&quot; title=&quot;2.什么是最小二乘法&quot;&gt;&lt;/a&gt;2.什么是最小二乘法&lt;/h6&gt;&lt;p&gt;​    &lt;strong&gt;最小二乘法&lt;/strong&gt;（&lt;strong&gt;least squares method&lt;/strong&gt;），又称&lt;strong&gt;最小平方法&lt;/strong&gt;，是一种&lt;a href=&quot;https://zh.wikipedia.org/wiki/数学&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;数学&lt;/a&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/优化&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;优化&lt;/a&gt;方法。它通过最小化&lt;a href=&quot;https://zh.wikipedia.org/wiki/误差&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;误差&lt;/a&gt;的平方和寻找数据的最佳函数匹配。&lt;/p&gt;
+&lt;p&gt;​    利用最小二乘法可以简便地求得未知的数据，并使得求得的数据与实际数据之间误差的平方和为最小。&lt;/p&gt;
     
     </summary>
     
