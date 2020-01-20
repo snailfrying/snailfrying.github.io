@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[spark与pandas 如何构建分类模型]]></title>
+    <url>%2F2020%2F01%2F20%2Fspark%E4%B8%8Epandas-%E5%A6%82%E4%BD%95%E6%9E%84%E5%BB%BA%E5%88%86%E7%B1%BB%E6%A8%A1%E5%9E%8B%2F</url>
+    <content type="text"><![CDATA[spark与pandas 如何构建分类模型本章通过sklearn，鸢尾花数据，通过pandas的DataFrame与spark的DataFrame之间转化，构建spark多分类模型，并且图调参以及得到最佳参数和评价分数。具体代码流程如下： 导入相关工具包12345678910111213141516171819import numpy as npimport pandas as pdimport sklearn.datasets as sdfrom pyspark.context import SparkContextfrom pyspark.sql.context import SparkSessionfrom pyspark.sql import Rowfrom pyspark.ml.linalg import Vectorsfrom pyspark.mllib.regression import LabeledPointfrom pyspark.ml.tuning import ParamGridBuilder,CrossValidatorfrom pyspark.ml.classification import LogisticRegressionfrom pyspark.mllib.classification import LogisticRegressionWithLBFGS, LogisticRegressionModelfrom pyspark.ml.evaluation import MulticlassClassificationEvaluator,BinaryClassificationEvaluator 导入数据以及转换数据结果12345678910111213141516171819202122232425262728sc = SparkContext('local','iris_logistic')spark = SparkSession(sc)data = sd.load_iris()#data_x = data.data[:100,:]#data_y = data.target[:100]data_x = data.datadata_y = data.targetdata_x = pd.DataFrame(data_x)data_x.columns = ['sw','sh','dw','dh']print(data_x.dtypes)data_x['label'] = data_ydata_x = spark.createDataFrame(data_x)print(data_x)#labeledPoint 实现二分类#parsedData = data_x.rdd.map(lambda row:LabeledPoint(row[-1], Vectors.dense(row[:-1])))#print(parsedData .collect())#training = sc.parallelize(training)train_x, test_x = data_x.randomSplit([.75,.25],38)row = Row( 'label','features')train_x = train_x.rdd.map(lambda v: (row(v[-1],Vectors.dense(v[:-1])))).toDF()test_x = test_x.rdd.map(lambda v: (row(v[-1],Vectors.dense(v[:-1])))).toDF()print(train_x.show(2)) 构建模型以及输出最佳参数-评价分数1234567891011121314151617181920212223242526272829303132333435lr = LogisticRegression()grid = ParamGridBuilder()\ .addGrid(lr.maxIter, [8, 18])\ .addGrid(lr.regParam, [0.1, 0.01]) \ .addGrid(lr.fitIntercept, [False, True])\ .addGrid(lr.elasticNetParam, [0.0, 0.5, 1.0])\ .build()evaluator = MulticlassClassificationEvaluator()cv = CrossValidator(estimator=lr, estimatorParamMaps=grid, evaluator=evaluator, parallelism=2,numFolds=2)cvModel = cv.fit(train_x)pre=cvModel.transform(test_x)print(evaluator.evaluate(pre))selected = pre.select("features", "label", "probability","prediction")for s in selected.collect(): print(s)def getBestParam(cvModel): params = cvModel.getEstimatorParamMaps() avgMetrics = cvModel.avgMetrics all_params = list(zip(params, avgMetrics)) print(all_params) best_param = sorted(all_params, key=lambda x: x[1], reverse=True)[0][0] return best_param#输出最佳参数best_param = getBestParam(cvModel)for p, v in best_param.items(): print("&#123;&#125; : &#123;&#125;".format(p.name, v))]]></content>
+      <categories>
+        <category>spark</category>
+      </categories>
+      <tags>
+        <tag>algorithms</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[chapter6-python实现TensorFlow-logistic]]></title>
     <url>%2F2020%2F01%2F09%2Fchapter6-python%E5%AE%9E%E7%8E%B0TensorFlow-logistic%2F</url>
     <content type="text"><![CDATA[版权声明： 除非注明，本博文章均为原创，转载请以链接形式标明本文地址。]]></content>
