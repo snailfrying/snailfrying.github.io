@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-01-20T09:18:08.188Z</updated>
+  <updated>2020-02-02T08:17:17.760Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://yoursite.com/2020/01/20/spark%E4%B8%8Epandas-%E5%A6%82%E4%BD%95%E6%9E%84%E5%BB%BA%E5%88%86%E7%B1%BB%E6%A8%A1%E5%9E%8B/"/>
     <id>http://yoursite.com/2020/01/20/spark与pandas-如何构建分类模型/</id>
     <published>2020-01-20T08:34:48.000Z</published>
-    <updated>2020-01-20T09:18:08.188Z</updated>
+    <updated>2020-02-02T08:17:17.760Z</updated>
     
     <summary type="html">
     
@@ -66,83 +66,6 @@
   </entry>
   
   <entry>
-    <title>chapter5-逻辑斯谛回归-LogisticRegression</title>
-    <link href="http://yoursite.com/2019/11/20/chapter5-%E9%80%BB%E8%BE%91%E6%96%AF%E8%B0%9B%E5%9B%9E%E5%BD%92-LogisticRegression/"/>
-    <id>http://yoursite.com/2019/11/20/chapter5-逻辑斯谛回归-LogisticRegression/</id>
-    <published>2019-11-20T12:14:04.000Z</published>
-    <updated>2019-12-30T10:48:03.822Z</updated>
-    
-    <summary type="html">
-    
-      &lt;hr&gt;
-&lt;h3 id=&quot;chapter5-逻辑斯谛回归-LogisticRegression&quot;&gt;&lt;a href=&quot;#chapter5-逻辑斯谛回归-LogisticRegression&quot; class=&quot;headerlink&quot; title=&quot;chapter5-逻辑斯谛回归-LogisticRegression&quot;&gt;&lt;/a&gt;chapter5-逻辑斯谛回归-LogisticRegression&lt;/h3&gt;&lt;h4 id=&quot;statistics-learning&quot;&gt;&lt;a href=&quot;#statistics-learning&quot; class=&quot;headerlink&quot; title=&quot;statistics learning&quot;&gt;&lt;/a&gt;statistics learning&lt;/h4&gt;&lt;h5 id=&quot;1-浅谈线性回归&quot;&gt;&lt;a href=&quot;#1-浅谈线性回归&quot; class=&quot;headerlink&quot; title=&quot;1.浅谈线性回归&quot;&gt;&lt;/a&gt;1.浅谈线性回归&lt;/h5&gt;&lt;p&gt;由于前面&lt;a href=&quot;https://snailfrying.github.io/2019/11/20/chapter2-最小二乘法完整实践理论/#more&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;最小二乘法&lt;/a&gt;和&lt;a href=&quot;https://snailfrying.github.io/2019/11/20/chapter4-梯度下降算法-Gradient-Descent/#more&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;梯度下降算法&lt;/a&gt;，已经大力讨论了回归模型，因此，本章只进行简单的回顾回归模型。分析线性回归原理和与最小二乘法之间的区别。&lt;/p&gt;
-&lt;p&gt;线性回归与最小二乘法的最大区别，就在于损失函数的迭代。也就是如何优化损失函数。最小二乘法顾名思义，就是采用最小二乘法进行迭代，损失函数如下：&lt;br&gt;$$&lt;br&gt;J(\theta_0,\theta_1,\cdots,\theta_j) =\sum_{i=1}^m(h_θ(x_0^{(i)},x_1^{(i)},\cdots,x_j^{(i)}) - y^{(j)})^2=\sum_{i=1}^n(\sum_{j=1}^m\theta_jx_j^{(i)}-y^{(i)})^2&lt;br&gt;$$&lt;/p&gt;
-&lt;p&gt;对损失函数求导为，更新参数$\theta$：&lt;br&gt;$$&lt;br&gt;\theta = (X^TX)^-1X^TY&lt;br&gt;$$&lt;br&gt;对于线性回归算法来说，就是利用梯度下降算法，损失函数如下：&lt;br&gt;$$&lt;br&gt;J(\theta_0,\theta_1,\cdots,\theta_j) =\frac{1}{2m}\sum_{i=1}^m(h_θ(x_0^{(i)},x_1^{(i)},\cdots,x_j^{(i)}) - y^{(j)})^2=\frac{1}{2m}\sum_{i=1}^n(\sum_{j=1}^m\theta_jx_j^{(i)}-y^{(i)})^2&lt;br&gt;$$&lt;/p&gt;
-&lt;p&gt;对损失函数求偏导，更新参数$\theta$：&lt;br&gt;$$&lt;br&gt;\theta = \theta-\alpha X^T(\theta X-Y)&lt;br&gt;$$&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="python" scheme="http://yoursite.com/categories/python/"/>
-    
-    
-      <category term="algorithms" scheme="http://yoursite.com/tags/algorithms/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>chapter2 最小二乘法完整实践理论</title>
-    <link href="http://yoursite.com/2019/11/20/chapter2-%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E6%B3%95%E5%AE%8C%E6%95%B4%E5%AE%9E%E8%B7%B5%E7%90%86%E8%AE%BA/"/>
-    <id>http://yoursite.com/2019/11/20/chapter2-最小二乘法完整实践理论/</id>
-    <published>2019-11-20T12:14:04.000Z</published>
-    <updated>2019-12-26T11:49:03.322Z</updated>
-    
-    <summary type="html">
-    
-      &lt;hr&gt;
-&lt;h3 id=&quot;chapter2-最小二乘法完整实践理论&quot;&gt;&lt;a href=&quot;#chapter2-最小二乘法完整实践理论&quot; class=&quot;headerlink&quot; title=&quot;chapter2- 最小二乘法完整实践理论&quot;&gt;&lt;/a&gt;chapter2- 最小二乘法完整实践理论&lt;/h3&gt;&lt;h6 id=&quot;1-概要&quot;&gt;&lt;a href=&quot;#1-概要&quot; class=&quot;headerlink&quot; title=&quot;1.概要&quot;&gt;&lt;/a&gt;1.概要&lt;/h6&gt;&lt;p&gt;​    此章，通过最小二乘法，在统计学习，机器学习，深度学习的轨道上进行讨论，它们叁之间的共性与异性。&lt;/p&gt;
-&lt;h6 id=&quot;2-什么是最小二乘法&quot;&gt;&lt;a href=&quot;#2-什么是最小二乘法&quot; class=&quot;headerlink&quot; title=&quot;2.什么是最小二乘法&quot;&gt;&lt;/a&gt;2.什么是最小二乘法&lt;/h6&gt;&lt;p&gt;​    &lt;strong&gt;最小二乘法&lt;/strong&gt;（&lt;strong&gt;least squares method&lt;/strong&gt;），又称&lt;strong&gt;最小平方法&lt;/strong&gt;，是一种&lt;a href=&quot;https://zh.wikipedia.org/wiki/数学&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;数学&lt;/a&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/优化&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;优化&lt;/a&gt;方法。它通过最小化&lt;a href=&quot;https://zh.wikipedia.org/wiki/误差&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;误差&lt;/a&gt;的平方和寻找数据的最佳函数匹配。&lt;/p&gt;
-&lt;p&gt;​    利用最小二乘法可以简便地求得未知的数据，并使得求得的数据与实际数据之间误差的平方和为最小。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="python" scheme="http://yoursite.com/categories/python/"/>
-    
-    
-      <category term="algorithms" scheme="http://yoursite.com/tags/algorithms/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>chapter6-神经网络</title>
-    <link href="http://yoursite.com/2019/11/20/chapter6-%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"/>
-    <id>http://yoursite.com/2019/11/20/chapter6-神经网络/</id>
-    <published>2019-11-20T12:14:04.000Z</published>
-    <updated>2020-01-10T01:46:36.780Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;hr&gt;
-&lt;h2 id=&quot;chapter6-神经网络（neural-networks）&quot;&gt;&lt;a href=&quot;#chapter6-神经网络（neural-networks）&quot; class=&quot;headerlink&quot; title=&quot;chapter6-神经网络（neural
-        
-      
-    
-    </summary>
-    
-    
-      <category term="python" scheme="http://yoursite.com/categories/python/"/>
-    
-    
-      <category term="algorithms" scheme="http://yoursite.com/tags/algorithms/"/>
-    
-  </entry>
-  
-  <entry>
     <title>chapter4-梯度下降算法(Gradient Descent)</title>
     <link href="http://yoursite.com/2019/11/20/chapter4-%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E7%AE%97%E6%B3%95-Gradient-Descent/"/>
     <id>http://yoursite.com/2019/11/20/chapter4-梯度下降算法-Gradient-Descent/</id>
@@ -168,6 +91,59 @@
   </entry>
   
   <entry>
+    <title>chapter5-逻辑斯谛回归-LogisticRegression</title>
+    <link href="http://yoursite.com/2019/11/20/chapter5-%E9%80%BB%E8%BE%91%E6%96%AF%E8%B0%9B%E5%9B%9E%E5%BD%92-LogisticRegression/"/>
+    <id>http://yoursite.com/2019/11/20/chapter5-逻辑斯谛回归-LogisticRegression/</id>
+    <published>2019-11-20T12:14:04.000Z</published>
+    <updated>2019-12-30T10:48:03.822Z</updated>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+&lt;h3 id=&quot;chapter5-逻辑斯谛回归-LogisticRegression&quot;&gt;&lt;a href=&quot;#chapter5-逻辑斯谛回归-LogisticRegression&quot; class=&quot;headerlink&quot; title=&quot;chapter5-逻辑斯谛回归-LogisticRegression&quot;&gt;&lt;/a&gt;chapter5-逻辑斯谛回归-LogisticRegression&lt;/h3&gt;&lt;h4 id=&quot;statistics-learning&quot;&gt;&lt;a href=&quot;#statistics-learning&quot; class=&quot;headerlink&quot; title=&quot;statistics learning&quot;&gt;&lt;/a&gt;statistics learning&lt;/h4&gt;&lt;h5 id=&quot;1-浅谈线性回归&quot;&gt;&lt;a href=&quot;#1-浅谈线性回归&quot; class=&quot;headerlink&quot; title=&quot;1.浅谈线性回归&quot;&gt;&lt;/a&gt;1.浅谈线性回归&lt;/h5&gt;&lt;p&gt;由于前面&lt;a href=&quot;https://snailfrying.github.io/2019/11/20/chapter2-最小二乘法完整实践理论/#more&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;最小二乘法&lt;/a&gt;和&lt;a href=&quot;https://snailfrying.github.io/2019/11/20/chapter4-梯度下降算法-Gradient-Descent/#more&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;梯度下降算法&lt;/a&gt;，已经大力讨论了回归模型，因此，本章只进行简单的回顾回归模型。分析线性回归原理和与最小二乘法之间的区别。&lt;/p&gt;
+&lt;p&gt;线性回归与最小二乘法的最大区别，就在于损失函数的迭代。也就是如何优化损失函数。最小二乘法顾名思义，就是采用最小二乘法进行迭代，损失函数如下：&lt;br&gt;$$&lt;br&gt;J(\theta_0,\theta_1,\cdots,\theta_j) =\sum_{i=1}^m(h_θ(x_0^{(i)},x_1^{(i)},\cdots,x_j^{(i)}) - y^{(j)})^2=\sum_{i=1}^n(\sum_{j=1}^m\theta_jx_j^{(i)}-y^{(i)})^2&lt;br&gt;$$&lt;/p&gt;
+&lt;p&gt;对损失函数求导为，更新参数$\theta$：&lt;br&gt;$$&lt;br&gt;\theta = (X^TX)^-1X^TY&lt;br&gt;$$&lt;br&gt;对于线性回归算法来说，就是利用梯度下降算法，损失函数如下：&lt;br&gt;$$&lt;br&gt;J(\theta_0,\theta_1,\cdots,\theta_j) =\frac{1}{2m}\sum_{i=1}^m(h_θ(x_0^{(i)},x_1^{(i)},\cdots,x_j^{(i)}) - y^{(j)})^2=\frac{1}{2m}\sum_{i=1}^n(\sum_{j=1}^m\theta_jx_j^{(i)}-y^{(i)})^2&lt;br&gt;$$&lt;/p&gt;
+&lt;p&gt;对损失函数求偏导，更新参数$\theta$：&lt;br&gt;$$&lt;br&gt;\theta = \theta-\alpha X^T(\theta X-Y)&lt;br&gt;$$&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="python" scheme="http://yoursite.com/categories/python/"/>
+    
+    
+      <category term="algorithms" scheme="http://yoursite.com/tags/algorithms/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>chapter6-神经网络</title>
+    <link href="http://yoursite.com/2019/11/20/chapter6-%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"/>
+    <id>http://yoursite.com/2019/11/20/chapter6-神经网络/</id>
+    <published>2019-11-20T12:14:04.000Z</published>
+    <updated>2020-02-04T07:14:22.035Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;hr&gt;
+&lt;h2 id=&quot;chapter6-神经网络（neural-networks）&quot;&gt;&lt;a href=&quot;#chapter6-神经网络（neural-networks）&quot; class=&quot;headerlink&quot; title=&quot;chapter6-神经网络（neural
+        
+      
+    
+    </summary>
+    
+    
+      <category term="python" scheme="http://yoursite.com/categories/python/"/>
+    
+    
+      <category term="algorithms" scheme="http://yoursite.com/tags/algorithms/"/>
+    
+  </entry>
+  
+  <entry>
     <title>chapter3-感知机</title>
     <link href="http://yoursite.com/2019/11/20/chapter3-%E6%84%9F%E7%9F%A5%E6%9C%BA/"/>
     <id>http://yoursite.com/2019/11/20/chapter3-感知机/</id>
@@ -179,6 +155,30 @@
       &lt;hr&gt;
 &lt;h2 id=&quot;chapter3-感知机&quot;&gt;&lt;a href=&quot;#chapter3-感知机&quot; class=&quot;headerlink&quot; title=&quot;chapter3-感知机&quot;&gt;&lt;/a&gt;chapter3-感知机&lt;/h2&gt;&lt;h5 id=&quot;1-概要&quot;&gt;&lt;a href=&quot;#1-概要&quot; class=&quot;headerlink&quot; title=&quot;1.概要&quot;&gt;&lt;/a&gt;1.概要&lt;/h5&gt;&lt;p&gt;通过上一章最小二乘法的理论与实践，我们知道统计学学习-机器学习-深度学习，它们之间的联系与区别。本章我们将讨论感知机算法，再次讨论他们叁之间的关系。并且很有必要熟悉感知机，虽然它现在在分类模型当中已经不适用，因为泛化能力有限，能力更强的为支撑向量机(svm)。但是它在机器学习和深度学习其他深奥算法上有较大的联系，甚至为其算法逻辑实现基础。掌握它的思想，为进一步的提升，打下坚实的基础。&lt;/p&gt;
 &lt;h5 id=&quot;2-感知机模型原理&quot;&gt;&lt;a href=&quot;#2-感知机模型原理&quot; class=&quot;headerlink&quot; title=&quot;2.感知机模型原理&quot;&gt;&lt;/a&gt;2.感知机模型原理&lt;/h5&gt;&lt;p&gt;首先感知机算法是一种二分类线性算法。当然也可以提升至多维分类模型上，但是都是线性模型，对于非线性的，神经网络了解一下。感知机学习算法：用一个函数输入$x$(一个实值的向量)映射到输出值$f(x)$(一个二元值):&lt;br&gt;$$&lt;br&gt;f(x)=\begin{cases}&lt;br&gt;    1 \qquad if \quad w.x + b &amp;gt; 0 \ \&lt;br&gt;    -1 \qquad other wise&lt;br&gt;\end{cases}&lt;br&gt;$$&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="python" scheme="http://yoursite.com/categories/python/"/>
+    
+    
+      <category term="algorithms" scheme="http://yoursite.com/tags/algorithms/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>chapter2 最小二乘法完整实践理论</title>
+    <link href="http://yoursite.com/2019/11/20/chapter2-%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E6%B3%95%E5%AE%8C%E6%95%B4%E5%AE%9E%E8%B7%B5%E7%90%86%E8%AE%BA/"/>
+    <id>http://yoursite.com/2019/11/20/chapter2-最小二乘法完整实践理论/</id>
+    <published>2019-11-20T12:14:04.000Z</published>
+    <updated>2019-12-26T11:49:03.322Z</updated>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+&lt;h3 id=&quot;chapter2-最小二乘法完整实践理论&quot;&gt;&lt;a href=&quot;#chapter2-最小二乘法完整实践理论&quot; class=&quot;headerlink&quot; title=&quot;chapter2- 最小二乘法完整实践理论&quot;&gt;&lt;/a&gt;chapter2- 最小二乘法完整实践理论&lt;/h3&gt;&lt;h6 id=&quot;1-概要&quot;&gt;&lt;a href=&quot;#1-概要&quot; class=&quot;headerlink&quot; title=&quot;1.概要&quot;&gt;&lt;/a&gt;1.概要&lt;/h6&gt;&lt;p&gt;​    此章，通过最小二乘法，在统计学习，机器学习，深度学习的轨道上进行讨论，它们叁之间的共性与异性。&lt;/p&gt;
+&lt;h6 id=&quot;2-什么是最小二乘法&quot;&gt;&lt;a href=&quot;#2-什么是最小二乘法&quot; class=&quot;headerlink&quot; title=&quot;2.什么是最小二乘法&quot;&gt;&lt;/a&gt;2.什么是最小二乘法&lt;/h6&gt;&lt;p&gt;​    &lt;strong&gt;最小二乘法&lt;/strong&gt;（&lt;strong&gt;least squares method&lt;/strong&gt;），又称&lt;strong&gt;最小平方法&lt;/strong&gt;，是一种&lt;a href=&quot;https://zh.wikipedia.org/wiki/数学&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;数学&lt;/a&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/优化&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;优化&lt;/a&gt;方法。它通过最小化&lt;a href=&quot;https://zh.wikipedia.org/wiki/误差&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;误差&lt;/a&gt;的平方和寻找数据的最佳函数匹配。&lt;/p&gt;
+&lt;p&gt;​    利用最小二乘法可以简便地求得未知的数据，并使得求得的数据与实际数据之间误差的平方和为最小。&lt;/p&gt;
     
     </summary>
     
@@ -362,26 +362,25 @@
   </entry>
   
   <entry>
-    <title>chapter2_array_matrix_algorithm</title>
-    <link href="http://yoursite.com/2019/10/30/chapter2-array-matrix-algorithm/"/>
-    <id>http://yoursite.com/2019/10/30/chapter2-array-matrix-algorithm/</id>
+    <title>python algorithms string</title>
+    <link href="http://yoursite.com/2019/10/30/python-algorithms-string/"/>
+    <id>http://yoursite.com/2019/10/30/python-algorithms-string/</id>
     <published>2019-10-30T11:44:55.000Z</published>
-    <updated>2020-01-20T08:23:42.245Z</updated>
+    <updated>2020-01-17T09:19:03.813Z</updated>
     
     <summary type="html">
     
-      &lt;h3 id=&quot;chapter2-array-matrix-algorithm&quot;&gt;&lt;a href=&quot;#chapter2-array-matrix-algorithm&quot; class=&quot;headerlink&quot; title=&quot;chapter2_array_matrix_algorithm&quot;&gt;&lt;/a&gt;chapter2_array_matrix_algorithm&lt;/h3&gt;&lt;p&gt;此章节过于leetcode类，全部是关于数组与矩阵方面的算法题，包括解题思路，以及Python代码&lt;/p&gt;
-&lt;figure class=&quot;highlight angelscript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;# &lt;span class=&quot;number&quot;&gt;1.&lt;/span&gt; 把数组中的 &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt; 移到末尾&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;def moveZeroes():&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    #遍历，数组，前面记住不为&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;的值，往依次迁移，遍历完数组，除记录不为&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;的数，直接填充为&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    nums = [ &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;12&lt;/span&gt; ]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    vn = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; i,v &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; enumerate(nums):&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; v != &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            nums[vn] = v&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            vn += &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    nums[vn:] = [&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;]*(len(nums)-vn)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    print(nums)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+      &lt;hr&gt;
+&lt;h2 id=&quot;1-1-旋转字符串&quot;&gt;&lt;a href=&quot;#1-1-旋转字符串&quot; class=&quot;headerlink&quot; title=&quot;1.1 旋转字符串&quot;&gt;&lt;/a&gt;1.1 旋转字符串&lt;/h2&gt;&lt;h3 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述&quot;&gt;&lt;/a&gt;题目描述&lt;/h3&gt;&lt;p&gt;给定一个字符串，要求把字符串前面的若干个字符移动到字符串的尾部，如把字符串“abcdef”前面的2个字符’a’和’b’移动到字符串的尾部，使得原字符串变成字符串“cdefab”。请写一个函数完成此功能，要求对长度为n的字符串操作的时间复杂度为 O(n)，空间复杂度为 O(1)。&lt;/p&gt;
+&lt;h4 id=&quot;方法：三步反转法&quot;&gt;&lt;a href=&quot;#方法：三步反转法&quot; class=&quot;headerlink&quot; title=&quot;方法：三步反转法&quot;&gt;&lt;/a&gt;方法：三步反转法&lt;/h4&gt;&lt;p&gt;对于这个问题，换一个角度思考一下。&lt;/p&gt;
     
     </summary>
     
     
-      <category term="leetcode" scheme="http://yoursite.com/categories/leetcode/"/>
+      <category term="python" scheme="http://yoursite.com/categories/python/"/>
     
     
       <category term="algorithms" scheme="http://yoursite.com/tags/algorithms/"/>
-    
-      <category term="python" scheme="http://yoursite.com/tags/python/"/>
     
   </entry>
   
@@ -412,25 +411,26 @@
   </entry>
   
   <entry>
-    <title>python algorithms string</title>
-    <link href="http://yoursite.com/2019/10/30/python-algorithms-string/"/>
-    <id>http://yoursite.com/2019/10/30/python-algorithms-string/</id>
+    <title>chapter2_array_matrix_algorithm</title>
+    <link href="http://yoursite.com/2019/10/30/chapter2-array-matrix-algorithm/"/>
+    <id>http://yoursite.com/2019/10/30/chapter2-array-matrix-algorithm/</id>
     <published>2019-10-30T11:44:55.000Z</published>
-    <updated>2020-01-17T09:19:03.813Z</updated>
+    <updated>2020-01-20T08:23:42.245Z</updated>
     
     <summary type="html">
     
-      &lt;hr&gt;
-&lt;h2 id=&quot;1-1-旋转字符串&quot;&gt;&lt;a href=&quot;#1-1-旋转字符串&quot; class=&quot;headerlink&quot; title=&quot;1.1 旋转字符串&quot;&gt;&lt;/a&gt;1.1 旋转字符串&lt;/h2&gt;&lt;h3 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述&quot;&gt;&lt;/a&gt;题目描述&lt;/h3&gt;&lt;p&gt;给定一个字符串，要求把字符串前面的若干个字符移动到字符串的尾部，如把字符串“abcdef”前面的2个字符’a’和’b’移动到字符串的尾部，使得原字符串变成字符串“cdefab”。请写一个函数完成此功能，要求对长度为n的字符串操作的时间复杂度为 O(n)，空间复杂度为 O(1)。&lt;/p&gt;
-&lt;h4 id=&quot;方法：三步反转法&quot;&gt;&lt;a href=&quot;#方法：三步反转法&quot; class=&quot;headerlink&quot; title=&quot;方法：三步反转法&quot;&gt;&lt;/a&gt;方法：三步反转法&lt;/h4&gt;&lt;p&gt;对于这个问题，换一个角度思考一下。&lt;/p&gt;
+      &lt;h3 id=&quot;chapter2-array-matrix-algorithm&quot;&gt;&lt;a href=&quot;#chapter2-array-matrix-algorithm&quot; class=&quot;headerlink&quot; title=&quot;chapter2_array_matrix_algorithm&quot;&gt;&lt;/a&gt;chapter2_array_matrix_algorithm&lt;/h3&gt;&lt;p&gt;此章节过于leetcode类，全部是关于数组与矩阵方面的算法题，包括解题思路，以及Python代码&lt;/p&gt;
+&lt;figure class=&quot;highlight angelscript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;# &lt;span class=&quot;number&quot;&gt;1.&lt;/span&gt; 把数组中的 &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt; 移到末尾&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;def moveZeroes():&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    #遍历，数组，前面记住不为&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;的值，往依次迁移，遍历完数组，除记录不为&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;的数，直接填充为&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    nums = [ &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;12&lt;/span&gt; ]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    vn = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; i,v &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; enumerate(nums):&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; v != &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            nums[vn] = v&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            vn += &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    nums[vn:] = [&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;]*(len(nums)-vn)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    print(nums)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
     </summary>
     
     
-      <category term="python" scheme="http://yoursite.com/categories/python/"/>
+      <category term="leetcode" scheme="http://yoursite.com/categories/leetcode/"/>
     
     
       <category term="algorithms" scheme="http://yoursite.com/tags/algorithms/"/>
+    
+      <category term="python" scheme="http://yoursite.com/tags/python/"/>
     
   </entry>
   
