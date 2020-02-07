@@ -1293,7 +1293,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/20/chapter3-感知机/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/20/chapter4-梯度下降算法-Gradient-Descent/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="snail json">
@@ -1312,7 +1312,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/11/20/chapter3-感知机/" itemprop="url">chapter3-感知机</a></h1>
+                <a class="post-title-link" href="/2019/11/20/chapter4-梯度下降算法-Gradient-Descent/" itemprop="url">chapter4-梯度下降算法(Gradient Descent)</a></h1>
         
 
         <div class="post-meta">
@@ -1365,8 +1365,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/11/20/chapter3-感知机/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/11/20/chapter3-感知机/" itemprop="commentCount"></span>
+                <a href="/2019/11/20/chapter4-梯度下降算法-Gradient-Descent/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/11/20/chapter4-梯度下降算法-Gradient-Descent/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1374,7 +1374,7 @@
 
           
           
-             <span id="/2019/11/20/chapter3-感知机/" class="leancloud_visitors" data-flag-title="chapter3-感知机">
+             <span id="/2019/11/20/chapter4-梯度下降算法-Gradient-Descent/" class="leancloud_visitors" data-flag-title="chapter4-梯度下降算法(Gradient Descent)">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1400,7 +1400,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  3.3k
+                  2.4k
                 </span>
               
 
@@ -1416,7 +1416,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  14
+                  9
                 </span>
               
             </div>
@@ -1439,11 +1439,13 @@
       
         
           <hr>
-<h2 id="chapter3-感知机"><a href="#chapter3-感知机" class="headerlink" title="chapter3-感知机"></a>chapter3-感知机</h2><h5 id="1-概要"><a href="#1-概要" class="headerlink" title="1.概要"></a>1.概要</h5><p>通过上一章最小二乘法的理论与实践，我们知道统计学学习-机器学习-深度学习，它们之间的联系与区别。本章我们将讨论感知机算法，再次讨论他们叁之间的关系。并且很有必要熟悉感知机，虽然它现在在分类模型当中已经不适用，因为泛化能力有限，能力更强的为支撑向量机(svm)。但是它在机器学习和深度学习其他深奥算法上有较大的联系，甚至为其算法逻辑实现基础。掌握它的思想，为进一步的提升，打下坚实的基础。</p>
-<h5 id="2-感知机模型原理"><a href="#2-感知机模型原理" class="headerlink" title="2.感知机模型原理"></a>2.感知机模型原理</h5><p>首先感知机算法是一种二分类线性算法。当然也可以提升至多维分类模型上，但是都是线性模型，对于非线性的，神经网络了解一下。感知机学习算法：用一个函数输入$x$(一个实值的向量)映射到输出值$f(x)$(一个二元值):<br>$$<br>f(x)=\begin{cases}<br>    1 \qquad if \quad w.x + b &gt; 0 \ \<br>    -1 \qquad other wise<br>\end{cases}<br>$$</p>
+<hr>
+<h3 id="chapter4-梯度下降算法-Gradient-Descent"><a href="#chapter4-梯度下降算法-Gradient-Descent" class="headerlink" title="chapter4-梯度下降算法(Gradient Descent)"></a>chapter4-梯度下降算法(Gradient Descent)</h3><p>求解机器学习算法的模型参数时，即无约束优化问题时，梯度下降（Gradient Descent）是最常采用的方法之一，另一种常用的方法是最小二乘法。这里就对梯度下降法做一个完整的总结。</p>
+<h5 id="1-梯度"><a href="#1-梯度" class="headerlink" title="1.梯度"></a>1.梯度</h5><p>在微积分里面，对多元函数的参数求∂偏导数，把求得的各个参数的偏导数以向量的形式写出来，就是梯度。比如函数$f(x,y)$,分别对$x,y$进行求导，求得梯度向量是$(\frac{\partial f}{\partial x},\frac{\partial f}{\partial y})^T$ 简称$grad f(x,y)$ | $\Delta f(x,y)$,对于点为$(x_0,y_0)$,他的梯度向量值为$(\frac{\partial f}{\partial x_0},\frac{\partial f}{\partial y_0})^T$ | $\Delta f(x_0,y_0)$,如果为三个变量，就为：$\Delta f(x,y,z)$,以此类推。</p>
+<p>那为什么要找到函数$f(x,y)$的梯度呢？因为梯度向量是函数下降(增加)速度最快的地方。比如说，在初始点$(x_0,y_0)$ 沿着梯度向量$\Delta f(x_0,y_0)$ (-$\Delta f(x_0,y_0)$)，增加最快(下降最快)的方向 ，我们能够更快的找到函数的最小值(最大值)。</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2019/11/20/chapter3-感知机/#more" rel="contents">
+            <a class="btn" href="/2019/11/20/chapter4-梯度下降算法-Gradient-Descent/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>

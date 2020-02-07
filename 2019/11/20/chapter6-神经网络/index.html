@@ -143,7 +143,7 @@
 <meta property="og:image" content="http://yoursite.com/uploads/loading.gif">
 <meta property="og:image" content="http://yoursite.com/uploads/loading.gif">
 <meta property="og:image" content="http://yoursite.com/uploads/loading.gif">
-<meta property="og:updated_time" content="2020-02-07T13:05:38.977Z">
+<meta property="og:updated_time" content="2020-02-07T13:08:13.912Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="chapter6-神经网络">
 <meta name="twitter:description" content="chapter6-神经网络（neural networks）1. 神经网络原理这节大部分内容参考AndrewNG深度学习教学视频以及黄海广博士在github上开源的吴恩达深度学习笔记,本节知识根据自己使用经验进行基本总结，细致末梢还请看吴恩达老师讲义。对于neural networks统计学原理，我将从下面伍个部分进行仔细探讨，因为这些部分是神经网络不可或缺的部分。我将通过与logisticRe">
@@ -487,7 +487,8 @@
         <hr>
 <h2 id="chapter6-神经网络（neural-networks）"><a href="#chapter6-神经网络（neural-networks）" class="headerlink" title="chapter6-神经网络（neural networks）"></a>chapter6-神经网络（neural networks）</h2><h4 id="1-神经网络原理"><a href="#1-神经网络原理" class="headerlink" title="1. 神经网络原理"></a>1. 神经网络原理</h4><h6 id="这节大部分内容参考AndrewNG深度学习教学视频以及黄海广博士在github上开源的吴恩达深度学习笔记-本节知识根据自己使用经验进行基本总结，细致末梢还请看吴恩达老师讲义。"><a href="#这节大部分内容参考AndrewNG深度学习教学视频以及黄海广博士在github上开源的吴恩达深度学习笔记-本节知识根据自己使用经验进行基本总结，细致末梢还请看吴恩达老师讲义。" class="headerlink" title="这节大部分内容参考AndrewNG深度学习教学视频以及黄海广博士在github上开源的吴恩达深度学习笔记,本节知识根据自己使用经验进行基本总结，细致末梢还请看吴恩达老师讲义。"></a>这节大部分内容参考AndrewNG深度学习<a href="https://mooc.study.163.com/course/2001281002?tid=2001392029&_trace_c_p_k2_=fb1e25a65ef84e5c927c8125d985e008#/info" target="_blank" rel="noopener">教学视频</a>以及黄海广博士在github上开源的吴恩达深度学习笔记,本节知识根据自己使用经验进行基本总结，细致末梢还请看吴恩达老师讲义。</h6><p>对于neural networks统计学原理，我将从下面伍个部分进行仔细探讨，因为这些部分是神经网络不可或缺的部分。我将通过与logisticRegression原理进行对比介绍，如果不知道或者不清楚的可以看前面所介绍的logistic。最后实现代码，更深一步了解简单的TensorFlow实现。并且分析机器学习和深度学习建模的联系。</p>
 <ol>
-<li><h6 id="损失函数"><a href="#损失函数" class="headerlink" title="损失函数"></a>损失函数</h6><p>​        损失函数（cost function）是优化的目的。如果没有损失函数，也就没有了目标。不管是任何事情，都需要去了解问题的根本。知道问题的缘由，才能进一步进行建模优化。比如是回归还是分类。是有监督，还是无监督。使用什么统计学原理。如何筛选评价函数。这些都需要通过损失函数，与具体背景结合去构建模型。这里不考虑业务背景。现，只通过逻辑回归损失函数去优化，实现对图像的分类。即有监督。所以损失函数为：<br>$$<br>L(\theta) = -Y^Tlogh_{\theta}(X) - (E-Y)^T log(E-h_{\theta}(X))<br>$$<br>​            </p>
+<li><h6 id="损失函数"><a href="#损失函数" class="headerlink" title="损失函数"></a>损失函数</h6><p>​        损失函数（cost function）是优化的目的。如果没有损失函数，也就没有了目标。不管是任何事情，都需要去了解问题的根本。知道问题的缘由，才能进一步进行建模优化。比如是回归还是分类。是有监督，还是无监督。使用什么统计学原理。如何筛选评价函数。这些都需要通过损失函数，与具体背景结合去构建模型。这里不考虑业务背景。现，只通过逻辑回归损失函数去优化，实现对图像的分类。即有监督。所以损失函数为：<br>$$<br>L(\theta) = -Y^Tlogh_{\theta}(X) - (E-Y)^T log(E-h_{\theta}(X))<br>$$</p>
+<a id="more"></a>            
 </li>
 <li><h6 id="非线性激活函数"><a href="#非线性激活函数" class="headerlink" title="非线性激活函数"></a>非线性激活函数</h6><p>​    为什么要有非线性激活函数？对于深度学习，非线性激活函数是必不可少的。如果没有非线性激活函数，那么深度学习只能解决极小数线性问题。</p>
 <p>​        前面作为基础讨论的<a href="[https://snailfrying.github.io/2019/11/20/chapter2-%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E6%B3%95%E5%AE%8C%E6%95%B4%E5%AE%9E%E8%B7%B5%E7%90%86%E8%AE%BA/](https://snailfrying.github.io/2019/11/20/chapter2-最小二乘法完整实践理论/)">最小二乘法</a>，只能够做线性拟合，做深度学习没有加非线性激活函数，进行拟合的结果简直惨不忍睹。对于现大数据时代，人行为规律分布，基本呈现高斯分布，也就是说，解决问题，要先解决重要度高的问题。而分类问题，是占有大壁江山的。当然时序问题也挺重要，将后讨论。</p>
@@ -602,8 +603,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/11/20/chapter5-逻辑斯谛回归-LogisticRegression/" rel="next" title="chapter5-逻辑斯谛回归-LogisticRegression">
-                <i class="fa fa-chevron-left"></i> chapter5-逻辑斯谛回归-LogisticRegression
+              <a href="/2019/11/20/chapter2-最小二乘法完整实践理论/" rel="next" title="chapter2 最小二乘法完整实践理论">
+                <i class="fa fa-chevron-left"></i> chapter2 最小二乘法完整实践理论
               </a>
             
           </div>
@@ -612,8 +613,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/11/20/chapter2-最小二乘法完整实践理论/" rel="prev" title="chapter2 最小二乘法完整实践理论">
-                chapter2 最小二乘法完整实践理论 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/11/20/chapter5-逻辑斯谛回归-LogisticRegression/" rel="prev" title="chapter5-逻辑斯谛回归-LogisticRegression">
+                chapter5-逻辑斯谛回归-LogisticRegression <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
