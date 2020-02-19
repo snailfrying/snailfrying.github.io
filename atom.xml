@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-02-07T09:37:26.385Z</updated>
+  <updated>2020-02-19T06:10:29.610Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>chapter3-dynamic-algorithm </title>
+    <link href="http://yoursite.com/2020/02/19/chapter3-dynamic-algorithm/"/>
+    <id>http://yoursite.com/2020/02/19/chapter3-dynamic-algorithm/</id>
+    <published>2020-02-19T05:36:43.000Z</published>
+    <updated>2020-02-19T06:10:29.610Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;chapter3-dynamic-algorithm&quot;&gt;&lt;a href=&quot;#chapter3-dynamic-algorithm&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>snail first travel essays 3day</title>
@@ -143,31 +166,6 @@
   </entry>
   
   <entry>
-    <title>chapter5-逻辑斯谛回归-LogisticRegression</title>
-    <link href="http://yoursite.com/2019/11/20/chapter5-%E9%80%BB%E8%BE%91%E6%96%AF%E8%B0%9B%E5%9B%9E%E5%BD%92-LogisticRegression/"/>
-    <id>http://yoursite.com/2019/11/20/chapter5-逻辑斯谛回归-LogisticRegression/</id>
-    <published>2019-11-20T12:14:04.000Z</published>
-    <updated>2019-12-30T10:48:03.822Z</updated>
-    
-    <summary type="html">
-    
-      &lt;hr&gt;
-&lt;h3 id=&quot;chapter5-逻辑斯谛回归-LogisticRegression&quot;&gt;&lt;a href=&quot;#chapter5-逻辑斯谛回归-LogisticRegression&quot; class=&quot;headerlink&quot; title=&quot;chapter5-逻辑斯谛回归-LogisticRegression&quot;&gt;&lt;/a&gt;chapter5-逻辑斯谛回归-LogisticRegression&lt;/h3&gt;&lt;h4 id=&quot;statistics-learning&quot;&gt;&lt;a href=&quot;#statistics-learning&quot; class=&quot;headerlink&quot; title=&quot;statistics learning&quot;&gt;&lt;/a&gt;statistics learning&lt;/h4&gt;&lt;h5 id=&quot;1-浅谈线性回归&quot;&gt;&lt;a href=&quot;#1-浅谈线性回归&quot; class=&quot;headerlink&quot; title=&quot;1.浅谈线性回归&quot;&gt;&lt;/a&gt;1.浅谈线性回归&lt;/h5&gt;&lt;p&gt;由于前面&lt;a href=&quot;https://snailfrying.github.io/2019/11/20/chapter2-最小二乘法完整实践理论/#more&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;最小二乘法&lt;/a&gt;和&lt;a href=&quot;https://snailfrying.github.io/2019/11/20/chapter4-梯度下降算法-Gradient-Descent/#more&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;梯度下降算法&lt;/a&gt;，已经大力讨论了回归模型，因此，本章只进行简单的回顾回归模型。分析线性回归原理和与最小二乘法之间的区别。&lt;/p&gt;
-&lt;p&gt;线性回归与最小二乘法的最大区别，就在于损失函数的迭代。也就是如何优化损失函数。最小二乘法顾名思义，就是采用最小二乘法进行迭代，损失函数如下：&lt;br&gt;$$&lt;br&gt;J(\theta_0,\theta_1,\cdots,\theta_j) =\sum_{i=1}^m(h_θ(x_0^{(i)},x_1^{(i)},\cdots,x_j^{(i)}) - y^{(j)})^2=\sum_{i=1}^n(\sum_{j=1}^m\theta_jx_j^{(i)}-y^{(i)})^2&lt;br&gt;$$&lt;/p&gt;
-&lt;p&gt;对损失函数求导为，更新参数$\theta$：&lt;br&gt;$$&lt;br&gt;\theta = (X^TX)^-1X^TY&lt;br&gt;$$&lt;br&gt;对于线性回归算法来说，就是利用梯度下降算法，损失函数如下：&lt;br&gt;$$&lt;br&gt;J(\theta_0,\theta_1,\cdots,\theta_j) =\frac{1}{2m}\sum_{i=1}^m(h_θ(x_0^{(i)},x_1^{(i)},\cdots,x_j^{(i)}) - y^{(j)})^2=\frac{1}{2m}\sum_{i=1}^n(\sum_{j=1}^m\theta_jx_j^{(i)}-y^{(i)})^2&lt;br&gt;$$&lt;/p&gt;
-&lt;p&gt;对损失函数求偏导，更新参数$\theta$：&lt;br&gt;$$&lt;br&gt;\theta = \theta-\alpha X^T(\theta X-Y)&lt;br&gt;$$&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="python" scheme="http://yoursite.com/categories/python/"/>
-    
-    
-      <category term="algorithms" scheme="http://yoursite.com/tags/algorithms/"/>
-    
-  </entry>
-  
-  <entry>
     <title>chapter3-感知机</title>
     <link href="http://yoursite.com/2019/11/20/chapter3-%E6%84%9F%E7%9F%A5%E6%9C%BA/"/>
     <id>http://yoursite.com/2019/11/20/chapter3-感知机/</id>
@@ -195,7 +193,7 @@
     <link href="http://yoursite.com/2019/11/20/chapter6-%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"/>
     <id>http://yoursite.com/2019/11/20/chapter6-神经网络/</id>
     <published>2019-11-20T12:14:04.000Z</published>
-    <updated>2020-02-07T13:08:13.912Z</updated>
+    <updated>2020-02-07T13:21:12.197Z</updated>
     
     <summary type="html">
     
@@ -228,6 +226,31 @@
 &lt;h3 id=&quot;chapter4-梯度下降算法-Gradient-Descent&quot;&gt;&lt;a href=&quot;#chapter4-梯度下降算法-Gradient-Descent&quot; class=&quot;headerlink&quot; title=&quot;chapter4-梯度下降算法(Gradient Descent)&quot;&gt;&lt;/a&gt;chapter4-梯度下降算法(Gradient Descent)&lt;/h3&gt;&lt;p&gt;求解机器学习算法的模型参数时，即无约束优化问题时，梯度下降（Gradient Descent）是最常采用的方法之一，另一种常用的方法是最小二乘法。这里就对梯度下降法做一个完整的总结。&lt;/p&gt;
 &lt;h5 id=&quot;1-梯度&quot;&gt;&lt;a href=&quot;#1-梯度&quot; class=&quot;headerlink&quot; title=&quot;1.梯度&quot;&gt;&lt;/a&gt;1.梯度&lt;/h5&gt;&lt;p&gt;在微积分里面，对多元函数的参数求∂偏导数，把求得的各个参数的偏导数以向量的形式写出来，就是梯度。比如函数$f(x,y)$,分别对$x,y$进行求导，求得梯度向量是$(\frac{\partial f}{\partial x},\frac{\partial f}{\partial y})^T$ 简称$grad f(x,y)$ | $\Delta f(x,y)$,对于点为$(x_0,y_0)$,他的梯度向量值为$(\frac{\partial f}{\partial x_0},\frac{\partial f}{\partial y_0})^T$ | $\Delta f(x_0,y_0)$,如果为三个变量，就为：$\Delta f(x,y,z)$,以此类推。&lt;/p&gt;
 &lt;p&gt;那为什么要找到函数$f(x,y)$的梯度呢？因为梯度向量是函数下降(增加)速度最快的地方。比如说，在初始点$(x_0,y_0)$ 沿着梯度向量$\Delta f(x_0,y_0)$ (-$\Delta f(x_0,y_0)$)，增加最快(下降最快)的方向 ，我们能够更快的找到函数的最小值(最大值)。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="python" scheme="http://yoursite.com/categories/python/"/>
+    
+    
+      <category term="algorithms" scheme="http://yoursite.com/tags/algorithms/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>chapter5-逻辑斯谛回归-LogisticRegression</title>
+    <link href="http://yoursite.com/2019/11/20/chapter5-%E9%80%BB%E8%BE%91%E6%96%AF%E8%B0%9B%E5%9B%9E%E5%BD%92-LogisticRegression/"/>
+    <id>http://yoursite.com/2019/11/20/chapter5-逻辑斯谛回归-LogisticRegression/</id>
+    <published>2019-11-20T12:14:04.000Z</published>
+    <updated>2019-12-30T10:48:03.822Z</updated>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+&lt;h3 id=&quot;chapter5-逻辑斯谛回归-LogisticRegression&quot;&gt;&lt;a href=&quot;#chapter5-逻辑斯谛回归-LogisticRegression&quot; class=&quot;headerlink&quot; title=&quot;chapter5-逻辑斯谛回归-LogisticRegression&quot;&gt;&lt;/a&gt;chapter5-逻辑斯谛回归-LogisticRegression&lt;/h3&gt;&lt;h4 id=&quot;statistics-learning&quot;&gt;&lt;a href=&quot;#statistics-learning&quot; class=&quot;headerlink&quot; title=&quot;statistics learning&quot;&gt;&lt;/a&gt;statistics learning&lt;/h4&gt;&lt;h5 id=&quot;1-浅谈线性回归&quot;&gt;&lt;a href=&quot;#1-浅谈线性回归&quot; class=&quot;headerlink&quot; title=&quot;1.浅谈线性回归&quot;&gt;&lt;/a&gt;1.浅谈线性回归&lt;/h5&gt;&lt;p&gt;由于前面&lt;a href=&quot;https://snailfrying.github.io/2019/11/20/chapter2-最小二乘法完整实践理论/#more&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;最小二乘法&lt;/a&gt;和&lt;a href=&quot;https://snailfrying.github.io/2019/11/20/chapter4-梯度下降算法-Gradient-Descent/#more&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;梯度下降算法&lt;/a&gt;，已经大力讨论了回归模型，因此，本章只进行简单的回顾回归模型。分析线性回归原理和与最小二乘法之间的区别。&lt;/p&gt;
+&lt;p&gt;线性回归与最小二乘法的最大区别，就在于损失函数的迭代。也就是如何优化损失函数。最小二乘法顾名思义，就是采用最小二乘法进行迭代，损失函数如下：&lt;br&gt;$$&lt;br&gt;J(\theta_0,\theta_1,\cdots,\theta_j) =\sum_{i=1}^m(h_θ(x_0^{(i)},x_1^{(i)},\cdots,x_j^{(i)}) - y^{(j)})^2=\sum_{i=1}^n(\sum_{j=1}^m\theta_jx_j^{(i)}-y^{(i)})^2&lt;br&gt;$$&lt;/p&gt;
+&lt;p&gt;对损失函数求导为，更新参数$\theta$：&lt;br&gt;$$&lt;br&gt;\theta = (X^TX)^-1X^TY&lt;br&gt;$$&lt;br&gt;对于线性回归算法来说，就是利用梯度下降算法，损失函数如下：&lt;br&gt;$$&lt;br&gt;J(\theta_0,\theta_1,\cdots,\theta_j) =\frac{1}{2m}\sum_{i=1}^m(h_θ(x_0^{(i)},x_1^{(i)},\cdots,x_j^{(i)}) - y^{(j)})^2=\frac{1}{2m}\sum_{i=1}^n(\sum_{j=1}^m\theta_jx_j^{(i)}-y^{(i)})^2&lt;br&gt;$$&lt;/p&gt;
+&lt;p&gt;对损失函数求偏导，更新参数$\theta$：&lt;br&gt;$$&lt;br&gt;\theta = \theta-\alpha X^T(\theta X-Y)&lt;br&gt;$$&lt;/p&gt;
     
     </summary>
     
@@ -411,16 +434,18 @@
   </entry>
   
   <entry>
-    <title>chapter2_array_matrix_algorithm</title>
-    <link href="http://yoursite.com/2019/10/30/chapter2-array-matrix-algorithm/"/>
-    <id>http://yoursite.com/2019/10/30/chapter2-array-matrix-algorithm/</id>
+    <title>chapter1_string_algorithm</title>
+    <link href="http://yoursite.com/2019/10/30/chapter1-string-algorithm/"/>
+    <id>http://yoursite.com/2019/10/30/chapter1-string-algorithm/</id>
     <published>2019-10-30T11:44:55.000Z</published>
-    <updated>2020-01-20T08:23:42.245Z</updated>
+    <updated>2020-01-20T08:23:48.976Z</updated>
     
     <summary type="html">
     
-      &lt;h3 id=&quot;chapter2-array-matrix-algorithm&quot;&gt;&lt;a href=&quot;#chapter2-array-matrix-algorithm&quot; class=&quot;headerlink&quot; title=&quot;chapter2_array_matrix_algorithm&quot;&gt;&lt;/a&gt;chapter2_array_matrix_algorithm&lt;/h3&gt;&lt;p&gt;此章节过于leetcode类，全部是关于数组与矩阵方面的算法题，包括解题思路，以及Python代码&lt;/p&gt;
-&lt;figure class=&quot;highlight angelscript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;# &lt;span class=&quot;number&quot;&gt;1.&lt;/span&gt; 把数组中的 &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt; 移到末尾&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;def moveZeroes():&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    #遍历，数组，前面记住不为&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;的值，往依次迁移，遍历完数组，除记录不为&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;的数，直接填充为&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    nums = [ &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;12&lt;/span&gt; ]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    vn = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; i,v &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; enumerate(nums):&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; v != &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            nums[vn] = v&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            vn += &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    nums[vn:] = [&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;]*(len(nums)-vn)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    print(nums)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+      &lt;hr&gt;
+&lt;h2 id=&quot;chapter1-string-algorithm&quot;&gt;&lt;a href=&quot;#chapter1-string-algorithm&quot; class=&quot;headerlink&quot; title=&quot;chapter1_string_algorithm&quot;&gt;&lt;/a&gt;chapter1_string_algorithm&lt;/h2&gt;&lt;p&gt;此章节过于leetcode类，全部是关于字符串方面的算法题，包括解题思路，以及Python代码&lt;/p&gt;
+&lt;h2 id=&quot;1-1-旋转字符串&quot;&gt;&lt;a href=&quot;#1-1-旋转字符串&quot; class=&quot;headerlink&quot; title=&quot;1.1 旋转字符串&quot;&gt;&lt;/a&gt;1.1 旋转字符串&lt;/h2&gt;&lt;h3 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述&quot;&gt;&lt;/a&gt;题目描述&lt;/h3&gt;&lt;p&gt;给定一个字符串，要求把字符串前面的若干个字符移动到字符串的尾部，如把字符串“abcdef”前面的2个字符’a’和’b’移动到字符串的尾部，使得原字符串变成字符串“cdefab”。请写一个函数完成此功能，要求对长度为n的字符串操作的时间复杂度为 O(n)，空间复杂度为 O(1)。&lt;/p&gt;
+&lt;h4 id=&quot;方法：三步反转法&quot;&gt;&lt;a href=&quot;#方法：三步反转法&quot; class=&quot;headerlink&quot; title=&quot;方法：三步反转法&quot;&gt;&lt;/a&gt;方法：三步反转法&lt;/h4&gt;&lt;p&gt;对于这个问题，换一个角度思考一下。&lt;/p&gt;
     
     </summary>
     
@@ -435,18 +460,16 @@
   </entry>
   
   <entry>
-    <title>chapter1_string_algorithm</title>
-    <link href="http://yoursite.com/2019/10/30/chapter1-string-algorithm/"/>
-    <id>http://yoursite.com/2019/10/30/chapter1-string-algorithm/</id>
+    <title>chapter2_array_matrix_algorithm</title>
+    <link href="http://yoursite.com/2019/10/30/chapter2-array-matrix-algorithm/"/>
+    <id>http://yoursite.com/2019/10/30/chapter2-array-matrix-algorithm/</id>
     <published>2019-10-30T11:44:55.000Z</published>
-    <updated>2020-01-20T08:23:48.976Z</updated>
+    <updated>2020-01-20T08:23:42.245Z</updated>
     
     <summary type="html">
     
-      &lt;hr&gt;
-&lt;h2 id=&quot;chapter1-string-algorithm&quot;&gt;&lt;a href=&quot;#chapter1-string-algorithm&quot; class=&quot;headerlink&quot; title=&quot;chapter1_string_algorithm&quot;&gt;&lt;/a&gt;chapter1_string_algorithm&lt;/h2&gt;&lt;p&gt;此章节过于leetcode类，全部是关于字符串方面的算法题，包括解题思路，以及Python代码&lt;/p&gt;
-&lt;h2 id=&quot;1-1-旋转字符串&quot;&gt;&lt;a href=&quot;#1-1-旋转字符串&quot; class=&quot;headerlink&quot; title=&quot;1.1 旋转字符串&quot;&gt;&lt;/a&gt;1.1 旋转字符串&lt;/h2&gt;&lt;h3 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述&quot;&gt;&lt;/a&gt;题目描述&lt;/h3&gt;&lt;p&gt;给定一个字符串，要求把字符串前面的若干个字符移动到字符串的尾部，如把字符串“abcdef”前面的2个字符’a’和’b’移动到字符串的尾部，使得原字符串变成字符串“cdefab”。请写一个函数完成此功能，要求对长度为n的字符串操作的时间复杂度为 O(n)，空间复杂度为 O(1)。&lt;/p&gt;
-&lt;h4 id=&quot;方法：三步反转法&quot;&gt;&lt;a href=&quot;#方法：三步反转法&quot; class=&quot;headerlink&quot; title=&quot;方法：三步反转法&quot;&gt;&lt;/a&gt;方法：三步反转法&lt;/h4&gt;&lt;p&gt;对于这个问题，换一个角度思考一下。&lt;/p&gt;
+      &lt;h3 id=&quot;chapter2-array-matrix-algorithm&quot;&gt;&lt;a href=&quot;#chapter2-array-matrix-algorithm&quot; class=&quot;headerlink&quot; title=&quot;chapter2_array_matrix_algorithm&quot;&gt;&lt;/a&gt;chapter2_array_matrix_algorithm&lt;/h3&gt;&lt;p&gt;此章节过于leetcode类，全部是关于数组与矩阵方面的算法题，包括解题思路，以及Python代码&lt;/p&gt;
+&lt;figure class=&quot;highlight angelscript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;# &lt;span class=&quot;number&quot;&gt;1.&lt;/span&gt; 把数组中的 &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt; 移到末尾&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;def moveZeroes():&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    #遍历，数组，前面记住不为&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;的值，往依次迁移，遍历完数组，除记录不为&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;的数，直接填充为&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    nums = [ &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;12&lt;/span&gt; ]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    vn = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; i,v &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; enumerate(nums):&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; v != &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            nums[vn] = v&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            vn += &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    nums[vn:] = [&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;]*(len(nums)-vn)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    print(nums)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
     </summary>
     
@@ -480,37 +503,6 @@
     
     
       <category term="algorithms" scheme="http://yoursite.com/tags/algorithms/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>window10 快捷键</title>
-    <link href="http://yoursite.com/2019/10/30/window10-%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
-    <id>http://yoursite.com/2019/10/30/window10-快捷键/</id>
-    <published>2019-10-30T02:29:30.000Z</published>
-    <updated>2019-10-31T05:14:50.812Z</updated>
-    
-    <summary type="html">
-    
-      &lt;hr&gt;
-&lt;h3 id=&quot;1-常用window10-快捷键菜单&quot;&gt;&lt;a href=&quot;#1-常用window10-快捷键菜单&quot; class=&quot;headerlink&quot; title=&quot;1.常用window10 快捷键菜单&quot;&gt;&lt;/a&gt;1.常用window10 快捷键菜单&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Win+D：显示桌面&lt;/strong&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;　　&lt;strong&gt;Win+E：打开资源管理器&lt;/strong&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;　　&lt;strong&gt;Win+I：打开设置界面&lt;/strong&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;　　&lt;strong&gt;Win+L：锁定屏幕&lt;/strong&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;　　&lt;strong&gt;Win+R：打开运行窗口&lt;/strong&gt;&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="巧技" scheme="http://yoursite.com/categories/%E5%B7%A7%E6%8A%80/"/>
-    
-    
-      <category term="win10快捷键" scheme="http://yoursite.com/tags/win10%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
     
   </entry>
   

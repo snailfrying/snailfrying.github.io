@@ -143,7 +143,8 @@
 <meta property="og:image" content="http://yoursite.com/uploads/loading.gif">
 <meta property="og:image" content="http://yoursite.com/uploads/loading.gif">
 <meta property="og:image" content="http://yoursite.com/uploads/loading.gif">
-<meta property="og:updated_time" content="2020-02-07T13:08:13.912Z">
+<meta property="og:image" content="http://yoursite.com/uploads/loading.gif">
+<meta property="og:updated_time" content="2020-02-07T13:21:12.197Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="chapter6-神经网络">
 <meta name="twitter:description" content="chapter6-神经网络（neural networks）1. 神经网络原理这节大部分内容参考AndrewNG深度学习教学视频以及黄海广博士在github上开源的吴恩达深度学习笔记,本节知识根据自己使用经验进行基本总结，细致末梢还请看吴恩达老师讲义。对于neural networks统计学原理，我将从下面伍个部分进行仔细探讨，因为这些部分是神经网络不可或缺的部分。我将通过与logisticRe">
@@ -503,24 +504,21 @@
 <p>​    类比于前几章节，向量化的过程，神经网络也一样，公式更加的简单，相比较于非向量化的公式，只能在用for循环遍历计算，向量化的矩阵，计算更加的块。其中矩阵$Z,X $ 水平方向上，对应于不同的训练样本；竖直方向上，对应不同的输入特征.</p>
 </li>
 <li><h6 id="神经网络的梯度下降算法"><a href="#神经网络的梯度下降算法" class="headerlink" title="神经网络的梯度下降算法"></a>神经网络的梯度下降算法</h6><ol>
-<li><h6 id="forward-propagation"><a href="#forward-propagation" class="headerlink" title="forward  propagation"></a>forward  propagation</h6><p>​    正向传播就很简单，只需要从在$z^{[1]} \rightarrow a^{[1]} \rightarrow z^{[2]} \rightarrow a^{[2]} $ 依次计算即可</p>
+<li><p>forward  propagation</p>
+<p>​    正向传播就很简单，只需要从在$z^{[1]} \rightarrow a^{[1]} \rightarrow z^{[2]} \rightarrow a^{[2]} $ 依次计算即可</p>
 <p><img src="/uploads/loading.gif" data-original="D:%5Csnail_blog%5Cblog%5Csource%5Cimage%5CTL_5.jpg" alt></p>
 </li>
-</ol>
+<li><p>backward propagation</p>
+<p> 对于反向传播，我们需要链式求导，去更新参数$W,b$ 进而优化损失函数。</p>
+<p>主要公式如下：</p>
+<p>其中，𝑛[1]表示隐藏单元个数，𝑛[2]表示输出单元个数，每次优化预测值$Y:y^{(i) },(𝑖 = 1,2,…,𝑚) $,$L$为上述的logistic损失函数</p>
+<p><img src="/uploads/loading.gif" data-original="D:%5Csnail_blog%5Cblog%5Csource%5Cimage%5CTL_4.jpg" alt></p>
 </li>
 </ol>
 </li>
 </ol>
-<pre><code>2. ###### backward propagation
-
-    对于反向传播，我们需要链式求导，去更新参数$W,b$ 进而优化损失函数。
-
-   主要公式如下：
-
-   其中，𝑛[1]表示隐藏单元个数，𝑛[2]表示输出单元个数，每次优化预测值$Y:y^{(i) },(𝑖 = 1,2,…,𝑚) $,$L$为上述的logistic损失函数
-
-   ![](D:\snail_blog\blog\source\image\TL_4.jpg)</code></pre><ol start="4">
-<li><h6 id="正则化与标准化"><a href="#正则化与标准化" class="headerlink" title="正则化与标准化"></a>正则化与标准化</h6><p>​            需要细聊，数据处理，建模，优化模型，看此[machine learning yearning](<a href="https://github.com/deeplearning-ai/machine-learning-yearning-cn/blob/master/_docs/Setting" target="_blank" rel="noopener">https://github.com/deeplearning-ai/machine-learning-yearning-cn/blob/master/_docs/Setting</a> up development and test sets/ch08.md)！！！</p>
+</li>
+<li><h6 id="正则化与标准化"><a href="#正则化与标准化" class="headerlink" title="正则化与标准化"></a>正则化与标准化</h6><p>​            需要细聊，数据处理，建模，优化模型，看此<a href="https://github.com/deeplearning-ai/machine-learning-yearning-cn" target="_blank" rel="noopener">machine learning yearning</a>！！！</p>
 <ol>
 <li><p>为什么要正则化</p>
 <p>​    为什么要正则化？为什么要分析模型结果的方差和偏差？模型的泛化性如何？三个问号，目标同一，就是你到结果是否好？如下图所示，我们和直观的看出模型好坏与方差、偏差的关系。</p>
@@ -542,7 +540,7 @@
 <p>对于神经网络数学公式，正向传播来说，最终的结果如下：</p>
 <p><img src="/uploads/loading.gif" data-original="D:%5Csnail_blog%5Cblog%5Csource%5Cimage%5CTL_8.jpg" alt></p>
 <p>我们可以从公式中看到，如果$W$过大或者过小，在连乘中，也就是模型迭代过程中，参数会逐渐变极小或变极大的情况。这种情况就被称为神经网络的梯度爆炸与消失。</p>
-<p>因此，神经网络对参数初始化有较大的要求，需要根据使用不同数据和激活函数进行优化设置。具体细节参考上面的[machine learning yearning](<a href="https://github.com/deeplearning-ai/machine-learning-yearning-cn/blob/master/_docs/Setting" target="_blank" rel="noopener">https://github.com/deeplearning-ai/machine-learning-yearning-cn/blob/master/_docs/Setting</a> up development and test sets/ch08.md)！</p>
+<p>因此，神经网络对参数初始化有较大的要求，需要根据使用不同数据和激活函数进行优化设置。具体细节参考上面的<a href="https://github.com/deeplearning-ai/machine-learning-yearning-cn" target="_blank" rel="noopener">machine learning yearning</a>！</p>
 </li>
 </ol>
 </li>
@@ -703,7 +701,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">31</span>
+                  <span class="site-state-item-count">32</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -793,7 +791,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#chapter6-神经网络（neural-networks）"><span class="nav-number">1.</span> <span class="nav-text">chapter6-神经网络（neural networks）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-神经网络原理"><span class="nav-number">1.0.1.</span> <span class="nav-text">1. 神经网络原理</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#这节大部分内容参考AndrewNG深度学习教学视频以及黄海广博士在github上开源的吴恩达深度学习笔记-本节知识根据自己使用经验进行基本总结，细致末梢还请看吴恩达老师讲义。"><span class="nav-number">1.0.1.0.1.</span> <span class="nav-text">这节大部分内容参考AndrewNG深度学习教学视频以及黄海广博士在github上开源的吴恩达深度学习笔记,本节知识根据自己使用经验进行基本总结，细致末梢还请看吴恩达老师讲义。</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#损失函数"><span class="nav-number">1.0.1.0.2.</span> <span class="nav-text">损失函数</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#非线性激活函数"><span class="nav-number">1.0.1.0.3.</span> <span class="nav-text">非线性激活函数</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#计算图（神经网络中的因为结果梯度下降）"><span class="nav-number">1.0.1.0.4.</span> <span class="nav-text">计算图（神经网络中的因为结果梯度下降）</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#什么神经网络"><span class="nav-number">1.0.1.0.5.</span> <span class="nav-text">什么神经网络</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#神经网络的梯度下降算法"><span class="nav-number">1.0.1.0.6.</span> <span class="nav-text">神经网络的梯度下降算法</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#forward-propagation"><span class="nav-number">1.0.1.0.7.</span> <span class="nav-text">forward  propagation</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#正则化与标准化"><span class="nav-number">1.0.1.0.8.</span> <span class="nav-text">正则化与标准化</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#优化算法"><span class="nav-number">1.0.1.0.9.</span> <span class="nav-text">优化算法</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#神经网络-Python实现"><span class="nav-number">1.0.1.1.</span> <span class="nav-text">神经网络-Python实现</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#1-加载数据"><span class="nav-number">1.0.1.1.1.</span> <span class="nav-text">1.加载数据</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#2-建立函数"><span class="nav-number">1.0.1.1.2.</span> <span class="nav-text">2.建立函数</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-建立模型"><span class="nav-number">1.0.1.2.</span> <span class="nav-text">3.建立模型</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#chapter6-神经网络（neural-networks）"><span class="nav-number">1.</span> <span class="nav-text">chapter6-神经网络（neural networks）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-神经网络原理"><span class="nav-number">1.0.1.</span> <span class="nav-text">1. 神经网络原理</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#这节大部分内容参考AndrewNG深度学习教学视频以及黄海广博士在github上开源的吴恩达深度学习笔记-本节知识根据自己使用经验进行基本总结，细致末梢还请看吴恩达老师讲义。"><span class="nav-number">1.0.1.0.1.</span> <span class="nav-text">这节大部分内容参考AndrewNG深度学习教学视频以及黄海广博士在github上开源的吴恩达深度学习笔记,本节知识根据自己使用经验进行基本总结，细致末梢还请看吴恩达老师讲义。</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#损失函数"><span class="nav-number">1.0.1.0.2.</span> <span class="nav-text">损失函数</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#非线性激活函数"><span class="nav-number">1.0.1.0.3.</span> <span class="nav-text">非线性激活函数</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#计算图（神经网络中的因为结果梯度下降）"><span class="nav-number">1.0.1.0.4.</span> <span class="nav-text">计算图（神经网络中的因为结果梯度下降）</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#什么神经网络"><span class="nav-number">1.0.1.0.5.</span> <span class="nav-text">什么神经网络</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#神经网络的梯度下降算法"><span class="nav-number">1.0.1.0.6.</span> <span class="nav-text">神经网络的梯度下降算法</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#正则化与标准化"><span class="nav-number">1.0.1.0.7.</span> <span class="nav-text">正则化与标准化</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#优化算法"><span class="nav-number">1.0.1.0.8.</span> <span class="nav-text">优化算法</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#神经网络-Python实现"><span class="nav-number">1.0.1.1.</span> <span class="nav-text">神经网络-Python实现</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#1-加载数据"><span class="nav-number">1.0.1.1.1.</span> <span class="nav-text">1.加载数据</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#2-建立函数"><span class="nav-number">1.0.1.1.2.</span> <span class="nav-text">2.建立函数</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-建立模型"><span class="nav-number">1.0.1.2.</span> <span class="nav-text">3.建立模型</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -841,7 +839,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">91.7k</span>
+    <span title="Site words total count">99.7k</span>
   
 </div>
 
