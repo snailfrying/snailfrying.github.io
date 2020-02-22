@@ -127,18 +127,18 @@
 
 
 
-<meta name="description" content="chapter5-bit-operation-algorith[TOC] 位运算1.统计两个数的二进制表示有多少位不同123456789101112131415161718192021# 461. 汉明距离import mathdef hammingDistance():    x = 1; y = 4    # 1:(0 0 0 1); 4:(0 1 0 0)    # 有上述列子可知，根据题意">
+<meta name="description" content="chapter5-bit-operation-algorith[TOC]">
 <meta name="keywords" content="algorithms,python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="chapter5-bit-operation-algorithm">
 <meta property="og:url" content="http://yoursite.com/2020/02/20/chapter5-bit-operation-algorithm/index.html">
 <meta property="og:site_name" content="Snail Life">
-<meta property="og:description" content="chapter5-bit-operation-algorith[TOC] 位运算1.统计两个数的二进制表示有多少位不同123456789101112131415161718192021# 461. 汉明距离import mathdef hammingDistance():    x = 1; y = 4    # 1:(0 0 0 1); 4:(0 1 0 0)    # 有上述列子可知，根据题意">
+<meta property="og:description" content="chapter5-bit-operation-algorith[TOC]">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-02-20T12:44:04.172Z">
+<meta property="og:updated_time" content="2020-02-21T09:06:26.629Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="chapter5-bit-operation-algorithm">
-<meta name="twitter:description" content="chapter5-bit-operation-algorith[TOC] 位运算1.统计两个数的二进制表示有多少位不同123456789101112131415161718192021# 461. 汉明距离import mathdef hammingDistance():    x = 1; y = 4    # 1:(0 0 0 1); 4:(0 1 0 0)    # 有上述列子可知，根据题意">
+<meta name="twitter:description" content="chapter5-bit-operation-algorith[TOC]">
 
 
 
@@ -476,6 +476,8 @@
 
       
         <h2 id="chapter5-bit-operation-algorith"><a href="#chapter5-bit-operation-algorith" class="headerlink" title="chapter5-bit-operation-algorith"></a>chapter5-bit-operation-algorith</h2><p>[TOC]</p>
+<a id="more"></a>
+
 <h5 id="位运算"><a href="#位运算" class="headerlink" title="位运算"></a>位运算</h5><h6 id="1-统计两个数的二进制表示有多少位不同"><a href="#1-统计两个数的二进制表示有多少位不同" class="headerlink" title="1.统计两个数的二进制表示有多少位不同"></a>1.统计两个数的二进制表示有多少位不同</h6><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 461. 汉明距离</span></span><br><span class="line"><span class="keyword">import</span> math</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">hammingDistance</span><span class="params">()</span>:</span></span><br><span class="line">    x = <span class="number">1</span>; y = <span class="number">4</span></span><br><span class="line">    <span class="comment"># 1:(0 0 0 1); 4:(0 1 0 0)</span></span><br><span class="line">    <span class="comment"># 有上述列子可知，根据题意，我们把两个数算异或就可以知道那些位置不一样了</span></span><br><span class="line">    <span class="comment"># 1 ^ 4-&gt;(0 1 0 1)-&gt;5</span></span><br><span class="line">    <span class="comment"># 然后遍历得到数字，每次取一位数，判断是否为1，如果是1 那就是不一样计数即可。</span></span><br><span class="line">    cnt, z = <span class="number">0</span>, x ^ y</span><br><span class="line">    print(z)</span><br><span class="line">    <span class="keyword">while</span>(z != <span class="number">0</span>):</span><br><span class="line">        <span class="comment"># if (z &amp; 1) == 1:</span></span><br><span class="line">        <span class="comment">#     cnt += 1</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># cnt += z&amp;1</span></span><br><span class="line">        <span class="comment"># z = z &gt;&gt; 1</span></span><br><span class="line">        z &amp;= (z - <span class="number">1</span>)</span><br><span class="line">        cnt += <span class="number">1</span></span><br><span class="line">    print(cnt)</span><br><span class="line">    <span class="keyword">return</span> cnt</span><br><span class="line">hammingDistance()</span><br></pre></td></tr></table></figure>
 
 <h6 id="2-数组中唯一一个不重复的元素"><a href="#2-数组中唯一一个不重复的元素" class="headerlink" title="2.数组中唯一一个不重复的元素"></a>2.数组中唯一一个不重复的元素</h6><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 136. 只出现一次的数字</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">singleNumber</span><span class="params">()</span>:</span></span><br><span class="line">    nums = [<span class="number">2</span>,<span class="number">2</span>,<span class="number">1</span>]</span><br><span class="line">    cnt = <span class="number">0</span></span><br><span class="line">    <span class="comment"># 初始化一个不存在的数，依次进行异或运算，最后得到的数就为不存在的数</span></span><br><span class="line">    <span class="comment"># 因为相同抵消，不相同继承</span></span><br><span class="line">    <span class="keyword">for</span> v <span class="keyword">in</span> nums:</span><br><span class="line">        cnt ^= v</span><br><span class="line">        print(cnt)</span><br><span class="line">    <span class="keyword">return</span> cnt</span><br><span class="line">singleNumber()</span><br></pre></td></tr></table></figure>
@@ -645,7 +647,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">35</span>
+                  <span class="site-state-item-count">36</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -783,7 +785,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">103.7k</span>
+    <span title="Site words total count">106k</span>
   
 </div>
 
