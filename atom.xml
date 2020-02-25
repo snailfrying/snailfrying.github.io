@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-02-25T05:40:37.281Z</updated>
+  <updated>2020-02-25T11:26:55.343Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,22 +17,39 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>chapter10-graph-algorithm</title>
+    <link href="http://yoursite.com/2020/02/25/chapter10-graph-algorithm/"/>
+    <id>http://yoursite.com/2020/02/25/chapter10-graph-algorithm/</id>
+    <published>2020-02-25T05:43:56.000Z</published>
+    <updated>2020-02-25T11:26:55.343Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;[TOC]&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="leetcode" scheme="http://yoursite.com/categories/leetcode/"/>
+    
+    
+      <category term="algorithms" scheme="http://yoursite.com/tags/algorithms/"/>
+    
+      <category term="python" scheme="http://yoursite.com/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
     <title>chapter9-tree-algorithm</title>
     <link href="http://yoursite.com/2020/02/23/chapter9-tree-algorithm/"/>
     <id>http://yoursite.com/2020/02/23/chapter9-tree-algorithm/</id>
     <published>2020-02-23T04:03:22.000Z</published>
-    <updated>2020-02-25T05:40:37.281Z</updated>
+    <updated>2020-02-25T11:15:09.232Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;hr&gt;
-&lt;h2 id=&quot;chapter9-tree-algorithm&quot;&gt;&lt;a href=&quot;#chapter9-tree-algorithm&quot; class=&quot;headerlink&quot;
-        
-      
+      &lt;hr&gt;
+&lt;h2 id=&quot;chapter9-tree-algorithm&quot;&gt;&lt;a href=&quot;#chapter9-tree-algorithm&quot; class=&quot;headerlink&quot; title=&quot;chapter9-tree-algorithm&quot;&gt;&lt;/a&gt;chapter9-tree-algorithm&lt;/h2&gt;&lt;p&gt;[TOC]&lt;/p&gt;
     
     </summary>
     
@@ -295,30 +312,6 @@
   </entry>
   
   <entry>
-    <title>chapter6-神经网络</title>
-    <link href="http://yoursite.com/2019/11/20/chapter6-%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"/>
-    <id>http://yoursite.com/2019/11/20/chapter6-神经网络/</id>
-    <published>2019-11-20T12:14:04.000Z</published>
-    <updated>2020-02-07T13:21:12.197Z</updated>
-    
-    <summary type="html">
-    
-      &lt;hr&gt;
-&lt;h2 id=&quot;chapter6-神经网络（neural-networks）&quot;&gt;&lt;a href=&quot;#chapter6-神经网络（neural-networks）&quot; class=&quot;headerlink&quot; title=&quot;chapter6-神经网络（neural networks）&quot;&gt;&lt;/a&gt;chapter6-神经网络（neural networks）&lt;/h2&gt;&lt;h4 id=&quot;1-神经网络原理&quot;&gt;&lt;a href=&quot;#1-神经网络原理&quot; class=&quot;headerlink&quot; title=&quot;1. 神经网络原理&quot;&gt;&lt;/a&gt;1. 神经网络原理&lt;/h4&gt;&lt;h6 id=&quot;这节大部分内容参考AndrewNG深度学习教学视频以及黄海广博士在github上开源的吴恩达深度学习笔记-本节知识根据自己使用经验进行基本总结，细致末梢还请看吴恩达老师讲义。&quot;&gt;&lt;a href=&quot;#这节大部分内容参考AndrewNG深度学习教学视频以及黄海广博士在github上开源的吴恩达深度学习笔记-本节知识根据自己使用经验进行基本总结，细致末梢还请看吴恩达老师讲义。&quot; class=&quot;headerlink&quot; title=&quot;这节大部分内容参考AndrewNG深度学习教学视频以及黄海广博士在github上开源的吴恩达深度学习笔记,本节知识根据自己使用经验进行基本总结，细致末梢还请看吴恩达老师讲义。&quot;&gt;&lt;/a&gt;这节大部分内容参考AndrewNG深度学习&lt;a href=&quot;https://mooc.study.163.com/course/2001281002?tid=2001392029&amp;_trace_c_p_k2_=fb1e25a65ef84e5c927c8125d985e008#/info&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;教学视频&lt;/a&gt;以及黄海广博士在github上开源的吴恩达深度学习笔记,本节知识根据自己使用经验进行基本总结，细致末梢还请看吴恩达老师讲义。&lt;/h6&gt;&lt;p&gt;对于neural networks统计学原理，我将从下面伍个部分进行仔细探讨，因为这些部分是神经网络不可或缺的部分。我将通过与logisticRegression原理进行对比介绍，如果不知道或者不清楚的可以看前面所介绍的logistic。最后实现代码，更深一步了解简单的TensorFlow实现。并且分析机器学习和深度学习建模的联系。&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;h6 id=&quot;损失函数&quot;&gt;&lt;a href=&quot;#损失函数&quot; class=&quot;headerlink&quot; title=&quot;损失函数&quot;&gt;&lt;/a&gt;损失函数&lt;/h6&gt;&lt;p&gt;​        损失函数（cost function）是优化的目的。如果没有损失函数，也就没有了目标。不管是任何事情，都需要去了解问题的根本。知道问题的缘由，才能进一步进行建模优化。比如是回归还是分类。是有监督，还是无监督。使用什么统计学原理。如何筛选评价函数。这些都需要通过损失函数，与具体背景结合去构建模型。这里不考虑业务背景。现，只通过逻辑回归损失函数去优化，实现对图像的分类。即有监督。所以损失函数为：&lt;br&gt;$$&lt;br&gt;L(\theta) = -Y^Tlogh_{\theta}(X) - (E-Y)^T log(E-h_{\theta}(X))&lt;br&gt;$$&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="python" scheme="http://yoursite.com/categories/python/"/>
-    
-    
-      <category term="algorithms" scheme="http://yoursite.com/tags/algorithms/"/>
-    
-  </entry>
-  
-  <entry>
     <title>chapter3-感知机</title>
     <link href="http://yoursite.com/2019/11/20/chapter3-%E6%84%9F%E7%9F%A5%E6%9C%BA/"/>
     <id>http://yoursite.com/2019/11/20/chapter3-感知机/</id>
@@ -354,6 +347,30 @@
 &lt;h3 id=&quot;chapter2-最小二乘法完整实践理论&quot;&gt;&lt;a href=&quot;#chapter2-最小二乘法完整实践理论&quot; class=&quot;headerlink&quot; title=&quot;chapter2- 最小二乘法完整实践理论&quot;&gt;&lt;/a&gt;chapter2- 最小二乘法完整实践理论&lt;/h3&gt;&lt;h6 id=&quot;1-概要&quot;&gt;&lt;a href=&quot;#1-概要&quot; class=&quot;headerlink&quot; title=&quot;1.概要&quot;&gt;&lt;/a&gt;1.概要&lt;/h6&gt;&lt;p&gt;​    此章，通过最小二乘法，在统计学习，机器学习，深度学习的轨道上进行讨论，它们叁之间的共性与异性。&lt;/p&gt;
 &lt;h6 id=&quot;2-什么是最小二乘法&quot;&gt;&lt;a href=&quot;#2-什么是最小二乘法&quot; class=&quot;headerlink&quot; title=&quot;2.什么是最小二乘法&quot;&gt;&lt;/a&gt;2.什么是最小二乘法&lt;/h6&gt;&lt;p&gt;​    &lt;strong&gt;最小二乘法&lt;/strong&gt;（&lt;strong&gt;least squares method&lt;/strong&gt;），又称&lt;strong&gt;最小平方法&lt;/strong&gt;，是一种&lt;a href=&quot;https://zh.wikipedia.org/wiki/数学&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;数学&lt;/a&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/优化&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;优化&lt;/a&gt;方法。它通过最小化&lt;a href=&quot;https://zh.wikipedia.org/wiki/误差&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;误差&lt;/a&gt;的平方和寻找数据的最佳函数匹配。&lt;/p&gt;
 &lt;p&gt;​    利用最小二乘法可以简便地求得未知的数据，并使得求得的数据与实际数据之间误差的平方和为最小。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="python" scheme="http://yoursite.com/categories/python/"/>
+    
+    
+      <category term="algorithms" scheme="http://yoursite.com/tags/algorithms/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>chapter6-神经网络</title>
+    <link href="http://yoursite.com/2019/11/20/chapter6-%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"/>
+    <id>http://yoursite.com/2019/11/20/chapter6-神经网络/</id>
+    <published>2019-11-20T12:14:04.000Z</published>
+    <updated>2020-02-07T13:21:12.197Z</updated>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+&lt;h2 id=&quot;chapter6-神经网络（neural-networks）&quot;&gt;&lt;a href=&quot;#chapter6-神经网络（neural-networks）&quot; class=&quot;headerlink&quot; title=&quot;chapter6-神经网络（neural networks）&quot;&gt;&lt;/a&gt;chapter6-神经网络（neural networks）&lt;/h2&gt;&lt;h4 id=&quot;1-神经网络原理&quot;&gt;&lt;a href=&quot;#1-神经网络原理&quot; class=&quot;headerlink&quot; title=&quot;1. 神经网络原理&quot;&gt;&lt;/a&gt;1. 神经网络原理&lt;/h4&gt;&lt;h6 id=&quot;这节大部分内容参考AndrewNG深度学习教学视频以及黄海广博士在github上开源的吴恩达深度学习笔记-本节知识根据自己使用经验进行基本总结，细致末梢还请看吴恩达老师讲义。&quot;&gt;&lt;a href=&quot;#这节大部分内容参考AndrewNG深度学习教学视频以及黄海广博士在github上开源的吴恩达深度学习笔记-本节知识根据自己使用经验进行基本总结，细致末梢还请看吴恩达老师讲义。&quot; class=&quot;headerlink&quot; title=&quot;这节大部分内容参考AndrewNG深度学习教学视频以及黄海广博士在github上开源的吴恩达深度学习笔记,本节知识根据自己使用经验进行基本总结，细致末梢还请看吴恩达老师讲义。&quot;&gt;&lt;/a&gt;这节大部分内容参考AndrewNG深度学习&lt;a href=&quot;https://mooc.study.163.com/course/2001281002?tid=2001392029&amp;_trace_c_p_k2_=fb1e25a65ef84e5c927c8125d985e008#/info&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;教学视频&lt;/a&gt;以及黄海广博士在github上开源的吴恩达深度学习笔记,本节知识根据自己使用经验进行基本总结，细致末梢还请看吴恩达老师讲义。&lt;/h6&gt;&lt;p&gt;对于neural networks统计学原理，我将从下面伍个部分进行仔细探讨，因为这些部分是神经网络不可或缺的部分。我将通过与logisticRegression原理进行对比介绍，如果不知道或者不清楚的可以看前面所介绍的logistic。最后实现代码，更深一步了解简单的TensorFlow实现。并且分析机器学习和深度学习建模的联系。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;h6 id=&quot;损失函数&quot;&gt;&lt;a href=&quot;#损失函数&quot; class=&quot;headerlink&quot; title=&quot;损失函数&quot;&gt;&lt;/a&gt;损失函数&lt;/h6&gt;&lt;p&gt;​        损失函数（cost function）是优化的目的。如果没有损失函数，也就没有了目标。不管是任何事情，都需要去了解问题的根本。知道问题的缘由，才能进一步进行建模优化。比如是回归还是分类。是有监督，还是无监督。使用什么统计学原理。如何筛选评价函数。这些都需要通过损失函数，与具体背景结合去构建模型。这里不考虑业务背景。现，只通过逻辑回归损失函数去优化，实现对图像的分类。即有监督。所以损失函数为：&lt;br&gt;$$&lt;br&gt;L(\theta) = -Y^Tlogh_{\theta}(X) - (E-Y)^T log(E-h_{\theta}(X))&lt;br&gt;$$&lt;/p&gt;
     
     </summary>
     
@@ -492,27 +509,6 @@
       <category term="vim" scheme="http://yoursite.com/tags/vim/"/>
     
       <category term="linux" scheme="http://yoursite.com/tags/linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>hive 脚本用户 and beeline</title>
-    <link href="http://yoursite.com/2019/11/09/hive-%E8%84%9A%E6%9C%AC%E7%94%A8%E6%88%B7-and-beeline/"/>
-    <id>http://yoursite.com/2019/11/09/hive-脚本用户-and-beeline/</id>
-    <published>2019-11-09T05:57:26.000Z</published>
-    <updated>2019-11-22T10:20:24.212Z</updated>
-    
-    <summary type="html">
-    
-      &lt;hr&gt;
-&lt;p&gt;&lt;a href=&quot;[https://cwiki.apache.org/confluence/display/Hive/HiveServer2+Clients#HiveServer2Clients-Beeline%E2%80%93NewCommandLineShell](https://cwiki.apache.org/confluence/display/Hive/HiveServer2+Clients#HiveServer2Clients-Beeline–NewCommandLineShell)&quot;&gt;&lt;a href=&quot;https://cwiki.apache.org/confluence/display/Hive/HiveServer2+Clients&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;HiveServer2 Clients&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h4 id=&quot;HiveServer2Clients简介&quot;&gt;&lt;a href=&quot;#HiveServer2Clients简介&quot; class=&quot;headerlink&quot; title=&quot;HiveServer2Clients简介&quot;&gt;&lt;/a&gt;HiveServer2Clients简介&lt;/h4&gt;&lt;h6 id=&quot;1-beeline是什么&quot;&gt;&lt;a href=&quot;#1-beeline是什么&quot; class=&quot;headerlink&quot; title=&quot;1.beeline是什么&quot;&gt;&lt;/a&gt;1.beeline是什么&lt;/h6&gt;&lt;p&gt;​    Beeline，是HiveServer2的JDBC客户端，基于SQLLine命令行接口。Beeline Shell可以工作在嵌入式模式和远程模式，在嵌入式模式中，它运行一个嵌入式的Hive（类似于Hive CLI），在远程模式中，通过Thrift连接到一个单独的HiveServer2进程，从Hive 0.14开始，当Beeline和HiveServer2一起使用时，它会从HiveServer2打印执行查询的日志信息到STDERR。建议在生产环境使用远程HiveServer2模式，因为这样更安全，不需要为用户授予直接的HDFS/Metastore访问权限&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="hive" scheme="http://yoursite.com/categories/hive/"/>
-    
     
   </entry>
   
