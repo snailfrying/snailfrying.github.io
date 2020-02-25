@@ -333,7 +333,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/20/chapter3-感知机/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/20/spark与pandas-如何构建分类模型/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="snail json">
@@ -352,7 +352,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/11/20/chapter3-感知机/" itemprop="url">chapter3-感知机</a></h1>
+                <a class="post-title-link" href="/2020/01/20/spark与pandas-如何构建分类模型/" itemprop="url">spark与pandas 如何构建分类模型</a></h1>
         
 
         <div class="post-meta">
@@ -364,8 +364,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-11-20T20:14:04+08:00">
-                2019-11-20
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-01-20T16:34:48+08:00">
+                2020-01-20
               </time>
             
 
@@ -387,8 +387,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/python/" itemprop="url" rel="index">
-                    <span itemprop="name">python</span>
+                  <a href="/categories/spark/" itemprop="url" rel="index">
+                    <span itemprop="name">spark</span>
                   </a>
                 </span>
 
@@ -405,8 +405,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/11/20/chapter3-感知机/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/11/20/chapter3-感知机/" itemprop="commentCount"></span>
+                <a href="/2020/01/20/spark与pandas-如何构建分类模型/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/01/20/spark与pandas-如何构建分类模型/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -414,7 +414,7 @@
 
           
           
-             <span id="/2019/11/20/chapter3-感知机/" class="leancloud_visitors" data-flag-title="chapter3-感知机">
+             <span id="/2020/01/20/spark与pandas-如何构建分类模型/" class="leancloud_visitors" data-flag-title="spark与pandas 如何构建分类模型">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -440,7 +440,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  3.3k
+                  467
                 </span>
               
 
@@ -456,7 +456,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  14
+                  2
                 </span>
               
             </div>
@@ -479,221 +479,19 @@
       
         
           <hr>
-<h2 id="chapter3-感知机"><a href="#chapter3-感知机" class="headerlink" title="chapter3-感知机"></a>chapter3-感知机</h2><h5 id="1-概要"><a href="#1-概要" class="headerlink" title="1.概要"></a>1.概要</h5><p>通过上一章最小二乘法的理论与实践，我们知道统计学学习-机器学习-深度学习，它们之间的联系与区别。本章我们将讨论感知机算法，再次讨论他们叁之间的关系。并且很有必要熟悉感知机，虽然它现在在分类模型当中已经不适用，因为泛化能力有限，能力更强的为支撑向量机(svm)。但是它在机器学习和深度学习其他深奥算法上有较大的联系，甚至为其算法逻辑实现基础。掌握它的思想，为进一步的提升，打下坚实的基础。</p>
-<h5 id="2-感知机模型原理"><a href="#2-感知机模型原理" class="headerlink" title="2.感知机模型原理"></a>2.感知机模型原理</h5><p>首先感知机算法是一种二分类线性算法。当然也可以提升至多维分类模型上，但是都是线性模型，对于非线性的，神经网络了解一下。感知机学习算法：用一个函数输入$x$(一个实值的向量)映射到输出值$f(x)$(一个二元值):<br>$$<br>f(x)=\begin{cases}<br>    1 \qquad if \quad w.x + b &gt; 0 \ \<br>    -1 \qquad other wise<br>\end{cases}<br>$$</p>
+<h2 id="spark与pandas-如何构建分类模型"><a href="#spark与pandas-如何构建分类模型" class="headerlink" title="spark与pandas 如何构建分类模型"></a>spark与pandas 如何构建分类模型</h2><p>本章通过sklearn，鸢尾花数据，通过pandas的DataFrame与spark的DataFrame之间转化，构建spark多分类模型，并且图调参以及得到最佳参数和评价分数。具体代码流程如下：</p>
+<ol>
+<li><h6 id="导入相关工具包"><a href="#导入相关工具包" class="headerlink" title="导入相关工具包"></a>导入相关工具包</h6><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span>  sklearn.datasets <span class="keyword">as</span> sd</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> pyspark.context <span class="keyword">import</span> SparkContext</span><br><span class="line"><span class="keyword">from</span> pyspark.sql.context <span class="keyword">import</span>  SparkSession</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> pyspark.sql <span class="keyword">import</span> Row</span><br><span class="line"><span class="keyword">from</span> pyspark.ml.linalg <span class="keyword">import</span> Vectors</span><br><span class="line"><span class="keyword">from</span> pyspark.mllib.regression <span class="keyword">import</span> LabeledPoint</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> pyspark.ml.tuning <span class="keyword">import</span> ParamGridBuilder,CrossValidator</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> pyspark.ml.classification <span class="keyword">import</span> LogisticRegression</span><br><span class="line"><span class="keyword">from</span> pyspark.mllib.classification <span class="keyword">import</span> LogisticRegressionWithLBFGS, LogisticRegressionModel</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> pyspark.ml.evaluation <span class="keyword">import</span> MulticlassClassificationEvaluator,BinaryClassificationEvaluator</span><br></pre></td></tr></table></figure>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2019/11/20/chapter3-感知机/#more" rel="contents">
+            <a class="btn" href="/2020/01/20/spark与pandas-如何构建分类模型/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
           <!--/noindex-->
         
       
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/20/chapter4-梯度下降算法-Gradient-Descent/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="snail json">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Snail Life">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/11/20/chapter4-梯度下降算法-Gradient-Descent/" itemprop="url">chapter4-梯度下降算法(Gradient Descent)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-11-20T20:14:04+08:00">
-                2019-11-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/python/" itemprop="url" rel="index">
-                    <span itemprop="name">python</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/11/20/chapter4-梯度下降算法-Gradient-Descent/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/11/20/chapter4-梯度下降算法-Gradient-Descent/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2019/11/20/chapter4-梯度下降算法-Gradient-Descent/" class="leancloud_visitors" data-flag-title="chapter4-梯度下降算法(Gradient Descent)">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Visitors&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             <span>℃</span>
-			 </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Words count in article&#58;</span>
-                
-                <span title="Words count in article">
-                  2.4k
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Reading time &asymp;</span>
-                
-                <span title="Reading time">
-                  9
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <hr>
-<hr>
-<h3 id="chapter4-梯度下降算法-Gradient-Descent"><a href="#chapter4-梯度下降算法-Gradient-Descent" class="headerlink" title="chapter4-梯度下降算法(Gradient Descent)"></a>chapter4-梯度下降算法(Gradient Descent)</h3><p>求解机器学习算法的模型参数时，即无约束优化问题时，梯度下降（Gradient Descent）是最常采用的方法之一，另一种常用的方法是最小二乘法。这里就对梯度下降法做一个完整的总结。</p>
-<h5 id="1-梯度"><a href="#1-梯度" class="headerlink" title="1.梯度"></a>1.梯度</h5><p>在微积分里面，对多元函数的参数求∂偏导数，把求得的各个参数的偏导数以向量的形式写出来，就是梯度。比如函数$f(x,y)$,分别对$x,y$进行求导，求得梯度向量是$(\frac{\partial f}{\partial x},\frac{\partial f}{\partial y})^T$ 简称$grad f(x,y)$ | $\Delta f(x,y)$,对于点为$(x_0,y_0)$,他的梯度向量值为$(\frac{\partial f}{\partial x_0},\frac{\partial f}{\partial y_0})^T$ | $\Delta f(x_0,y_0)$,如果为三个变量，就为：$\Delta f(x,y,z)$,以此类推。</p>
-<p>那为什么要找到函数$f(x,y)$的梯度呢？因为梯度向量是函数下降(增加)速度最快的地方。比如说，在初始点$(x_0,y_0)$ 沿着梯度向量$\Delta f(x_0,y_0)$ (-$\Delta f(x_0,y_0)$)，增加最快(下降最快)的方向 ，我们能够更快的找到函数的最小值(最大值)。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/11/20/chapter4-梯度下降算法-Gradient-Descent/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
+    </li></ol></div>
     
     
     
@@ -939,7 +737,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/20/chapter5-逻辑斯谛回归-LogisticRegression/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/20/chapter3-感知机/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="snail json">
@@ -958,7 +756,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/11/20/chapter5-逻辑斯谛回归-LogisticRegression/" itemprop="url">chapter5-逻辑斯谛回归-LogisticRegression</a></h1>
+                <a class="post-title-link" href="/2019/11/20/chapter3-感知机/" itemprop="url">chapter3-感知机</a></h1>
         
 
         <div class="post-meta">
@@ -1011,8 +809,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/11/20/chapter5-逻辑斯谛回归-LogisticRegression/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/11/20/chapter5-逻辑斯谛回归-LogisticRegression/" itemprop="commentCount"></span>
+                <a href="/2019/11/20/chapter3-感知机/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/11/20/chapter3-感知机/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1020,7 +818,7 @@
 
           
           
-             <span id="/2019/11/20/chapter5-逻辑斯谛回归-LogisticRegression/" class="leancloud_visitors" data-flag-title="chapter5-逻辑斯谛回归-LogisticRegression">
+             <span id="/2019/11/20/chapter3-感知机/" class="leancloud_visitors" data-flag-title="chapter3-感知机">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1046,7 +844,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  3.2k
+                  3.3k
                 </span>
               
 
@@ -1062,7 +860,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  13
+                  14
                 </span>
               
             </div>
@@ -1085,13 +883,11 @@
       
         
           <hr>
-<h3 id="chapter5-逻辑斯谛回归-LogisticRegression"><a href="#chapter5-逻辑斯谛回归-LogisticRegression" class="headerlink" title="chapter5-逻辑斯谛回归-LogisticRegression"></a>chapter5-逻辑斯谛回归-LogisticRegression</h3><h4 id="statistics-learning"><a href="#statistics-learning" class="headerlink" title="statistics learning"></a>statistics learning</h4><h5 id="1-浅谈线性回归"><a href="#1-浅谈线性回归" class="headerlink" title="1.浅谈线性回归"></a>1.浅谈线性回归</h5><p>由于前面<a href="https://snailfrying.github.io/2019/11/20/chapter2-最小二乘法完整实践理论/#more" target="_blank" rel="noopener">最小二乘法</a>和<a href="https://snailfrying.github.io/2019/11/20/chapter4-梯度下降算法-Gradient-Descent/#more" target="_blank" rel="noopener">梯度下降算法</a>，已经大力讨论了回归模型，因此，本章只进行简单的回顾回归模型。分析线性回归原理和与最小二乘法之间的区别。</p>
-<p>线性回归与最小二乘法的最大区别，就在于损失函数的迭代。也就是如何优化损失函数。最小二乘法顾名思义，就是采用最小二乘法进行迭代，损失函数如下：<br>$$<br>J(\theta_0,\theta_1,\cdots,\theta_j) =\sum_{i=1}^m(h_θ(x_0^{(i)},x_1^{(i)},\cdots,x_j^{(i)}) - y^{(j)})^2=\sum_{i=1}^n(\sum_{j=1}^m\theta_jx_j^{(i)}-y^{(i)})^2<br>$$</p>
-<p>对损失函数求导为，更新参数$\theta$：<br>$$<br>\theta = (X^TX)^-1X^TY<br>$$<br>对于线性回归算法来说，就是利用梯度下降算法，损失函数如下：<br>$$<br>J(\theta_0,\theta_1,\cdots,\theta_j) =\frac{1}{2m}\sum_{i=1}^m(h_θ(x_0^{(i)},x_1^{(i)},\cdots,x_j^{(i)}) - y^{(j)})^2=\frac{1}{2m}\sum_{i=1}^n(\sum_{j=1}^m\theta_jx_j^{(i)}-y^{(i)})^2<br>$$</p>
-<p>对损失函数求偏导，更新参数$\theta$：<br>$$<br>\theta = \theta-\alpha X^T(\theta X-Y)<br>$$</p>
+<h2 id="chapter3-感知机"><a href="#chapter3-感知机" class="headerlink" title="chapter3-感知机"></a>chapter3-感知机</h2><h5 id="1-概要"><a href="#1-概要" class="headerlink" title="1.概要"></a>1.概要</h5><p>通过上一章最小二乘法的理论与实践，我们知道统计学学习-机器学习-深度学习，它们之间的联系与区别。本章我们将讨论感知机算法，再次讨论他们叁之间的关系。并且很有必要熟悉感知机，虽然它现在在分类模型当中已经不适用，因为泛化能力有限，能力更强的为支撑向量机(svm)。但是它在机器学习和深度学习其他深奥算法上有较大的联系，甚至为其算法逻辑实现基础。掌握它的思想，为进一步的提升，打下坚实的基础。</p>
+<h5 id="2-感知机模型原理"><a href="#2-感知机模型原理" class="headerlink" title="2.感知机模型原理"></a>2.感知机模型原理</h5><p>首先感知机算法是一种二分类线性算法。当然也可以提升至多维分类模型上，但是都是线性模型，对于非线性的，神经网络了解一下。感知机学习算法：用一个函数输入$x$(一个实值的向量)映射到输出值$f(x)$(一个二元值):<br>$$<br>f(x)=\begin{cases}<br>    1 \qquad if \quad w.x + b &gt; 0 \ \<br>    -1 \qquad other wise<br>\end{cases}<br>$$</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2019/11/20/chapter5-逻辑斯谛回归-LogisticRegression/#more" rel="contents">
+            <a class="btn" href="/2019/11/20/chapter3-感知机/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -1142,7 +938,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/19/chapter1-统计学习与深度学习方法概论/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/20/chapter2-最小二乘法完整实践理论/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="snail json">
@@ -1161,7 +957,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/11/19/chapter1-统计学习与深度学习方法概论/" itemprop="url">chapter1-统计学习与深度学习方法概论</a></h1>
+                <a class="post-title-link" href="/2019/11/20/chapter2-最小二乘法完整实践理论/" itemprop="url">chapter2 最小二乘法完整实践理论</a></h1>
         
 
         <div class="post-meta">
@@ -1173,8 +969,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-11-19T20:13:13+08:00">
-                2019-11-19
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-11-20T20:14:04+08:00">
+                2019-11-20
               </time>
             
 
@@ -1214,8 +1010,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/11/19/chapter1-统计学习与深度学习方法概论/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/11/19/chapter1-统计学习与深度学习方法概论/" itemprop="commentCount"></span>
+                <a href="/2019/11/20/chapter2-最小二乘法完整实践理论/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/11/20/chapter2-最小二乘法完整实践理论/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1223,7 +1019,7 @@
 
           
           
-             <span id="/2019/11/19/chapter1-统计学习与深度学习方法概论/" class="leancloud_visitors" data-flag-title="chapter1-统计学习与深度学习方法概论">
+             <span id="/2019/11/20/chapter2-最小二乘法完整实践理论/" class="leancloud_visitors" data-flag-title="chapter2 最小二乘法完整实践理论">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1249,7 +1045,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  856
+                  3k
                 </span>
               
 
@@ -1265,7 +1061,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  2
+                  13
                 </span>
               
             </div>
@@ -1288,24 +1084,222 @@
       
         
           <hr>
-<h3 id="chapter1-统计学习方法与深度学习方法概论"><a href="#chapter1-统计学习方法与深度学习方法概论" class="headerlink" title="chapter1-统计学习方法与深度学习方法概论"></a>chapter1-统计学习方法与深度学习方法概论</h3><ol>
-<li><h6 id="什么是统计学-statistics-learning"><a href="#什么是统计学-statistics-learning" class="headerlink" title="什么是统计学(statistics learning)"></a>什么是统计学(statistics learning)</h6><p>​       统计学习是关于计算机基于数据构建概率统计模型并运用模型对数据进行分析与预测的一门学科。统计学习包括监督学习、非监督学习、半监督学习和强化学习。</p>
-</li>
-<li><h6 id="统计学三要素"><a href="#统计学三要素" class="headerlink" title="统计学三要素"></a>统计学三要素</h6><p>​                                                        方法 = 模型 + 策略 + 算法</p>
-<p>​      模型、策略 、算法三要素是理解统计学习中，起到提纲挈领的作用。</p>
-<p>​      模型(model)：亦为假设空间(hypothesis),包含所有可能的概率分布或者决策函数。</p>
-<p>​      策略(strategy): 亦为评价准则(evaluation  criterion)，评价模型经验风险最小化与结构风险最小化。不同模型有不同的风险函数</p>
-<p>​      算法(algorithm): 学习模型的具体计算方法。</p>
+<h3 id="chapter2-最小二乘法完整实践理论"><a href="#chapter2-最小二乘法完整实践理论" class="headerlink" title="chapter2- 最小二乘法完整实践理论"></a>chapter2- 最小二乘法完整实践理论</h3><h6 id="1-概要"><a href="#1-概要" class="headerlink" title="1.概要"></a>1.概要</h6><p>​    此章，通过最小二乘法，在统计学习，机器学习，深度学习的轨道上进行讨论，它们叁之间的共性与异性。</p>
+<h6 id="2-什么是最小二乘法"><a href="#2-什么是最小二乘法" class="headerlink" title="2.什么是最小二乘法"></a>2.什么是最小二乘法</h6><p>​    <strong>最小二乘法</strong>（<strong>least squares method</strong>），又称<strong>最小平方法</strong>，是一种<a href="https://zh.wikipedia.org/wiki/数学" target="_blank" rel="noopener">数学</a><a href="https://zh.wikipedia.org/wiki/优化" target="_blank" rel="noopener">优化</a>方法。它通过最小化<a href="https://zh.wikipedia.org/wiki/误差" target="_blank" rel="noopener">误差</a>的平方和寻找数据的最佳函数匹配。</p>
+<p>​    利用最小二乘法可以简便地求得未知的数据，并使得求得的数据与实际数据之间误差的平方和为最小。</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2019/11/19/chapter1-统计学习与深度学习方法概论/#more" rel="contents">
+            <a class="btn" href="/2019/11/20/chapter2-最小二乘法完整实践理论/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
           <!--/noindex-->
         
       
-    </li></ol></div>
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/20/chapter4-梯度下降算法-Gradient-Descent/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="snail json">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Snail Life">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/11/20/chapter4-梯度下降算法-Gradient-Descent/" itemprop="url">chapter4-梯度下降算法(Gradient Descent)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-11-20T20:14:04+08:00">
+                2019-11-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/11/20/chapter4-梯度下降算法-Gradient-Descent/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/11/20/chapter4-梯度下降算法-Gradient-Descent/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2019/11/20/chapter4-梯度下降算法-Gradient-Descent/" class="leancloud_visitors" data-flag-title="chapter4-梯度下降算法(Gradient Descent)">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             <span>℃</span>
+			 </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  2.4k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  9
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <hr>
+<hr>
+<h3 id="chapter4-梯度下降算法-Gradient-Descent"><a href="#chapter4-梯度下降算法-Gradient-Descent" class="headerlink" title="chapter4-梯度下降算法(Gradient Descent)"></a>chapter4-梯度下降算法(Gradient Descent)</h3><p>求解机器学习算法的模型参数时，即无约束优化问题时，梯度下降（Gradient Descent）是最常采用的方法之一，另一种常用的方法是最小二乘法。这里就对梯度下降法做一个完整的总结。</p>
+<h5 id="1-梯度"><a href="#1-梯度" class="headerlink" title="1.梯度"></a>1.梯度</h5><p>在微积分里面，对多元函数的参数求∂偏导数，把求得的各个参数的偏导数以向量的形式写出来，就是梯度。比如函数$f(x,y)$,分别对$x,y$进行求导，求得梯度向量是$(\frac{\partial f}{\partial x},\frac{\partial f}{\partial y})^T$ 简称$grad f(x,y)$ | $\Delta f(x,y)$,对于点为$(x_0,y_0)$,他的梯度向量值为$(\frac{\partial f}{\partial x_0},\frac{\partial f}{\partial y_0})^T$ | $\Delta f(x_0,y_0)$,如果为三个变量，就为：$\Delta f(x,y,z)$,以此类推。</p>
+<p>那为什么要找到函数$f(x,y)$的梯度呢？因为梯度向量是函数下降(增加)速度最快的地方。比如说，在初始点$(x_0,y_0)$ 沿着梯度向量$\Delta f(x_0,y_0)$ (-$\Delta f(x_0,y_0)$)，增加最快(下降最快)的方向 ，我们能够更快的找到函数的最小值(最大值)。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/11/20/chapter4-梯度下降算法-Gradient-Descent/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
     
     
     
@@ -1387,7 +1381,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">36</span>
+                  <span class="site-state-item-count">38</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1478,7 +1472,7 @@
 		<h3 class="widget-title">Tag Cloud</h3>
 		<div id="myCanvasContainer" class="widget tagcloud">
 		  <canvas width="250" height="250" id="resCanvas" style="width=100%">
-			<ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/thread/">-- thread</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Optimization/">Optimization</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithms/">algorithms</a><span class="tag-list-count">14</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/db2/">db2</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hive/">hive</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/self-study/">self-study</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sql/">sql</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/statistics/">statistics</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/thread/">thread</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vim/">vim</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/win10快捷键/">win10快捷键</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/古月山风/">古月山风</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/梦想/">梦想</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/破晓/">破晓</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a><span class="tag-list-count">2</span></li></ul>
+			<ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/thread/">-- thread</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Optimization/">Optimization</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithms/">algorithms</a><span class="tag-list-count">17</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/db2/">db2</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hive/">hive</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/self-study/">self-study</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sql/">sql</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/statistics/">statistics</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/thread/">thread</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vim/">vim</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/win10快捷键/">win10快捷键</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/古月山风/">古月山风</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/梦想/">梦想</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/破晓/">破晓</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a><span class="tag-list-count">2</span></li></ul>
 		  </canvas>
 		</div>
 	  </div>
@@ -1509,7 +1503,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">106k</span>
+    <span title="Site words total count">114.4k</span>
   
 </div>
 

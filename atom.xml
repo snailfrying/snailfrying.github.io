@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-02-22T09:25:03.694Z</updated>
+  <updated>2020-02-25T05:40:37.281Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,22 +17,82 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>chapter9-tree-algorithm</title>
+    <link href="http://yoursite.com/2020/02/23/chapter9-tree-algorithm/"/>
+    <id>http://yoursite.com/2020/02/23/chapter9-tree-algorithm/</id>
+    <published>2020-02-23T04:03:22.000Z</published>
+    <updated>2020-02-25T05:40:37.281Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;hr&gt;
+&lt;h2 id=&quot;chapter9-tree-algorithm&quot;&gt;&lt;a href=&quot;#chapter9-tree-algorithm&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="leetcode" scheme="http://yoursite.com/categories/leetcode/"/>
+    
+    
+      <category term="algorithms" scheme="http://yoursite.com/tags/algorithms/"/>
+    
+      <category term="python" scheme="http://yoursite.com/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>chapter8-dual-pointer-algorithm</title>
+    <link href="http://yoursite.com/2020/02/22/chapter8-dual-pointer-algorithm/"/>
+    <id>http://yoursite.com/2020/02/22/chapter8-dual-pointer-algorithm/</id>
+    <published>2020-02-22T09:38:11.000Z</published>
+    <updated>2020-02-22T14:39:41.625Z</updated>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+&lt;h2 id=&quot;chapter8-dual-pointer-algorithm&quot;&gt;&lt;a href=&quot;#chapter8-dual-pointer-algorithm&quot; class=&quot;headerlink&quot; title=&quot;chapter8-dual-pointer-algorithm&quot;&gt;&lt;/a&gt;chapter8-dual-pointer-algorithm&lt;/h2&gt;&lt;p&gt;[TOC]&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="leetcode" scheme="http://yoursite.com/categories/leetcode/"/>
+    
+    
+      <category term="algorithms" scheme="http://yoursite.com/tags/algorithms/"/>
+    
+      <category term="python" scheme="http://yoursite.com/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
     <title>chapter7-greedy-algorithm</title>
     <link href="http://yoursite.com/2020/02/21/chapter7-greedy-algorithm/"/>
     <id>http://yoursite.com/2020/02/21/chapter7-greedy-algorithm/</id>
     <published>2020-02-21T09:08:13.000Z</published>
-    <updated>2020-02-22T09:25:03.694Z</updated>
+    <updated>2020-02-22T14:40:17.643Z</updated>
     
     <summary type="html">
     
       &lt;hr&gt;
 &lt;h2 id=&quot;chapter7-greedy-algorithm&quot;&gt;&lt;a href=&quot;#chapter7-greedy-algorithm&quot; class=&quot;headerlink&quot; title=&quot;chapter7-greedy-algorithm&quot;&gt;&lt;/a&gt;chapter7-greedy-algorithm&lt;/h2&gt;&lt;p&gt;[TOC]&lt;/p&gt;
 &lt;h5 id=&quot;贪心思想&quot;&gt;&lt;a href=&quot;#贪心思想&quot; class=&quot;headerlink&quot; title=&quot;贪心思想&quot;&gt;&lt;/a&gt;贪心思想&lt;/h5&gt;&lt;h6 id=&quot;1-分配饼干&quot;&gt;&lt;a href=&quot;#1-分配饼干&quot; class=&quot;headerlink&quot; title=&quot;1. 分配饼干&quot;&gt;&lt;/a&gt;1. 分配饼干&lt;/h6&gt;&lt;p&gt;&lt;a href=&quot;https://leetcode.com/problems/assign-cookies/description/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Leetcode&lt;/a&gt; / &lt;a href=&quot;https://leetcode-cn.com/problems/assign-cookies/description/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;力扣&lt;/a&gt;&lt;/p&gt;
-&lt;figure class=&quot;highlight angelscript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;def findContentChildren():&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    g, s = [ &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;3&lt;/span&gt; ], [ &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt; ]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    # 由题意 “目标是尽可能满足越多数量的孩子”&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    # 而饼干是有限的，所以首先满足胃口小的孩子，这样才能，尽可能满足较多数量的孩子&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    cnt = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    g.sort()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    s.sort()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; n &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; s:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; n &amp;gt;= g[cnt]:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            cnt += &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; cnt &amp;gt;= len(g): &lt;span class=&quot;keyword&quot;&gt;break&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    print(cnt)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;findContentChildren()&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;findContentChildren&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    g, s = [ &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;3&lt;/span&gt; ], [ &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt; ]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;# 由题意 “目标是尽可能满足越多数量的孩子”&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;# 而饼干是有限的，所以首先满足胃口小的孩子，这样才能，尽可能满足较多数量的孩子&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    cnt = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    g.sort()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    s.sort()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; n &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; s:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; n &amp;gt;= g[cnt]:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            cnt += &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; cnt &amp;gt;= len(g): &lt;span class=&quot;keyword&quot;&gt;break&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    print(cnt)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;findContentChildren()&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
     </summary>
     
     
+      <category term="leetcode" scheme="http://yoursite.com/categories/leetcode/"/>
+    
+    
+      <category term="algorithms" scheme="http://yoursite.com/tags/algorithms/"/>
+    
+      <category term="python" scheme="http://yoursite.com/tags/python/"/>
     
   </entry>
   
@@ -235,18 +295,18 @@
   </entry>
   
   <entry>
-    <title>chapter2 最小二乘法完整实践理论</title>
-    <link href="http://yoursite.com/2019/11/20/chapter2-%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E6%B3%95%E5%AE%8C%E6%95%B4%E5%AE%9E%E8%B7%B5%E7%90%86%E8%AE%BA/"/>
-    <id>http://yoursite.com/2019/11/20/chapter2-最小二乘法完整实践理论/</id>
+    <title>chapter6-神经网络</title>
+    <link href="http://yoursite.com/2019/11/20/chapter6-%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"/>
+    <id>http://yoursite.com/2019/11/20/chapter6-神经网络/</id>
     <published>2019-11-20T12:14:04.000Z</published>
-    <updated>2019-12-26T11:49:03.322Z</updated>
+    <updated>2020-02-07T13:21:12.197Z</updated>
     
     <summary type="html">
     
       &lt;hr&gt;
-&lt;h3 id=&quot;chapter2-最小二乘法完整实践理论&quot;&gt;&lt;a href=&quot;#chapter2-最小二乘法完整实践理论&quot; class=&quot;headerlink&quot; title=&quot;chapter2- 最小二乘法完整实践理论&quot;&gt;&lt;/a&gt;chapter2- 最小二乘法完整实践理论&lt;/h3&gt;&lt;h6 id=&quot;1-概要&quot;&gt;&lt;a href=&quot;#1-概要&quot; class=&quot;headerlink&quot; title=&quot;1.概要&quot;&gt;&lt;/a&gt;1.概要&lt;/h6&gt;&lt;p&gt;​    此章，通过最小二乘法，在统计学习，机器学习，深度学习的轨道上进行讨论，它们叁之间的共性与异性。&lt;/p&gt;
-&lt;h6 id=&quot;2-什么是最小二乘法&quot;&gt;&lt;a href=&quot;#2-什么是最小二乘法&quot; class=&quot;headerlink&quot; title=&quot;2.什么是最小二乘法&quot;&gt;&lt;/a&gt;2.什么是最小二乘法&lt;/h6&gt;&lt;p&gt;​    &lt;strong&gt;最小二乘法&lt;/strong&gt;（&lt;strong&gt;least squares method&lt;/strong&gt;），又称&lt;strong&gt;最小平方法&lt;/strong&gt;，是一种&lt;a href=&quot;https://zh.wikipedia.org/wiki/数学&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;数学&lt;/a&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/优化&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;优化&lt;/a&gt;方法。它通过最小化&lt;a href=&quot;https://zh.wikipedia.org/wiki/误差&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;误差&lt;/a&gt;的平方和寻找数据的最佳函数匹配。&lt;/p&gt;
-&lt;p&gt;​    利用最小二乘法可以简便地求得未知的数据，并使得求得的数据与实际数据之间误差的平方和为最小。&lt;/p&gt;
+&lt;h2 id=&quot;chapter6-神经网络（neural-networks）&quot;&gt;&lt;a href=&quot;#chapter6-神经网络（neural-networks）&quot; class=&quot;headerlink&quot; title=&quot;chapter6-神经网络（neural networks）&quot;&gt;&lt;/a&gt;chapter6-神经网络（neural networks）&lt;/h2&gt;&lt;h4 id=&quot;1-神经网络原理&quot;&gt;&lt;a href=&quot;#1-神经网络原理&quot; class=&quot;headerlink&quot; title=&quot;1. 神经网络原理&quot;&gt;&lt;/a&gt;1. 神经网络原理&lt;/h4&gt;&lt;h6 id=&quot;这节大部分内容参考AndrewNG深度学习教学视频以及黄海广博士在github上开源的吴恩达深度学习笔记-本节知识根据自己使用经验进行基本总结，细致末梢还请看吴恩达老师讲义。&quot;&gt;&lt;a href=&quot;#这节大部分内容参考AndrewNG深度学习教学视频以及黄海广博士在github上开源的吴恩达深度学习笔记-本节知识根据自己使用经验进行基本总结，细致末梢还请看吴恩达老师讲义。&quot; class=&quot;headerlink&quot; title=&quot;这节大部分内容参考AndrewNG深度学习教学视频以及黄海广博士在github上开源的吴恩达深度学习笔记,本节知识根据自己使用经验进行基本总结，细致末梢还请看吴恩达老师讲义。&quot;&gt;&lt;/a&gt;这节大部分内容参考AndrewNG深度学习&lt;a href=&quot;https://mooc.study.163.com/course/2001281002?tid=2001392029&amp;_trace_c_p_k2_=fb1e25a65ef84e5c927c8125d985e008#/info&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;教学视频&lt;/a&gt;以及黄海广博士在github上开源的吴恩达深度学习笔记,本节知识根据自己使用经验进行基本总结，细致末梢还请看吴恩达老师讲义。&lt;/h6&gt;&lt;p&gt;对于neural networks统计学原理，我将从下面伍个部分进行仔细探讨，因为这些部分是神经网络不可或缺的部分。我将通过与logisticRegression原理进行对比介绍，如果不知道或者不清楚的可以看前面所介绍的logistic。最后实现代码，更深一步了解简单的TensorFlow实现。并且分析机器学习和深度学习建模的联系。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;h6 id=&quot;损失函数&quot;&gt;&lt;a href=&quot;#损失函数&quot; class=&quot;headerlink&quot; title=&quot;损失函数&quot;&gt;&lt;/a&gt;损失函数&lt;/h6&gt;&lt;p&gt;​        损失函数（cost function）是优化的目的。如果没有损失函数，也就没有了目标。不管是任何事情，都需要去了解问题的根本。知道问题的缘由，才能进一步进行建模优化。比如是回归还是分类。是有监督，还是无监督。使用什么统计学原理。如何筛选评价函数。这些都需要通过损失函数，与具体背景结合去构建模型。这里不考虑业务背景。现，只通过逻辑回归损失函数去优化，实现对图像的分类。即有监督。所以损失函数为：&lt;br&gt;$$&lt;br&gt;L(\theta) = -Y^Tlogh_{\theta}(X) - (E-Y)^T log(E-h_{\theta}(X))&lt;br&gt;$$&lt;/p&gt;
     
     </summary>
     
@@ -282,6 +342,30 @@
   </entry>
   
   <entry>
+    <title>chapter2 最小二乘法完整实践理论</title>
+    <link href="http://yoursite.com/2019/11/20/chapter2-%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E6%B3%95%E5%AE%8C%E6%95%B4%E5%AE%9E%E8%B7%B5%E7%90%86%E8%AE%BA/"/>
+    <id>http://yoursite.com/2019/11/20/chapter2-最小二乘法完整实践理论/</id>
+    <published>2019-11-20T12:14:04.000Z</published>
+    <updated>2019-12-26T11:49:03.322Z</updated>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+&lt;h3 id=&quot;chapter2-最小二乘法完整实践理论&quot;&gt;&lt;a href=&quot;#chapter2-最小二乘法完整实践理论&quot; class=&quot;headerlink&quot; title=&quot;chapter2- 最小二乘法完整实践理论&quot;&gt;&lt;/a&gt;chapter2- 最小二乘法完整实践理论&lt;/h3&gt;&lt;h6 id=&quot;1-概要&quot;&gt;&lt;a href=&quot;#1-概要&quot; class=&quot;headerlink&quot; title=&quot;1.概要&quot;&gt;&lt;/a&gt;1.概要&lt;/h6&gt;&lt;p&gt;​    此章，通过最小二乘法，在统计学习，机器学习，深度学习的轨道上进行讨论，它们叁之间的共性与异性。&lt;/p&gt;
+&lt;h6 id=&quot;2-什么是最小二乘法&quot;&gt;&lt;a href=&quot;#2-什么是最小二乘法&quot; class=&quot;headerlink&quot; title=&quot;2.什么是最小二乘法&quot;&gt;&lt;/a&gt;2.什么是最小二乘法&lt;/h6&gt;&lt;p&gt;​    &lt;strong&gt;最小二乘法&lt;/strong&gt;（&lt;strong&gt;least squares method&lt;/strong&gt;），又称&lt;strong&gt;最小平方法&lt;/strong&gt;，是一种&lt;a href=&quot;https://zh.wikipedia.org/wiki/数学&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;数学&lt;/a&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/优化&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;优化&lt;/a&gt;方法。它通过最小化&lt;a href=&quot;https://zh.wikipedia.org/wiki/误差&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;误差&lt;/a&gt;的平方和寻找数据的最佳函数匹配。&lt;/p&gt;
+&lt;p&gt;​    利用最小二乘法可以简便地求得未知的数据，并使得求得的数据与实际数据之间误差的平方和为最小。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="python" scheme="http://yoursite.com/categories/python/"/>
+    
+    
+      <category term="algorithms" scheme="http://yoursite.com/tags/algorithms/"/>
+    
+  </entry>
+  
+  <entry>
     <title>chapter4-梯度下降算法(Gradient Descent)</title>
     <link href="http://yoursite.com/2019/11/20/chapter4-%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E7%AE%97%E6%B3%95-Gradient-Descent/"/>
     <id>http://yoursite.com/2019/11/20/chapter4-梯度下降算法-Gradient-Descent/</id>
@@ -295,30 +379,6 @@
 &lt;h3 id=&quot;chapter4-梯度下降算法-Gradient-Descent&quot;&gt;&lt;a href=&quot;#chapter4-梯度下降算法-Gradient-Descent&quot; class=&quot;headerlink&quot; title=&quot;chapter4-梯度下降算法(Gradient Descent)&quot;&gt;&lt;/a&gt;chapter4-梯度下降算法(Gradient Descent)&lt;/h3&gt;&lt;p&gt;求解机器学习算法的模型参数时，即无约束优化问题时，梯度下降（Gradient Descent）是最常采用的方法之一，另一种常用的方法是最小二乘法。这里就对梯度下降法做一个完整的总结。&lt;/p&gt;
 &lt;h5 id=&quot;1-梯度&quot;&gt;&lt;a href=&quot;#1-梯度&quot; class=&quot;headerlink&quot; title=&quot;1.梯度&quot;&gt;&lt;/a&gt;1.梯度&lt;/h5&gt;&lt;p&gt;在微积分里面，对多元函数的参数求∂偏导数，把求得的各个参数的偏导数以向量的形式写出来，就是梯度。比如函数$f(x,y)$,分别对$x,y$进行求导，求得梯度向量是$(\frac{\partial f}{\partial x},\frac{\partial f}{\partial y})^T$ 简称$grad f(x,y)$ | $\Delta f(x,y)$,对于点为$(x_0,y_0)$,他的梯度向量值为$(\frac{\partial f}{\partial x_0},\frac{\partial f}{\partial y_0})^T$ | $\Delta f(x_0,y_0)$,如果为三个变量，就为：$\Delta f(x,y,z)$,以此类推。&lt;/p&gt;
 &lt;p&gt;那为什么要找到函数$f(x,y)$的梯度呢？因为梯度向量是函数下降(增加)速度最快的地方。比如说，在初始点$(x_0,y_0)$ 沿着梯度向量$\Delta f(x_0,y_0)$ (-$\Delta f(x_0,y_0)$)，增加最快(下降最快)的方向 ，我们能够更快的找到函数的最小值(最大值)。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="python" scheme="http://yoursite.com/categories/python/"/>
-    
-    
-      <category term="algorithms" scheme="http://yoursite.com/tags/algorithms/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>chapter6-神经网络</title>
-    <link href="http://yoursite.com/2019/11/20/chapter6-%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"/>
-    <id>http://yoursite.com/2019/11/20/chapter6-神经网络/</id>
-    <published>2019-11-20T12:14:04.000Z</published>
-    <updated>2020-02-07T13:21:12.197Z</updated>
-    
-    <summary type="html">
-    
-      &lt;hr&gt;
-&lt;h2 id=&quot;chapter6-神经网络（neural-networks）&quot;&gt;&lt;a href=&quot;#chapter6-神经网络（neural-networks）&quot; class=&quot;headerlink&quot; title=&quot;chapter6-神经网络（neural networks）&quot;&gt;&lt;/a&gt;chapter6-神经网络（neural networks）&lt;/h2&gt;&lt;h4 id=&quot;1-神经网络原理&quot;&gt;&lt;a href=&quot;#1-神经网络原理&quot; class=&quot;headerlink&quot; title=&quot;1. 神经网络原理&quot;&gt;&lt;/a&gt;1. 神经网络原理&lt;/h4&gt;&lt;h6 id=&quot;这节大部分内容参考AndrewNG深度学习教学视频以及黄海广博士在github上开源的吴恩达深度学习笔记-本节知识根据自己使用经验进行基本总结，细致末梢还请看吴恩达老师讲义。&quot;&gt;&lt;a href=&quot;#这节大部分内容参考AndrewNG深度学习教学视频以及黄海广博士在github上开源的吴恩达深度学习笔记-本节知识根据自己使用经验进行基本总结，细致末梢还请看吴恩达老师讲义。&quot; class=&quot;headerlink&quot; title=&quot;这节大部分内容参考AndrewNG深度学习教学视频以及黄海广博士在github上开源的吴恩达深度学习笔记,本节知识根据自己使用经验进行基本总结，细致末梢还请看吴恩达老师讲义。&quot;&gt;&lt;/a&gt;这节大部分内容参考AndrewNG深度学习&lt;a href=&quot;https://mooc.study.163.com/course/2001281002?tid=2001392029&amp;_trace_c_p_k2_=fb1e25a65ef84e5c927c8125d985e008#/info&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;教学视频&lt;/a&gt;以及黄海广博士在github上开源的吴恩达深度学习笔记,本节知识根据自己使用经验进行基本总结，细致末梢还请看吴恩达老师讲义。&lt;/h6&gt;&lt;p&gt;对于neural networks统计学原理，我将从下面伍个部分进行仔细探讨，因为这些部分是神经网络不可或缺的部分。我将通过与logisticRegression原理进行对比介绍，如果不知道或者不清楚的可以看前面所介绍的logistic。最后实现代码，更深一步了解简单的TensorFlow实现。并且分析机器学习和深度学习建模的联系。&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;h6 id=&quot;损失函数&quot;&gt;&lt;a href=&quot;#损失函数&quot; class=&quot;headerlink&quot; title=&quot;损失函数&quot;&gt;&lt;/a&gt;损失函数&lt;/h6&gt;&lt;p&gt;​        损失函数（cost function）是优化的目的。如果没有损失函数，也就没有了目标。不管是任何事情，都需要去了解问题的根本。知道问题的缘由，才能进一步进行建模优化。比如是回归还是分类。是有监督，还是无监督。使用什么统计学原理。如何筛选评价函数。这些都需要通过损失函数，与具体背景结合去构建模型。这里不考虑业务背景。现，只通过逻辑回归损失函数去优化，实现对图像的分类。即有监督。所以损失函数为：&lt;br&gt;$$&lt;br&gt;L(\theta) = -Y^Tlogh_{\theta}(X) - (E-Y)^T log(E-h_{\theta}(X))&lt;br&gt;$$&lt;/p&gt;
     
     </summary>
     
@@ -452,54 +512,6 @@
     
     
       <category term="hive" scheme="http://yoursite.com/categories/hive/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>linux菜鸟</title>
-    <link href="http://yoursite.com/2019/11/05/linux%E8%8F%9C%E9%B8%9F/"/>
-    <id>http://yoursite.com/2019/11/05/linux菜鸟/</id>
-    <published>2019-11-05T08:26:36.000Z</published>
-    <updated>2019-11-09T08:51:01.352Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;菜鸟-linux命令总结&quot;&gt;&lt;a href=&quot;#菜鸟-linux命令总结&quot; class=&quot;headerlink&quot; title=&quot;菜鸟-linux命令总结&quot;&gt;&lt;/a&gt;菜鸟-linux命令总结&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/jaywcjlove/linux-command&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;linux命令大全教程&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://man.linuxde.net/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;linux搜索大全&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://wangchujiang.com/linux-command/list.html#!kw=ls&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;linux命令搜索教程岚&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/judasn/Linux-Tutorial&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;linux安装教程-bigData&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/fengyuhetao/shell&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;shell脚本案列大全&lt;/a&gt;&lt;/p&gt;
-&lt;h4 id=&quot;1-命令大全&quot;&gt;&lt;a href=&quot;#1-命令大全&quot; class=&quot;headerlink&quot; title=&quot;1. 命令大全&quot;&gt;&lt;/a&gt;1. 命令大全&lt;/h4&gt;&lt;h5 id=&quot;文件传输&quot;&gt;&lt;a href=&quot;#文件传输&quot; class=&quot;headerlink&quot; title=&quot;文件传输&quot;&gt;&lt;/a&gt;文件传输&lt;/h5&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;bye、ftp、ftpcount、ftpshut、ftpwho、ncftp、tftp、uucico、uucp、uupick、uuto、scp&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-    
-    </summary>
-    
-    
-      <category term="linux" scheme="http://yoursite.com/categories/linux/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Win10设置电脑内网连接网线，外网连接wifi</title>
-    <link href="http://yoursite.com/2019/11/04/Win10%E8%AE%BE%E7%BD%AE%E7%94%B5%E8%84%91%E5%86%85%E7%BD%91%E8%BF%9E%E6%8E%A5%E7%BD%91%E7%BA%BF%EF%BC%8C%E5%A4%96%E7%BD%91%E8%BF%9E%E6%8E%A5wifi/"/>
-    <id>http://yoursite.com/2019/11/04/Win10设置电脑内网连接网线，外网连接wifi/</id>
-    <published>2019-11-04T10:05:42.000Z</published>
-    <updated>2019-12-16T11:35:32.968Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h4 id=&quot;Win10设置电脑内网连接网线，外网连接wifi&quot;&gt;&lt;a href=&quot;#Win10设置电脑内网连接网线，外网连接wifi&quot; class=&quot;headerlink&quot; title=&quot;Win10设置电脑内网连接网线，外网连接wifi&quot;&gt;&lt;/a&gt;Win10设置电脑内网连接网线，外网连接wifi&lt;/h4&gt;&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;win10一台电脑即可使用内网又可使用外网原理&lt;/p&gt;
-&lt;p&gt;​    您可以把电脑比喻为一个路由器。就像打电话的移动服务器一样，一台服务器可以多个用户使用，就是因为每一个用户有专用的电话号码，然后通过中转服务器转到你所到达的属地，再到达相应的用用户。&lt;/p&gt;
-&lt;p&gt;​    所以你就是用户，电脑就是中转器，你访问不同的页面，通过路由转到不同的网段，就可以使用相应的网络了。当然内网和外网是有优先级的。也就是说你访问的网页，优先使用哪一个网段。选取看你电脑哪一个网段是常用的。比如说我，外网常用，当然使用外网，并且外网的访问ip是很复杂的，分配网段比较复杂，分配内容比较容易。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-    
-    </summary>
-    
-    
-      <category term="巧技" scheme="http://yoursite.com/categories/%E5%B7%A7%E6%8A%80/"/>
     
     
   </entry>
