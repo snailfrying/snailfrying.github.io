@@ -114,7 +114,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="algorithms,python,">
 
 
 
@@ -127,17 +127,18 @@
 
 
 
-<meta name="description" content="您心底所憧憬的事物，一定在某个维度发生">
-<meta name="keywords" content="嘟嘟嘟">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Snail Life">
-<meta property="og:url" content="http://yoursite.com/archives/2020/index.html">
+<meta name="description" content="chapter12-partition-algorithm[TOC] 分治算法1. 给表达式加括号Leetcode / 力扣 123456789101112131415161718192021222324252627282930313233def diffWaysToCompute(input):    # 又题意可知    # 给表达式加括号    # 就意味着只要有一个算术符号为一个独立板快，">
+<meta name="keywords" content="algorithms,python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="chapter12-partition-algorithm">
+<meta property="og:url" content="http://yoursite.com/2020/02/28/chapter12-partition-algorithm/index.html">
 <meta property="og:site_name" content="Snail Life">
-<meta property="og:description" content="您心底所憧憬的事物，一定在某个维度发生">
+<meta property="og:description" content="chapter12-partition-algorithm[TOC] 分治算法1. 给表达式加括号Leetcode / 力扣 123456789101112131415161718192021222324252627282930313233def diffWaysToCompute(input):    # 又题意可知    # 给表达式加括号    # 就意味着只要有一个算术符号为一个独立板快，">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2020-02-28T12:05:14.460Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Snail Life">
-<meta name="twitter:description" content="您心底所憧憬的事物，一定在某个维度发生">
+<meta name="twitter:title" content="chapter12-partition-algorithm">
+<meta name="twitter:description" content="chapter12-partition-algorithm[TOC] 分治算法1. 给表达式加括号Leetcode / 力扣 123456789101112131415161718192021222324252627282930313233def diffWaysToCompute(input):    # 又题意可知    # 给表达式加括号    # 就意味着只要有一个算术符号为一个独立板快，">
 
 
 
@@ -167,13 +168,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/archives/2020/">
+  <link rel="canonical" href="http://yoursite.com/2020/02/28/chapter12-partition-algorithm/">
 
 
 
 
 
-  <title>Archive | Snail Life</title>
+  <title>chapter12-partition-algorithm | Snail Life</title>
   
 
 
@@ -192,7 +193,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 	<a href="https://github.com/snailfrying" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#64CEAA; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -318,215 +319,245 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/28/chapter12-partition-algorithm/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="snail json">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Snail Life">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
-         
+          <h1 class="post-title" itemprop="name headline">chapter12-partition-algorithm</h1>
         
-        OK! 41 posts in total. Keep on posting.
-      </span>
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-02-28T16:02:16+08:00">
+                2020-02-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/leetcode/" itemprop="url" rel="index">
+                    <span itemprop="name">leetcode</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/02/28/chapter12-partition-algorithm/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/02/28/chapter12-partition-algorithm/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2020/02/28/chapter12-partition-algorithm/" class="leancloud_visitors" data-flag-title="chapter12-partition-algorithm">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             <span>℃</span>
+			 </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  402
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
+      
 
+      
+        <h3 id="chapter12-partition-algorithm"><a href="#chapter12-partition-algorithm" class="headerlink" title="chapter12-partition-algorithm"></a>chapter12-partition-algorithm</h3><p>[TOC]</p>
+<h5 id="分治算法"><a href="#分治算法" class="headerlink" title="分治算法"></a>分治算法</h5><h6 id="1-给表达式加括号"><a href="#1-给表达式加括号" class="headerlink" title="1. 给表达式加括号"></a>1. 给表达式加括号</h6><p><a href="https://leetcode.com/problems/different-ways-to-add-parentheses/description/" target="_blank" rel="noopener">Leetcode</a> / <a href="https://leetcode-cn.com/problems/different-ways-to-add-parentheses/description/" target="_blank" rel="noopener">力扣</a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">diffWaysToCompute</span><span class="params">(input)</span>:</span></span><br><span class="line">    <span class="comment"># 又题意可知</span></span><br><span class="line">    <span class="comment"># 给表达式加括号</span></span><br><span class="line">    <span class="comment"># 就意味着只要有一个算术符号为一个独立板快，运算后继续组合</span></span><br><span class="line">    <span class="comment"># 因此每一个算法符号都可以把算术表达式分为两半</span></span><br><span class="line">    <span class="comment"># 如果我们把它看作一棵树的话</span></span><br><span class="line">    <span class="comment"># 那么算术符号就是根或者父节点，而数则是子节点</span></span><br><span class="line">    <span class="comment"># 一次遍历下去，就可以得到全部的算术组合了</span></span><br><span class="line">    <span class="comment"># 因此我们需要分治，也就是先把树给划分好</span></span><br><span class="line">    <span class="comment"># 然后在回溯的时候，进行求解子节点，也就是合并枝丫</span></span><br><span class="line">    <span class="comment"># 知道一个根节点为止，则为一个结果</span></span><br><span class="line">    <span class="comment"># 因此代码逻辑如下：</span></span><br><span class="line"></span><br><span class="line">    ways = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(input)):</span><br><span class="line">        c =input[i]</span><br><span class="line">        <span class="keyword">if</span> c <span class="keyword">in</span> <span class="string">"-*+"</span>:</span><br><span class="line">            left = diffWaysToCompute(input[:i])</span><br><span class="line">            right = diffWaysToCompute(input[i+<span class="number">1</span>:])</span><br><span class="line">            <span class="keyword">for</span> l <span class="keyword">in</span> left:</span><br><span class="line">                <span class="keyword">for</span> r <span class="keyword">in</span> right:</span><br><span class="line">                    <span class="keyword">if</span> c == <span class="string">'-'</span>:</span><br><span class="line">                        ways.append(l - r)</span><br><span class="line">                    <span class="keyword">elif</span> c == <span class="string">'+'</span>:</span><br><span class="line">                        ways.append(l + r)</span><br><span class="line">                    <span class="keyword">else</span>:</span><br><span class="line">                        ways.append(l * r)</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> ways:</span><br><span class="line">        ways.append(int(input))</span><br><span class="line">    <span class="keyword">return</span> ways</span><br><span class="line"></span><br><span class="line">input = <span class="string">"2*3-4*5"</span></span><br><span class="line"><span class="comment"># diffWaysToCompute(input)</span></span><br></pre></td></tr></table></figure>
+
+<h6 id="2-不同的二叉搜索树"><a href="#2-不同的二叉搜索树" class="headerlink" title="2. 不同的二叉搜索树"></a>2. 不同的二叉搜索树</h6><p><a href="https://leetcode.com/problems/unique-binary-search-trees-ii/description/" target="_blank" rel="noopener">Leetcode</a> / <a href="https://leetcode-cn.com/problems/unique-binary-search-trees-ii/description/" target="_blank" rel="noopener">力扣</a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TreeNode</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, x)</span>:</span></span><br><span class="line">        self.val = x</span><br><span class="line">        self.left = <span class="literal">None</span></span><br><span class="line">        self.right = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">generateTrees</span><span class="params">(n)</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">generateSubTree</span><span class="params">(s, e)</span>:</span></span><br><span class="line">        ways = []</span><br><span class="line">        <span class="keyword">if</span> s &gt; e:</span><br><span class="line">            ways.append(<span class="literal">None</span>)</span><br><span class="line">            <span class="keyword">return</span> ways</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(s, e+<span class="number">1</span>):</span><br><span class="line">            leftSubTrees = generateSubTree(s, i<span class="number">-1</span>)</span><br><span class="line">            rightSubTrees = generateSubTree(i + <span class="number">1</span>, e)</span><br><span class="line">            <span class="keyword">for</span> l <span class="keyword">in</span> leftSubTrees:</span><br><span class="line">                <span class="keyword">for</span> r <span class="keyword">in</span> rightSubTrees:</span><br><span class="line">                    root = TreeNode(i)</span><br><span class="line">                    root.left = l</span><br><span class="line">                    root.right = r</span><br><span class="line">                    ways.append(root)</span><br><span class="line">        <span class="keyword">return</span> ways</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">generateSubTrees2</span><span class="params">(nums, left, right)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> left &gt; right:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        mid = left + (right - left)</span><br><span class="line">        root = TreeNode(nums[mid])</span><br><span class="line">        root.left = generateSubTrees2(nums, left, mid - <span class="number">1</span>)</span><br><span class="line">        root.right = generateSubTrees2(nums, mid + <span class="number">1</span>, right)</span><br><span class="line">        <span class="keyword">return</span> root</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> n &lt; <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> []</span><br><span class="line">    <span class="comment"># return generateSubTree(1, n)</span></span><br><span class="line">    <span class="keyword">return</span> generateSubTrees2([i <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, n+<span class="number">1</span>)], <span class="number">0</span>, n<span class="number">-1</span>)</span><br><span class="line">print(generateTrees(<span class="number">3</span>))</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/algorithms/" rel="tag"># algorithms</a>
+          
+            <a href="/tags/python/" rel="tag"># python</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
         
-        
+
         
 
         
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2020">2020</h1>
+          <div id="needsharebutton-postbottom">
+            <span class="btn">
+              <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </span>
           </div>
         
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2020/02/28/chapter12-partition-algorithm/" itemprop="url">
-              
-                <span itemprop="name">chapter12-partition-algorithm</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2020-02-28T16:02:16+08:00" content="2020-02-28">
-          02-28
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
+        </div>
+      
       
 
-        
-        
-        
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/02/28/chapter11-search-algorithm/" rel="next" title="chapter11-search-algorithm">
+                <i class="fa fa-chevron-left"></i> chapter11-search-algorithm
+              </a>
+            
+          </div>
 
-        
-        
+          <span class="post-nav-divider"></span>
 
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2020/02/28/chapter11-search-algorithm/" itemprop="url">
-              
-                <span itemprop="name">chapter11-search-algorithm</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2020-02-28T15:30:41+08:00" content="2020-02-28">
-          02-28
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2020/02/25/chapter10-graph-algorithm/" itemprop="url">
-              
-                <span itemprop="name">chapter10-graph-algorithm</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2020-02-25T13:43:56+08:00" content="2020-02-25">
-          02-25
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2020/02/23/chapter9-tree-algorithm/" itemprop="url">
-              
-                <span itemprop="name">chapter9-tree-algorithm</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2020-02-23T12:03:22+08:00" content="2020-02-23">
-          02-23
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2020/02/22/chapter8-dual-pointer-algorithm/" itemprop="url">
-              
-                <span itemprop="name">chapter8-dual-pointer-algorithm</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2020-02-22T17:38:11+08:00" content="2020-02-22">
-          02-22
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-    </div>
+    </footer>
   </div>
   
   
   
-
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/archives/2020/page/2/">2</a><a class="page-number" href="/archives/2020/page/3/">3</a><a class="extend next" rel="next" href="/archives/2020/page/2/"><i class="fa fa-angle-right"></i></a>
-  </nav>
+  </article>
 
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -534,6 +565,20 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -554,9 +599,18 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 		
 		
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -651,6 +705,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#chapter12-partition-algorithm"><span class="nav-number">1.</span> <span class="nav-text">chapter12-partition-algorithm</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#分治算法"><span class="nav-number">1.0.1.</span> <span class="nav-text">分治算法</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#1-给表达式加括号"><span class="nav-number">1.0.1.1.</span> <span class="nav-text">1. 给表达式加括号</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#2-不同的二叉搜索树"><span class="nav-number">1.0.1.2.</span> <span class="nav-text">2. 不同的二叉搜索树</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -841,6 +911,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -858,6 +932,18 @@
       <script id="dsq-count-scr" src="https://龙门阵.disqus.com/count.js" async></script>
     
 
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2020/02/28/chapter12-partition-algorithm/';
+          this.page.identifier = '2020/02/28/chapter12-partition-algorithm/';
+          this.page.title = 'chapter12-partition-algorithm';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://龙门阵.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
     
 
   
@@ -1385,26 +1471,6 @@
   
 
   
-  
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-          processEscapes: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-        }
-      });
-    </script>
-
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-      });
-    </script>
-    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
   
 
 
