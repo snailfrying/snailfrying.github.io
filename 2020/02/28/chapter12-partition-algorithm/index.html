@@ -127,18 +127,18 @@
 
 
 
-<meta name="description" content="chapter12-partition-algorithm[TOC] 分治算法1. 给表达式加括号Leetcode / 力扣 123456789101112131415161718192021222324252627282930313233def diffWaysToCompute(input):    # 又题意可知    # 给表达式加括号    # 就意味着只要有一个算术符号为一个独立板快，">
+<meta name="description" content="chapter12-partition-algorithm[TOC]">
 <meta name="keywords" content="algorithms,python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="chapter12-partition-algorithm">
 <meta property="og:url" content="http://yoursite.com/2020/02/28/chapter12-partition-algorithm/index.html">
 <meta property="og:site_name" content="Snail Life">
-<meta property="og:description" content="chapter12-partition-algorithm[TOC] 分治算法1. 给表达式加括号Leetcode / 力扣 123456789101112131415161718192021222324252627282930313233def diffWaysToCompute(input):    # 又题意可知    # 给表达式加括号    # 就意味着只要有一个算术符号为一个独立板快，">
+<meta property="og:description" content="chapter12-partition-algorithm[TOC]">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-02-28T12:05:14.460Z">
+<meta property="og:updated_time" content="2020-02-29T11:56:53.703Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="chapter12-partition-algorithm">
-<meta name="twitter:description" content="chapter12-partition-algorithm[TOC] 分治算法1. 给表达式加括号Leetcode / 力扣 123456789101112131415161718192021222324252627282930313233def diffWaysToCompute(input):    # 又题意可知    # 给表达式加括号    # 就意味着只要有一个算术符号为一个独立板快，">
+<meta name="twitter:description" content="chapter12-partition-algorithm[TOC]">
 
 
 
@@ -476,6 +476,8 @@
 
       
         <h3 id="chapter12-partition-algorithm"><a href="#chapter12-partition-algorithm" class="headerlink" title="chapter12-partition-algorithm"></a>chapter12-partition-algorithm</h3><p>[TOC]</p>
+<a id="more"></a>
+
 <h5 id="分治算法"><a href="#分治算法" class="headerlink" title="分治算法"></a>分治算法</h5><h6 id="1-给表达式加括号"><a href="#1-给表达式加括号" class="headerlink" title="1. 给表达式加括号"></a>1. 给表达式加括号</h6><p><a href="https://leetcode.com/problems/different-ways-to-add-parentheses/description/" target="_blank" rel="noopener">Leetcode</a> / <a href="https://leetcode-cn.com/problems/different-ways-to-add-parentheses/description/" target="_blank" rel="noopener">力扣</a></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">diffWaysToCompute</span><span class="params">(input)</span>:</span></span><br><span class="line">    <span class="comment"># 又题意可知</span></span><br><span class="line">    <span class="comment"># 给表达式加括号</span></span><br><span class="line">    <span class="comment"># 就意味着只要有一个算术符号为一个独立板快，运算后继续组合</span></span><br><span class="line">    <span class="comment"># 因此每一个算法符号都可以把算术表达式分为两半</span></span><br><span class="line">    <span class="comment"># 如果我们把它看作一棵树的话</span></span><br><span class="line">    <span class="comment"># 那么算术符号就是根或者父节点，而数则是子节点</span></span><br><span class="line">    <span class="comment"># 一次遍历下去，就可以得到全部的算术组合了</span></span><br><span class="line">    <span class="comment"># 因此我们需要分治，也就是先把树给划分好</span></span><br><span class="line">    <span class="comment"># 然后在回溯的时候，进行求解子节点，也就是合并枝丫</span></span><br><span class="line">    <span class="comment"># 知道一个根节点为止，则为一个结果</span></span><br><span class="line">    <span class="comment"># 因此代码逻辑如下：</span></span><br><span class="line"></span><br><span class="line">    ways = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(input)):</span><br><span class="line">        c =input[i]</span><br><span class="line">        <span class="keyword">if</span> c <span class="keyword">in</span> <span class="string">"-*+"</span>:</span><br><span class="line">            left = diffWaysToCompute(input[:i])</span><br><span class="line">            right = diffWaysToCompute(input[i+<span class="number">1</span>:])</span><br><span class="line">            <span class="keyword">for</span> l <span class="keyword">in</span> left:</span><br><span class="line">                <span class="keyword">for</span> r <span class="keyword">in</span> right:</span><br><span class="line">                    <span class="keyword">if</span> c == <span class="string">'-'</span>:</span><br><span class="line">                        ways.append(l - r)</span><br><span class="line">                    <span class="keyword">elif</span> c == <span class="string">'+'</span>:</span><br><span class="line">                        ways.append(l + r)</span><br><span class="line">                    <span class="keyword">else</span>:</span><br><span class="line">                        ways.append(l * r)</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> ways:</span><br><span class="line">        ways.append(int(input))</span><br><span class="line">    <span class="keyword">return</span> ways</span><br><span class="line"></span><br><span class="line">input = <span class="string">"2*3-4*5"</span></span><br><span class="line"><span class="comment"># diffWaysToCompute(input)</span></span><br></pre></td></tr></table></figure>
 
@@ -538,6 +540,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/02/28/chapter13-hashTable-algorithm/" rel="prev" title="chapter13-hashTable-algorithm">
+                chapter13-hashTable-algorithm <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -625,7 +631,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">41</span>
+                  <span class="site-state-item-count">43</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -732,7 +738,7 @@
 		<h3 class="widget-title">Tag Cloud</h3>
 		<div id="myCanvasContainer" class="widget tagcloud">
 		  <canvas width="250" height="250" id="resCanvas" style="width=100%">
-			<ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/thread/">-- thread</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Optimization/">Optimization</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithms/">algorithms</a><span class="tag-list-count">20</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/db2/">db2</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hive/">hive</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">15</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/self-study/">self-study</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sql/">sql</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/statistics/">statistics</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/thread/">thread</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vim/">vim</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/win10快捷键/">win10快捷键</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/古月山风/">古月山风</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/梦想/">梦想</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/破晓/">破晓</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a><span class="tag-list-count">2</span></li></ul>
+			<ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/thread/">-- thread</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Optimization/">Optimization</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithms/">algorithms</a><span class="tag-list-count">22</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/db2/">db2</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hive/">hive</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">17</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/self-study/">self-study</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sql/">sql</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/statistics/">statistics</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/thread/">thread</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vim/">vim</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/win10快捷键/">win10快捷键</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/古月山风/">古月山风</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/梦想/">梦想</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/破晓/">破晓</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a><span class="tag-list-count">2</span></li></ul>
 		  </canvas>
 		</div>
 	  </div>
@@ -763,7 +769,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">123k</span>
+    <span title="Site words total count">125.6k</span>
   
 </div>
 

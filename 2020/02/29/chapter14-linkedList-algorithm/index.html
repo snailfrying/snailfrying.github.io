@@ -1,0 +1,1512 @@
+<!DOCTYPE html>
+
+
+
+
+<html class="theme-next mist" lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  <link href="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+  
+
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="algorithms,python,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Snail Life" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="chapter14-linkedList-algorithm[TOC]">
+<meta name="keywords" content="algorithms,python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="chapter14-linkedList-algorithm">
+<meta property="og:url" content="http://yoursite.com/2020/02/29/chapter14-linkedList-algorithm/index.html">
+<meta property="og:site_name" content="Snail Life">
+<meta property="og:description" content="chapter14-linkedList-algorithm[TOC]">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2020-03-04T04:25:04.320Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="chapter14-linkedList-algorithm">
+<meta name="twitter:description" content="chapter14-linkedList-algorithm[TOC]">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/02/29/chapter14-linkedList-algorithm/">
+
+
+
+
+
+  <title>chapter14-linkedList-algorithm | Snail Life</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+	<a href="https://github.com/snailfrying" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#64CEAA; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Snail Life</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">basketball dance rap</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="Searching..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/29/chapter14-linkedList-algorithm/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="snail json">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Snail Life">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">chapter14-linkedList-algorithm</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-02-29T19:56:30+08:00">
+                2020-02-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/leetcode/" itemprop="url" rel="index">
+                    <span itemprop="name">leetcode</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/02/29/chapter14-linkedList-algorithm/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/02/29/chapter14-linkedList-algorithm/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2020/02/29/chapter14-linkedList-algorithm/" class="leancloud_visitors" data-flag-title="chapter14-linkedList-algorithm">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             <span>℃</span>
+			 </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  1.8k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  8
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <hr>
+<h2 id="chapter14-linkedList-algorithm"><a href="#chapter14-linkedList-algorithm" class="headerlink" title="chapter14-linkedList-algorithm"></a>chapter14-linkedList-algorithm</h2><p>[TOC]</p>
+<a id="more"></a>
+
+<h5 id="链表类算法"><a href="#链表类算法" class="headerlink" title="链表类算法"></a>链表类算法</h5><h6 id="1-找出两个链表的交点"><a href="#1-找出两个链表的交点" class="headerlink" title="1. 找出两个链表的交点"></a>1. 找出两个链表的交点</h6><p><a href="https://leetcode.com/problems/intersection-of-two-linked-lists/description/" target="_blank" rel="noopener">Leetcode</a> / <a href="https://leetcode-cn.com/problems/intersection-of-two-linked-lists/description/" target="_blank" rel="noopener">力扣</a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ListNode</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, x)</span>:</span></span><br><span class="line">        self.val = x</span><br><span class="line">        self.next = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">getIntersectionNode</span><span class="params">(self, headA: ListNode, headB: ListNode)</span> -&gt; ListNode:</span></span><br><span class="line">        <span class="comment"># you题意可知</span></span><br><span class="line">        <span class="comment"># 两个链表相交，结果有两种</span></span><br><span class="line">        <span class="comment"># 1. 只相交一点，后面的链表完全不同</span></span><br><span class="line">        <span class="comment"># 2. 相交一点后，后面的链表完全相同(如果后面只有两点相同，后面不同，那么一个点是需要两个next的，这是不符合链表规则的)</span></span><br><span class="line">        <span class="comment"># 因此解法如下：</span></span><br><span class="line">        <span class="comment"># 1. 把两链表结果相连，判断最后一个元素相同，或者是否有环</span></span><br><span class="line">        <span class="comment"># 2. 不相连，分别遍历两次headA和headB并且交替遍历，这样总会有一个值相等，要么交点，要么结尾</span></span><br><span class="line">        <span class="comment"># 因为 a + b = b + a</span></span><br><span class="line">        <span class="comment"># 因此代码逻辑如下：</span></span><br><span class="line">        l1, l2 = headA, headB</span><br><span class="line">        <span class="keyword">while</span>(l1 != l2):</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> l1:</span><br><span class="line">                l1 = headB</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                l1 = l1.next</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> l2:</span><br><span class="line">                l2 = headA</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                l2 = l2.next</span><br><span class="line">        print(l1)</span><br><span class="line">        <span class="keyword">return</span> l1</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">headA = ListNode(<span class="number">4</span>)</span><br><span class="line">headB = ListNode(<span class="number">4</span>)</span><br><span class="line">headC = ListNode(<span class="number">4</span>)</span><br><span class="line">headA.next = headC</span><br><span class="line">headB.next = headC</span><br><span class="line">s = Solution()</span><br><span class="line">s.getIntersectionNode(headA = headA, headB = headB)</span><br></pre></td></tr></table></figure>
+
+<h6 id="2-链表反转"><a href="#2-链表反转" class="headerlink" title="2. 链表反转"></a>2. 链表反转</h6><p><a href="https://leetcode.com/problems/reverse-linked-list/description/" target="_blank" rel="noopener">Leetcode</a> / <a href="https://leetcode-cn.com/problems/reverse-linked-list/description/" target="_blank" rel="noopener">力扣</a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution2</span>:</span></span><br><span class="line">    <span class="comment"># 递归</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">reverseList</span><span class="params">(self, head: ListNode)</span> -&gt; ListNode:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> head <span class="keyword">or</span> <span class="keyword">not</span> head.next:</span><br><span class="line">            <span class="keyword">return</span> head <span class="comment"># 返回最后一个结点给NewHead，作为头结点</span></span><br><span class="line">        node = head.next</span><br><span class="line">        newHead = self.reverseList(node)</span><br><span class="line">        node.next = head <span class="comment"># 利用当前节点node的值，去指向返回的倒数第二个值，就实现了反转，然后依次返回，反转</span></span><br><span class="line">        head.next = <span class="literal">None</span> <span class="comment"># node为当前链表，原链表就需要断开以前的值，只需要当前节点</span></span><br><span class="line">        <span class="keyword">return</span> newHead</span><br><span class="line">    <span class="comment"># 头插法</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">reverseList2</span><span class="params">( self, head: ListNode )</span> -&gt; ListNode:</span></span><br><span class="line">        <span class="comment"># 新拟一个头结点</span></span><br><span class="line">        newHead = ListNode(<span class="number">-1</span>)</span><br><span class="line">        <span class="keyword">while</span> head:</span><br><span class="line">            node = head.next <span class="comment"># 为了移动节点</span></span><br><span class="line">            head.next = newHead.next <span class="comment"># 断开指向一个的next，转向-1(newHead)只指向的下一个</span></span><br><span class="line">            newHead.next = head <span class="comment"># 把-1(newHead)指向的值，指向到head，就实现了吧当前值插入到-1(newHead)的后面</span></span><br><span class="line">            head = node <span class="comment"># 更新到下一个节点</span></span><br><span class="line">        <span class="keyword">return</span> newHead.next</span><br></pre></td></tr></table></figure>
+
+<h6 id="3-归并两个有序的链表"><a href="#3-归并两个有序的链表" class="headerlink" title="3. 归并两个有序的链表"></a>3. 归并两个有序的链表</h6><p><a href="https://leetcode.com/problems/merge-two-sorted-lists/description/" target="_blank" rel="noopener">Leetcode</a> / <a href="https://leetcode-cn.com/problems/merge-two-sorted-lists/description/" target="_blank" rel="noopener">力扣</a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution3</span>:</span></span><br><span class="line">    <span class="comment"># you题意可知</span></span><br><span class="line">    <span class="comment"># 归并两个有序的链表</span></span><br><span class="line">    <span class="comment"># 根据判断大小依次往下递归</span></span><br><span class="line">    <span class="comment"># 难点就在于如果有一个遍历完了，说明后面的数，只需要连接再后面即可，因为后面的数一定比前面的数都大，不需要在比较了</span></span><br><span class="line">    <span class="comment"># 而不知道那一个先遍历完，所以都要根据大小分别遍历</span></span><br><span class="line">    <span class="comment"># 而先遍历玩的一边，全部点也返回到先遍历完的一边进行连接返回即可</span></span><br><span class="line">    <span class="comment"># 代码逻辑如下：</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">mergeTwoLists</span><span class="params">(self, l1: ListNode, l2: ListNode)</span> -&gt; ListNode:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> l1: <span class="keyword">return</span> l2</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> l2: <span class="keyword">return</span> l1</span><br><span class="line">        <span class="keyword">if</span> l1.val &lt; l2.val:</span><br><span class="line">            l1.next = self.mergeTwoLists(l1.next, l2)</span><br><span class="line">            <span class="keyword">return</span> l1</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            l2.next = self.mergeTwoLists(l2.next, l1)</span><br><span class="line">            <span class="keyword">return</span> l2</span><br><span class="line">l1 = ListNode(<span class="number">4</span>)</span><br><span class="line">l1.next = ListNode(<span class="number">5</span>)</span><br><span class="line">l2 = ListNode(<span class="number">4</span>)</span><br><span class="line">s = Solution3()</span><br><span class="line">s.mergeTwoLists(l1, l2)</span><br></pre></td></tr></table></figure>
+
+<h6 id="4-从有序链表中删除重复节点"><a href="#4-从有序链表中删除重复节点" class="headerlink" title="4. 从有序链表中删除重复节点"></a>4. 从有序链表中删除重复节点</h6><p><a href="https://leetcode.com/problems/remove-duplicates-from-sorted-list/description/" target="_blank" rel="noopener">Leetcode</a> / <a href="https://leetcode-cn.com/problems/remove-duplicates-from-sorted-list/description/" target="_blank" rel="noopener">力扣</a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution4</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 又题意可知</span></span><br><span class="line">    <span class="comment"># 深度遍历链表</span></span><br><span class="line">    <span class="comment"># 如果返回值是，当前值和前一个值相同就返回前一个值（这样就删除了相同的值）</span></span><br><span class="line">    <span class="comment"># 如果不同就返回当前值</span></span><br><span class="line">    <span class="comment"># 逻辑代码如下：</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">deleteDuplicates</span><span class="params">(self, head: ListNode)</span> -&gt; ListNode:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> head <span class="keyword">or</span> <span class="keyword">not</span> head.next:</span><br><span class="line">            <span class="keyword">return</span> head</span><br><span class="line">        newHead = head.next</span><br><span class="line">        head.next = self.deleteDuplicates(newHead)</span><br><span class="line">        <span class="keyword">if</span> newHead.val == head.val:</span><br><span class="line">            <span class="keyword">return</span> head.next</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> head</span><br></pre></td></tr></table></figure>
+
+<h6 id="5-删除链表的倒数第-n-个节点"><a href="#5-删除链表的倒数第-n-个节点" class="headerlink" title="5. 删除链表的倒数第 n 个节点"></a>5. 删除链表的倒数第 n 个节点</h6><p><a href="https://leetcode.com/problems/remove-nth-node-from-end-of-list/description/" target="_blank" rel="noopener">Leetcode</a> / <a href="https://leetcode-cn.com/problems/remove-nth-node-from-end-of-list/description/" target="_blank" rel="noopener">力扣</a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">removeNthFromEnd</span><span class="params">(head: ListNode, n: int)</span>:</span></span><br><span class="line">    <span class="comment"># you题意可知</span></span><br><span class="line">    <span class="comment"># 删除链表节点，必须先知道删除节点的前一个节点</span></span><br><span class="line">    <span class="comment"># 由于是删除倒数第n个节点</span></span><br><span class="line">    <span class="comment"># 使用快慢指针的方法即可找到删除最后一个节点</span></span><br><span class="line">    <span class="comment"># 意为，快指针先移动n个结点，然后慢指针从头结点遍历，</span></span><br><span class="line">    <span class="comment"># 快指针的下一个节点为空是，那么慢指针就找到删除节点的前一个节点了</span></span><br><span class="line">    <span class="comment"># 先保留下一个节点，然后删除，并且释放空间即可</span></span><br><span class="line">    <span class="comment"># 代码逻辑如下：</span></span><br><span class="line">    fast = head</span><br><span class="line">    <span class="keyword">while</span> n:</span><br><span class="line">        fast = fast.next</span><br><span class="line">        n -= <span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> fast:</span><br><span class="line">        <span class="keyword">return</span> head.next</span><br><span class="line">    slow = head</span><br><span class="line">    <span class="keyword">while</span> fast.next:</span><br><span class="line">        fast = fast.next</span><br><span class="line">        slow = slow.next</span><br><span class="line">    dNode = slow.next</span><br><span class="line">    slow.next = slow.next.next</span><br><span class="line">    <span class="keyword">del</span> dNode</span><br><span class="line">    <span class="keyword">return</span> head</span><br><span class="line"></span><br><span class="line">l1 = ListNode(<span class="number">4</span>)</span><br><span class="line">l1.next = ListNode(<span class="number">5</span>)</span><br><span class="line">removeNthFromEnd(l1, <span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+
+<h6 id="6-交换链表中的相邻结点"><a href="#6-交换链表中的相邻结点" class="headerlink" title="6. 交换链表中的相邻结点"></a>6. 交换链表中的相邻结点</h6><p><a href="https://leetcode.com/problems/swap-nodes-in-pairs/description/" target="_blank" rel="noopener">Leetcode</a> / <a href="https://leetcode-cn.com/problems/swap-nodes-in-pairs/description/" target="_blank" rel="noopener">力扣</a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 24. 两两交换链表中的节点</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">swapPairs</span><span class="params">(head: ListNode)</span> -&gt; ListNode:</span></span><br><span class="line">    node = ListNode(<span class="number">-1</span>)</span><br><span class="line">    node.next = head</span><br><span class="line">    pre = node</span><br><span class="line">    <span class="keyword">while</span> pre.next <span class="keyword">and</span> pre.next.next:</span><br><span class="line">        l1, l2 = pre.next, pre.next.next</span><br><span class="line">        next = l2.next</span><br><span class="line">        l1.next = next</span><br><span class="line">        l2.next = l1</span><br><span class="line">        pre.next = l2</span><br><span class="line"></span><br><span class="line">        pre = l1</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> node.next</span><br><span class="line"></span><br><span class="line">l1 = ListNode(<span class="number">4</span>)</span><br><span class="line">l1.next = ListNode(<span class="number">5</span>)</span><br><span class="line">swapPairs(l1)</span><br></pre></td></tr></table></figure>
+
+<h6 id="7-链表求和"><a href="#7-链表求和" class="headerlink" title="7. 链表求和"></a>7. 链表求和</h6><p><a href="https://leetcode.com/problems/add-two-numbers-ii/description/" target="_blank" rel="noopener">Leetcode</a> / <a href="https://leetcode-cn.com/problems/add-two-numbers-ii/description/" target="_blank" rel="noopener">力扣</a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">addTwoNumbers</span><span class="params">(l1: ListNode, l2: ListNode)</span>:</span></span><br><span class="line">    <span class="comment"># you题意可知</span></span><br><span class="line">    <span class="comment"># 直接把链表数据转为数组或者直接数字</span></span><br><span class="line">    <span class="comment"># 然后相加后，直接通过取数，创建链表即可</span></span><br><span class="line">    <span class="comment"># 代码逻辑如下：</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">buildStack</span><span class="params">( root )</span>:</span></span><br><span class="line">        stack = [ ]</span><br><span class="line">        <span class="keyword">while</span> (root):</span><br><span class="line">            stack.append(root.val)</span><br><span class="line">            root = root.next</span><br><span class="line">        <span class="keyword">return</span> stack</span><br><span class="line"></span><br><span class="line">    ls1 = buildStack(l1)</span><br><span class="line">    ls2 = buildStack(l2)</span><br><span class="line"></span><br><span class="line">    carry = <span class="number">0</span></span><br><span class="line">    root = ListNode(<span class="number">-1</span>)</span><br><span class="line">    <span class="keyword">while</span> carry <span class="keyword">or</span> ls1 <span class="keyword">or</span> ls2:</span><br><span class="line">        vs1 = ls1.pop() <span class="keyword">if</span> ls1 <span class="keyword">else</span> <span class="number">0</span></span><br><span class="line">        vs2 = ls2.pop() <span class="keyword">if</span> ls2 <span class="keyword">else</span> <span class="number">0</span></span><br><span class="line">        s = vs1 + vs2 + carry</span><br><span class="line">        node = ListNode(s % <span class="number">10</span>)</span><br><span class="line">        node.next = root.next</span><br><span class="line">        root.next = node</span><br><span class="line"></span><br><span class="line">        carry = s // <span class="number">10</span></span><br><span class="line">    <span class="keyword">return</span> root.next</span><br><span class="line"><span class="comment"># l1 = ListNode(4)</span></span><br><span class="line"><span class="comment"># l1.next = ListNode(5)</span></span><br><span class="line"><span class="comment"># l2 = ListNode(4)</span></span><br><span class="line"><span class="comment"># l2.next = ListNode(5)</span></span><br><span class="line"><span class="comment"># addTwoNumbers(l1, l2)</span></span><br></pre></td></tr></table></figure>
+
+<h6 id="8-回文链表"><a href="#8-回文链表" class="headerlink" title="8. 回文链表"></a>8. 回文链表</h6><p><a href="https://leetcode.com/problems/palindrome-linked-list/description/" target="_blank" rel="noopener">Leetcode</a> / <a href="https://leetcode-cn.com/problems/palindrome-linked-list/description/" target="_blank" rel="noopener">力扣</a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">isPalindrome</span><span class="params">(head: ListNode)</span> -&gt; bool:</span></span><br><span class="line">    <span class="comment"># 有题意可知</span></span><br><span class="line">    <span class="comment"># 找到链表终点，反转后面链表，判断反转后的链表与前面的链表是否一致</span></span><br><span class="line">    <span class="comment"># 代码逻辑如下</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 如果为空，则为真</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> head <span class="keyword">or</span> <span class="keyword">not</span> head.next:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">        <span class="comment"># 找到用户终点指针</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 找到链表终点，并且切断终点链表之间相互的连接</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">findMidLinkNode</span><span class="params">( root )</span>:</span></span><br><span class="line">        slow, fast = root, root</span><br><span class="line">        pre = slow</span><br><span class="line">        <span class="keyword">while</span> (fast.next <span class="keyword">and</span> fast.next.next):</span><br><span class="line">            pre = slow</span><br><span class="line">            slow = slow.next</span><br><span class="line">            fast = fast.next.next</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 如果链表为偶数，则终点链表，指向下一个节点</span></span><br><span class="line">        <span class="keyword">if</span> fast.next:</span><br><span class="line">            slow = slow.next</span><br><span class="line">            pre = pre.next</span><br><span class="line">        <span class="comment"># 断开head</span></span><br><span class="line">        pre.next = <span class="literal">None</span></span><br><span class="line">        <span class="keyword">return</span> slow</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 反转后面部分的指针</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">reverseLinklist</span><span class="params">( root )</span>:</span></span><br><span class="line">        RN = ListNode(<span class="number">-1</span>)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> (root):</span><br><span class="line">            next = root.next</span><br><span class="line">            root.next = RN.next</span><br><span class="line">            RN.next = root</span><br><span class="line">            root = next</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> RN.next</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 输出链表</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">printL</span><span class="params">( l )</span>:</span></span><br><span class="line">        r = [ ]</span><br><span class="line">        <span class="keyword">while</span> (l):</span><br><span class="line">            r.append(l.val)</span><br><span class="line">            l = l.next</span><br><span class="line">        print(r)</span><br><span class="line"></span><br><span class="line">    MNode = findMidLinkNode(head)</span><br><span class="line">    printL(MNode)</span><br><span class="line">    MNode = reverseLinklist(MNode)</span><br><span class="line">    printL(MNode)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 判断是否为回文链表</span></span><br><span class="line">    <span class="keyword">while</span> head <span class="keyword">and</span> MNode:</span><br><span class="line">        <span class="keyword">if</span> head.val != MNode.val:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        head, MNode = head.next, MNode.next</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line"></span><br><span class="line">l1 = ListNode(<span class="number">4</span>)</span><br><span class="line">l1.next = ListNode(<span class="number">5</span>)</span><br><span class="line"><span class="comment"># l1.next.next = ListNode(2)</span></span><br><span class="line"><span class="comment"># l1.next.next.next = ListNode(4)</span></span><br><span class="line">print(isPalindrome(l1))</span><br></pre></td></tr></table></figure>
+
+<h6 id="9-分隔链表"><a href="#9-分隔链表" class="headerlink" title="9. 分隔链表"></a>9. 分隔链表</h6><p><a href="https://leetcode.com/problems/split-linked-list-in-parts/description/" target="_blank" rel="noopener">Leetcode</a> / <a href="https://leetcode-cn.com/problems/split-linked-list-in-parts/description/" target="_blank" rel="noopener">力扣</a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">splitListToParts</span><span class="params">(root, k)</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># you题意可知</span></span><br><span class="line">    <span class="comment"># 通过求链表长度n</span></span><br><span class="line">    <span class="comment"># 由k段，有与要分段基本相同，由于可能是有余数的</span></span><br><span class="line">    <span class="comment"># 所以对n进行求n//k and n%k 得到倍数和余数</span></span><br><span class="line">    <span class="comment"># 然后通过remainder的变化进行遍历，分割链表即可</span></span><br><span class="line">    n = <span class="number">0</span></span><br><span class="line">    curr = root</span><br><span class="line">    <span class="keyword">while</span> curr:</span><br><span class="line">        curr = curr.next</span><br><span class="line">        n += <span class="number">1</span></span><br><span class="line">    <span class="comment"># 算出倍数以及余数 // %</span></span><br><span class="line">    width, remainder = divmod(n, k)</span><br><span class="line"></span><br><span class="line">    result = [ ]</span><br><span class="line">    curr = root</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(k):</span><br><span class="line">        head = curr</span><br><span class="line">        <span class="comment"># 难点在这，遍历width-1次，通过余数remainder进行判断是否全长度遍历</span></span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(width - <span class="number">1</span> + int(i &lt; remainder)):</span><br><span class="line">            <span class="keyword">if</span> curr:</span><br><span class="line">                curr = curr.next</span><br><span class="line">        <span class="keyword">if</span> curr:</span><br><span class="line">            curr.next, curr = <span class="literal">None</span>, curr.next</span><br><span class="line">        result.append(head)</span><br><span class="line">    <span class="keyword">return</span> result</span><br></pre></td></tr></table></figure>
+
+<h6 id="10-链表元素按奇偶聚集"><a href="#10-链表元素按奇偶聚集" class="headerlink" title="10. 链表元素按奇偶聚集"></a>10. 链表元素按奇偶聚集</h6><p><a href="https://leetcode.com/problems/odd-even-linked-list/description/" target="_blank" rel="noopener">Leetcode</a> / <a href="https://leetcode-cn.com/problems/odd-even-linked-list/description/" target="_blank" rel="noopener">力扣</a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">oddEvenList</span><span class="params">(head: ListNode )</span> -&gt; ListNode:</span></span><br><span class="line">    <span class="comment"># 取出奇偶数，为两个链表</span></span><br><span class="line">    <span class="comment"># 最后相连即可</span></span><br><span class="line">    <span class="comment"># 代码逻辑如下：</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> head:</span><br><span class="line">        <span class="keyword">return</span> head</span><br><span class="line"></span><br><span class="line">    odd, even, evenhead = head, head.next, head.next</span><br><span class="line">    <span class="keyword">while</span> even <span class="keyword">and</span> even.next:</span><br><span class="line">        odd.next = odd.next.next</span><br><span class="line">        odd = odd.next</span><br><span class="line">        even.next = even.next.next</span><br><span class="line">        even = even.next</span><br><span class="line">    odd.next = evenhead</span><br><span class="line">    <span class="keyword">return</span> head</span><br></pre></td></tr></table></figure>
+
+<h6 id="11-移除链表元素"><a href="#11-移除链表元素" class="headerlink" title="11. 移除链表元素"></a>11. 移除链表元素</h6><p><a href="https://leetcode-cn.com/problems/remove-linked-list-elements/" target="_blank" rel="noopener">力扣</a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">removeElements</span><span class="params">(self, head: ListNode, val: int)</span> -&gt; ListNode:</span></span><br><span class="line">    dummy = ListNode(float(<span class="string">"-inf"</span>))</span><br><span class="line">    dummy.next = head</span><br><span class="line">    prev, curr = dummy, dummy.next</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> curr:</span><br><span class="line">        <span class="keyword">if</span> curr.val == val:</span><br><span class="line">            prev.next = curr.next</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            prev = curr</span><br><span class="line"></span><br><span class="line">        curr = curr.next</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> dummy.next</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/algorithms/" rel="tag"># algorithms</a>
+          
+            <a href="/tags/python/" rel="tag"># python</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div id="needsharebutton-postbottom">
+            <span class="btn">
+              <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </span>
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/02/28/chapter13-hashTable-algorithm/" rel="next" title="chapter13-hashTable-algorithm">
+                <i class="fa fa-chevron-left"></i> chapter13-hashTable-algorithm
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+		
+		
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">snail json</p>
+              <p class="site-description motion-element" itemprop="description">您心底所憧憬的事物，一定在某个维度发生</p>
+          </div>
+		<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=483937795&auto=0&height=66"></iframe>
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">43</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/snailfrying" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:snailfrying@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://plus.google.com/snailfrying" target="_blank" title="Google">
+                      
+                        <i class="fa fa-fw fa-google"></i>Google</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.zhihu.com/people/gua-niu-hui-fei-37/activities" target="_blank" title="知乎">
+                      
+                        <i class="fa fa-fw fa-raindrops"></i>知乎</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#chapter14-linkedList-algorithm"><span class="nav-number">1.</span> <span class="nav-text">chapter14-linkedList-algorithm</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#链表类算法"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">链表类算法</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#1-找出两个链表的交点"><span class="nav-number">1.0.0.1.1.</span> <span class="nav-text">1. 找出两个链表的交点</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#2-链表反转"><span class="nav-number">1.0.0.1.2.</span> <span class="nav-text">2. 链表反转</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#3-归并两个有序的链表"><span class="nav-number">1.0.0.1.3.</span> <span class="nav-text">3. 归并两个有序的链表</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#4-从有序链表中删除重复节点"><span class="nav-number">1.0.0.1.4.</span> <span class="nav-text">4. 从有序链表中删除重复节点</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#5-删除链表的倒数第-n-个节点"><span class="nav-number">1.0.0.1.5.</span> <span class="nav-text">5. 删除链表的倒数第 n 个节点</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#6-交换链表中的相邻结点"><span class="nav-number">1.0.0.1.6.</span> <span class="nav-text">6. 交换链表中的相邻结点</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#7-链表求和"><span class="nav-number">1.0.0.1.7.</span> <span class="nav-text">7. 链表求和</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#8-回文链表"><span class="nav-number">1.0.0.1.8.</span> <span class="nav-text">8. 回文链表</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#9-分隔链表"><span class="nav-number">1.0.0.1.9.</span> <span class="nav-text">9. 分隔链表</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#10-链表元素按奇偶聚集"><span class="nav-number">1.0.0.1.10.</span> <span class="nav-text">10. 链表元素按奇偶聚集</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#11-移除链表元素"><span class="nav-number">1.0.0.1.11.</span> <span class="nav-text">11. 移除链表元素</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+	
+	  <script type="text/javascript" charset="utf-8" src="/js/tagcloud.js"></script>
+	  <script type="text/javascript" charset="utf-8" src="/js/tagcanvas.js"></script>
+	  <div class="widget-wrap">
+		<h3 class="widget-title">Tag Cloud</h3>
+		<div id="myCanvasContainer" class="widget tagcloud">
+		  <canvas width="250" height="250" id="resCanvas" style="width=100%">
+			<ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/thread/">-- thread</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Optimization/">Optimization</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithms/">algorithms</a><span class="tag-list-count">22</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/db2/">db2</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hive/">hive</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">17</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/self-study/">self-study</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sql/">sql</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/statistics/">statistics</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/thread/">thread</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vim/">vim</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/win10快捷键/">win10快捷键</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/古月山风/">古月山风</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/梦想/">梦想</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/破晓/">破晓</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a><span class="tag-list-count">2</span></li></ul>
+		  </canvas>
+		</div>
+	  </div>
+	
+	
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">snail json</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">125.6k</span>
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">snail silly?</span>
+</div>
+<!--页面点击小红心-->
+<script type="text/javascript" src="/love.js"></script>
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+      <div id="needsharebutton-float">
+        <span class="btn">
+          <i class="fa fa-share-alt" aria-hidden="true"></i>
+        </span>
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/2.1.3/jquery.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/fastclick/1.0.6/fastclick.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.lazyload/1.9.3/jquery.lazyload.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.ui.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://龙门阵.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2020/02/29/chapter14-linkedList-algorithm/';
+          this.page.identifier = '2020/02/29/chapter14-linkedList-algorithm/';
+          this.page.title = 'chapter14-linkedList-algorithm';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://龙门阵.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: true,
+        notify: true,
+        appId: 'fF92eK9HnnGlETqxfUmFSOTy-gzGzoHsz',
+        appKey: '0OJnVAzjWXYUJttLekLy93fu',
+        placeholder: 'Small snail crawling up!!!',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("gFXuJyqJKwqMss9sIRbzJ0Qa-gzGzoHsz", "Uq6nDSovYwizyRBYP6qTGxNX");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+      pbOptions = {};
+      
+          pbOptions.iconStyle = "box";
+      
+          pbOptions.boxForm = "horizontal";
+      
+          pbOptions.position = "bottomCenter";
+      
+          pbOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+    
+    
+      flOptions = {};
+      
+          flOptions.iconStyle = "box";
+      
+          flOptions.boxForm = "horizontal";
+      
+          flOptions.position = "middleRight";
+      
+          flOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-float', flOptions);
+    
+  </script>
+
+  
+
+  
+  
+
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"left","width":200,"height":400},"mobile":{"show":true},"react":{"opacity":0.7}});</script><script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script></body>
+</html>
