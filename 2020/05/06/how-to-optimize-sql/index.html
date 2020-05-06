@@ -127,18 +127,18 @@
 
 
 
-<meta name="description" content="how to optimize sql 无法使用index 情况 使用负向条件查询，导致索引失效 使用模糊查询，前导模糊查询不能是索引生效，而后置模糊查询可以 数据区分度不大的字段 不宜使用索引 运算式中的字段无法使用其上的索引，或者说在属性上进行计算无法命中其索引 存在null值的列，如果建立索引，查询会存在隐患 复合索引最左前缀原则 把计算放到业务层而不是数据库层，除了节省数据的CPU，还有">
+<meta name="description" content="how to optimize sql 无法使用index 情况  使用负向条件查询，导致索引失效 使用模糊查询，前导模糊查询不能是索引生效，而后置模糊查询可以 数据区分度不大的字段 不宜使用索引 运算式中的字段无法使用其上的索引，或者说在属性上进行计算无法命中其索引 存在null值的列，如果建立索引，查询会存在隐患 复合索引最左前缀原则 把计算放到业务层而不是数据库层，除了节省数据的CPU，还">
 <meta name="keywords" content="db2">
 <meta property="og:type" content="article">
 <meta property="og:title" content="how to optimize sql">
 <meta property="og:url" content="http://yoursite.com/2020/05/06/how-to-optimize-sql/index.html">
 <meta property="og:site_name" content="Snail Life">
-<meta property="og:description" content="how to optimize sql 无法使用index 情况 使用负向条件查询，导致索引失效 使用模糊查询，前导模糊查询不能是索引生效，而后置模糊查询可以 数据区分度不大的字段 不宜使用索引 运算式中的字段无法使用其上的索引，或者说在属性上进行计算无法命中其索引 存在null值的列，如果建立索引，查询会存在隐患 复合索引最左前缀原则 把计算放到业务层而不是数据库层，除了节省数据的CPU，还有">
+<meta property="og:description" content="how to optimize sql 无法使用index 情况  使用负向条件查询，导致索引失效 使用模糊查询，前导模糊查询不能是索引生效，而后置模糊查询可以 数据区分度不大的字段 不宜使用索引 运算式中的字段无法使用其上的索引，或者说在属性上进行计算无法命中其索引 存在null值的列，如果建立索引，查询会存在隐患 复合索引最左前缀原则 把计算放到业务层而不是数据库层，除了节省数据的CPU，还">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-05-06T01:26:02.066Z">
+<meta property="og:updated_time" content="2020-05-06T01:35:57.855Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="how to optimize sql">
-<meta name="twitter:description" content="how to optimize sql 无法使用index 情况 使用负向条件查询，导致索引失效 使用模糊查询，前导模糊查询不能是索引生效，而后置模糊查询可以 数据区分度不大的字段 不宜使用索引 运算式中的字段无法使用其上的索引，或者说在属性上进行计算无法命中其索引 存在null值的列，如果建立索引，查询会存在隐患 复合索引最左前缀原则 把计算放到业务层而不是数据库层，除了节省数据的CPU，还有">
+<meta name="twitter:description" content="how to optimize sql 无法使用index 情况  使用负向条件查询，导致索引失效 使用模糊查询，前导模糊查询不能是索引生效，而后置模糊查询可以 数据区分度不大的字段 不宜使用索引 运算式中的字段无法使用其上的索引，或者说在属性上进行计算无法命中其索引 存在null值的列，如果建立索引，查询会存在隐患 复合索引最左前缀原则 把计算放到业务层而不是数据库层，除了节省数据的CPU，还">
 
 
 
@@ -477,7 +477,8 @@
       
         <hr>
 <h2 id="how-to-optimize-sql"><a href="#how-to-optimize-sql" class="headerlink" title="how to optimize sql"></a>how to optimize sql</h2><ul>
-<li>无法使用index 情况<ul>
+<li><p>无法使用index 情况</p>
+<ul>
 <li>使用负向条件查询，导致索引失效</li>
 <li>使用模糊查询，前导模糊查询不能是索引生效，而后置模糊查询可以</li>
 <li>数据区分度不大的字段 不宜使用索引</li>
@@ -506,28 +507,33 @@
 </ul>
 </li>
 </ul>
-</li>
-<li>史上最全SQL优化方案<ul>
+<a id="more"></a></li>
+<li><p>史上最全SQL优化方案</p>
+<ul>
 <li><a href="https://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&amp;mid=2651960284&amp;idx=1&amp;sn=d427372dd71b7f598f9ddc99b58f8b35&amp;chksm=bd2d06008a5a8f164503bf2d10ea4d6ad482e496195436ff2573cd4440b3f44654820f353651&amp;scene=27#wechat_redirect" target="_blank" rel="noopener">https://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&amp;mid=2651960284&amp;idx=1&amp;sn=d427372dd71b7f598f9ddc99b58f8b35&amp;chksm=bd2d06008a5a8f164503bf2d10ea4d6ad482e496195436ff2573cd4440b3f44654820f353651&amp;scene=27#wechat_redirect</a></li>
 <li><a href="https://zhuanlan.zhihu.com/p/48385127" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/48385127</a></li>
 </ul>
 </li>
-<li>SQL语法，行为军规<ul>
+<li><p>SQL语法，行为军规</p>
+<ul>
 <li><a href="https://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&amp;mid=2651960284&amp;idx=1&amp;sn=d427372dd71b7f598f9ddc99b58f8b35&amp;chksm=bd2d06008a5a8f164503bf2d10ea4d6ad482e496195436ff2573cd4440b3f44654820f353651&amp;scene=27#wechat_redirect" target="_blank" rel="noopener">https://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&amp;mid=2651960284&amp;idx=1&amp;sn=d427372dd71b7f598f9ddc99b58f8b35&amp;chksm=bd2d06008a5a8f164503bf2d10ea4d6ad482e496195436ff2573cd4440b3f44654820f353651&amp;scene=27#wechat_redirect</a></li>
 <li><a href="https://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&amp;mid=2651959906&amp;idx=1&amp;sn=2cbdc66cfb5b53cf4327a1e0d18d9b4a&amp;chksm=bd2d07be8a5a8ea86dc3c04eced3f411ee5ec207f73d317245e1fefea1628feb037ad71531bc&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">https://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&amp;mid=2651959906&amp;idx=1&amp;sn=2cbdc66cfb5b53cf4327a1e0d18d9b4a&amp;chksm=bd2d07be8a5a8ea86dc3c04eced3f411ee5ec207f73d317245e1fefea1628feb037ad71531bc&amp;scene=21#wechat_redirect</a></li>
 <li><a href="https://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&amp;mid=2651959910&amp;idx=1&amp;sn=6b6853b70dbbe6d689a12a4a60b84d8b&amp;chksm=bd2d07ba8a5a8eac6783bac951dba345d865d875538755fe665a5daaf142efe670e2c02b7c71&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">https://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&amp;mid=2651959910&amp;idx=1&amp;sn=6b6853b70dbbe6d689a12a4a60b84d8b&amp;chksm=bd2d07ba8a5a8eac6783bac951dba345d865d875538755fe665a5daaf142efe670e2c02b7c71&amp;scene=21#wechat_redirect</a></li>
 <li></li>
 </ul>
 </li>
-<li>事实表，实体表，维度表之间的关系<ul>
+<li><p>事实表，实体表，维度表之间的关系</p>
+<ul>
 <li><a href="https://blog.csdn.net/PTtaoge/article/details/80880494" target="_blank" rel="noopener">https://blog.csdn.net/PTtaoge/article/details/80880494</a></li>
 </ul>
 </li>
-<li>explain 用法详解<ul>
+<li><p>explain 用法详解</p>
+<ul>
 <li><a href="https://segmentfault.com/a/1190000008131735#articleHeader8" target="_blank" rel="noopener">https://segmentfault.com/a/1190000008131735#articleHeader8</a></li>
 </ul>
 </li>
-<li>聚集索引与非聚集索引<ul>
+<li><p>聚集索引与非聚集索引</p>
+<ul>
 <li><a href="https://www.cnblogs.com/aspnethot/articles/1504082.html" target="_blank" rel="noopener">https://www.cnblogs.com/aspnethot/articles/1504082.html</a></li>
 <li>对于聚集索引，创建索引的位置不同也会对查询效率不同（参考最左原则）<ul>
 <li>比如 select user_id from students order by user_age<ul>
@@ -538,15 +544,18 @@
 </li>
 </ul>
 </li>
-<li>Shell 脚本中执行mysql语句<ul>
+<li><p>Shell 脚本中执行mysql语句</p>
+<ul>
 <li><a href="https://cloud.tencent.com/developer/article/1183686" target="_blank" rel="noopener">https://cloud.tencent.com/developer/article/1183686</a></li>
 </ul>
 </li>
-<li>IBM Knowledge center DB2<ul>
+<li><p>IBM Knowledge center DB2</p>
+<ul>
 <li><a href="https://www.ibm.com/support/knowledgecenter/SSEPGG_9.7.0/com.ibm.db2.luw.sql.ref.doc/doc/r0001022.html" target="_blank" rel="noopener">https://www.ibm.com/support/knowledgecenter/SSEPGG_9.7.0/com.ibm.db2.luw.sql.ref.doc/doc/r0001022.html</a></li>
 </ul>
 </li>
-<li>Hive中HSQL中left semi join和INNER JOIN、LEFT JOIN、RIGHT JOIN、FULL JOIN区别<ul>
+<li><p>Hive中HSQL中left semi join和INNER JOIN、LEFT JOIN、RIGHT JOIN、FULL JOIN区别</p>
+<ul>
 <li><a href="https://blog.csdn.net/helloxiaozhe/article/details/87910386" target="_blank" rel="noopener">https://blog.csdn.net/helloxiaozhe/article/details/87910386</a></li>
 </ul>
 </li>

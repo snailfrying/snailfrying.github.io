@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-05-06T01:26:02.066Z</updated>
+  <updated>2020-05-06T01:35:57.855Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,18 +21,42 @@
     <link href="http://yoursite.com/2020/05/06/how-to-optimize-sql/"/>
     <id>http://yoursite.com/2020/05/06/how-to-optimize-sql/</id>
     <published>2020-05-06T01:20:17.000Z</published>
-    <updated>2020-05-06T01:26:02.066Z</updated>
+    <updated>2020-05-06T01:35:57.855Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;hr&gt;
-&lt;h2 id=&quot;how-to-optimize-sql&quot;&gt;&lt;a href=&quot;#how-to-optimize-sql&quot; class=&quot;headerlink&quot; title=&quot;how to optimize sql&quot;&gt;&lt;/a&gt;how to optimize
-        
-      
+      &lt;hr&gt;
+&lt;h2 id=&quot;how-to-optimize-sql&quot;&gt;&lt;a href=&quot;#how-to-optimize-sql&quot; class=&quot;headerlink&quot; title=&quot;how to optimize sql&quot;&gt;&lt;/a&gt;how to optimize sql&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;无法使用index 情况&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;使用负向条件查询，导致索引失效&lt;/li&gt;
+&lt;li&gt;使用模糊查询，前导模糊查询不能是索引生效，而后置模糊查询可以&lt;/li&gt;
+&lt;li&gt;数据区分度不大的字段 不宜使用索引&lt;/li&gt;
+&lt;li&gt;运算式中的字段无法使用其上的索引，或者说在属性上进行计算无法命中其索引&lt;/li&gt;
+&lt;li&gt;存在null值的列，如果建立索引，查询会存在隐患&lt;/li&gt;
+&lt;li&gt;复合索引最左前缀原则&lt;/li&gt;
+&lt;li&gt;把计算放到业务层而不是数据库层，除了节省数据的CPU，还有意想不到的查询缓存优化效果&lt;/li&gt;
+&lt;li&gt;条件中用or(新版本应该行)，即使其中有条件带索引，也不会使用索引查询&lt;/li&gt;
+&lt;li&gt;如果列类型是字符串，那一定要在条件中将数据使用引号引用起来，否则不会使用索引&lt;ul&gt;
+&lt;li&gt;强制类型转换会全表扫描&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;如果MySQL预计使用全表扫描要比使用索引快，则不使用索引&lt;/li&gt;
+&lt;li&gt;在索引上做任何操作都会造成索引失效，而使用全局扫描&lt;/li&gt;
+&lt;li&gt;对索引列运算，运算包括（+、-、*、/、！、&amp;lt;&amp;gt;、%、like’%_’（%放在前面）、or、in、exist等），导致索引失效。&lt;/li&gt;
+&lt;li&gt;mysql使用!= ,&amp;lt;&amp;gt; ,is null ,is not null会使索引失效&lt;/li&gt;
+&lt;li&gt;union all 肯定是能够命中索引的&lt;/li&gt;
+&lt;li&gt;如果业务大部分是单条查询，使用Hash索引性能更好，例如用户中心&lt;/li&gt;
+&lt;li&gt;如果明确知道只有一条结果返回，limit 1能够提高效率&lt;/li&gt;
+&lt;li&gt;加索引，左连接，加右表上，反之&lt;/li&gt;
+&lt;li&gt;Exists&lt;ul&gt;
+&lt;li&gt;select …from table wherer exists（subquery 子查询)&lt;/li&gt;
+&lt;li&gt;将主查询的数据，放到子查询中做条件验证，根据验证结果(True or False) 来决定主查询的数据结果是否得以保留&lt;/li&gt;
+&lt;li&gt;exists子查询往往也可以用条件表达式，其他子查询或者join来替代，何种最优需要具体问题具体分析。&lt;/li&gt;
+&lt;li&gt;exists只返回True or False ,因此子查询中select * 也可以是select 1 or select ‘x’ 官方说法是实际执行时会忽略select清单，因此没有区别&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
     
     </summary>
     
@@ -49,18 +73,31 @@
     <link href="http://yoursite.com/2020/05/06/how-to-optimize-hive/"/>
     <id>http://yoursite.com/2020/05/06/how-to-optimize-hive/</id>
     <published>2020-05-06T01:18:01.000Z</published>
-    <updated>2020-05-06T01:26:09.455Z</updated>
+    <updated>2020-05-06T01:36:07.625Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;hr&gt;
-&lt;h3 id=&quot;how-to-optimize-hive&quot;&gt;&lt;a href=&quot;#how-to-optimize-hive&quot; class=&quot;headerlink&quot; title=&quot;how to optimize hive&quot;&gt;&lt;/a&gt;how to optimize
-        
-      
+      &lt;hr&gt;
+&lt;h3 id=&quot;how-to-optimize-hive&quot;&gt;&lt;a href=&quot;#how-to-optimize-hive&quot; class=&quot;headerlink&quot; title=&quot;how to optimize hive&quot;&gt;&lt;/a&gt;how to optimize hive&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;hive tutorial&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://cwiki.apache.org/confluence/display/Hive/Tutorial&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://cwiki.apache.org/confluence/display/Hive/Tutorial&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Hive SQL的编译过程&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://tech.meituan.com/2014/02/12/hive-sql-to-mapreduce.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://tech.meituan.com/2014/02/12/hive-sql-to-mapreduce.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;hive的map reduce 执行顺序&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://zhipengyeve.wang/2019/02/02/hiveSQL的执行顺序以及hive优化/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://zhipengyeve.wang/2019/02/02/hiveSQL%E7%9A%84%E6%89%A7%E8%A1%8C%E9%A1%BA%E5%BA%8F%E4%BB%A5%E5%8F%8Ahive%E4%BC%98%E5%8C%96/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;hive优化&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.iteye.com/blog/daizj-2289981&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://www.iteye.com/blog/daizj-2289981&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
     
     </summary>
     

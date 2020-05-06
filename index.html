@@ -478,10 +478,10 @@
 
       
         
-          
-            <hr>
+          <hr>
 <h2 id="how-to-optimize-sql"><a href="#how-to-optimize-sql" class="headerlink" title="how to optimize sql"></a>how to optimize sql</h2><ul>
-<li>无法使用index 情况<ul>
+<li><p>无法使用index 情况</p>
+<ul>
 <li>使用负向条件查询，导致索引失效</li>
 <li>使用模糊查询，前导模糊查询不能是索引生效，而后置模糊查询可以</li>
 <li>数据区分度不大的字段 不宜使用索引</li>
@@ -510,56 +510,16 @@
 </ul>
 </li>
 </ul>
-</li>
-<li>史上最全SQL优化方案<ul>
-<li><a href="https://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&amp;mid=2651960284&amp;idx=1&amp;sn=d427372dd71b7f598f9ddc99b58f8b35&amp;chksm=bd2d06008a5a8f164503bf2d10ea4d6ad482e496195436ff2573cd4440b3f44654820f353651&amp;scene=27#wechat_redirect" target="_blank" rel="noopener">https://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&amp;mid=2651960284&amp;idx=1&amp;sn=d427372dd71b7f598f9ddc99b58f8b35&amp;chksm=bd2d06008a5a8f164503bf2d10ea4d6ad482e496195436ff2573cd4440b3f44654820f353651&amp;scene=27#wechat_redirect</a></li>
-<li><a href="https://zhuanlan.zhihu.com/p/48385127" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/48385127</a></li>
-</ul>
-</li>
-<li>SQL语法，行为军规<ul>
-<li><a href="https://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&amp;mid=2651960284&amp;idx=1&amp;sn=d427372dd71b7f598f9ddc99b58f8b35&amp;chksm=bd2d06008a5a8f164503bf2d10ea4d6ad482e496195436ff2573cd4440b3f44654820f353651&amp;scene=27#wechat_redirect" target="_blank" rel="noopener">https://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&amp;mid=2651960284&amp;idx=1&amp;sn=d427372dd71b7f598f9ddc99b58f8b35&amp;chksm=bd2d06008a5a8f164503bf2d10ea4d6ad482e496195436ff2573cd4440b3f44654820f353651&amp;scene=27#wechat_redirect</a></li>
-<li><a href="https://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&amp;mid=2651959906&amp;idx=1&amp;sn=2cbdc66cfb5b53cf4327a1e0d18d9b4a&amp;chksm=bd2d07be8a5a8ea86dc3c04eced3f411ee5ec207f73d317245e1fefea1628feb037ad71531bc&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">https://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&amp;mid=2651959906&amp;idx=1&amp;sn=2cbdc66cfb5b53cf4327a1e0d18d9b4a&amp;chksm=bd2d07be8a5a8ea86dc3c04eced3f411ee5ec207f73d317245e1fefea1628feb037ad71531bc&amp;scene=21#wechat_redirect</a></li>
-<li><a href="https://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&amp;mid=2651959910&amp;idx=1&amp;sn=6b6853b70dbbe6d689a12a4a60b84d8b&amp;chksm=bd2d07ba8a5a8eac6783bac951dba345d865d875538755fe665a5daaf142efe670e2c02b7c71&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">https://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&amp;mid=2651959910&amp;idx=1&amp;sn=6b6853b70dbbe6d689a12a4a60b84d8b&amp;chksm=bd2d07ba8a5a8eac6783bac951dba345d865d875538755fe665a5daaf142efe670e2c02b7c71&amp;scene=21#wechat_redirect</a></li>
-<li></li>
-</ul>
-</li>
-<li>事实表，实体表，维度表之间的关系<ul>
-<li><a href="https://blog.csdn.net/PTtaoge/article/details/80880494" target="_blank" rel="noopener">https://blog.csdn.net/PTtaoge/article/details/80880494</a></li>
-</ul>
-</li>
-<li>explain 用法详解<ul>
-<li><a href="https://segmentfault.com/a/1190000008131735#articleHeader8" target="_blank" rel="noopener">https://segmentfault.com/a/1190000008131735#articleHeader8</a></li>
-</ul>
-</li>
-<li>聚集索引与非聚集索引<ul>
-<li><a href="https://www.cnblogs.com/aspnethot/articles/1504082.html" target="_blank" rel="noopener">https://www.cnblogs.com/aspnethot/articles/1504082.html</a></li>
-<li>对于聚集索引，创建索引的位置不同也会对查询效率不同（参考最左原则）<ul>
-<li>比如 select user_id from students order by user_age<ul>
-<li>create index clust_ix(user_id, user_age)</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Shell 脚本中执行mysql语句<ul>
-<li><a href="https://cloud.tencent.com/developer/article/1183686" target="_blank" rel="noopener">https://cloud.tencent.com/developer/article/1183686</a></li>
-</ul>
-</li>
-<li>IBM Knowledge center DB2<ul>
-<li><a href="https://www.ibm.com/support/knowledgecenter/SSEPGG_9.7.0/com.ibm.db2.luw.sql.ref.doc/doc/r0001022.html" target="_blank" rel="noopener">https://www.ibm.com/support/knowledgecenter/SSEPGG_9.7.0/com.ibm.db2.luw.sql.ref.doc/doc/r0001022.html</a></li>
-</ul>
-</li>
-<li>Hive中HSQL中left semi join和INNER JOIN、LEFT JOIN、RIGHT JOIN、FULL JOIN区别<ul>
-<li><a href="https://blog.csdn.net/helloxiaozhe/article/details/87910386" target="_blank" rel="noopener">https://blog.csdn.net/helloxiaozhe/article/details/87910386</a></li>
-</ul>
-</li>
-</ul>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/05/06/how-to-optimize-sql/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
-    </div>
+    </li></ul></div>
     
     
     
@@ -748,84 +708,37 @@
 
       
         
-          
-            <hr>
+          <hr>
 <h3 id="how-to-optimize-hive"><a href="#how-to-optimize-hive" class="headerlink" title="how to optimize hive"></a>how to optimize hive</h3><ul>
-<li>hive tutorial<ul>
+<li><p>hive tutorial</p>
+<ul>
 <li><a href="https://cwiki.apache.org/confluence/display/Hive/Tutorial" target="_blank" rel="noopener">https://cwiki.apache.org/confluence/display/Hive/Tutorial</a></li>
 </ul>
 </li>
-<li>Hive SQL的编译过程<ul>
+<li><p>Hive SQL的编译过程</p>
+<ul>
 <li><a href="https://tech.meituan.com/2014/02/12/hive-sql-to-mapreduce.html" target="_blank" rel="noopener">https://tech.meituan.com/2014/02/12/hive-sql-to-mapreduce.html</a></li>
 </ul>
 </li>
-<li>hive的map reduce 执行顺序<ul>
+<li><p>hive的map reduce 执行顺序</p>
+<ul>
 <li><a href="https://zhipengyeve.wang/2019/02/02/hiveSQL的执行顺序以及hive优化/" target="_blank" rel="noopener">https://zhipengyeve.wang/2019/02/02/hiveSQL%E7%9A%84%E6%89%A7%E8%A1%8C%E9%A1%BA%E5%BA%8F%E4%BB%A5%E5%8F%8Ahive%E4%BC%98%E5%8C%96/</a></li>
 </ul>
 </li>
-<li>hive优化<ul>
+<li><p>hive优化</p>
+<ul>
 <li><a href="https://www.iteye.com/blog/daizj-2289981" target="_blank" rel="noopener">https://www.iteye.com/blog/daizj-2289981</a></li>
 </ul>
-</li>
-<li>hive 总结以及优化<ul>
-<li><a href="https://blog.csdn.net/yu0_zhang0/article/details/81776459" target="_blank" rel="noopener">https://blog.csdn.net/yu0_zhang0/article/details/81776459</a></li>
-<li><a href="https://blog.csdn.net/ForgetThatNight/article/details/79632364" target="_blank" rel="noopener">https://blog.csdn.net/ForgetThatNight/article/details/79632364</a></li>
-<li>Hive于关系型数据库的区别<ul>
-<li>时效性、延时性比较高，可扩展性高；</li>
-<li>Hive数据规模大，优势在于处理大数据集，对于小数据集没有优势</li>
-<li>事务没什么用(比较鸡肋，没什么实际的意义，对于离线的来说) 一个小问题：那个版本开始提供了事务？</li>
-<li>insert/update没什么实际用途，大数据场景下大多数是select</li>
-<li>RDBMS也支持分布式，节点有限 成本高，处理的数据量小</li>
-<li>Hadoop集群规模更大 部署在廉价机器上，处理的数据量大</li>
-<li>数据库可以用在Online的应用中，Hive主要进行离线的大数据分析；</li>
-<li>数据库的查询语句为SQL，Hive的查询语句为HQL；</li>
-<li>数据库数据存储在LocalFS，Hive的数据存储在HDFS；</li>
-<li>数据格式:Hive中有多种存储格式：由于在加载数据的过程中，不需要从用户数据格式到 Hive 定义的数据格式的转换，</li>
-<li>因此，Hive 在加载的过程中不会对数据本身进行任何修改，而只是将数据内容复制或者移动到相应的 HDFS 目录中。</li>
-<li>而在数据库中，不同的数据库有不同的存储引擎，定义了自己的数据格式。所有数据都会按照一定的组织存储，因此，</li>
-<li>数据库加载数据的过程会比较耗时。</li>
-<li>Hive执行MapReduce，MySQL执行Executor；</li>
-</ul>
-</li>
-<li>Hive的优点<ul>
-<li>简单易上手</li>
-<li>扩展能力较好(指集群 HDFS或是YARN)</li>
-<li>统一的元数据管理 metastore包括的了数据库，表，字段分区等详细信息</li>
-</ul>
-</li>
-<li>SQL转化为MapReduce的过程<ul>
-<li>Antlr定义SQL的语法规则，完成SQL词法，语法解析，将SQL转化为抽象语法树AST Tree</li>
-<li>遍历AST Tree，抽象出查询的基本组成单元QueryBlock</li>
-<li>遍历QueryBlock，翻译为执行操作树OperatorTree</li>
-<li>逻辑层优化器进行OperatorTree变换，合并不必要的ReduceSinkOperator，减少shuffle数据量</li>
-<li>遍历OperatorTree，翻译为MapReduce任务</li>
-<li>物理层优化器进行MapReduce任务的变换，生成最终的执行计划</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Hadoop压缩相关<ul>
-<li><a href="https://blog.csdn.net/yu0_zhang0/article/details/79524842" target="_blank" rel="noopener">https://blog.csdn.net/yu0_zhang0/article/details/79524842</a></li>
-</ul>
-</li>
-<li>Correlation OPtimizer<ul>
-<li><a href="https://cwiki.apache.org/confluence/display/Hive/Correlation+Optimizer?preview=/34019487/34177456/Example2Optimized.png" target="_blank" rel="noopener">https://cwiki.apache.org/confluence/display/Hive/Correlation+Optimizer?preview=/34019487/34177456/Example2Optimized.png</a></li>
-</ul>
-</li>
-<li>hive language manual（说明书）<ul>
-<li><a href="https://cwiki.apache.org/confluence/display/Hive/LanguageManual" target="_blank" rel="noopener">https://cwiki.apache.org/confluence/display/Hive/LanguageManual</a></li>
-</ul>
-</li>
-<li>db2 sql tutorial<ul>
-<li><a href="https://www.ibm.com/support/knowledgecenter/SSEPGG_9.7.0/com.ibm.db2.luw.sql.ref.doc/doc/r0000888.html" target="_blank" rel="noopener">https://www.ibm.com/support/knowledgecenter/SSEPGG_9.7.0/com.ibm.db2.luw.sql.ref.doc/doc/r0000888.html</a></li>
-</ul>
-</li>
-</ul>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/05/06/how-to-optimize-hive/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
-    </div>
+    </li></ul></div>
     
     
     
