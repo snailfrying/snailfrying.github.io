@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-03-04T07:31:17.534Z</updated>
+  <updated>2020-05-06T01:26:02.066Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,86 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>how to optimize sql</title>
+    <link href="http://yoursite.com/2020/05/06/how-to-optimize-sql/"/>
+    <id>http://yoursite.com/2020/05/06/how-to-optimize-sql/</id>
+    <published>2020-05-06T01:20:17.000Z</published>
+    <updated>2020-05-06T01:26:02.066Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;hr&gt;
+&lt;h2 id=&quot;how-to-optimize-sql&quot;&gt;&lt;a href=&quot;#how-to-optimize-sql&quot; class=&quot;headerlink&quot; title=&quot;how to optimize sql&quot;&gt;&lt;/a&gt;how to optimize
+        
+      
+    
+    </summary>
+    
+    
+      <category term="sql" scheme="http://yoursite.com/categories/sql/"/>
+    
+    
+      <category term="db2" scheme="http://yoursite.com/tags/db2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>how to optimize hive</title>
+    <link href="http://yoursite.com/2020/05/06/how-to-optimize-hive/"/>
+    <id>http://yoursite.com/2020/05/06/how-to-optimize-hive/</id>
+    <published>2020-05-06T01:18:01.000Z</published>
+    <updated>2020-05-06T01:26:09.455Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;hr&gt;
+&lt;h3 id=&quot;how-to-optimize-hive&quot;&gt;&lt;a href=&quot;#how-to-optimize-hive&quot; class=&quot;headerlink&quot; title=&quot;how to optimize hive&quot;&gt;&lt;/a&gt;how to optimize
+        
+      
+    
+    </summary>
+    
+    
+      <category term="sql" scheme="http://yoursite.com/categories/sql/"/>
+    
+    
+      <category term="hive" scheme="http://yoursite.com/tags/hive/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>chapter16-sort-algorithm</title>
+    <link href="http://yoursite.com/2020/03/08/chapter16-sort-algorithm/"/>
+    <id>http://yoursite.com/2020/03/08/chapter16-sort-algorithm/</id>
+    <published>2020-03-08T04:58:38.000Z</published>
+    <updated>2020-03-13T06:24:11.097Z</updated>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+&lt;h2 id=&quot;chapter16-sort-algorithm&quot;&gt;&lt;a href=&quot;#chapter16-sort-algorithm&quot; class=&quot;headerlink&quot; title=&quot;chapter16-sort-algorithm&quot;&gt;&lt;/a&gt;chapter16-sort-algorithm&lt;/h2&gt;&lt;p&gt;[TOC]&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="leetcode" scheme="http://yoursite.com/categories/leetcode/"/>
+    
+    
+      <category term="algorithms" scheme="http://yoursite.com/tags/algorithms/"/>
+    
+      <category term="python" scheme="http://yoursite.com/tags/python/"/>
+    
+  </entry>
   
   <entry>
     <title>chapter15-unionFindSets-algorithm</title>
@@ -424,78 +504,6 @@
     
     
       <category term="spark" scheme="http://yoursite.com/categories/spark/"/>
-    
-    
-      <category term="algorithms" scheme="http://yoursite.com/tags/algorithms/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>chapter3-感知机</title>
-    <link href="http://yoursite.com/2019/11/20/chapter3-%E6%84%9F%E7%9F%A5%E6%9C%BA/"/>
-    <id>http://yoursite.com/2019/11/20/chapter3-感知机/</id>
-    <published>2019-11-20T12:14:04.000Z</published>
-    <updated>2019-12-24T02:29:32.035Z</updated>
-    
-    <summary type="html">
-    
-      &lt;hr&gt;
-&lt;h2 id=&quot;chapter3-感知机&quot;&gt;&lt;a href=&quot;#chapter3-感知机&quot; class=&quot;headerlink&quot; title=&quot;chapter3-感知机&quot;&gt;&lt;/a&gt;chapter3-感知机&lt;/h2&gt;&lt;h5 id=&quot;1-概要&quot;&gt;&lt;a href=&quot;#1-概要&quot; class=&quot;headerlink&quot; title=&quot;1.概要&quot;&gt;&lt;/a&gt;1.概要&lt;/h5&gt;&lt;p&gt;通过上一章最小二乘法的理论与实践，我们知道统计学学习-机器学习-深度学习，它们之间的联系与区别。本章我们将讨论感知机算法，再次讨论他们叁之间的关系。并且很有必要熟悉感知机，虽然它现在在分类模型当中已经不适用，因为泛化能力有限，能力更强的为支撑向量机(svm)。但是它在机器学习和深度学习其他深奥算法上有较大的联系，甚至为其算法逻辑实现基础。掌握它的思想，为进一步的提升，打下坚实的基础。&lt;/p&gt;
-&lt;h5 id=&quot;2-感知机模型原理&quot;&gt;&lt;a href=&quot;#2-感知机模型原理&quot; class=&quot;headerlink&quot; title=&quot;2.感知机模型原理&quot;&gt;&lt;/a&gt;2.感知机模型原理&lt;/h5&gt;&lt;p&gt;首先感知机算法是一种二分类线性算法。当然也可以提升至多维分类模型上，但是都是线性模型，对于非线性的，神经网络了解一下。感知机学习算法：用一个函数输入$x$(一个实值的向量)映射到输出值$f(x)$(一个二元值):&lt;br&gt;$$&lt;br&gt;f(x)=\begin{cases}&lt;br&gt;    1 \qquad if \quad w.x + b &amp;gt; 0 \ \&lt;br&gt;    -1 \qquad other wise&lt;br&gt;\end{cases}&lt;br&gt;$$&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="python" scheme="http://yoursite.com/categories/python/"/>
-    
-    
-      <category term="algorithms" scheme="http://yoursite.com/tags/algorithms/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>chapter5-逻辑斯谛回归-LogisticRegression</title>
-    <link href="http://yoursite.com/2019/11/20/chapter5-%E9%80%BB%E8%BE%91%E6%96%AF%E8%B0%9B%E5%9B%9E%E5%BD%92-LogisticRegression/"/>
-    <id>http://yoursite.com/2019/11/20/chapter5-逻辑斯谛回归-LogisticRegression/</id>
-    <published>2019-11-20T12:14:04.000Z</published>
-    <updated>2020-02-19T11:31:27.434Z</updated>
-    
-    <summary type="html">
-    
-      &lt;hr&gt;
-&lt;h3 id=&quot;chapter5-逻辑斯谛回归-LogisticRegression&quot;&gt;&lt;a href=&quot;#chapter5-逻辑斯谛回归-LogisticRegression&quot; class=&quot;headerlink&quot; title=&quot;chapter5-逻辑斯谛回归-LogisticRegression&quot;&gt;&lt;/a&gt;chapter5-逻辑斯谛回归-LogisticRegression&lt;/h3&gt;&lt;h4 id=&quot;statistics-learning&quot;&gt;&lt;a href=&quot;#statistics-learning&quot; class=&quot;headerlink&quot; title=&quot;statistics learning&quot;&gt;&lt;/a&gt;statistics learning&lt;/h4&gt;&lt;h5 id=&quot;1-浅谈线性回归&quot;&gt;&lt;a href=&quot;#1-浅谈线性回归&quot; class=&quot;headerlink&quot; title=&quot;1.浅谈线性回归&quot;&gt;&lt;/a&gt;1.浅谈线性回归&lt;/h5&gt;&lt;p&gt;由于前面&lt;a href=&quot;https://snailfrying.github.io/2019/11/20/chapter2-最小二乘法完整实践理论/#more&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;最小二乘法&lt;/a&gt;和&lt;a href=&quot;https://snailfrying.github.io/2019/11/20/chapter4-梯度下降算法-Gradient-Descent/#more&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;梯度下降算法&lt;/a&gt;，已经大力讨论了回归模型，因此，本章只进行简单的回顾回归模型。分析线性回归原理和与最小二乘法之间的区别。&lt;/p&gt;
-&lt;p&gt;线性回归与最小二乘法的最大区别，就在于损失函数的迭代。也就是如何优化损失函数。最小二乘法顾名思义，就是采用最小二乘法进行迭代，损失函数如下：&lt;br&gt;$$&lt;br&gt;J(\theta_0,\theta_1,\cdots,\theta_j) =\sum_{i=1}^m(h_θ(x_0^{(i)},x_1^{(i)},\cdots,x_j^{(i)}) - y^{(j)})^2=\sum_{i=1}^n(\sum_{j=1}^m\theta_jx_j^{(i)}-y^{(i)})^2&lt;br&gt;$$&lt;/p&gt;
-&lt;p&gt;对损失函数求导为，更新参数$\theta$：&lt;br&gt;$$&lt;br&gt;\theta = (X^TX)^-1X^TY&lt;br&gt;$$&lt;br&gt;对于线性回归算法来说，就是利用梯度下降算法，损失函数如下：&lt;br&gt;$$&lt;br&gt;J(\theta_0,\theta_1,\cdots,\theta_j) =\frac{1}{2m}\sum_{i=1}^m(h_θ(x_0^{(i)},x_1^{(i)},\cdots,x_j^{(i)}) - y^{(j)})^2=\frac{1}{2m}\sum_{i=1}^n(\sum_{j=1}^m\theta_jx_j^{(i)}-y^{(i)})^2&lt;br&gt;$$&lt;/p&gt;
-&lt;p&gt;对损失函数求偏导，更新参数$\theta$：&lt;br&gt;$$&lt;br&gt;\theta = \theta-\alpha X^T(\theta X-Y)&lt;br&gt;$$&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="python" scheme="http://yoursite.com/categories/python/"/>
-    
-    
-      <category term="algorithms" scheme="http://yoursite.com/tags/algorithms/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>chapter2 最小二乘法完整实践理论</title>
-    <link href="http://yoursite.com/2019/11/20/chapter2-%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E6%B3%95%E5%AE%8C%E6%95%B4%E5%AE%9E%E8%B7%B5%E7%90%86%E8%AE%BA/"/>
-    <id>http://yoursite.com/2019/11/20/chapter2-最小二乘法完整实践理论/</id>
-    <published>2019-11-20T12:14:04.000Z</published>
-    <updated>2019-12-26T11:49:03.322Z</updated>
-    
-    <summary type="html">
-    
-      &lt;hr&gt;
-&lt;h3 id=&quot;chapter2-最小二乘法完整实践理论&quot;&gt;&lt;a href=&quot;#chapter2-最小二乘法完整实践理论&quot; class=&quot;headerlink&quot; title=&quot;chapter2- 最小二乘法完整实践理论&quot;&gt;&lt;/a&gt;chapter2- 最小二乘法完整实践理论&lt;/h3&gt;&lt;h6 id=&quot;1-概要&quot;&gt;&lt;a href=&quot;#1-概要&quot; class=&quot;headerlink&quot; title=&quot;1.概要&quot;&gt;&lt;/a&gt;1.概要&lt;/h6&gt;&lt;p&gt;​    此章，通过最小二乘法，在统计学习，机器学习，深度学习的轨道上进行讨论，它们叁之间的共性与异性。&lt;/p&gt;
-&lt;h6 id=&quot;2-什么是最小二乘法&quot;&gt;&lt;a href=&quot;#2-什么是最小二乘法&quot; class=&quot;headerlink&quot; title=&quot;2.什么是最小二乘法&quot;&gt;&lt;/a&gt;2.什么是最小二乘法&lt;/h6&gt;&lt;p&gt;​    &lt;strong&gt;最小二乘法&lt;/strong&gt;（&lt;strong&gt;least squares method&lt;/strong&gt;），又称&lt;strong&gt;最小平方法&lt;/strong&gt;，是一种&lt;a href=&quot;https://zh.wikipedia.org/wiki/数学&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;数学&lt;/a&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/优化&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;优化&lt;/a&gt;方法。它通过最小化&lt;a href=&quot;https://zh.wikipedia.org/wiki/误差&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;误差&lt;/a&gt;的平方和寻找数据的最佳函数匹配。&lt;/p&gt;
-&lt;p&gt;​    利用最小二乘法可以简便地求得未知的数据，并使得求得的数据与实际数据之间误差的平方和为最小。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="python" scheme="http://yoursite.com/categories/python/"/>
     
     
       <category term="algorithms" scheme="http://yoursite.com/tags/algorithms/"/>

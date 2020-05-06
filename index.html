@@ -333,6 +333,742 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/06/how-to-optimize-sql/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="snail json">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Snail Life">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/05/06/how-to-optimize-sql/" itemprop="url">how to optimize sql</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-05-06T09:20:17+08:00">
+                2020-05-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/sql/" itemprop="url" rel="index">
+                    <span itemprop="name">sql</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/05/06/how-to-optimize-sql/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/05/06/how-to-optimize-sql/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2020/05/06/how-to-optimize-sql/" class="leancloud_visitors" data-flag-title="how to optimize sql">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             <span>℃</span>
+			 </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  825
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  3
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <hr>
+<h2 id="how-to-optimize-sql"><a href="#how-to-optimize-sql" class="headerlink" title="how to optimize sql"></a>how to optimize sql</h2><ul>
+<li>无法使用index 情况<ul>
+<li>使用负向条件查询，导致索引失效</li>
+<li>使用模糊查询，前导模糊查询不能是索引生效，而后置模糊查询可以</li>
+<li>数据区分度不大的字段 不宜使用索引</li>
+<li>运算式中的字段无法使用其上的索引，或者说在属性上进行计算无法命中其索引</li>
+<li>存在null值的列，如果建立索引，查询会存在隐患</li>
+<li>复合索引最左前缀原则</li>
+<li>把计算放到业务层而不是数据库层，除了节省数据的CPU，还有意想不到的查询缓存优化效果</li>
+<li>条件中用or(新版本应该行)，即使其中有条件带索引，也不会使用索引查询</li>
+<li>如果列类型是字符串，那一定要在条件中将数据使用引号引用起来，否则不会使用索引<ul>
+<li>强制类型转换会全表扫描</li>
+</ul>
+</li>
+<li>如果MySQL预计使用全表扫描要比使用索引快，则不使用索引</li>
+<li>在索引上做任何操作都会造成索引失效，而使用全局扫描</li>
+<li>对索引列运算，运算包括（+、-、*、/、！、&lt;&gt;、%、like’%_’（%放在前面）、or、in、exist等），导致索引失效。</li>
+<li>mysql使用!= ,&lt;&gt; ,is null ,is not null会使索引失效</li>
+<li>union all 肯定是能够命中索引的</li>
+<li>如果业务大部分是单条查询，使用Hash索引性能更好，例如用户中心</li>
+<li>如果明确知道只有一条结果返回，limit 1能够提高效率</li>
+<li>加索引，左连接，加右表上，反之</li>
+<li>Exists<ul>
+<li>select …from table wherer exists（subquery 子查询)</li>
+<li>将主查询的数据，放到子查询中做条件验证，根据验证结果(True or False) 来决定主查询的数据结果是否得以保留</li>
+<li>exists子查询往往也可以用条件表达式，其他子查询或者join来替代，何种最优需要具体问题具体分析。</li>
+<li>exists只返回True or False ,因此子查询中select * 也可以是select 1 or select ‘x’ 官方说法是实际执行时会忽略select清单，因此没有区别</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>史上最全SQL优化方案<ul>
+<li><a href="https://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&amp;mid=2651960284&amp;idx=1&amp;sn=d427372dd71b7f598f9ddc99b58f8b35&amp;chksm=bd2d06008a5a8f164503bf2d10ea4d6ad482e496195436ff2573cd4440b3f44654820f353651&amp;scene=27#wechat_redirect" target="_blank" rel="noopener">https://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&amp;mid=2651960284&amp;idx=1&amp;sn=d427372dd71b7f598f9ddc99b58f8b35&amp;chksm=bd2d06008a5a8f164503bf2d10ea4d6ad482e496195436ff2573cd4440b3f44654820f353651&amp;scene=27#wechat_redirect</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/48385127" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/48385127</a></li>
+</ul>
+</li>
+<li>SQL语法，行为军规<ul>
+<li><a href="https://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&amp;mid=2651960284&amp;idx=1&amp;sn=d427372dd71b7f598f9ddc99b58f8b35&amp;chksm=bd2d06008a5a8f164503bf2d10ea4d6ad482e496195436ff2573cd4440b3f44654820f353651&amp;scene=27#wechat_redirect" target="_blank" rel="noopener">https://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&amp;mid=2651960284&amp;idx=1&amp;sn=d427372dd71b7f598f9ddc99b58f8b35&amp;chksm=bd2d06008a5a8f164503bf2d10ea4d6ad482e496195436ff2573cd4440b3f44654820f353651&amp;scene=27#wechat_redirect</a></li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&amp;mid=2651959906&amp;idx=1&amp;sn=2cbdc66cfb5b53cf4327a1e0d18d9b4a&amp;chksm=bd2d07be8a5a8ea86dc3c04eced3f411ee5ec207f73d317245e1fefea1628feb037ad71531bc&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">https://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&amp;mid=2651959906&amp;idx=1&amp;sn=2cbdc66cfb5b53cf4327a1e0d18d9b4a&amp;chksm=bd2d07be8a5a8ea86dc3c04eced3f411ee5ec207f73d317245e1fefea1628feb037ad71531bc&amp;scene=21#wechat_redirect</a></li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&amp;mid=2651959910&amp;idx=1&amp;sn=6b6853b70dbbe6d689a12a4a60b84d8b&amp;chksm=bd2d07ba8a5a8eac6783bac951dba345d865d875538755fe665a5daaf142efe670e2c02b7c71&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">https://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&amp;mid=2651959910&amp;idx=1&amp;sn=6b6853b70dbbe6d689a12a4a60b84d8b&amp;chksm=bd2d07ba8a5a8eac6783bac951dba345d865d875538755fe665a5daaf142efe670e2c02b7c71&amp;scene=21#wechat_redirect</a></li>
+<li></li>
+</ul>
+</li>
+<li>事实表，实体表，维度表之间的关系<ul>
+<li><a href="https://blog.csdn.net/PTtaoge/article/details/80880494" target="_blank" rel="noopener">https://blog.csdn.net/PTtaoge/article/details/80880494</a></li>
+</ul>
+</li>
+<li>explain 用法详解<ul>
+<li><a href="https://segmentfault.com/a/1190000008131735#articleHeader8" target="_blank" rel="noopener">https://segmentfault.com/a/1190000008131735#articleHeader8</a></li>
+</ul>
+</li>
+<li>聚集索引与非聚集索引<ul>
+<li><a href="https://www.cnblogs.com/aspnethot/articles/1504082.html" target="_blank" rel="noopener">https://www.cnblogs.com/aspnethot/articles/1504082.html</a></li>
+<li>对于聚集索引，创建索引的位置不同也会对查询效率不同（参考最左原则）<ul>
+<li>比如 select user_id from students order by user_age<ul>
+<li>create index clust_ix(user_id, user_age)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Shell 脚本中执行mysql语句<ul>
+<li><a href="https://cloud.tencent.com/developer/article/1183686" target="_blank" rel="noopener">https://cloud.tencent.com/developer/article/1183686</a></li>
+</ul>
+</li>
+<li>IBM Knowledge center DB2<ul>
+<li><a href="https://www.ibm.com/support/knowledgecenter/SSEPGG_9.7.0/com.ibm.db2.luw.sql.ref.doc/doc/r0001022.html" target="_blank" rel="noopener">https://www.ibm.com/support/knowledgecenter/SSEPGG_9.7.0/com.ibm.db2.luw.sql.ref.doc/doc/r0001022.html</a></li>
+</ul>
+</li>
+<li>Hive中HSQL中left semi join和INNER JOIN、LEFT JOIN、RIGHT JOIN、FULL JOIN区别<ul>
+<li><a href="https://blog.csdn.net/helloxiaozhe/article/details/87910386" target="_blank" rel="noopener">https://blog.csdn.net/helloxiaozhe/article/details/87910386</a></li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/06/how-to-optimize-hive/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="snail json">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Snail Life">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/05/06/how-to-optimize-hive/" itemprop="url">how to optimize hive</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-05-06T09:18:01+08:00">
+                2020-05-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/sql/" itemprop="url" rel="index">
+                    <span itemprop="name">sql</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/05/06/how-to-optimize-hive/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/05/06/how-to-optimize-hive/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2020/05/06/how-to-optimize-hive/" class="leancloud_visitors" data-flag-title="how to optimize hive">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             <span>℃</span>
+			 </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  711
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  2
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <hr>
+<h3 id="how-to-optimize-hive"><a href="#how-to-optimize-hive" class="headerlink" title="how to optimize hive"></a>how to optimize hive</h3><ul>
+<li>hive tutorial<ul>
+<li><a href="https://cwiki.apache.org/confluence/display/Hive/Tutorial" target="_blank" rel="noopener">https://cwiki.apache.org/confluence/display/Hive/Tutorial</a></li>
+</ul>
+</li>
+<li>Hive SQL的编译过程<ul>
+<li><a href="https://tech.meituan.com/2014/02/12/hive-sql-to-mapreduce.html" target="_blank" rel="noopener">https://tech.meituan.com/2014/02/12/hive-sql-to-mapreduce.html</a></li>
+</ul>
+</li>
+<li>hive的map reduce 执行顺序<ul>
+<li><a href="https://zhipengyeve.wang/2019/02/02/hiveSQL的执行顺序以及hive优化/" target="_blank" rel="noopener">https://zhipengyeve.wang/2019/02/02/hiveSQL%E7%9A%84%E6%89%A7%E8%A1%8C%E9%A1%BA%E5%BA%8F%E4%BB%A5%E5%8F%8Ahive%E4%BC%98%E5%8C%96/</a></li>
+</ul>
+</li>
+<li>hive优化<ul>
+<li><a href="https://www.iteye.com/blog/daizj-2289981" target="_blank" rel="noopener">https://www.iteye.com/blog/daizj-2289981</a></li>
+</ul>
+</li>
+<li>hive 总结以及优化<ul>
+<li><a href="https://blog.csdn.net/yu0_zhang0/article/details/81776459" target="_blank" rel="noopener">https://blog.csdn.net/yu0_zhang0/article/details/81776459</a></li>
+<li><a href="https://blog.csdn.net/ForgetThatNight/article/details/79632364" target="_blank" rel="noopener">https://blog.csdn.net/ForgetThatNight/article/details/79632364</a></li>
+<li>Hive于关系型数据库的区别<ul>
+<li>时效性、延时性比较高，可扩展性高；</li>
+<li>Hive数据规模大，优势在于处理大数据集，对于小数据集没有优势</li>
+<li>事务没什么用(比较鸡肋，没什么实际的意义，对于离线的来说) 一个小问题：那个版本开始提供了事务？</li>
+<li>insert/update没什么实际用途，大数据场景下大多数是select</li>
+<li>RDBMS也支持分布式，节点有限 成本高，处理的数据量小</li>
+<li>Hadoop集群规模更大 部署在廉价机器上，处理的数据量大</li>
+<li>数据库可以用在Online的应用中，Hive主要进行离线的大数据分析；</li>
+<li>数据库的查询语句为SQL，Hive的查询语句为HQL；</li>
+<li>数据库数据存储在LocalFS，Hive的数据存储在HDFS；</li>
+<li>数据格式:Hive中有多种存储格式：由于在加载数据的过程中，不需要从用户数据格式到 Hive 定义的数据格式的转换，</li>
+<li>因此，Hive 在加载的过程中不会对数据本身进行任何修改，而只是将数据内容复制或者移动到相应的 HDFS 目录中。</li>
+<li>而在数据库中，不同的数据库有不同的存储引擎，定义了自己的数据格式。所有数据都会按照一定的组织存储，因此，</li>
+<li>数据库加载数据的过程会比较耗时。</li>
+<li>Hive执行MapReduce，MySQL执行Executor；</li>
+</ul>
+</li>
+<li>Hive的优点<ul>
+<li>简单易上手</li>
+<li>扩展能力较好(指集群 HDFS或是YARN)</li>
+<li>统一的元数据管理 metastore包括的了数据库，表，字段分区等详细信息</li>
+</ul>
+</li>
+<li>SQL转化为MapReduce的过程<ul>
+<li>Antlr定义SQL的语法规则，完成SQL词法，语法解析，将SQL转化为抽象语法树AST Tree</li>
+<li>遍历AST Tree，抽象出查询的基本组成单元QueryBlock</li>
+<li>遍历QueryBlock，翻译为执行操作树OperatorTree</li>
+<li>逻辑层优化器进行OperatorTree变换，合并不必要的ReduceSinkOperator，减少shuffle数据量</li>
+<li>遍历OperatorTree，翻译为MapReduce任务</li>
+<li>物理层优化器进行MapReduce任务的变换，生成最终的执行计划</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Hadoop压缩相关<ul>
+<li><a href="https://blog.csdn.net/yu0_zhang0/article/details/79524842" target="_blank" rel="noopener">https://blog.csdn.net/yu0_zhang0/article/details/79524842</a></li>
+</ul>
+</li>
+<li>Correlation OPtimizer<ul>
+<li><a href="https://cwiki.apache.org/confluence/display/Hive/Correlation+Optimizer?preview=/34019487/34177456/Example2Optimized.png" target="_blank" rel="noopener">https://cwiki.apache.org/confluence/display/Hive/Correlation+Optimizer?preview=/34019487/34177456/Example2Optimized.png</a></li>
+</ul>
+</li>
+<li>hive language manual（说明书）<ul>
+<li><a href="https://cwiki.apache.org/confluence/display/Hive/LanguageManual" target="_blank" rel="noopener">https://cwiki.apache.org/confluence/display/Hive/LanguageManual</a></li>
+</ul>
+</li>
+<li>db2 sql tutorial<ul>
+<li><a href="https://www.ibm.com/support/knowledgecenter/SSEPGG_9.7.0/com.ibm.db2.luw.sql.ref.doc/doc/r0000888.html" target="_blank" rel="noopener">https://www.ibm.com/support/knowledgecenter/SSEPGG_9.7.0/com.ibm.db2.luw.sql.ref.doc/doc/r0000888.html</a></li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/08/chapter16-sort-algorithm/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="snail json">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Snail Life">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/03/08/chapter16-sort-algorithm/" itemprop="url">chapter16-sort-algorithm</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-03-08T12:58:38+08:00">
+                2020-03-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/leetcode/" itemprop="url" rel="index">
+                    <span itemprop="name">leetcode</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/03/08/chapter16-sort-algorithm/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/03/08/chapter16-sort-algorithm/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2020/03/08/chapter16-sort-algorithm/" class="leancloud_visitors" data-flag-title="chapter16-sort-algorithm">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             <span>℃</span>
+			 </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  1.5k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  6
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <hr>
+<h2 id="chapter16-sort-algorithm"><a href="#chapter16-sort-algorithm" class="headerlink" title="chapter16-sort-algorithm"></a>chapter16-sort-algorithm</h2><p>[TOC]</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/03/08/chapter16-sort-algorithm/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/04/chapter15-unionFindSets-algorithm/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -720,610 +1456,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/28/chapter13-hashTable-algorithm/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="snail json">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Snail Life">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/02/28/chapter13-hashTable-algorithm/" itemprop="url">chapter13-hashTable-algorithm</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-02-28T20:09:47+08:00">
-                2020-02-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/leetcode/" itemprop="url" rel="index">
-                    <span itemprop="name">leetcode</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2020/02/28/chapter13-hashTable-algorithm/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/02/28/chapter13-hashTable-algorithm/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2020/02/28/chapter13-hashTable-algorithm/" class="leancloud_visitors" data-flag-title="chapter13-hashTable-algorithm">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Visitors&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             <span>℃</span>
-			 </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Words count in article&#58;</span>
-                
-                <span title="Words count in article">
-                  762
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Reading time &asymp;</span>
-                
-                <span title="Reading time">
-                  3
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h3 id="chapter13-hashTable-algorithm"><a href="#chapter13-hashTable-algorithm" class="headerlink" title="chapter13-hashTable-algorithm"></a>chapter13-hashTable-algorithm</h3><hr>
-<p>[TOC]</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2020/02/28/chapter13-hashTable-algorithm/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/28/chapter12-partition-algorithm/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="snail json">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Snail Life">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/02/28/chapter12-partition-algorithm/" itemprop="url">chapter12-partition-algorithm</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-02-28T16:02:16+08:00">
-                2020-02-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/leetcode/" itemprop="url" rel="index">
-                    <span itemprop="name">leetcode</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2020/02/28/chapter12-partition-algorithm/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/02/28/chapter12-partition-algorithm/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2020/02/28/chapter12-partition-algorithm/" class="leancloud_visitors" data-flag-title="chapter12-partition-algorithm">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Visitors&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             <span>℃</span>
-			 </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Words count in article&#58;</span>
-                
-                <span title="Words count in article">
-                  402
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Reading time &asymp;</span>
-                
-                <span title="Reading time">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h3 id="chapter12-partition-algorithm"><a href="#chapter12-partition-algorithm" class="headerlink" title="chapter12-partition-algorithm"></a>chapter12-partition-algorithm</h3><p>[TOC]</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2020/02/28/chapter12-partition-algorithm/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/28/chapter11-search-algorithm/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="snail json">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Snail Life">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/02/28/chapter11-search-algorithm/" itemprop="url">chapter11-search-algorithm</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-02-28T15:30:41+08:00">
-                2020-02-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/leetcode/" itemprop="url" rel="index">
-                    <span itemprop="name">leetcode</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2020/02/28/chapter11-search-algorithm/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/02/28/chapter11-search-algorithm/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2020/02/28/chapter11-search-algorithm/" class="leancloud_visitors" data-flag-title="chapter11-search-algorithm">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Visitors&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             <span>℃</span>
-			 </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Words count in article&#58;</span>
-                
-                <span title="Words count in article">
-                  6.8k
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Reading time &asymp;</span>
-                
-                <span title="Reading time">
-                  31
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <hr>
-<h2 id="chapter11-search-algorithm"><a href="#chapter11-search-algorithm" class="headerlink" title="chapter11-search-algorithm"></a>chapter11-search-algorithm</h2><p>[TOC]</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2020/02/28/chapter11-search-algorithm/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1370,7 +1507,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">44</span>
+                  <span class="site-state-item-count">47</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1381,7 +1518,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -1461,7 +1598,7 @@
 		<h3 class="widget-title">Tag Cloud</h3>
 		<div id="myCanvasContainer" class="widget tagcloud">
 		  <canvas width="250" height="250" id="resCanvas" style="width=100%">
-			<ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/thread/">-- thread</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Optimization/">Optimization</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithms/">algorithms</a><span class="tag-list-count">23</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/db2/">db2</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hive/">hive</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">18</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/self-study/">self-study</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sql/">sql</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/statistics/">statistics</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/thread/">thread</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vim/">vim</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/win10快捷键/">win10快捷键</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/古月山风/">古月山风</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/梦想/">梦想</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/破晓/">破晓</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a><span class="tag-list-count">2</span></li></ul>
+			<ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/thread/">-- thread</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Optimization/">Optimization</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithms/">algorithms</a><span class="tag-list-count">24</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/db2/">db2</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hive/">hive</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">19</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/self-study/">self-study</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sql/">sql</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/statistics/">statistics</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/thread/">thread</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vim/">vim</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/win10快捷键/">win10快捷键</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/古月山风/">古月山风</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/梦想/">梦想</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/破晓/">破晓</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a><span class="tag-list-count">2</span></li></ul>
 		  </canvas>
 		</div>
 	  </div>
@@ -1492,7 +1629,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">126.2k</span>
+    <span title="Site words total count">129.2k</span>
   
 </div>
 
