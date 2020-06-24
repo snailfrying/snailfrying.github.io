@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-05-06T01:35:57.855Z</updated>
+  <updated>2020-06-24T06:48:41.351Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Anaconda And Tsinghua University Open Source Software Mirror Station</title>
+    <link href="http://yoursite.com/2020/06/24/Anaconda-And-Tsinghua-University-Open-Source-Software-Mirror-Station/"/>
+    <id>http://yoursite.com/2020/06/24/Anaconda-And-Tsinghua-University-Open-Source-Software-Mirror-Station/</id>
+    <published>2020-06-24T06:46:29.000Z</published>
+    <updated>2020-06-24T06:48:41.351Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;hr&gt;
+&lt;h2 id=&quot;Anaconda-And-Tsinghua-University-Open-Source-Software-Mirror-Station&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Python" scheme="http://yoursite.com/categories/Python/"/>
+    
+    
+      <category term="Anaconda" scheme="http://yoursite.com/tags/Anaconda/"/>
+    
+  </entry>
   
   <entry>
     <title>how to optimize sql</title>
@@ -520,30 +548,6 @@
     
       <category term="-[随笔]" scheme="http://yoursite.com/categories/%E9%9A%8F%E7%AC%94/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>spark与pandas 如何构建分类模型</title>
-    <link href="http://yoursite.com/2020/01/20/spark%E4%B8%8Epandas-%E5%A6%82%E4%BD%95%E6%9E%84%E5%BB%BA%E5%88%86%E7%B1%BB%E6%A8%A1%E5%9E%8B/"/>
-    <id>http://yoursite.com/2020/01/20/spark与pandas-如何构建分类模型/</id>
-    <published>2020-01-20T08:34:48.000Z</published>
-    <updated>2020-02-02T08:17:17.760Z</updated>
-    
-    <summary type="html">
-    
-      &lt;hr&gt;
-&lt;h2 id=&quot;spark与pandas-如何构建分类模型&quot;&gt;&lt;a href=&quot;#spark与pandas-如何构建分类模型&quot; class=&quot;headerlink&quot; title=&quot;spark与pandas 如何构建分类模型&quot;&gt;&lt;/a&gt;spark与pandas 如何构建分类模型&lt;/h2&gt;&lt;p&gt;本章通过sklearn，鸢尾花数据，通过pandas的DataFrame与spark的DataFrame之间转化，构建spark多分类模型，并且图调参以及得到最佳参数和评价分数。具体代码流程如下：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;h6 id=&quot;导入相关工具包&quot;&gt;&lt;a href=&quot;#导入相关工具包&quot; class=&quot;headerlink&quot; title=&quot;导入相关工具包&quot;&gt;&lt;/a&gt;导入相关工具包&lt;/h6&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; numpy &lt;span class=&quot;keyword&quot;&gt;as&lt;/span&gt; np&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; pandas &lt;span class=&quot;keyword&quot;&gt;as&lt;/span&gt; pd&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt;  sklearn.datasets &lt;span class=&quot;keyword&quot;&gt;as&lt;/span&gt; sd&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;from&lt;/span&gt; pyspark.context &lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; SparkContext&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;from&lt;/span&gt; pyspark.sql.context &lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt;  SparkSession&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;from&lt;/span&gt; pyspark.sql &lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; Row&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;from&lt;/span&gt; pyspark.ml.linalg &lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; Vectors&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;from&lt;/span&gt; pyspark.mllib.regression &lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; LabeledPoint&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;from&lt;/span&gt; pyspark.ml.tuning &lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; ParamGridBuilder,CrossValidator&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;from&lt;/span&gt; pyspark.ml.classification &lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; LogisticRegression&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;from&lt;/span&gt; pyspark.mllib.classification &lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; LogisticRegressionWithLBFGS, LogisticRegressionModel&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;from&lt;/span&gt; pyspark.ml.evaluation &lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; MulticlassClassificationEvaluator,BinaryClassificationEvaluator&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-    
-    </summary>
-    
-    
-      <category term="spark" scheme="http://yoursite.com/categories/spark/"/>
-    
-    
-      <category term="algorithms" scheme="http://yoursite.com/tags/algorithms/"/>
     
   </entry>
   
