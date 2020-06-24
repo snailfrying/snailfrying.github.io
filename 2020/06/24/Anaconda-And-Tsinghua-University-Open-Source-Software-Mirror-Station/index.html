@@ -135,7 +135,7 @@
 <meta property="og:site_name" content="Snail Life">
 <meta property="og:description" content="Anaconda And Tsinghua University Open Source Software Mirror Station 清华源  https://mirrors-i.tuna.tsinghua.edu.cn/   查看cond config配置详细说明  conda config -h   conda info  查看添加源信息   删除清华源，改为默认源  conda con">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-06-24T06:56:41.571Z">
+<meta property="og:updated_time" content="2020-06-24T06:59:37.356Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Anaconda And Tsinghua University Open Source Software Mirror Station">
 <meta name="twitter:description" content="Anaconda And Tsinghua University Open Source Software Mirror Station 清华源  https://mirrors-i.tuna.tsinghua.edu.cn/   查看cond config配置详细说明  conda config -h   conda info  查看添加源信息   删除清华源，改为默认源  conda con">
@@ -515,36 +515,23 @@
 </ul>
 </li>
 <li><p>添加清华源</p>
-<ul>
-<li>conda config –add channels <a href="https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/" target="_blank" rel="noopener">https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/</a></li>
-<li>conda config –add channels <a href="https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/" target="_blank" rel="noopener">https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/</a></li>
-<li>conda config –set show_channel_urls yes</li>
-</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/</span><br><span class="line"></span><br><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/</span><br><span class="line"></span><br><span class="line">conda config --set show_channel_urls yes</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>Conda Forge（添加附加库）</p>
-<ul>
-<li>conda config –add channels <a href="https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/" target="_blank" rel="noopener">https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/</a></li>
-</ul>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda config --add channels https:<span class="regexp">//mi</span>rrors.tuna.tsinghua.edu.cn<span class="regexp">/anaconda/</span>cloud<span class="regexp">/conda-forge/</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>msys2（添加附加库）</p>
-<ul>
-<li>conda config –add channels <a href="https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/msys2/" target="_blank" rel="noopener">https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/msys2/</a></li>
-</ul>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda config --add channels https:<span class="regexp">//mi</span>rrors.tuna.tsinghua.edu.cn<span class="regexp">/anaconda/</span>cloud<span class="regexp">/msys2/</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>bioconda（添加附加库）</p>
-<ul>
-<li>conda config –add channels <a href="https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/bioconda/" target="_blank" rel="noopener">https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/bioconda/</a></li>
-</ul>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda config --add channels https:<span class="regexp">//mi</span>rrors.tuna.tsinghua.edu.cn<span class="regexp">/anaconda/</span>cloud<span class="regexp">/bioconda/</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>menpo（添加附加库）</p>
-<ul>
-<li>conda config –add channels <a href="https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/menpo/" target="_blank" rel="noopener">https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/menpo/</a></li>
-</ul>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda config --add channels https:<span class="regexp">//mi</span>rrors.tuna.tsinghua.edu.cn<span class="regexp">/anaconda/</span>cloud<span class="regexp">/menpo/</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>pytorch</p>
-<ul>
-<li>conda config –add channels <a href="https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/" target="_blank" rel="noopener">https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/</a></li>
-</ul>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda config --add channels https:<span class="regexp">//mi</span>rrors.tuna.tsinghua.edu.cn<span class="regexp">/anaconda/</span>cloud<span class="regexp">/pytorch/</span></span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
 
