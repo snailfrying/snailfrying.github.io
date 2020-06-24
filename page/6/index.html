@@ -333,7 +333,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/20/chapter4-梯度下降算法-Gradient-Descent/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/20/chapter5-逻辑斯谛回归-LogisticRegression/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="snail json">
@@ -352,7 +352,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/11/20/chapter4-梯度下降算法-Gradient-Descent/" itemprop="url">chapter4-梯度下降算法(Gradient Descent)</a></h1>
+                <a class="post-title-link" href="/2019/11/20/chapter5-逻辑斯谛回归-LogisticRegression/" itemprop="url">chapter5-逻辑斯谛回归-LogisticRegression</a></h1>
         
 
         <div class="post-meta">
@@ -405,8 +405,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/11/20/chapter4-梯度下降算法-Gradient-Descent/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/11/20/chapter4-梯度下降算法-Gradient-Descent/" itemprop="commentCount"></span>
+                <a href="/2019/11/20/chapter5-逻辑斯谛回归-LogisticRegression/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/11/20/chapter5-逻辑斯谛回归-LogisticRegression/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -414,7 +414,7 @@
 
           
           
-             <span id="/2019/11/20/chapter4-梯度下降算法-Gradient-Descent/" class="leancloud_visitors" data-flag-title="chapter4-梯度下降算法(Gradient Descent)">
+             <span id="/2019/11/20/chapter5-逻辑斯谛回归-LogisticRegression/" class="leancloud_visitors" data-flag-title="chapter5-逻辑斯谛回归-LogisticRegression">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -440,7 +440,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  2.4k
+                  3.2k
                 </span>
               
 
@@ -456,7 +456,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  9
+                  13
                 </span>
               
             </div>
@@ -479,13 +479,13 @@
       
         
           <hr>
-<hr>
-<h3 id="chapter4-梯度下降算法-Gradient-Descent"><a href="#chapter4-梯度下降算法-Gradient-Descent" class="headerlink" title="chapter4-梯度下降算法(Gradient Descent)"></a>chapter4-梯度下降算法(Gradient Descent)</h3><p>求解机器学习算法的模型参数时，即无约束优化问题时，梯度下降（Gradient Descent）是最常采用的方法之一，另一种常用的方法是最小二乘法。这里就对梯度下降法做一个完整的总结。</p>
-<h5 id="1-梯度"><a href="#1-梯度" class="headerlink" title="1.梯度"></a>1.梯度</h5><p>在微积分里面，对多元函数的参数求∂偏导数，把求得的各个参数的偏导数以向量的形式写出来，就是梯度。比如函数$f(x,y)$,分别对$x,y$进行求导，求得梯度向量是$(\frac{\partial f}{\partial x},\frac{\partial f}{\partial y})^T$ 简称$grad f(x,y)$ | $\Delta f(x,y)$,对于点为$(x_0,y_0)$,他的梯度向量值为$(\frac{\partial f}{\partial x_0},\frac{\partial f}{\partial y_0})^T$ | $\Delta f(x_0,y_0)$,如果为三个变量，就为：$\Delta f(x,y,z)$,以此类推。</p>
-<p>那为什么要找到函数$f(x,y)$的梯度呢？因为梯度向量是函数下降(增加)速度最快的地方。比如说，在初始点$(x_0,y_0)$ 沿着梯度向量$\Delta f(x_0,y_0)$ (-$\Delta f(x_0,y_0)$)，增加最快(下降最快)的方向 ，我们能够更快的找到函数的最小值(最大值)。</p>
+<h3 id="chapter5-逻辑斯谛回归-LogisticRegression"><a href="#chapter5-逻辑斯谛回归-LogisticRegression" class="headerlink" title="chapter5-逻辑斯谛回归-LogisticRegression"></a>chapter5-逻辑斯谛回归-LogisticRegression</h3><h4 id="statistics-learning"><a href="#statistics-learning" class="headerlink" title="statistics learning"></a>statistics learning</h4><h5 id="1-浅谈线性回归"><a href="#1-浅谈线性回归" class="headerlink" title="1.浅谈线性回归"></a>1.浅谈线性回归</h5><p>由于前面<a href="https://snailfrying.github.io/2019/11/20/chapter2-最小二乘法完整实践理论/#more" target="_blank" rel="noopener">最小二乘法</a>和<a href="https://snailfrying.github.io/2019/11/20/chapter4-梯度下降算法-Gradient-Descent/#more" target="_blank" rel="noopener">梯度下降算法</a>，已经大力讨论了回归模型，因此，本章只进行简单的回顾回归模型。分析线性回归原理和与最小二乘法之间的区别。</p>
+<p>线性回归与最小二乘法的最大区别，就在于损失函数的迭代。也就是如何优化损失函数。最小二乘法顾名思义，就是采用最小二乘法进行迭代，损失函数如下：<br>$$<br>J(\theta_0,\theta_1,\cdots,\theta_j) =\sum_{i=1}^m(h_θ(x_0^{(i)},x_1^{(i)},\cdots,x_j^{(i)}) - y^{(j)})^2=\sum_{i=1}^n(\sum_{j=1}^m\theta_jx_j^{(i)}-y^{(i)})^2<br>$$</p>
+<p>对损失函数求导为，更新参数$\theta$：<br>$$<br>\theta = (X^TX)^-1X^TY<br>$$<br>对于线性回归算法来说，就是利用梯度下降算法，损失函数如下：<br>$$<br>J(\theta_0,\theta_1,\cdots,\theta_j) =\frac{1}{2m}\sum_{i=1}^m(h_θ(x_0^{(i)},x_1^{(i)},\cdots,x_j^{(i)}) - y^{(j)})^2=\frac{1}{2m}\sum_{i=1}^n(\sum_{j=1}^m\theta_jx_j^{(i)}-y^{(i)})^2<br>$$</p>
+<p>对损失函数求偏导，更新参数$\theta$：<br>$$<br>\theta = \theta-\alpha X^T(\theta X-Y)<br>$$</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2019/11/20/chapter4-梯度下降算法-Gradient-Descent/#more" rel="contents">
+            <a class="btn" href="/2019/11/20/chapter5-逻辑斯谛回归-LogisticRegression/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>

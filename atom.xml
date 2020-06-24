@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-06-24T06:48:41.351Z</updated>
+  <updated>2020-06-24T06:56:41.571Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,18 +21,31 @@
     <link href="http://yoursite.com/2020/06/24/Anaconda-And-Tsinghua-University-Open-Source-Software-Mirror-Station/"/>
     <id>http://yoursite.com/2020/06/24/Anaconda-And-Tsinghua-University-Open-Source-Software-Mirror-Station/</id>
     <published>2020-06-24T06:46:29.000Z</published>
-    <updated>2020-06-24T06:48:41.351Z</updated>
+    <updated>2020-06-24T06:56:41.571Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;hr&gt;
-&lt;h2 id=&quot;Anaconda-And-Tsinghua-University-Open-Source-Software-Mirror-Station&quot;&gt;&lt;a
-        
-      
+      &lt;hr&gt;
+&lt;h2 id=&quot;Anaconda-And-Tsinghua-University-Open-Source-Software-Mirror-Station&quot;&gt;&lt;a href=&quot;#Anaconda-And-Tsinghua-University-Open-Source-Software-Mirror-Station&quot; class=&quot;headerlink&quot; title=&quot;Anaconda And Tsinghua University Open Source Software Mirror Station&quot;&gt;&lt;/a&gt;Anaconda And Tsinghua University Open Source Software Mirror Station&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;清华源&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://mirrors-i.tuna.tsinghua.edu.cn/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://mirrors-i.tuna.tsinghua.edu.cn/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;查看cond config配置详细说明&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;conda config -h&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;conda info&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;查看添加源信息&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;删除清华源，改为默认源&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;conda config –remove-key channels&lt;/li&gt;
+&lt;/ul&gt;
     
     </summary>
     
