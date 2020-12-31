@@ -333,6 +333,204 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/12/31/Spark-2-2-0-LogisticRegression-scala/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="snail json">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Snail Life">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/12/31/Spark-2-2-0-LogisticRegression-scala/" itemprop="url">Spark_2.2.0_LogisticRegression_scala</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-12-31T16:34:10+08:00">
+                2020-12-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/spark/" itemprop="url" rel="index">
+                    <span itemprop="name">spark</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/12/31/Spark-2-2-0-LogisticRegression-scala/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/12/31/Spark-2-2-0-LogisticRegression-scala/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2020/12/31/Spark-2-2-0-LogisticRegression-scala/" class="leancloud_visitors" data-flag-title="Spark_2.2.0_LogisticRegression_scala">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             <span>℃</span>
+			 </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  1.6k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  8
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <hr>
+<h2 id="Spark-2-2-0-LogisticRegression-scala"><a href="#Spark-2-2-0-LogisticRegression-scala" class="headerlink" title="Spark_2.2.0_LogisticRegression_scala"></a>Spark_2.2.0_LogisticRegression_scala</h2><p>针对spark 2.2.0版本，从hive读取数据，转为DataFrame，以及利用scala工具和sparkML相关工具包进行数据处理与建模，然后对模型进行详细评价，代码如下：</p>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> org.apache.spark.sql.<span class="type">SparkSession</span></span><br><span class="line"><span class="keyword">import</span> org.apache.spark.sql.hive.<span class="type">HiveContext</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> scala.collection.mutable.<span class="type">ListBuffer</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> util.<span class="type">Random</span></span><br><span class="line"><span class="keyword">import</span> org.apache.spark.sql.<span class="type">Row</span></span><br><span class="line"><span class="keyword">import</span> org.apache.spark.sql.types._</span><br><span class="line"><span class="keyword">import</span> org.apache.spark.sql.functions</span><br><span class="line"><span class="keyword">import</span> org.apache.spark.sql.functions.udf</span><br><span class="line"><span class="keyword">import</span> org.apache.spark.sql.functions.rand</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.apache.spark.ml.stat.<span class="type">ChiSquareTest</span></span><br><span class="line"><span class="keyword">import</span> org.apache.spark.ml.linalg.<span class="type">DenseVector</span></span><br><span class="line"><span class="keyword">import</span> org.apache.spark.ml.linalg.&#123;<span class="type">Vector</span>, <span class="type">Vectors</span>&#125;</span><br><span class="line"><span class="keyword">import</span> org.apache.spark.ml.classification.<span class="type">LogisticRegression</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.apache.spark.ml.param.<span class="type">ParamMap</span></span><br><span class="line"><span class="keyword">import</span> org.apache.spark.ml.&#123;<span class="type">Pipeline</span>,<span class="type">PipelineStage</span>&#125;</span><br><span class="line"><span class="keyword">import</span> org.apache.spark.ml.tuning.&#123;<span class="type">ParamGridBuilder</span>, <span class="type">TrainValidationSplit</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.apache.spark.ml.feature.<span class="type">Binarizer</span></span><br><span class="line"><span class="keyword">import</span> org.apache.spark.ml.feature.<span class="type">VectorSlicer</span></span><br><span class="line"><span class="keyword">import</span> org.apache.spark.ml.feature.<span class="type">StandardScaler</span></span><br><span class="line"><span class="keyword">import</span> org.apache.spark.ml.feature.&#123;<span class="type">IndexToString</span>, <span class="type">OneHotEncoder</span>,<span class="type">StringIndexer</span>, <span class="type">VectorIndexer</span>,<span class="type">VectorAssembler</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.apache.spark.mllib.evaluation.<span class="type">MulticlassMetrics</span></span><br><span class="line"><span class="keyword">import</span> org.apache.spark.ml.evaluation.<span class="type">MulticlassClassificationEvaluator</span></span><br><span class="line"><span class="keyword">import</span> org.apache.spark.ml.classification.&#123;<span class="type">BinaryLogisticRegressionSummary</span>, <span class="type">LogisticRegression</span>, <span class="type">LogisticRegressionModel</span>,<span class="type">LogisticRegressionSummary</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//配置环境</span></span><br><span class="line"><span class="keyword">val</span> hiveCtx = <span class="keyword">new</span> <span class="type">HiveContext</span>(sc) </span><br><span class="line"><span class="keyword">val</span> myPath = <span class="string">"hdfs://shmbdcluster/user/bdoc/35/services/hive/shmc/tmp_ana_hm_train_feature/"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//string 格式读取</span></span><br><span class="line"><span class="comment">//val data=  spark.read.format("com.databricks.spark.csv").option("delimiter","\t").load("hdfs://shmbdcluster/user/bdoc/35/services/hive/shmc/tmp_ana_hm_train_feature/month_id=202009/*").cache()</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//可以直接读取为label features 的DataFrame</span></span><br><span class="line"><span class="keyword">val</span> rawData = sc.textFile(myPath).filter(row =&gt; !(row.contains(<span class="string">"\\N"</span>)))</span><br><span class="line"></span><br><span class="line"><span class="comment">//读取label and features 全为string 需要进行分割</span></span><br><span class="line"><span class="keyword">val</span> colsLength = rawData.first.split(<span class="string">","</span>).slice(<span class="number">0</span>, <span class="number">46</span>).length.toInt</span><br><span class="line"><span class="keyword">val</span> rdd = rawData.map(_.split(',').slice(<span class="number">0</span>, <span class="number">46</span>).map(_.toString)).map(p=&gt;<span class="type">Row</span>(p:_*))</span><br><span class="line"></span><br><span class="line"><span class="comment">//根据列数 直接取名</span></span><br><span class="line"><span class="comment">//val colNames  =(0 until colsLength).map(i =&gt; "col_" + (i+1))</span></span><br><span class="line"><span class="keyword">val</span>  colNames = <span class="type">Array</span>(<span class="string">"user_id"</span>,<span class="string">"phone_no"</span>,<span class="string">"offer_id"</span>,<span class="string">"label"</span>,<span class="string">"is_zn"</span>,<span class="string">"FML_FLAG"</span>,<span class="string">"LCL_FLAG"</span>,<span class="string">"GENDER_ID"</span>,<span class="string">"device_flag"</span>,<span class="string">"LVL1_PLAN_ID"</span>,<span class="string">"CREDIT_LEVEL_ID"</span>,<span class="string">"CROWD_TOGETHER_FLAG"</span>,<span class="string">"lan_offer_lvl2_type_snt"</span>,<span class="string">"CROWD_MAIN_PHONE_NO_FLAG"</span>,<span class="string">"age"</span>,<span class="string">"dou"</span>,<span class="string">"mou"</span>,<span class="string">"jw_num"</span>,<span class="string">"bill_fee"</span>,<span class="string">"use_kday"</span>,<span class="string">"band_rate"</span>,<span class="string">"eff_kdate"</span>,<span class="string">"group_num"</span>,<span class="string">"exp_kdate"</span>,<span class="string">"lacci_num"</span>,<span class="string">"ONLINE_id"</span>,<span class="string">"have_child"</span>,<span class="string">"have_older"</span>,<span class="string">"days_home1"</span>,<span class="string">"days_workl"</span>,<span class="string">"start_zdate"</span>,<span class="string">"man_call_dur"</span>,<span class="string">"sum_up_kflow"</span>,<span class="string">"man_call_num"</span>,<span class="string">"group_num_wsyd"</span>,<span class="string">"sum_down_kflow"</span>,<span class="string">"group_num_yiwang"</span>,<span class="string">"area_id"</span>,<span class="string">"term_model_snt"</span>,<span class="string">"lacci_home1_snt"</span>,<span class="string">"lacci_work1_snt"</span>,<span class="string">"community_jid_snt"</span>,<span class="string">"community_kid_snt"</span>,<span class="string">"create_area_id_snt"</span>,<span class="string">"term_brand_name_snt"</span>,<span class="string">"multi_term_cata3_name_snt"</span>)</span><br><span class="line"><span class="comment">//创建结构体 DoubleType</span></span><br><span class="line"><span class="keyword">val</span> schema = <span class="type">StructType</span>(colNames.map(fieldName =&gt; <span class="type">StructField</span>(fieldName.toString,<span class="type">StringType</span>)))  </span><br><span class="line"><span class="comment">//创建dataFrame</span></span><br><span class="line"><span class="keyword">val</span> data = spark.createDataFrame(rdd,schema)</span><br><span class="line"></span><br><span class="line"><span class="comment">//1.打乱数据 通过创建一列随机数，排序来对DataFrame数据进行打乱</span></span><br><span class="line"><span class="keyword">val</span> randr = data.select(<span class="string">"user_id"</span>).map(row =&gt; (row.getAs[<span class="type">String</span>](<span class="number">0</span>), <span class="type">Random</span>.nextDouble())).toDF(<span class="string">"user_id"</span>,<span class="string">"rand"</span>)</span><br><span class="line">randr.show(<span class="number">5</span>)</span><br><span class="line"><span class="keyword">val</span> df1 = data.join(randr,<span class="type">Seq</span>[<span class="type">String</span>](<span class="string">"user_id"</span>,<span class="string">"user_id"</span>),<span class="string">"left"</span>).orderBy(<span class="string">"rand"</span>)</span><br><span class="line">df1.show(<span class="number">4</span>)</span><br><span class="line"><span class="keyword">val</span> df = df1.drop(<span class="string">"rand"</span>)</span><br><span class="line"><span class="comment">//2.数据打乱 进行rand()函数产生一列数据，直接记性打乱</span></span><br><span class="line"><span class="keyword">var</span> <span class="type">HouseWifiDF_newsam</span> = df.orderBy(rand())</span><br><span class="line"></span><br><span class="line"><span class="comment">//列出相关结果变量</span></span><br><span class="line"><span class="comment">//val colNames_1  =(1 until colsLength).map(i =&gt; "col_" + (i+1)).toArray</span></span><br><span class="line"><span class="keyword">val</span> wcol = &#123;<span class="type">Array</span>(<span class="string">"label"</span>,<span class="string">"is_zn"</span>,<span class="string">"FML_FLAG"</span>,<span class="string">"LCL_FLAG"</span>,<span class="string">"GENDER_ID"</span>,<span class="string">"device_flag"</span>,<span class="string">"LVL1_PLAN_ID"</span>,<span class="string">"CREDIT_LEVEL_ID"</span>,<span class="string">"CROWD_TOGETHER_FLAG"</span>,<span class="string">"lan_offer_lvl2_type_snt"</span>,<span class="string">"CROWD_MAIN_PHONE_NO_FLAG"</span>,<span class="string">"age"</span>,<span class="string">"dou"</span>,<span class="string">"mou"</span>,<span class="string">"jw_num"</span>,<span class="string">"bill_fee"</span>,<span class="string">"use_kday"</span>,<span class="string">"band_rate"</span>,<span class="string">"eff_kdate"</span>,<span class="string">"group_num"</span>,<span class="string">"exp_kdate"</span>,<span class="string">"lacci_num"</span>,<span class="string">"ONLINE_id"</span>,<span class="string">"have_child"</span>,<span class="string">"have_older"</span>,<span class="string">"days_home1"</span>,<span class="string">"days_workl"</span>,<span class="string">"start_zdate"</span>,<span class="string">"man_call_dur"</span>,<span class="string">"sum_up_kflow"</span>,<span class="string">"man_call_num"</span>,<span class="string">"group_num_wsyd"</span>,<span class="string">"sum_down_kflow"</span>,<span class="string">"group_num_yiwang"</span>,<span class="string">"area_id"</span>,<span class="string">"term_model_snt"</span>,<span class="string">"lacci_home1_snt"</span>,<span class="string">"lacci_work1_snt"</span>,<span class="string">"community_jid_snt"</span>,<span class="string">"community_kid_snt"</span>,<span class="string">"create_area_id_snt"</span>,<span class="string">"term_brand_name_snt"</span>,<span class="string">"multi_term_cata3_name_snt"</span>)&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">val</span> colNames_1 = &#123;<span class="type">Array</span>(<span class="string">"is_zn"</span>,<span class="string">"FML_FLAG"</span>,<span class="string">"LCL_FLAG"</span>,<span class="string">"GENDER_ID"</span>,<span class="string">"device_flag"</span>,<span class="string">"LVL1_PLAN_ID"</span>,<span class="string">"CREDIT_LEVEL_ID"</span>,<span class="string">"CROWD_TOGETHER_FLAG"</span>,<span class="string">"lan_offer_lvl2_type_snt"</span>,<span class="string">"CROWD_MAIN_PHONE_NO_FLAG"</span>,<span class="string">"age"</span>,<span class="string">"dou"</span>,<span class="string">"mou"</span>,<span class="string">"jw_num"</span>,<span class="string">"bill_fee"</span>,<span class="string">"use_kday"</span>,<span class="string">"band_rate"</span>,<span class="string">"eff_kdate"</span>,<span class="string">"group_num"</span>,<span class="string">"exp_kdate"</span>,<span class="string">"lacci_num"</span>,<span class="string">"ONLINE_id"</span>,<span class="string">"have_child"</span>,<span class="string">"have_older"</span>,<span class="string">"days_home1"</span>,<span class="string">"days_workl"</span>,<span class="string">"start_zdate"</span>,<span class="string">"man_call_dur"</span>,<span class="string">"sum_up_kflow"</span>,<span class="string">"man_call_num"</span>,<span class="string">"group_num_wsyd"</span>,<span class="string">"sum_down_kflow"</span>,<span class="string">"group_num_yiwang"</span>,<span class="string">"area_id"</span>,<span class="string">"term_model_snt"</span>,<span class="string">"lacci_home1_snt"</span>,<span class="string">"lacci_work1_snt"</span>,<span class="string">"community_jid_snt"</span>,<span class="string">"community_kid_snt"</span>,<span class="string">"create_area_id_snt"</span>,<span class="string">"term_brand_name_snt"</span>,<span class="string">"multi_term_cata3_name_snt"</span>)&#125;</span><br><span class="line"><span class="keyword">val</span> continuousVariable = <span class="type">Array</span>(<span class="string">"dou"</span>,<span class="string">"mou"</span>,<span class="string">"jw_num"</span>,<span class="string">"bill_fee"</span>,<span class="string">"use_kday"</span>,<span class="string">"eff_kdate"</span>,<span class="string">"group_num"</span>,<span class="string">"exp_kdate"</span>,<span class="string">"start_zdate"</span>,<span class="string">"man_call_dur"</span>,<span class="string">"sum_up_kflow"</span>,<span class="string">"man_call_num"</span>,<span class="string">"group_num_wsyd"</span>,<span class="string">"sum_down_kflow"</span>,<span class="string">"group_num_yiwang"</span>,<span class="string">"have_child"</span>,<span class="string">"have_older"</span>)</span><br><span class="line"><span class="keyword">val</span> categoricalVariable = colNames_1.filter(v =&gt; !continuousVariable.contains(v))</span><br><span class="line"></span><br><span class="line"><span class="comment">//对连续性变量进行类型转换</span></span><br><span class="line"><span class="keyword">val</span> wdata =  df.select(wcol.map(name =&gt; col(name).cast(<span class="type">DoubleType</span>)): _*)</span><br><span class="line"></span><br><span class="line"><span class="comment">//数据集划分</span></span><br><span class="line"><span class="keyword">val</span> <span class="type">Array</span>(trainingData, tData) = wdata.randomSplit(<span class="type">Array</span>(<span class="number">0.75</span>, <span class="number">0.25</span>), seed = <span class="number">38</span>)</span><br><span class="line"><span class="keyword">val</span> <span class="type">Array</span>(testingData, vaildingData) = tData.randomSplit(<span class="type">Array</span>(<span class="number">0.6</span>, <span class="number">0.4</span>), seed = <span class="number">38</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">//采用Pileline方式处理机器学习流程 对每一个类别特征 进行onehot</span></span><br><span class="line"><span class="comment">val stagesArray = new ListBuffer[PipelineStage]()</span></span><br><span class="line"><span class="comment">for (cate &lt;- categoricalVariable) &#123;</span></span><br><span class="line"><span class="comment">    //使用StringIndexer 建立类别索引</span></span><br><span class="line"><span class="comment">    val indexer = new StringIndexer().setInputCol(cate).setOutputCol(s"$&#123;cate&#125;_Index")</span></span><br><span class="line"><span class="comment">    // 使用OneHotEncoder将分类变量转换为二进制稀疏向量</span></span><br><span class="line"><span class="comment">    val encoder = new OneHotEncoder().setInputCol(indexer.getOutputCol).setOutputCol(s"$&#123;cate&#125;_onehot")</span></span><br><span class="line"><span class="comment">    stagesArray.append(indexer, encoder)</span></span><br><span class="line"><span class="comment">&#125;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">val assemblerInputs = categoricalVariable.map(_ + "_onehot")</span></span><br><span class="line"><span class="comment">// 使用VectorAssembler将所有特征转换为一个向量</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//对离散变量进行合成向量</span></span><br><span class="line"><span class="keyword">val</span> categoricalAssembler = <span class="keyword">new</span> <span class="type">VectorAssembler</span>().setInputCols(categoricalVariable).setOutputCol(<span class="string">"categoricalFeature"</span>)</span><br><span class="line"><span class="comment">//对连续变量进行合成向量</span></span><br><span class="line"><span class="keyword">val</span> continuousAssembler = <span class="keyword">new</span> <span class="type">VectorAssembler</span>().setInputCols(continuousVariable).setOutputCol(<span class="string">"continuousFeature"</span>)</span><br><span class="line"><span class="comment">//对连续性变量进行标准化</span></span><br><span class="line"><span class="keyword">val</span> scaler = <span class="keyword">new</span> <span class="type">StandardScaler</span>().setInputCol(<span class="string">"continuousFeature"</span>).setOutputCol(<span class="string">"continuousFeature1"</span>).setWithStd(<span class="literal">true</span>).setWithMean(<span class="literal">true</span>)</span><br><span class="line"><span class="comment">//对全部变量合成向量Features</span></span><br><span class="line"><span class="keyword">val</span> <span class="type">Assembler</span> = <span class="keyword">new</span> <span class="type">VectorAssembler</span>().setInputCols(<span class="type">Array</span>(<span class="string">"categoricalFeature"</span>,<span class="string">"continuousFeature1"</span>)).setOutputCol(<span class="string">"features"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">//建立逻辑回归模型 .setMaxIter(68)</span></span><br><span class="line"><span class="keyword">val</span> lr = <span class="keyword">new</span> <span class="type">LogisticRegression</span>().setRegParam(<span class="number">0.3</span>).setElasticNetParam(<span class="number">0.8</span>).setLabelCol(<span class="string">"label"</span>).setFeaturesCol(<span class="string">"features"</span>)</span><br><span class="line"><span class="keyword">val</span> lr = <span class="keyword">new</span> <span class="type">LogisticRegression</span>().setLabelCol(<span class="string">"label"</span>).setFeaturesCol(<span class="string">"features"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">//建立通道一次Array顺序进行数据操作转换</span></span><br><span class="line"><span class="comment">//val lrPipeline = new Pipeline().setStages(stagesArray.toArray ++  Array(categoricalAssembler,continuousAssembler,scaler,Assembler, lr))</span></span><br><span class="line"><span class="keyword">val</span> lrPipeline = <span class="keyword">new</span> <span class="type">Pipeline</span>().setStages(<span class="type">Array</span>(categoricalAssembler,continuousAssembler,scaler,<span class="type">Assembler</span>, lr))</span><br><span class="line"><span class="keyword">val</span> lrModel = lrPipeline.fit(trainingData)</span><br><span class="line"><span class="comment">//保存模型</span></span><br><span class="line"><span class="keyword">val</span> model_path = <span class="string">"hdfs://shmbdcluster/user/bdoc/35/services/hive/shmc/hm_lr_model_v2"</span></span><br><span class="line">lrModel.write.overwrite().save(model_path)</span><br><span class="line"></span><br><span class="line"><span class="comment">//根据全量数据划分 开发集、测试集和验证集 分别进行评价</span></span><br><span class="line"><span class="comment">//val lrPredictions = lrModel.transform(testingData)</span></span><br><span class="line"><span class="keyword">val</span> lrPredictions = lrModel.transform(vaildingData)</span><br><span class="line">lrPredictions.select(<span class="string">"prediction"</span>, <span class="string">"label"</span>, <span class="string">"features"</span>).show(<span class="number">20</span>)</span><br><span class="line"><span class="comment">//得到模型概率</span></span><br><span class="line"><span class="keyword">val</span> predictionProb = lrPredictions.select(<span class="string">"probability"</span>).map(row =&gt; row.getAs[<span class="type">DenseVector</span>](<span class="string">"probability"</span>).toArray).map(x=&gt;x(<span class="number">1</span>)).rdd</span><br><span class="line">predictionProb.take(<span class="number">4</span>)</span><br><span class="line"><span class="comment">//得到模型准确率</span></span><br><span class="line"><span class="keyword">val</span> evaluator=<span class="keyword">new</span> <span class="type">MulticlassClassificationEvaluator</span>().setLabelCol(<span class="string">"label"</span>).setPredictionCol(<span class="string">"prediction"</span>)</span><br><span class="line"><span class="keyword">val</span> lrAccuracy=evaluator.evaluate(lrPredictions)</span><br><span class="line">println(<span class="string">"准确率为： "</span>+lrAccuracy)</span><br><span class="line"><span class="keyword">val</span> lrError=<span class="number">1</span>-lrAccuracy</span><br><span class="line">println(<span class="string">"错误率为: "</span>+lrError)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//模型相关评估 </span></span><br><span class="line"><span class="comment">//val pipelineModel = lrPipeline.bestModel.asInstanceOf[PipelineModel]</span></span><br><span class="line"><span class="keyword">val</span> <span class="type">LRmodel</span>=lrModel.stages(<span class="number">4</span>).asInstanceOf[<span class="type">LogisticRegressionModel</span>]</span><br><span class="line">println(<span class="string">"二项逻辑回归模型系数的向量: "</span>+<span class="type">LRmodel</span>.coefficients)</span><br><span class="line">println(<span class="string">"二项逻辑回归模型的截距: "</span>+<span class="type">LRmodel</span>.intercept)</span><br><span class="line">println(<span class="string">"类的数量(标签可以使用的值): "</span>+<span class="type">LRmodel</span>.numClasses)</span><br><span class="line">println(<span class="string">"模型所接受的特征的数量: "</span>+<span class="type">LRmodel</span>.numFeatures)</span><br><span class="line"><span class="comment">//对模型的总结(summary)目前只支持二项逻辑斯蒂回归,多项式逻辑回归并不支持(用的是spark 2.2.0)</span></span><br><span class="line">println(<span class="type">LRmodel</span>.hasSummary)</span><br><span class="line"><span class="keyword">val</span> trainingSummary = <span class="type">LRmodel</span>.summary</span><br><span class="line"><span class="comment">//损失函数,可以看到损失函数随着循环是逐渐变小的,损失函数越小,模型就越好</span></span><br><span class="line"><span class="keyword">val</span> objectiveHistory =trainingSummary.objectiveHistory</span><br><span class="line">objectiveHistory.foreach(println)</span><br><span class="line"><span class="comment">//强制转换为BinaryLogisticRegressionSummary</span></span><br><span class="line"><span class="keyword">val</span> binarySummary= trainingSummary.asInstanceOf[<span class="type">BinaryLogisticRegressionSummary</span>]</span><br><span class="line"><span class="comment">//ROC曲线下方的面积,越接近1说明模型越好</span></span><br><span class="line"><span class="keyword">val</span> area_ROC=binarySummary.areaUnderROC</span><br><span class="line">println(<span class="string">"ROC 曲线下的面积为: "</span>+area_ROC)</span><br><span class="line"><span class="comment">//fMeasureByThreshold:返回一个带有beta = 1.0的两个字段(阈值,f - measure)曲线的dataframe</span></span><br><span class="line"><span class="keyword">val</span> fMeasure=binarySummary.fMeasureByThreshold</span><br><span class="line">println(<span class="string">"fMeasure的行数: "</span>+fMeasure.collect().length)</span><br><span class="line">fMeasure.show(<span class="number">100</span>)</span><br><span class="line"><span class="keyword">val</span> maxFMeasure=fMeasure.select(functions.max(<span class="string">"F-Measure"</span>)).head().getDouble(<span class="number">0</span>)</span><br><span class="line">println(<span class="string">"最大的F-Measure的值为: "</span>+maxFMeasure)</span><br><span class="line"><span class="comment">//最优的阈值</span></span><br><span class="line"><span class="keyword">val</span> bestThreashold=fMeasure.where($<span class="string">"F-Measure"</span>===maxFMeasure).select(<span class="string">"threshold"</span>).head().getDouble(<span class="number">0</span>)</span><br><span class="line">println(<span class="string">"最优的阈值为："</span>+bestThreashold)</span><br><span class="line"></span><br><span class="line"><span class="type">LRmodel</span>.setThreshold(bestThreashold)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//对模型各个数据集合精准评估</span></span><br><span class="line"><span class="keyword">val</span> predictionAndLabels = lrPredictions.select($<span class="string">"prediction"</span>, $<span class="string">"label"</span>).as[(<span class="type">Double</span>, <span class="type">Double</span>)].cache()</span><br><span class="line"></span><br><span class="line"><span class="comment">// 显示 label prediction 分组后的统计</span></span><br><span class="line">predictionAndLabels.groupBy(<span class="string">"label"</span>, <span class="string">"prediction"</span>).count().show()</span><br><span class="line">predictionAndLabels.show(<span class="literal">false</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 多分类指标</span></span><br><span class="line"><span class="keyword">val</span> multiclassMetrics = <span class="keyword">new</span> <span class="type">MulticlassMetrics</span>(predictionAndLabels.rdd)</span><br><span class="line">println(<span class="string">"混淆矩阵 Confusion matrix:"</span>)</span><br><span class="line"><span class="keyword">val</span> confusionMatrix = multiclassMetrics.confusionMatrix</span><br><span class="line">println(confusionMatrix)</span><br><span class="line"><span class="keyword">val</span> <span class="type">TN</span> = confusionMatrix.apply(<span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line">println(<span class="string">s"TN(True negative: 预测为负例，实际为负例):<span class="subst">$&#123;TN&#125;</span>"</span>)</span><br><span class="line"><span class="keyword">val</span> <span class="type">FP</span> = confusionMatrix.apply(<span class="number">0</span>, <span class="number">1</span>)</span><br><span class="line">println(<span class="string">s"FP(False Positive: 预测为正例，实际为负例):<span class="subst">$&#123;FP&#125;</span>"</span>)</span><br><span class="line"><span class="keyword">val</span> <span class="type">FN</span> = confusionMatrix.apply(<span class="number">1</span>, <span class="number">0</span>)</span><br><span class="line">println(<span class="string">s"FN(False negative: 预测为负例，实际为正例):<span class="subst">$&#123;FN&#125;</span>"</span>)</span><br><span class="line"><span class="keyword">val</span> <span class="type">TP</span> = confusionMatrix.apply(<span class="number">1</span>, <span class="number">1</span>)</span><br><span class="line">println(<span class="string">s"TP(True Positive: 预测为正例，实际为正例):<span class="subst">$&#123;TP&#125;</span>"</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">val</span> <span class="type">Accuracy</span> = (<span class="type">TP</span>+<span class="type">TN</span>)/(<span class="type">TP</span>+<span class="type">FP</span>+<span class="type">TN</span>+<span class="type">FN</span>)</span><br><span class="line">println(<span class="string">"Accuracy: "</span> + <span class="type">Accuracy</span>)</span><br><span class="line"><span class="keyword">val</span> precision = <span class="type">TP</span>/(<span class="type">TP</span>+<span class="type">FP</span>)</span><br><span class="line">println(<span class="string">"precision: "</span> + precision )</span><br><span class="line"><span class="keyword">val</span> recall = <span class="type">TP</span>/(<span class="type">TP</span>+<span class="type">FN</span>)</span><br><span class="line">println(<span class="string">"recall: "</span> + recall)</span><br><span class="line"><span class="keyword">val</span> <span class="type">F1_score</span> = <span class="number">2</span>*precision*recall/(precision + recall)</span><br><span class="line">println(<span class="string">"F1_score: "</span> + <span class="type">F1_score</span>)</span><br></pre></td></tr></table></figure>
+
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/12/02/github-ssh-免密登录/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1192,211 +1390,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/08/chapter16-sort-algorithm/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="snail json">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Snail Life">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/03/08/chapter16-sort-algorithm/" itemprop="url">chapter16-sort-algorithm</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-03-08T12:58:38+08:00">
-                2020-03-08
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/leetcode/" itemprop="url" rel="index">
-                    <span itemprop="name">leetcode</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2020/03/08/chapter16-sort-algorithm/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/03/08/chapter16-sort-algorithm/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2020/03/08/chapter16-sort-algorithm/" class="leancloud_visitors" data-flag-title="chapter16-sort-algorithm">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Visitors&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             <span>℃</span>
-			 </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Words count in article&#58;</span>
-                
-                <span title="Words count in article">
-                  1.5k
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Reading time &asymp;</span>
-                
-                <span title="Reading time">
-                  6
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <hr>
-<h2 id="chapter16-sort-algorithm"><a href="#chapter16-sort-algorithm" class="headerlink" title="chapter16-sort-algorithm"></a>chapter16-sort-algorithm</h2><p>[TOC]</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2020/03/08/chapter16-sort-algorithm/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1443,7 +1441,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">50</span>
+                  <span class="site-state-item-count">51</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1534,7 +1532,7 @@
 		<h3 class="widget-title">Tag Cloud</h3>
 		<div id="myCanvasContainer" class="widget tagcloud">
 		  <canvas width="250" height="250" id="resCanvas" style="width=100%">
-			<ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/thread/">-- thread</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Anaconda/">Anaconda</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Optimization/">Optimization</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithms/">algorithms</a><span class="tag-list-count">25</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/db2/">db2</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hive/">hive</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">19</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/self-study/">self-study</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sql/">sql</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/statistics/">statistics</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/thread/">thread</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vim/">vim</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/win10快捷键/">win10快捷键</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/古月山风/">古月山风</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/梦想/">梦想</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/破晓/">破晓</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a><span class="tag-list-count">2</span></li></ul>
+			<ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/thread/">-- thread</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Anaconda/">Anaconda</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Optimization/">Optimization</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithms/">algorithms</a><span class="tag-list-count">26</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/db2/">db2</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hive/">hive</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">19</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/self-study/">self-study</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sql/">sql</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/statistics/">statistics</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/thread/">thread</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vim/">vim</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/win10快捷键/">win10快捷键</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/古月山风/">古月山风</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/梦想/">梦想</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/破晓/">破晓</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a><span class="tag-list-count">2</span></li></ul>
 		  </canvas>
 		</div>
 	  </div>
@@ -1565,7 +1563,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">130.6k</span>
+    <span title="Site words total count">135.5k</span>
   
 </div>
 

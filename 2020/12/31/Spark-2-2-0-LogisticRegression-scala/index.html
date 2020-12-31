@@ -1,0 +1,1477 @@
+<!DOCTYPE html>
+
+
+
+
+<html class="theme-next mist" lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  <link href="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+  
+
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="algorithms,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Snail Life" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="Spark_2.2.0_LogisticRegression_scala针对spark 2.2.0版本，从hive读取数据，转为DataFrame，以及利用scala工具和sparkML相关工具包进行数据处理与建模，然后对模型进行详细评价，代码如下： 1234567891011121314151617181920212223242526272829303132333435363738394041">
+<meta name="keywords" content="algorithms">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Spark_2.2.0_LogisticRegression_scala">
+<meta property="og:url" content="http://yoursite.com/2020/12/31/Spark-2-2-0-LogisticRegression-scala/index.html">
+<meta property="og:site_name" content="Snail Life">
+<meta property="og:description" content="Spark_2.2.0_LogisticRegression_scala针对spark 2.2.0版本，从hive读取数据，转为DataFrame，以及利用scala工具和sparkML相关工具包进行数据处理与建模，然后对模型进行详细评价，代码如下： 1234567891011121314151617181920212223242526272829303132333435363738394041">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2020-12-31T08:37:54.859Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Spark_2.2.0_LogisticRegression_scala">
+<meta name="twitter:description" content="Spark_2.2.0_LogisticRegression_scala针对spark 2.2.0版本，从hive读取数据，转为DataFrame，以及利用scala工具和sparkML相关工具包进行数据处理与建模，然后对模型进行详细评价，代码如下： 1234567891011121314151617181920212223242526272829303132333435363738394041">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/12/31/Spark-2-2-0-LogisticRegression-scala/">
+
+
+
+
+
+  <title>Spark_2.2.0_LogisticRegression_scala | Snail Life</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+	<a href="https://github.com/snailfrying" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#64CEAA; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Snail Life</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">basketball dance rap</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="Searching..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/12/31/Spark-2-2-0-LogisticRegression-scala/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="snail json">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Snail Life">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Spark_2.2.0_LogisticRegression_scala</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-12-31T16:34:10+08:00">
+                2020-12-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/spark/" itemprop="url" rel="index">
+                    <span itemprop="name">spark</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/12/31/Spark-2-2-0-LogisticRegression-scala/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/12/31/Spark-2-2-0-LogisticRegression-scala/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2020/12/31/Spark-2-2-0-LogisticRegression-scala/" class="leancloud_visitors" data-flag-title="Spark_2.2.0_LogisticRegression_scala">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             <span>℃</span>
+			 </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  1.6k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  8
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <hr>
+<h2 id="Spark-2-2-0-LogisticRegression-scala"><a href="#Spark-2-2-0-LogisticRegression-scala" class="headerlink" title="Spark_2.2.0_LogisticRegression_scala"></a>Spark_2.2.0_LogisticRegression_scala</h2><p>针对spark 2.2.0版本，从hive读取数据，转为DataFrame，以及利用scala工具和sparkML相关工具包进行数据处理与建模，然后对模型进行详细评价，代码如下：</p>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> org.apache.spark.sql.<span class="type">SparkSession</span></span><br><span class="line"><span class="keyword">import</span> org.apache.spark.sql.hive.<span class="type">HiveContext</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> scala.collection.mutable.<span class="type">ListBuffer</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> util.<span class="type">Random</span></span><br><span class="line"><span class="keyword">import</span> org.apache.spark.sql.<span class="type">Row</span></span><br><span class="line"><span class="keyword">import</span> org.apache.spark.sql.types._</span><br><span class="line"><span class="keyword">import</span> org.apache.spark.sql.functions</span><br><span class="line"><span class="keyword">import</span> org.apache.spark.sql.functions.udf</span><br><span class="line"><span class="keyword">import</span> org.apache.spark.sql.functions.rand</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.apache.spark.ml.stat.<span class="type">ChiSquareTest</span></span><br><span class="line"><span class="keyword">import</span> org.apache.spark.ml.linalg.<span class="type">DenseVector</span></span><br><span class="line"><span class="keyword">import</span> org.apache.spark.ml.linalg.&#123;<span class="type">Vector</span>, <span class="type">Vectors</span>&#125;</span><br><span class="line"><span class="keyword">import</span> org.apache.spark.ml.classification.<span class="type">LogisticRegression</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.apache.spark.ml.param.<span class="type">ParamMap</span></span><br><span class="line"><span class="keyword">import</span> org.apache.spark.ml.&#123;<span class="type">Pipeline</span>,<span class="type">PipelineStage</span>&#125;</span><br><span class="line"><span class="keyword">import</span> org.apache.spark.ml.tuning.&#123;<span class="type">ParamGridBuilder</span>, <span class="type">TrainValidationSplit</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.apache.spark.ml.feature.<span class="type">Binarizer</span></span><br><span class="line"><span class="keyword">import</span> org.apache.spark.ml.feature.<span class="type">VectorSlicer</span></span><br><span class="line"><span class="keyword">import</span> org.apache.spark.ml.feature.<span class="type">StandardScaler</span></span><br><span class="line"><span class="keyword">import</span> org.apache.spark.ml.feature.&#123;<span class="type">IndexToString</span>, <span class="type">OneHotEncoder</span>,<span class="type">StringIndexer</span>, <span class="type">VectorIndexer</span>,<span class="type">VectorAssembler</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.apache.spark.mllib.evaluation.<span class="type">MulticlassMetrics</span></span><br><span class="line"><span class="keyword">import</span> org.apache.spark.ml.evaluation.<span class="type">MulticlassClassificationEvaluator</span></span><br><span class="line"><span class="keyword">import</span> org.apache.spark.ml.classification.&#123;<span class="type">BinaryLogisticRegressionSummary</span>, <span class="type">LogisticRegression</span>, <span class="type">LogisticRegressionModel</span>,<span class="type">LogisticRegressionSummary</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//配置环境</span></span><br><span class="line"><span class="keyword">val</span> hiveCtx = <span class="keyword">new</span> <span class="type">HiveContext</span>(sc) </span><br><span class="line"><span class="keyword">val</span> myPath = <span class="string">"hdfs://shmbdcluster/user/bdoc/35/services/hive/shmc/tmp_ana_hm_train_feature/"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//string 格式读取</span></span><br><span class="line"><span class="comment">//val data=  spark.read.format("com.databricks.spark.csv").option("delimiter","\t").load("hdfs://shmbdcluster/user/bdoc/35/services/hive/shmc/tmp_ana_hm_train_feature/month_id=202009/*").cache()</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//可以直接读取为label features 的DataFrame</span></span><br><span class="line"><span class="keyword">val</span> rawData = sc.textFile(myPath).filter(row =&gt; !(row.contains(<span class="string">"\\N"</span>)))</span><br><span class="line"></span><br><span class="line"><span class="comment">//读取label and features 全为string 需要进行分割</span></span><br><span class="line"><span class="keyword">val</span> colsLength = rawData.first.split(<span class="string">","</span>).slice(<span class="number">0</span>, <span class="number">46</span>).length.toInt</span><br><span class="line"><span class="keyword">val</span> rdd = rawData.map(_.split(',').slice(<span class="number">0</span>, <span class="number">46</span>).map(_.toString)).map(p=&gt;<span class="type">Row</span>(p:_*))</span><br><span class="line"></span><br><span class="line"><span class="comment">//根据列数 直接取名</span></span><br><span class="line"><span class="comment">//val colNames  =(0 until colsLength).map(i =&gt; "col_" + (i+1))</span></span><br><span class="line"><span class="keyword">val</span>  colNames = <span class="type">Array</span>(<span class="string">"user_id"</span>,<span class="string">"phone_no"</span>,<span class="string">"offer_id"</span>,<span class="string">"label"</span>,<span class="string">"is_zn"</span>,<span class="string">"FML_FLAG"</span>,<span class="string">"LCL_FLAG"</span>,<span class="string">"GENDER_ID"</span>,<span class="string">"device_flag"</span>,<span class="string">"LVL1_PLAN_ID"</span>,<span class="string">"CREDIT_LEVEL_ID"</span>,<span class="string">"CROWD_TOGETHER_FLAG"</span>,<span class="string">"lan_offer_lvl2_type_snt"</span>,<span class="string">"CROWD_MAIN_PHONE_NO_FLAG"</span>,<span class="string">"age"</span>,<span class="string">"dou"</span>,<span class="string">"mou"</span>,<span class="string">"jw_num"</span>,<span class="string">"bill_fee"</span>,<span class="string">"use_kday"</span>,<span class="string">"band_rate"</span>,<span class="string">"eff_kdate"</span>,<span class="string">"group_num"</span>,<span class="string">"exp_kdate"</span>,<span class="string">"lacci_num"</span>,<span class="string">"ONLINE_id"</span>,<span class="string">"have_child"</span>,<span class="string">"have_older"</span>,<span class="string">"days_home1"</span>,<span class="string">"days_workl"</span>,<span class="string">"start_zdate"</span>,<span class="string">"man_call_dur"</span>,<span class="string">"sum_up_kflow"</span>,<span class="string">"man_call_num"</span>,<span class="string">"group_num_wsyd"</span>,<span class="string">"sum_down_kflow"</span>,<span class="string">"group_num_yiwang"</span>,<span class="string">"area_id"</span>,<span class="string">"term_model_snt"</span>,<span class="string">"lacci_home1_snt"</span>,<span class="string">"lacci_work1_snt"</span>,<span class="string">"community_jid_snt"</span>,<span class="string">"community_kid_snt"</span>,<span class="string">"create_area_id_snt"</span>,<span class="string">"term_brand_name_snt"</span>,<span class="string">"multi_term_cata3_name_snt"</span>)</span><br><span class="line"><span class="comment">//创建结构体 DoubleType</span></span><br><span class="line"><span class="keyword">val</span> schema = <span class="type">StructType</span>(colNames.map(fieldName =&gt; <span class="type">StructField</span>(fieldName.toString,<span class="type">StringType</span>)))  </span><br><span class="line"><span class="comment">//创建dataFrame</span></span><br><span class="line"><span class="keyword">val</span> data = spark.createDataFrame(rdd,schema)</span><br><span class="line"></span><br><span class="line"><span class="comment">//1.打乱数据 通过创建一列随机数，排序来对DataFrame数据进行打乱</span></span><br><span class="line"><span class="keyword">val</span> randr = data.select(<span class="string">"user_id"</span>).map(row =&gt; (row.getAs[<span class="type">String</span>](<span class="number">0</span>), <span class="type">Random</span>.nextDouble())).toDF(<span class="string">"user_id"</span>,<span class="string">"rand"</span>)</span><br><span class="line">randr.show(<span class="number">5</span>)</span><br><span class="line"><span class="keyword">val</span> df1 = data.join(randr,<span class="type">Seq</span>[<span class="type">String</span>](<span class="string">"user_id"</span>,<span class="string">"user_id"</span>),<span class="string">"left"</span>).orderBy(<span class="string">"rand"</span>)</span><br><span class="line">df1.show(<span class="number">4</span>)</span><br><span class="line"><span class="keyword">val</span> df = df1.drop(<span class="string">"rand"</span>)</span><br><span class="line"><span class="comment">//2.数据打乱 进行rand()函数产生一列数据，直接记性打乱</span></span><br><span class="line"><span class="keyword">var</span> <span class="type">HouseWifiDF_newsam</span> = df.orderBy(rand())</span><br><span class="line"></span><br><span class="line"><span class="comment">//列出相关结果变量</span></span><br><span class="line"><span class="comment">//val colNames_1  =(1 until colsLength).map(i =&gt; "col_" + (i+1)).toArray</span></span><br><span class="line"><span class="keyword">val</span> wcol = &#123;<span class="type">Array</span>(<span class="string">"label"</span>,<span class="string">"is_zn"</span>,<span class="string">"FML_FLAG"</span>,<span class="string">"LCL_FLAG"</span>,<span class="string">"GENDER_ID"</span>,<span class="string">"device_flag"</span>,<span class="string">"LVL1_PLAN_ID"</span>,<span class="string">"CREDIT_LEVEL_ID"</span>,<span class="string">"CROWD_TOGETHER_FLAG"</span>,<span class="string">"lan_offer_lvl2_type_snt"</span>,<span class="string">"CROWD_MAIN_PHONE_NO_FLAG"</span>,<span class="string">"age"</span>,<span class="string">"dou"</span>,<span class="string">"mou"</span>,<span class="string">"jw_num"</span>,<span class="string">"bill_fee"</span>,<span class="string">"use_kday"</span>,<span class="string">"band_rate"</span>,<span class="string">"eff_kdate"</span>,<span class="string">"group_num"</span>,<span class="string">"exp_kdate"</span>,<span class="string">"lacci_num"</span>,<span class="string">"ONLINE_id"</span>,<span class="string">"have_child"</span>,<span class="string">"have_older"</span>,<span class="string">"days_home1"</span>,<span class="string">"days_workl"</span>,<span class="string">"start_zdate"</span>,<span class="string">"man_call_dur"</span>,<span class="string">"sum_up_kflow"</span>,<span class="string">"man_call_num"</span>,<span class="string">"group_num_wsyd"</span>,<span class="string">"sum_down_kflow"</span>,<span class="string">"group_num_yiwang"</span>,<span class="string">"area_id"</span>,<span class="string">"term_model_snt"</span>,<span class="string">"lacci_home1_snt"</span>,<span class="string">"lacci_work1_snt"</span>,<span class="string">"community_jid_snt"</span>,<span class="string">"community_kid_snt"</span>,<span class="string">"create_area_id_snt"</span>,<span class="string">"term_brand_name_snt"</span>,<span class="string">"multi_term_cata3_name_snt"</span>)&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">val</span> colNames_1 = &#123;<span class="type">Array</span>(<span class="string">"is_zn"</span>,<span class="string">"FML_FLAG"</span>,<span class="string">"LCL_FLAG"</span>,<span class="string">"GENDER_ID"</span>,<span class="string">"device_flag"</span>,<span class="string">"LVL1_PLAN_ID"</span>,<span class="string">"CREDIT_LEVEL_ID"</span>,<span class="string">"CROWD_TOGETHER_FLAG"</span>,<span class="string">"lan_offer_lvl2_type_snt"</span>,<span class="string">"CROWD_MAIN_PHONE_NO_FLAG"</span>,<span class="string">"age"</span>,<span class="string">"dou"</span>,<span class="string">"mou"</span>,<span class="string">"jw_num"</span>,<span class="string">"bill_fee"</span>,<span class="string">"use_kday"</span>,<span class="string">"band_rate"</span>,<span class="string">"eff_kdate"</span>,<span class="string">"group_num"</span>,<span class="string">"exp_kdate"</span>,<span class="string">"lacci_num"</span>,<span class="string">"ONLINE_id"</span>,<span class="string">"have_child"</span>,<span class="string">"have_older"</span>,<span class="string">"days_home1"</span>,<span class="string">"days_workl"</span>,<span class="string">"start_zdate"</span>,<span class="string">"man_call_dur"</span>,<span class="string">"sum_up_kflow"</span>,<span class="string">"man_call_num"</span>,<span class="string">"group_num_wsyd"</span>,<span class="string">"sum_down_kflow"</span>,<span class="string">"group_num_yiwang"</span>,<span class="string">"area_id"</span>,<span class="string">"term_model_snt"</span>,<span class="string">"lacci_home1_snt"</span>,<span class="string">"lacci_work1_snt"</span>,<span class="string">"community_jid_snt"</span>,<span class="string">"community_kid_snt"</span>,<span class="string">"create_area_id_snt"</span>,<span class="string">"term_brand_name_snt"</span>,<span class="string">"multi_term_cata3_name_snt"</span>)&#125;</span><br><span class="line"><span class="keyword">val</span> continuousVariable = <span class="type">Array</span>(<span class="string">"dou"</span>,<span class="string">"mou"</span>,<span class="string">"jw_num"</span>,<span class="string">"bill_fee"</span>,<span class="string">"use_kday"</span>,<span class="string">"eff_kdate"</span>,<span class="string">"group_num"</span>,<span class="string">"exp_kdate"</span>,<span class="string">"start_zdate"</span>,<span class="string">"man_call_dur"</span>,<span class="string">"sum_up_kflow"</span>,<span class="string">"man_call_num"</span>,<span class="string">"group_num_wsyd"</span>,<span class="string">"sum_down_kflow"</span>,<span class="string">"group_num_yiwang"</span>,<span class="string">"have_child"</span>,<span class="string">"have_older"</span>)</span><br><span class="line"><span class="keyword">val</span> categoricalVariable = colNames_1.filter(v =&gt; !continuousVariable.contains(v))</span><br><span class="line"></span><br><span class="line"><span class="comment">//对连续性变量进行类型转换</span></span><br><span class="line"><span class="keyword">val</span> wdata =  df.select(wcol.map(name =&gt; col(name).cast(<span class="type">DoubleType</span>)): _*)</span><br><span class="line"></span><br><span class="line"><span class="comment">//数据集划分</span></span><br><span class="line"><span class="keyword">val</span> <span class="type">Array</span>(trainingData, tData) = wdata.randomSplit(<span class="type">Array</span>(<span class="number">0.75</span>, <span class="number">0.25</span>), seed = <span class="number">38</span>)</span><br><span class="line"><span class="keyword">val</span> <span class="type">Array</span>(testingData, vaildingData) = tData.randomSplit(<span class="type">Array</span>(<span class="number">0.6</span>, <span class="number">0.4</span>), seed = <span class="number">38</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">//采用Pileline方式处理机器学习流程 对每一个类别特征 进行onehot</span></span><br><span class="line"><span class="comment">val stagesArray = new ListBuffer[PipelineStage]()</span></span><br><span class="line"><span class="comment">for (cate &lt;- categoricalVariable) &#123;</span></span><br><span class="line"><span class="comment">    //使用StringIndexer 建立类别索引</span></span><br><span class="line"><span class="comment">    val indexer = new StringIndexer().setInputCol(cate).setOutputCol(s"$&#123;cate&#125;_Index")</span></span><br><span class="line"><span class="comment">    // 使用OneHotEncoder将分类变量转换为二进制稀疏向量</span></span><br><span class="line"><span class="comment">    val encoder = new OneHotEncoder().setInputCol(indexer.getOutputCol).setOutputCol(s"$&#123;cate&#125;_onehot")</span></span><br><span class="line"><span class="comment">    stagesArray.append(indexer, encoder)</span></span><br><span class="line"><span class="comment">&#125;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">val assemblerInputs = categoricalVariable.map(_ + "_onehot")</span></span><br><span class="line"><span class="comment">// 使用VectorAssembler将所有特征转换为一个向量</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//对离散变量进行合成向量</span></span><br><span class="line"><span class="keyword">val</span> categoricalAssembler = <span class="keyword">new</span> <span class="type">VectorAssembler</span>().setInputCols(categoricalVariable).setOutputCol(<span class="string">"categoricalFeature"</span>)</span><br><span class="line"><span class="comment">//对连续变量进行合成向量</span></span><br><span class="line"><span class="keyword">val</span> continuousAssembler = <span class="keyword">new</span> <span class="type">VectorAssembler</span>().setInputCols(continuousVariable).setOutputCol(<span class="string">"continuousFeature"</span>)</span><br><span class="line"><span class="comment">//对连续性变量进行标准化</span></span><br><span class="line"><span class="keyword">val</span> scaler = <span class="keyword">new</span> <span class="type">StandardScaler</span>().setInputCol(<span class="string">"continuousFeature"</span>).setOutputCol(<span class="string">"continuousFeature1"</span>).setWithStd(<span class="literal">true</span>).setWithMean(<span class="literal">true</span>)</span><br><span class="line"><span class="comment">//对全部变量合成向量Features</span></span><br><span class="line"><span class="keyword">val</span> <span class="type">Assembler</span> = <span class="keyword">new</span> <span class="type">VectorAssembler</span>().setInputCols(<span class="type">Array</span>(<span class="string">"categoricalFeature"</span>,<span class="string">"continuousFeature1"</span>)).setOutputCol(<span class="string">"features"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">//建立逻辑回归模型 .setMaxIter(68)</span></span><br><span class="line"><span class="keyword">val</span> lr = <span class="keyword">new</span> <span class="type">LogisticRegression</span>().setRegParam(<span class="number">0.3</span>).setElasticNetParam(<span class="number">0.8</span>).setLabelCol(<span class="string">"label"</span>).setFeaturesCol(<span class="string">"features"</span>)</span><br><span class="line"><span class="keyword">val</span> lr = <span class="keyword">new</span> <span class="type">LogisticRegression</span>().setLabelCol(<span class="string">"label"</span>).setFeaturesCol(<span class="string">"features"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">//建立通道一次Array顺序进行数据操作转换</span></span><br><span class="line"><span class="comment">//val lrPipeline = new Pipeline().setStages(stagesArray.toArray ++  Array(categoricalAssembler,continuousAssembler,scaler,Assembler, lr))</span></span><br><span class="line"><span class="keyword">val</span> lrPipeline = <span class="keyword">new</span> <span class="type">Pipeline</span>().setStages(<span class="type">Array</span>(categoricalAssembler,continuousAssembler,scaler,<span class="type">Assembler</span>, lr))</span><br><span class="line"><span class="keyword">val</span> lrModel = lrPipeline.fit(trainingData)</span><br><span class="line"><span class="comment">//保存模型</span></span><br><span class="line"><span class="keyword">val</span> model_path = <span class="string">"hdfs://shmbdcluster/user/bdoc/35/services/hive/shmc/hm_lr_model_v2"</span></span><br><span class="line">lrModel.write.overwrite().save(model_path)</span><br><span class="line"></span><br><span class="line"><span class="comment">//根据全量数据划分 开发集、测试集和验证集 分别进行评价</span></span><br><span class="line"><span class="comment">//val lrPredictions = lrModel.transform(testingData)</span></span><br><span class="line"><span class="keyword">val</span> lrPredictions = lrModel.transform(vaildingData)</span><br><span class="line">lrPredictions.select(<span class="string">"prediction"</span>, <span class="string">"label"</span>, <span class="string">"features"</span>).show(<span class="number">20</span>)</span><br><span class="line"><span class="comment">//得到模型概率</span></span><br><span class="line"><span class="keyword">val</span> predictionProb = lrPredictions.select(<span class="string">"probability"</span>).map(row =&gt; row.getAs[<span class="type">DenseVector</span>](<span class="string">"probability"</span>).toArray).map(x=&gt;x(<span class="number">1</span>)).rdd</span><br><span class="line">predictionProb.take(<span class="number">4</span>)</span><br><span class="line"><span class="comment">//得到模型准确率</span></span><br><span class="line"><span class="keyword">val</span> evaluator=<span class="keyword">new</span> <span class="type">MulticlassClassificationEvaluator</span>().setLabelCol(<span class="string">"label"</span>).setPredictionCol(<span class="string">"prediction"</span>)</span><br><span class="line"><span class="keyword">val</span> lrAccuracy=evaluator.evaluate(lrPredictions)</span><br><span class="line">println(<span class="string">"准确率为： "</span>+lrAccuracy)</span><br><span class="line"><span class="keyword">val</span> lrError=<span class="number">1</span>-lrAccuracy</span><br><span class="line">println(<span class="string">"错误率为: "</span>+lrError)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//模型相关评估 </span></span><br><span class="line"><span class="comment">//val pipelineModel = lrPipeline.bestModel.asInstanceOf[PipelineModel]</span></span><br><span class="line"><span class="keyword">val</span> <span class="type">LRmodel</span>=lrModel.stages(<span class="number">4</span>).asInstanceOf[<span class="type">LogisticRegressionModel</span>]</span><br><span class="line">println(<span class="string">"二项逻辑回归模型系数的向量: "</span>+<span class="type">LRmodel</span>.coefficients)</span><br><span class="line">println(<span class="string">"二项逻辑回归模型的截距: "</span>+<span class="type">LRmodel</span>.intercept)</span><br><span class="line">println(<span class="string">"类的数量(标签可以使用的值): "</span>+<span class="type">LRmodel</span>.numClasses)</span><br><span class="line">println(<span class="string">"模型所接受的特征的数量: "</span>+<span class="type">LRmodel</span>.numFeatures)</span><br><span class="line"><span class="comment">//对模型的总结(summary)目前只支持二项逻辑斯蒂回归,多项式逻辑回归并不支持(用的是spark 2.2.0)</span></span><br><span class="line">println(<span class="type">LRmodel</span>.hasSummary)</span><br><span class="line"><span class="keyword">val</span> trainingSummary = <span class="type">LRmodel</span>.summary</span><br><span class="line"><span class="comment">//损失函数,可以看到损失函数随着循环是逐渐变小的,损失函数越小,模型就越好</span></span><br><span class="line"><span class="keyword">val</span> objectiveHistory =trainingSummary.objectiveHistory</span><br><span class="line">objectiveHistory.foreach(println)</span><br><span class="line"><span class="comment">//强制转换为BinaryLogisticRegressionSummary</span></span><br><span class="line"><span class="keyword">val</span> binarySummary= trainingSummary.asInstanceOf[<span class="type">BinaryLogisticRegressionSummary</span>]</span><br><span class="line"><span class="comment">//ROC曲线下方的面积,越接近1说明模型越好</span></span><br><span class="line"><span class="keyword">val</span> area_ROC=binarySummary.areaUnderROC</span><br><span class="line">println(<span class="string">"ROC 曲线下的面积为: "</span>+area_ROC)</span><br><span class="line"><span class="comment">//fMeasureByThreshold:返回一个带有beta = 1.0的两个字段(阈值,f - measure)曲线的dataframe</span></span><br><span class="line"><span class="keyword">val</span> fMeasure=binarySummary.fMeasureByThreshold</span><br><span class="line">println(<span class="string">"fMeasure的行数: "</span>+fMeasure.collect().length)</span><br><span class="line">fMeasure.show(<span class="number">100</span>)</span><br><span class="line"><span class="keyword">val</span> maxFMeasure=fMeasure.select(functions.max(<span class="string">"F-Measure"</span>)).head().getDouble(<span class="number">0</span>)</span><br><span class="line">println(<span class="string">"最大的F-Measure的值为: "</span>+maxFMeasure)</span><br><span class="line"><span class="comment">//最优的阈值</span></span><br><span class="line"><span class="keyword">val</span> bestThreashold=fMeasure.where($<span class="string">"F-Measure"</span>===maxFMeasure).select(<span class="string">"threshold"</span>).head().getDouble(<span class="number">0</span>)</span><br><span class="line">println(<span class="string">"最优的阈值为："</span>+bestThreashold)</span><br><span class="line"></span><br><span class="line"><span class="type">LRmodel</span>.setThreshold(bestThreashold)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//对模型各个数据集合精准评估</span></span><br><span class="line"><span class="keyword">val</span> predictionAndLabels = lrPredictions.select($<span class="string">"prediction"</span>, $<span class="string">"label"</span>).as[(<span class="type">Double</span>, <span class="type">Double</span>)].cache()</span><br><span class="line"></span><br><span class="line"><span class="comment">// 显示 label prediction 分组后的统计</span></span><br><span class="line">predictionAndLabels.groupBy(<span class="string">"label"</span>, <span class="string">"prediction"</span>).count().show()</span><br><span class="line">predictionAndLabels.show(<span class="literal">false</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 多分类指标</span></span><br><span class="line"><span class="keyword">val</span> multiclassMetrics = <span class="keyword">new</span> <span class="type">MulticlassMetrics</span>(predictionAndLabels.rdd)</span><br><span class="line">println(<span class="string">"混淆矩阵 Confusion matrix:"</span>)</span><br><span class="line"><span class="keyword">val</span> confusionMatrix = multiclassMetrics.confusionMatrix</span><br><span class="line">println(confusionMatrix)</span><br><span class="line"><span class="keyword">val</span> <span class="type">TN</span> = confusionMatrix.apply(<span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line">println(<span class="string">s"TN(True negative: 预测为负例，实际为负例):<span class="subst">$&#123;TN&#125;</span>"</span>)</span><br><span class="line"><span class="keyword">val</span> <span class="type">FP</span> = confusionMatrix.apply(<span class="number">0</span>, <span class="number">1</span>)</span><br><span class="line">println(<span class="string">s"FP(False Positive: 预测为正例，实际为负例):<span class="subst">$&#123;FP&#125;</span>"</span>)</span><br><span class="line"><span class="keyword">val</span> <span class="type">FN</span> = confusionMatrix.apply(<span class="number">1</span>, <span class="number">0</span>)</span><br><span class="line">println(<span class="string">s"FN(False negative: 预测为负例，实际为正例):<span class="subst">$&#123;FN&#125;</span>"</span>)</span><br><span class="line"><span class="keyword">val</span> <span class="type">TP</span> = confusionMatrix.apply(<span class="number">1</span>, <span class="number">1</span>)</span><br><span class="line">println(<span class="string">s"TP(True Positive: 预测为正例，实际为正例):<span class="subst">$&#123;TP&#125;</span>"</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">val</span> <span class="type">Accuracy</span> = (<span class="type">TP</span>+<span class="type">TN</span>)/(<span class="type">TP</span>+<span class="type">FP</span>+<span class="type">TN</span>+<span class="type">FN</span>)</span><br><span class="line">println(<span class="string">"Accuracy: "</span> + <span class="type">Accuracy</span>)</span><br><span class="line"><span class="keyword">val</span> precision = <span class="type">TP</span>/(<span class="type">TP</span>+<span class="type">FP</span>)</span><br><span class="line">println(<span class="string">"precision: "</span> + precision )</span><br><span class="line"><span class="keyword">val</span> recall = <span class="type">TP</span>/(<span class="type">TP</span>+<span class="type">FN</span>)</span><br><span class="line">println(<span class="string">"recall: "</span> + recall)</span><br><span class="line"><span class="keyword">val</span> <span class="type">F1_score</span> = <span class="number">2</span>*precision*recall/(precision + recall)</span><br><span class="line">println(<span class="string">"F1_score: "</span> + <span class="type">F1_score</span>)</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/algorithms/" rel="tag"># algorithms</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div id="needsharebutton-postbottom">
+            <span class="btn">
+              <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </span>
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/12/02/github-ssh-免密登录/" rel="next" title="github_ssh_免密登录">
+                <i class="fa fa-chevron-left"></i> github_ssh_免密登录
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+		
+		
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">snail json</p>
+              <p class="site-description motion-element" itemprop="description">您心底所憧憬的事物，一定在某个维度发生</p>
+          </div>
+		<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=483937795&auto=0&height=66"></iframe>
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">51</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/snailfrying" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:snailfrying@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://plus.google.com/snailfrying" target="_blank" title="Google">
+                      
+                        <i class="fa fa-fw fa-google"></i>Google</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.zhihu.com/people/gua-niu-hui-fei-37/activities" target="_blank" title="知乎">
+                      
+                        <i class="fa fa-fw fa-raindrops"></i>知乎</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Spark-2-2-0-LogisticRegression-scala"><span class="nav-number">1.</span> <span class="nav-text">Spark_2.2.0_LogisticRegression_scala</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+	
+	  <script type="text/javascript" charset="utf-8" src="/js/tagcloud.js"></script>
+	  <script type="text/javascript" charset="utf-8" src="/js/tagcanvas.js"></script>
+	  <div class="widget-wrap">
+		<h3 class="widget-title">Tag Cloud</h3>
+		<div id="myCanvasContainer" class="widget tagcloud">
+		  <canvas width="250" height="250" id="resCanvas" style="width=100%">
+			<ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/thread/">-- thread</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Anaconda/">Anaconda</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Optimization/">Optimization</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithms/">algorithms</a><span class="tag-list-count">26</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/db2/">db2</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hive/">hive</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">19</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/self-study/">self-study</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sql/">sql</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/statistics/">statistics</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/thread/">thread</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vim/">vim</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/win10快捷键/">win10快捷键</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/古月山风/">古月山风</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/梦想/">梦想</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/破晓/">破晓</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a><span class="tag-list-count">2</span></li></ul>
+		  </canvas>
+		</div>
+	  </div>
+	
+	
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">snail json</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">135.5k</span>
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">snail silly?</span>
+</div>
+<!--页面点击小红心-->
+<script type="text/javascript" src="/love.js"></script>
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+      <div id="needsharebutton-float">
+        <span class="btn">
+          <i class="fa fa-share-alt" aria-hidden="true"></i>
+        </span>
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/2.1.3/jquery.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/fastclick/1.0.6/fastclick.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.lazyload/1.9.3/jquery.lazyload.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.ui.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://龙门阵.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2020/12/31/Spark-2-2-0-LogisticRegression-scala/';
+          this.page.identifier = '2020/12/31/Spark-2-2-0-LogisticRegression-scala/';
+          this.page.title = 'Spark_2.2.0_LogisticRegression_scala';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://龙门阵.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: true,
+        notify: true,
+        appId: 'fF92eK9HnnGlETqxfUmFSOTy-gzGzoHsz',
+        appKey: '0OJnVAzjWXYUJttLekLy93fu',
+        placeholder: 'Small snail crawling up!!!',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("gFXuJyqJKwqMss9sIRbzJ0Qa-gzGzoHsz", "Uq6nDSovYwizyRBYP6qTGxNX");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+      pbOptions = {};
+      
+          pbOptions.iconStyle = "box";
+      
+          pbOptions.boxForm = "horizontal";
+      
+          pbOptions.position = "bottomCenter";
+      
+          pbOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+    
+    
+      flOptions = {};
+      
+          flOptions.iconStyle = "box";
+      
+          flOptions.boxForm = "horizontal";
+      
+          flOptions.position = "middleRight";
+      
+          flOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-float', flOptions);
+    
+  </script>
+
+  
+
+  
+  
+
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"left","width":200,"height":400},"mobile":{"show":true},"react":{"opacity":0.7}});</script><script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script></body>
+</html>
