@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-12-31T08:37:54.859Z</updated>
+  <updated>2021-02-26T06:26:22.012Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Radar_chart_1</title>
+    <link href="http://yoursite.com/2021/02/26/Radar-chart-1/"/>
+    <id>http://yoursite.com/2021/02/26/Radar-chart-1/</id>
+    <published>2021-02-26T02:05:45.000Z</published>
+    <updated>2021-02-26T06:26:22.012Z</updated>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+&lt;h2 id=&quot;Radar-chart&quot;&gt;&lt;a href=&quot;#Radar-chart&quot; class=&quot;headerlink&quot; title=&quot;Radar chart&quot;&gt;&lt;/a&gt;Radar chart&lt;/h2&gt;&lt;p&gt;The &lt;a href=&quot;https://en.wikipedia.org/wiki/Radar_chart&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;radar chart&lt;/a&gt; is a chart and/or plot that consists of a sequence of equi-angular spokes, called radii, with each spoke representing one of the variables. The data length of a spoke is proportional to the magnitude of the variable for the data point relative to the maximum magnitude of the variable across all data points. A line is drawn connecting the data values for each spoke. This gives the plot a star-like appearance and the origin of one of the popular names for this plot.&lt;/p&gt;
+&lt;h3 id=&quot;When-to-use-it&quot;&gt;&lt;a href=&quot;#When-to-use-it&quot; class=&quot;headerlink&quot; title=&quot;When to use it ?&quot;&gt;&lt;/a&gt;When to use it ?&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Comparing two or more items or groups on various features or characteristics.&lt;/li&gt;
+&lt;li&gt;Examining the relative values for a single data point.&lt;/li&gt;
+&lt;li&gt;Displaying less than ten factors on one radar chart.&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+    
+      <category term="-[DataAnalysis]" scheme="http://yoursite.com/categories/DataAnalysis/"/>
+    
+    
+      <category term="python" scheme="http://yoursite.com/tags/python/"/>
+    
+  </entry>
   
   <entry>
     <title>Spark_2.2.0_LogisticRegression_scala</title>
@@ -539,30 +566,6 @@
       <category term="algorithms" scheme="http://yoursite.com/tags/algorithms/"/>
     
       <category term="python" scheme="http://yoursite.com/tags/python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>snail first travel essays 3day</title>
-    <link href="http://yoursite.com/2020/02/06/snail-first-travel-essays-3day/"/>
-    <id>http://yoursite.com/2020/02/06/snail-first-travel-essays-3day/</id>
-    <published>2020-02-06T07:57:59.000Z</published>
-    <updated>2020-02-07T09:37:26.385Z</updated>
-    
-    <summary type="html">
-    
-      &lt;hr&gt;
-&lt;h2 id=&quot;snail-first-travel-essays-3day&quot;&gt;&lt;a href=&quot;#snail-first-travel-essays-3day&quot; class=&quot;headerlink&quot; title=&quot;snail first travel essays 3day&quot;&gt;&lt;/a&gt;snail first travel essays 3day&lt;/h2&gt;&lt;p&gt;20200123  雨 目的地-西溪湿地公园&lt;/p&gt;
-&lt;p&gt;一个人，一个口罩，一把伞，一个背包，一碗混沌，五个煎饺，一个目的地。&lt;/p&gt;
-&lt;p&gt;由于新型肺炎的不断扩散，我家人的关注，我更加选择人少的地方了。综合了一下，很想去湿地公园，毕竟电视上看多了，想去看花和鸟，哈哈哈，虽然我们大璧山也有。。。&lt;/p&gt;
-&lt;p&gt;第一次做杭州的公交，走路去车站，看见一个树，外面老皮坏了，重新又长了新枝干，我是棵树就好了，哈哈。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/uploads/loading.gif&quot; data-original=&quot;http://q5627p7xm.bkt.clouddn.com/IMG_20200123_104958.jpg&quot; alt&gt;&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="-[随笔]" scheme="http://yoursite.com/categories/%E9%9A%8F%E7%AC%94/"/>
-    
     
   </entry>
   
