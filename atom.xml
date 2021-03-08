@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2021-02-26T06:26:22.012Z</updated>
+  <updated>2021-03-08T08:01:18.314Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>hot_site_arrange</title>
+    <link href="http://yoursite.com/2021/03/08/hot-site-arrange/"/>
+    <id>http://yoursite.com/2021/03/08/hot-site-arrange/</id>
+    <published>2021-03-08T01:47:01.000Z</published>
+    <updated>2021-03-08T08:01:18.314Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;hr&gt;
+&lt;h2 id=&quot;Hot-Site-Arrange&quot;&gt;&lt;a href=&quot;#Hot-Site-Arrange&quot; class=&quot;headerlink&quot; title=&quot;Hot Site Arrange&quot;&gt;&lt;/a&gt;Hot Site Arrange&lt;/h2&gt;&lt;h6
+        
+      
+    
+    </summary>
+    
+    
+      <category term="巧技" scheme="http://yoursite.com/categories/%E5%B7%A7%E6%8A%80/"/>
+    
+    
+      <category term="site" scheme="http://yoursite.com/tags/site/"/>
+    
+  </entry>
   
   <entry>
     <title>Radar_chart_1</title>
@@ -104,12 +132,12 @@
     <link href="http://yoursite.com/2020/06/24/Anaconda-And-Tsinghua-University-Open-Source-Software-Mirror-Station/"/>
     <id>http://yoursite.com/2020/06/24/Anaconda-And-Tsinghua-University-Open-Source-Software-Mirror-Station/</id>
     <published>2020-06-24T06:46:29.000Z</published>
-    <updated>2020-06-24T06:59:37.356Z</updated>
+    <updated>2021-03-02T09:17:49.021Z</updated>
     
     <summary type="html">
     
       &lt;hr&gt;
-&lt;h2 id=&quot;Anaconda-And-Tsinghua-University-Open-Source-Software-Mirror-Station&quot;&gt;&lt;a href=&quot;#Anaconda-And-Tsinghua-University-Open-Source-Software-Mirror-Station&quot; class=&quot;headerlink&quot; title=&quot;Anaconda And Tsinghua University Open Source Software Mirror Station&quot;&gt;&lt;/a&gt;Anaconda And Tsinghua University Open Source Software Mirror Station&lt;/h2&gt;&lt;ul&gt;
+&lt;h2 id=&quot;Anaconda-And-Tsinghua-University-Open-Source-Software-Mirror-Station&quot;&gt;&lt;a href=&quot;#Anaconda-And-Tsinghua-University-Open-Source-Software-Mirror-Station&quot; class=&quot;headerlink&quot; title=&quot;Anaconda And Tsinghua University Open Source Software Mirror Station&quot;&gt;&lt;/a&gt;Anaconda And Tsinghua University Open Source Software Mirror Station&lt;/h2&gt;&lt;h4 id=&quot;anaconda更新镜像&quot;&gt;&lt;a href=&quot;#anaconda更新镜像&quot; class=&quot;headerlink&quot; title=&quot;anaconda更新镜像&quot;&gt;&lt;/a&gt;anaconda更新镜像&lt;/h4&gt;&lt;ul&gt;
 &lt;li&gt;&lt;p&gt;清华源&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://mirrors-i.tuna.tsinghua.edu.cn/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://mirrors-i.tuna.tsinghua.edu.cn/&lt;/a&gt;&lt;/li&gt;
@@ -251,9 +279,9 @@
       <category term="leetcode" scheme="http://yoursite.com/categories/leetcode/"/>
     
     
-      <category term="algorithms" scheme="http://yoursite.com/tags/algorithms/"/>
-    
       <category term="python" scheme="http://yoursite.com/tags/python/"/>
+    
+      <category term="algorithms" scheme="http://yoursite.com/tags/algorithms/"/>
     
   </entry>
   
@@ -275,9 +303,9 @@
       <category term="leetcode" scheme="http://yoursite.com/categories/leetcode/"/>
     
     
-      <category term="algorithms" scheme="http://yoursite.com/tags/algorithms/"/>
-    
       <category term="python" scheme="http://yoursite.com/tags/python/"/>
+    
+      <category term="algorithms" scheme="http://yoursite.com/tags/algorithms/"/>
     
   </entry>
   
@@ -299,9 +327,9 @@
       <category term="leetcode" scheme="http://yoursite.com/categories/leetcode/"/>
     
     
-      <category term="algorithms" scheme="http://yoursite.com/tags/algorithms/"/>
-    
       <category term="python" scheme="http://yoursite.com/tags/python/"/>
+    
+      <category term="algorithms" scheme="http://yoursite.com/tags/algorithms/"/>
     
   </entry>
   
@@ -323,9 +351,9 @@
       <category term="leetcode" scheme="http://yoursite.com/categories/leetcode/"/>
     
     
-      <category term="algorithms" scheme="http://yoursite.com/tags/algorithms/"/>
-    
       <category term="python" scheme="http://yoursite.com/tags/python/"/>
+    
+      <category term="algorithms" scheme="http://yoursite.com/tags/algorithms/"/>
     
   </entry>
   
@@ -346,9 +374,9 @@
       <category term="leetcode" scheme="http://yoursite.com/categories/leetcode/"/>
     
     
-      <category term="algorithms" scheme="http://yoursite.com/tags/algorithms/"/>
-    
       <category term="python" scheme="http://yoursite.com/tags/python/"/>
+    
+      <category term="algorithms" scheme="http://yoursite.com/tags/algorithms/"/>
     
   </entry>
   
@@ -370,9 +398,9 @@
       <category term="leetcode" scheme="http://yoursite.com/categories/leetcode/"/>
     
     
-      <category term="algorithms" scheme="http://yoursite.com/tags/algorithms/"/>
-    
       <category term="python" scheme="http://yoursite.com/tags/python/"/>
+    
+      <category term="algorithms" scheme="http://yoursite.com/tags/algorithms/"/>
     
   </entry>
   
@@ -393,9 +421,9 @@
       <category term="leetcode" scheme="http://yoursite.com/categories/leetcode/"/>
     
     
-      <category term="algorithms" scheme="http://yoursite.com/tags/algorithms/"/>
-    
       <category term="python" scheme="http://yoursite.com/tags/python/"/>
+    
+      <category term="algorithms" scheme="http://yoursite.com/tags/algorithms/"/>
     
   </entry>
   
@@ -417,9 +445,9 @@
       <category term="leetcode" scheme="http://yoursite.com/categories/leetcode/"/>
     
     
-      <category term="algorithms" scheme="http://yoursite.com/tags/algorithms/"/>
-    
       <category term="python" scheme="http://yoursite.com/tags/python/"/>
+    
+      <category term="algorithms" scheme="http://yoursite.com/tags/algorithms/"/>
     
   </entry>
   
@@ -441,9 +469,9 @@
       <category term="leetcode" scheme="http://yoursite.com/categories/leetcode/"/>
     
     
-      <category term="algorithms" scheme="http://yoursite.com/tags/algorithms/"/>
-    
       <category term="python" scheme="http://yoursite.com/tags/python/"/>
+    
+      <category term="algorithms" scheme="http://yoursite.com/tags/algorithms/"/>
     
   </entry>
   
@@ -467,9 +495,9 @@
       <category term="leetcode" scheme="http://yoursite.com/categories/leetcode/"/>
     
     
-      <category term="algorithms" scheme="http://yoursite.com/tags/algorithms/"/>
-    
       <category term="python" scheme="http://yoursite.com/tags/python/"/>
+    
+      <category term="algorithms" scheme="http://yoursite.com/tags/algorithms/"/>
     
   </entry>
   
@@ -491,9 +519,9 @@
       <category term="leetcode" scheme="http://yoursite.com/categories/leetcode/"/>
     
     
-      <category term="algorithms" scheme="http://yoursite.com/tags/algorithms/"/>
-    
       <category term="python" scheme="http://yoursite.com/tags/python/"/>
+    
+      <category term="algorithms" scheme="http://yoursite.com/tags/algorithms/"/>
     
   </entry>
   
@@ -514,9 +542,9 @@
       <category term="leetcode" scheme="http://yoursite.com/categories/leetcode/"/>
     
     
-      <category term="algorithms" scheme="http://yoursite.com/tags/algorithms/"/>
-    
       <category term="python" scheme="http://yoursite.com/tags/python/"/>
+    
+      <category term="algorithms" scheme="http://yoursite.com/tags/algorithms/"/>
     
   </entry>
   
@@ -539,33 +567,9 @@
       <category term="leetcode" scheme="http://yoursite.com/categories/leetcode/"/>
     
     
-      <category term="algorithms" scheme="http://yoursite.com/tags/algorithms/"/>
-    
       <category term="python" scheme="http://yoursite.com/tags/python/"/>
     
-  </entry>
-  
-  <entry>
-    <title>chapter3-dynamic-algorithm </title>
-    <link href="http://yoursite.com/2020/02/19/chapter3-dynamic-algorithm/"/>
-    <id>http://yoursite.com/2020/02/19/chapter3-dynamic-algorithm/</id>
-    <published>2020-02-19T05:36:43.000Z</published>
-    <updated>2020-02-19T11:17:54.160Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;chapter3-dynamic-algorithm&quot;&gt;&lt;a href=&quot;#chapter3-dynamic-algorithm&quot; class=&quot;headerlink&quot; title=&quot;chapter3-dynamic-algorithm&quot;&gt;&lt;/a&gt;chapter3-dynamic-algorithm&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/CyC2018/CS-Notes&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;参考链接&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;[TOC]&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="leetcode" scheme="http://yoursite.com/categories/leetcode/"/>
-    
-    
       <category term="algorithms" scheme="http://yoursite.com/tags/algorithms/"/>
-    
-      <category term="python" scheme="http://yoursite.com/tags/python/"/>
     
   </entry>
   
