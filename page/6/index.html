@@ -333,6 +333,208 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/20/spark与pandas-如何构建分类模型/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="snail json">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Snail Life">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/01/20/spark与pandas-如何构建分类模型/" itemprop="url">spark与pandas 如何构建分类模型</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-01-20T16:34:48+08:00">
+                2020-01-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/spark/" itemprop="url" rel="index">
+                    <span itemprop="name">spark</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/01/20/spark与pandas-如何构建分类模型/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/01/20/spark与pandas-如何构建分类模型/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2020/01/20/spark与pandas-如何构建分类模型/" class="leancloud_visitors" data-flag-title="spark与pandas 如何构建分类模型">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             <span>℃</span>
+			 </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  467
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  2
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <hr>
+<h2 id="spark与pandas-如何构建分类模型"><a href="#spark与pandas-如何构建分类模型" class="headerlink" title="spark与pandas 如何构建分类模型"></a>spark与pandas 如何构建分类模型</h2><p>本章通过sklearn，鸢尾花数据，通过pandas的DataFrame与spark的DataFrame之间转化，构建spark多分类模型，并且图调参以及得到最佳参数和评价分数。具体代码流程如下：</p>
+<ol>
+<li><h6 id="导入相关工具包"><a href="#导入相关工具包" class="headerlink" title="导入相关工具包"></a>导入相关工具包</h6><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span>  sklearn.datasets <span class="keyword">as</span> sd</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> pyspark.context <span class="keyword">import</span> SparkContext</span><br><span class="line"><span class="keyword">from</span> pyspark.sql.context <span class="keyword">import</span>  SparkSession</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> pyspark.sql <span class="keyword">import</span> Row</span><br><span class="line"><span class="keyword">from</span> pyspark.ml.linalg <span class="keyword">import</span> Vectors</span><br><span class="line"><span class="keyword">from</span> pyspark.mllib.regression <span class="keyword">import</span> LabeledPoint</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> pyspark.ml.tuning <span class="keyword">import</span> ParamGridBuilder,CrossValidator</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> pyspark.ml.classification <span class="keyword">import</span> LogisticRegression</span><br><span class="line"><span class="keyword">from</span> pyspark.mllib.classification <span class="keyword">import</span> LogisticRegressionWithLBFGS, LogisticRegressionModel</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> pyspark.ml.evaluation <span class="keyword">import</span> MulticlassClassificationEvaluator,BinaryClassificationEvaluator</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/01/20/spark与pandas-如何构建分类模型/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </li></ol></div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/20/sparkml-151-classification-tree/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -483,208 +685,6 @@
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2020/01/20/sparkml-151-classification-tree/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/20/chapter2-最小二乘法完整实践理论/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="snail json">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Snail Life">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/11/20/chapter2-最小二乘法完整实践理论/" itemprop="url">chapter2 最小二乘法完整实践理论</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-11-20T20:14:04+08:00">
-                2019-11-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/python/" itemprop="url" rel="index">
-                    <span itemprop="name">python</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/11/20/chapter2-最小二乘法完整实践理论/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/11/20/chapter2-最小二乘法完整实践理论/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2019/11/20/chapter2-最小二乘法完整实践理论/" class="leancloud_visitors" data-flag-title="chapter2 最小二乘法完整实践理论">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Visitors&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             <span>℃</span>
-			 </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Words count in article&#58;</span>
-                
-                <span title="Words count in article">
-                  3k
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Reading time &asymp;</span>
-                
-                <span title="Reading time">
-                  13
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <hr>
-<h3 id="chapter2-最小二乘法完整实践理论"><a href="#chapter2-最小二乘法完整实践理论" class="headerlink" title="chapter2- 最小二乘法完整实践理论"></a>chapter2- 最小二乘法完整实践理论</h3><h6 id="1-概要"><a href="#1-概要" class="headerlink" title="1.概要"></a>1.概要</h6><p>​    此章，通过最小二乘法，在统计学习，机器学习，深度学习的轨道上进行讨论，它们叁之间的共性与异性。</p>
-<h6 id="2-什么是最小二乘法"><a href="#2-什么是最小二乘法" class="headerlink" title="2.什么是最小二乘法"></a>2.什么是最小二乘法</h6><p>​    <strong>最小二乘法</strong>（<strong>least squares method</strong>），又称<strong>最小平方法</strong>，是一种<a href="https://zh.wikipedia.org/wiki/数学" target="_blank" rel="noopener">数学</a><a href="https://zh.wikipedia.org/wiki/优化" target="_blank" rel="noopener">优化</a>方法。它通过最小化<a href="https://zh.wikipedia.org/wiki/误差" target="_blank" rel="noopener">误差</a>的平方和寻找数据的最佳函数匹配。</p>
-<p>​    利用最小二乘法可以简便地求得未知的数据，并使得求得的数据与实际数据之间误差的平方和为最小。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/11/20/chapter2-最小二乘法完整实践理论/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -1139,7 +1139,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/20/chapter5-逻辑斯谛回归-LogisticRegression/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/20/chapter6-神经网络/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="snail json">
@@ -1158,7 +1158,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/11/20/chapter5-逻辑斯谛回归-LogisticRegression/" itemprop="url">chapter5-逻辑斯谛回归-LogisticRegression</a></h1>
+                <a class="post-title-link" href="/2019/11/20/chapter6-神经网络/" itemprop="url">chapter6-神经网络</a></h1>
         
 
         <div class="post-meta">
@@ -1211,8 +1211,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/11/20/chapter5-逻辑斯谛回归-LogisticRegression/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/11/20/chapter5-逻辑斯谛回归-LogisticRegression/" itemprop="commentCount"></span>
+                <a href="/2019/11/20/chapter6-神经网络/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/11/20/chapter6-神经网络/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1220,7 +1220,7 @@
 
           
           
-             <span id="/2019/11/20/chapter5-逻辑斯谛回归-LogisticRegression/" class="leancloud_visitors" data-flag-title="chapter5-逻辑斯谛回归-LogisticRegression">
+             <span id="/2019/11/20/chapter6-神经网络/" class="leancloud_visitors" data-flag-title="chapter6-神经网络">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1246,7 +1246,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  3.2k
+                  2.6k
                 </span>
               
 
@@ -1262,7 +1262,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  13
+                  11
                 </span>
               
             </div>
@@ -1285,20 +1285,19 @@
       
         
           <hr>
-<h3 id="chapter5-逻辑斯谛回归-LogisticRegression"><a href="#chapter5-逻辑斯谛回归-LogisticRegression" class="headerlink" title="chapter5-逻辑斯谛回归-LogisticRegression"></a>chapter5-逻辑斯谛回归-LogisticRegression</h3><h4 id="statistics-learning"><a href="#statistics-learning" class="headerlink" title="statistics learning"></a>statistics learning</h4><h5 id="1-浅谈线性回归"><a href="#1-浅谈线性回归" class="headerlink" title="1.浅谈线性回归"></a>1.浅谈线性回归</h5><p>由于前面<a href="https://snailfrying.github.io/2019/11/20/chapter2-最小二乘法完整实践理论/#more" target="_blank" rel="noopener">最小二乘法</a>和<a href="https://snailfrying.github.io/2019/11/20/chapter4-梯度下降算法-Gradient-Descent/#more" target="_blank" rel="noopener">梯度下降算法</a>，已经大力讨论了回归模型，因此，本章只进行简单的回顾回归模型。分析线性回归原理和与最小二乘法之间的区别。</p>
-<p>线性回归与最小二乘法的最大区别，就在于损失函数的迭代。也就是如何优化损失函数。最小二乘法顾名思义，就是采用最小二乘法进行迭代，损失函数如下：<br>$$<br>J(\theta_0,\theta_1,\cdots,\theta_j) =\sum_{i=1}^m(h_θ(x_0^{(i)},x_1^{(i)},\cdots,x_j^{(i)}) - y^{(j)})^2=\sum_{i=1}^n(\sum_{j=1}^m\theta_jx_j^{(i)}-y^{(i)})^2<br>$$</p>
-<p>对损失函数求导为，更新参数$\theta$：<br>$$<br>\theta = (X^TX)^-1X^TY<br>$$<br>对于线性回归算法来说，就是利用梯度下降算法，损失函数如下：<br>$$<br>J(\theta_0,\theta_1,\cdots,\theta_j) =\frac{1}{2m}\sum_{i=1}^m(h_θ(x_0^{(i)},x_1^{(i)},\cdots,x_j^{(i)}) - y^{(j)})^2=\frac{1}{2m}\sum_{i=1}^n(\sum_{j=1}^m\theta_jx_j^{(i)}-y^{(i)})^2<br>$$</p>
-<p>对损失函数求偏导，更新参数$\theta$：<br>$$<br>\theta = \theta-\alpha X^T(\theta X-Y)<br>$$</p>
+<h2 id="chapter6-神经网络（neural-networks）"><a href="#chapter6-神经网络（neural-networks）" class="headerlink" title="chapter6-神经网络（neural networks）"></a>chapter6-神经网络（neural networks）</h2><h4 id="1-神经网络原理"><a href="#1-神经网络原理" class="headerlink" title="1. 神经网络原理"></a>1. 神经网络原理</h4><h6 id="这节大部分内容参考AndrewNG深度学习教学视频以及黄海广博士在github上开源的吴恩达深度学习笔记-本节知识根据自己使用经验进行基本总结，细致末梢还请看吴恩达老师讲义。"><a href="#这节大部分内容参考AndrewNG深度学习教学视频以及黄海广博士在github上开源的吴恩达深度学习笔记-本节知识根据自己使用经验进行基本总结，细致末梢还请看吴恩达老师讲义。" class="headerlink" title="这节大部分内容参考AndrewNG深度学习教学视频以及黄海广博士在github上开源的吴恩达深度学习笔记,本节知识根据自己使用经验进行基本总结，细致末梢还请看吴恩达老师讲义。"></a>这节大部分内容参考AndrewNG深度学习<a href="https://mooc.study.163.com/course/2001281002?tid=2001392029&_trace_c_p_k2_=fb1e25a65ef84e5c927c8125d985e008#/info" target="_blank" rel="noopener">教学视频</a>以及黄海广博士在github上开源的吴恩达深度学习笔记,本节知识根据自己使用经验进行基本总结，细致末梢还请看吴恩达老师讲义。</h6><p>对于neural networks统计学原理，我将从下面伍个部分进行仔细探讨，因为这些部分是神经网络不可或缺的部分。我将通过与logisticRegression原理进行对比介绍，如果不知道或者不清楚的可以看前面所介绍的logistic。最后实现代码，更深一步了解简单的TensorFlow实现。并且分析机器学习和深度学习建模的联系。</p>
+<ol>
+<li><h6 id="损失函数"><a href="#损失函数" class="headerlink" title="损失函数"></a>损失函数</h6><p>​        损失函数（cost function）是优化的目的。如果没有损失函数，也就没有了目标。不管是任何事情，都需要去了解问题的根本。知道问题的缘由，才能进一步进行建模优化。比如是回归还是分类。是有监督，还是无监督。使用什么统计学原理。如何筛选评价函数。这些都需要通过损失函数，与具体背景结合去构建模型。这里不考虑业务背景。现，只通过逻辑回归损失函数去优化，实现对图像的分类。即有监督。所以损失函数为：<br>$$<br>L(\theta) = -Y^Tlogh_{\theta}(X) - (E-Y)^T log(E-h_{\theta}(X))<br>$$</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2019/11/20/chapter5-逻辑斯谛回归-LogisticRegression/#more" rel="contents">
+            <a class="btn" href="/2019/11/20/chapter6-神经网络/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
           <!--/noindex-->
         
       
-    </div>
+    </li></ol></div>
     
     
     
@@ -1380,7 +1379,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">53</span>
+                  <span class="site-state-item-count">54</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1471,7 +1470,7 @@
 		<h3 class="widget-title">Tag Cloud</h3>
 		<div id="myCanvasContainer" class="widget tagcloud">
 		  <canvas width="250" height="250" id="resCanvas" style="width=100%">
-			<ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/thread/">-- thread</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Anaconda/">Anaconda</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Optimization/">Optimization</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithms/">algorithms</a><span class="tag-list-count">26</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/db2/">db2</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hive/">hive</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">20</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/self-study/">self-study</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/site/">site</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sql/">sql</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/statistics/">statistics</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/thread/">thread</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vim/">vim</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/win10快捷键/">win10快捷键</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/古月山风/">古月山风</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/梦想/">梦想</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/破晓/">破晓</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a><span class="tag-list-count">2</span></li></ul>
+			<ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/thread/">-- thread</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Anaconda/">Anaconda</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Optimization/">Optimization</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithms/">algorithms</a><span class="tag-list-count">27</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/db2/">db2</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hive/">hive</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">20</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/self-study/">self-study</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/site/">site</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sql/">sql</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/statistics/">statistics</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/thread/">thread</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vim/">vim</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/win10快捷键/">win10快捷键</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/古月山风/">古月山风</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/梦想/">梦想</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/破晓/">破晓</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a><span class="tag-list-count">2</span></li></ul>
 		  </canvas>
 		</div>
 	  </div>
@@ -1502,7 +1501,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">137k</span>
+    <span title="Site words total count">137.6k</span>
   
 </div>
 
